@@ -70,11 +70,26 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		public System.Data.Linq.Table<test> tests
+		{
+			get
+			{
+				return this.GetTable<test>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_login")]
 		public ISingleResult<sp_loginResult> sp_login([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string password)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
 			return ((ISingleResult<sp_loginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_login1")]
+		public ISingleResult<sp_login1Result> sp_login1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
+			return ((ISingleResult<sp_login1Result>)(result.ReturnValue));
 		}
 	}
 	
@@ -339,6 +354,51 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.test")]
+	public partial class test
+	{
+		
+		private string _username;
+		
+		private string _apassword;
+		
+		public test()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(20)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_apassword", DbType="VarChar(20)")]
+		public string apassword
+		{
+			get
+			{
+				return this._apassword;
+			}
+			set
+			{
+				if ((this._apassword != value))
+				{
+					this._apassword = value;
+				}
+			}
+		}
+	}
+	
 	public partial class sp_loginResult
 	{
 		
@@ -378,6 +438,50 @@ namespace ANS_Library_Management_System
 				if ((this._password != value))
 				{
 					this._password = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_login1Result
+	{
+		
+		private string _username;
+		
+		private string _apassword;
+		
+		public sp_login1Result()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(20)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_apassword", DbType="VarChar(20)")]
+		public string apassword
+		{
+			get
+			{
+				return this._apassword;
+			}
+			set
+			{
+				if ((this._apassword != value))
+				{
+					this._apassword = value;
 				}
 			}
 		}

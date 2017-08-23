@@ -23,7 +23,7 @@ namespace ANS_Library_Management_System
         private void btnLogin_Click(object sender, EventArgs e)
         {
             int result;
-            result = db.sp_login(txtUsername.Text, txtPassword.text).Count();
+            result = db.sp_login1(txtUsername.Text, txtPassword.text).Count();
 
             if (result == 0)
             {

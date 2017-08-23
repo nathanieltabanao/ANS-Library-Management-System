@@ -28,6 +28,8 @@ create table tblUserDetails
 	Grade_Level varchar(20) not null,
 )
 
+select * from tblUserDetails
+
 --sample data for test
 insert into tblUserDetails
 values ('10001','nathan23','test12','Nathaniel','Angelico','Tabanao','jfkdjfldkjsf','564564654','Male','7-23-1998',18,'CI502A-C','3rd YR')

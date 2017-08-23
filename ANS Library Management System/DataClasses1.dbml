@@ -18,12 +18,26 @@
       <Column Name="Grade_Level" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.test" Member="tests">
+    <Type Name="test">
+      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="apassword" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.sp_login" Method="sp_login">
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
     <ElementType Name="sp_loginResult">
       <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_login1" Method="sp_login1">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_login1Result">
+      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="apassword" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
