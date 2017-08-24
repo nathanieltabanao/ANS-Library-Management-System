@@ -33,3 +33,62 @@ select * from tblUserDetails
 --sample data for test
 insert into tblUserDetails
 values ('10001','nathan23','test12','Nathaniel','Angelico','Tabanao','jfkdjfldkjsf','564564654','Male','7-23-1998',18,'CI502A-C','3rd YR')
+
+drop table test
+
+create table test
+(
+	username varchar(20),
+	apassword varchar(20)
+)
+
+insert into  test
+values ('nathan23','test12')
+
+create procedure sp_login1
+@username varchar (50),
+@password varchar(max)
+as
+	select test.username,test.apassword from test
+		where test.username=@username and test.apassword=@password
+	return 0
+
+drop table tblbooksdb
+
+create table tblBooksDB
+(
+	BookID int identity(200000,1),
+	bISBN varchar(50)
+	bTitle varchar(100) not null,
+	bAuthor1 varchar(100) not null,
+	bAuthor2 varchar(100),
+	bAuthor3 varchar(100),
+	bAuthor4 varchar(100),
+	bPublication_Year varchar(20),
+	bField_of_Study varchar(50),
+	bCategory varchar(50),
+	bPublisher varchar(50)
+)
+
+create table  BookAuthors
+(
+	
+)
+
+create table tblDailyReports
+(
+	transactionID int identity(200000,1)
+	tDate datetime,
+	tAttendant varchar(100),
+
+)
+
+create table tblBookUsage
+(
+	
+)
+
+create table tblLostBooks
+(
+	
+)
