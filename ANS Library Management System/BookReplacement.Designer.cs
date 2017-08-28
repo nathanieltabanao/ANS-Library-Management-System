@@ -42,12 +42,9 @@
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomTextbox4 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCalendar1 = new Bunifu.Framework.UI.BunifuCalendar();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnExit = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuThinButton2 = new WindowsFormsControlLibrary1.BunifuThinButton();
-            this.bunifuThinButton1 = new WindowsFormsControlLibrary1.BunifuThinButton();
             this.txtSearch = new Bunifu.Framework.UI.BunifuTextbox();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,98 +159,6 @@
             this.bunifuCustomLabel7.TabIndex = 21;
             this.bunifuCustomLabel7.Text = "Replacement Date";
             // 
-            // bunifuCalendar1
-            // 
-            this.bunifuCalendar1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCalendar1.BorderRadius = 0;
-            this.bunifuCalendar1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCalendar1.Location = new System.Drawing.Point(509, 365);
-            this.bunifuCalendar1.Name = "bunifuCalendar1";
-            this.bunifuCalendar1.Size = new System.Drawing.Size(231, 28);
-            this.bunifuCalendar1.TabIndex = 22;
-            this.bunifuCalendar1.Value = new System.DateTime(2017, 8, 21, 23, 30, 38, 143);
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "Replacement Records";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = global::ANS_Library_Management_System.Properties.Resources.eye_png;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconZoom = 75D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(66, 23);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(198, 30);
-            this.bunifuFlatButton1.TabIndex = 26;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnExit.color = System.Drawing.Color.SeaGreen;
-            this.btnExit.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::ANS_Library_Management_System.Properties.Resources.home;
-            this.btnExit.ImagePosition = 20;
-            this.btnExit.ImageZoom = 50;
-            this.btnExit.LabelPosition = 41;
-            this.btnExit.LabelText = "Exit";
-            this.btnExit.Location = new System.Drawing.Point(725, 418);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(6);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(47, 87);
-            this.btnExit.TabIndex = 25;
-            // 
-            // bunifuThinButton2
-            // 
-            this.bunifuThinButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton2.BackgroundImage")));
-            this.bunifuThinButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuThinButton2.ButtonText = "Cancel";
-            this.bunifuThinButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bunifuThinButton2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton2.ForeColorHoverState = System.Drawing.Color.White;
-            this.bunifuThinButton2.Iconimage = null;
-            this.bunifuThinButton2.IconVisible = true;
-            this.bunifuThinButton2.IconZoom = 90D;
-            this.bunifuThinButton2.ImageIconOverlay = false;
-            this.bunifuThinButton2.Location = new System.Drawing.Point(194, 399);
-            this.bunifuThinButton2.Name = "bunifuThinButton2";
-            this.bunifuThinButton2.Size = new System.Drawing.Size(122, 54);
-            this.bunifuThinButton2.TabIndex = 24;
-            // 
-            // bunifuThinButton1
-            // 
-            this.bunifuThinButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton1.BackgroundImage")));
-            this.bunifuThinButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuThinButton1.ButtonText = "Add Record";
-            this.bunifuThinButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bunifuThinButton1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton1.ForeColorHoverState = System.Drawing.Color.White;
-            this.bunifuThinButton1.Iconimage = null;
-            this.bunifuThinButton1.IconVisible = true;
-            this.bunifuThinButton1.IconZoom = 90D;
-            this.bunifuThinButton1.ImageIconOverlay = false;
-            this.bunifuThinButton1.Location = new System.Drawing.Point(66, 399);
-            this.bunifuThinButton1.Name = "bunifuThinButton1";
-            this.bunifuThinButton1.Size = new System.Drawing.Size(122, 54);
-            this.bunifuThinButton1.TabIndex = 23;
-            // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.White;
@@ -267,16 +172,35 @@
             this.txtSearch.TabIndex = 5;
             this.txtSearch.text = "Search for book";
             // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(70, 404);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(99, 41);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 25;
+            this.buttonX1.Text = "Add Record";
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(185, 404);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(99, 41);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 26;
+            this.buttonX2.Text = "Cancel";
+            // 
             // BookReplacement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 507);
-            this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.bunifuThinButton2);
-            this.Controls.Add(this.bunifuThinButton1);
-            this.Controls.Add(this.bunifuCalendar1);
+            this.Controls.Add(this.buttonX2);
+            this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.bunifuCustomLabel7);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.bunifuCustomTextbox5);
@@ -316,10 +240,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox bunifuCustomTextbox4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCalendar bunifuCalendar1;
-        private WindowsFormsControlLibrary1.BunifuThinButton bunifuThinButton1;
-        private WindowsFormsControlLibrary1.BunifuThinButton bunifuThinButton2;
-        private Bunifu.Framework.UI.BunifuTileButton btnExit;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
     }
 }

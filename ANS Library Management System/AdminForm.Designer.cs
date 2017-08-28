@@ -81,7 +81,7 @@
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.accountsToolStripMenuItem.Text = "Accounts";
             // 
             // libraryFunctionsToolStripMenuItem
@@ -164,6 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.lms_test__2_;
             this.ClientSize = new System.Drawing.Size(807, 477);
             this.Controls.Add(this.stripAdmin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

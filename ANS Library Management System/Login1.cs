@@ -18,15 +18,20 @@ namespace ANS_Library_Management_System
         }
 
         DataClasses1DataContext db = new DataClasses1DataContext();
-
+        int LogError;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             int result;
-            result = db.sp_login(txtUsername.Text, txtPassword.Text).Count();
+            result = db.sp_login1(txtUsername.Text, txtPassword.Text).Count();
 
             if (result == 0)
             {
                 MessageBox.Show("Error");
+                LogError++;
+                if (LogError>=3)
+                {
+                    lblForget.Text = "Forgot Password?";
+                }
             }
             else
             {
@@ -34,6 +39,16 @@ namespace ANS_Library_Management_System
                 this.Hide();
                 n.Show();
             }
+        }
+
+        private void Login1_Load(object sender, EventArgs e)
+        {
+            lblForget.Text = null;
+        }
+
+        private void lblForget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //this.Hide;
         }
     }
 }

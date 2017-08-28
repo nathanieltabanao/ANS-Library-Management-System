@@ -9,6 +9,9 @@ namespace ANS_Library_Management_System
             InitializeComponent();
         }
 
+        private void logOutToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
 
+        }
     }
 }

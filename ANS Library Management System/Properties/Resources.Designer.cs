@@ -63,6 +63,26 @@ namespace ANS_Library_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_contact {
+            get {
+                object obj = ResourceManager.GetObject("add contact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ANS_LOGO__2_ {
+            get {
+                object obj = ResourceManager.GetObject("ANS LOGO (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_png {
             get {
                 object obj = ResourceManager.GetObject("eye.png", resourceCulture);
@@ -76,6 +96,16 @@ namespace ANS_Library_Management_System.Properties {
         internal static System.Drawing.Bitmap home {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lms_test__2_ {
+            get {
+                object obj = ResourceManager.GetObject("lms-test (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
