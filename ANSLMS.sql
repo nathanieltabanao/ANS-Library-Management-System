@@ -144,6 +144,82 @@ create table tblAdminDetails
 	Security_Answer varchar(max) not null
 )
 
+
+--procedures for Admin
+
+--Data Insert Admin
+create procedure sp_AdminInsert
+(
+	@ID varchar(50),
+	@username varchar(50),
+	@password varchar(max),
+	@First_Name varchar(50),
+	@Middle_Name varchar(30),
+	@Last_Name varchar(50),
+	@Address varchar(max),
+	@Contact_Number varchar(20),
+	@Gender varchar(10),
+	@Birthdate datetime,
+	@Age int,
+	@Email_Address varchar(100),
+	@Security_Question varchar(max),
+	@Security_Answer varchar(max)
+)
+as
+insert into tblAdminDetails
+values(@ID,@username,@password,@First_Name ,@Middle_Name,@Last_Name,@Address,@Contact_Number,@Gender ,@Birthdate,@Age,@Email_Address,@Security_Question,@Security_Answer)
+
+
+create procedure sp_AdminUpdate
+(
+	@ID varchar(50),
+	@username varchar(50),
+	@password varchar(max),
+	@First_Name varchar(50),
+	@Middle_Name varchar(30),
+	@Last_Name varchar(50),
+	@Address varchar(max),
+	@Contact_Number varchar(20),
+	@Gender varchar(10),
+	@Birthdate datetime,
+	@Age int,
+	@Email_Address varchar(100),
+	@Security_Question varchar(max),
+	@Security_Answer varchar(max)
+)
+as
+update tblAdminDetails
+set username=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name,Last_Name=@Last_Name,Address=@Address,Contact_Number=@Contact_Number,Gender=@Gender,Age=@Age,Email_Address=@Email_Address,Security_Question=@Security_Question,Security_Answer=@Security_Answer
+where ID=@ID
+
+--delete from admin table
+create procedure sp_AdminDelete
+(
+	@ID varchar(50)
+)
+as
+delete tblAdminDetails
+where ID=@ID
+
+--search function 
+
+
+--LOGINFUNCTION
+create procedure sp_AdminLogin
+@username varchar (50),
+@password varchar(max)
+as
+select tblAdminDetails.username,tblAdminDetails.password from tblAdminDetails
+where tblAdminDetails.username=@username and tblAdminDetails.password=@password
+return 0
+
+--ID FUcntion
+create procedure sp_AdminID
+as
+declare @ID int
+select  @ID = IDENT_CURRENT('tblAdminDetails')
+return @ID
+
 ------------------------------------------------------------------------------------------------
 --test system
 create table test
@@ -188,11 +264,13 @@ create table  BookAuthors
 
 create table tblDailyReports
 (
-	transactionID int identity(200000,1)
+	transactionID int identity(1000000,1),
 	tDate datetime,
 	tAttendant varchar(100),
 
 )
+
+
 
 create table tblBookUsage
 (

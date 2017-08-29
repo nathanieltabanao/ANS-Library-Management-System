@@ -15,7 +15,7 @@ namespace ANS_Library_Management_System
             SHA256Managed sha = new SHA256Managed();
             //compute has from the bytes of text
 
-            sha.ComputeHash(ASCIIEncoding.ASCII.GetBytes(salt+salt+password));
+            sha.ComputeHash(ASCIIEncoding.ASCII.GetBytes(salt+password+salt));
             //get hash result after computation
             
 

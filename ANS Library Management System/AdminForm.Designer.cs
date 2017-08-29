@@ -81,8 +81,9 @@
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.accountsToolStripMenuItem.Text = "Accounts";
+            this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
             // libraryFunctionsToolStripMenuItem
             // 

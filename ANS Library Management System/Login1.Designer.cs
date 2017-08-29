@@ -44,7 +44,7 @@
             this.btnLogin.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogin.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLogin.Font = new System.Drawing.Font("HelvLight", 10F);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnLogin.Location = new System.Drawing.Point(196, 210);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(85, 42);
@@ -59,10 +59,10 @@
             // 
             // 
             this.txtUsername.Border.Class = "TextBoxBorder";
-            this.txtUsername.Font = new System.Drawing.Font("HelvLight", 12F);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtUsername.Location = new System.Drawing.Point(89, 133);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(192, 27);
+            this.txtUsername.Size = new System.Drawing.Size(192, 26);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.WatermarkText = "Username";
             // 
@@ -72,10 +72,11 @@
             // 
             // 
             this.txtPassword.Border.Class = "TextBoxBorder";
-            this.txtPassword.Font = new System.Drawing.Font("HelvLight", 12F);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPassword.Location = new System.Drawing.Point(89, 169);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(192, 27);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(192, 26);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.WatermarkText = "Password";
             // 
@@ -85,7 +86,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Font = new System.Drawing.Font("HelvLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.Location = new System.Drawing.Point(149, 68);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(160, 19);
@@ -96,10 +97,10 @@
             // lblForget
             // 
             this.lblForget.AutoSize = true;
-            this.lblForget.Font = new System.Drawing.Font("HelvLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForget.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForget.Location = new System.Drawing.Point(176, 255);
             this.lblForget.Name = "lblForget";
-            this.lblForget.Size = new System.Drawing.Size(113, 16);
+            this.lblForget.Size = new System.Drawing.Size(117, 16);
             this.lblForget.TabIndex = 4;
             this.lblForget.TabStop = true;
             this.lblForget.Text = "Forgot Password?";
@@ -121,7 +122,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Font = new System.Drawing.Font("HelvLight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.Location = new System.Drawing.Point(104, 12);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(251, 50);

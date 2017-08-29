@@ -59,6 +59,11 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ANSLMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ANSLMSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BookBorrow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +95,7 @@
     </Compile>
     <Compile Include="encryption_algorithm.cs" />
     <Compile Include="Extra_Libraries.cs" />
+    <Compile Include="GenerateID.cs" />
     <Compile Include="Login1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,17 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ANSLMSDataSet.xsc">
+      <DependentUpon>ANSLMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ANSLMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ANSLMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ANSLMSDataSet.xss">
+      <DependentUpon>ANSLMSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>

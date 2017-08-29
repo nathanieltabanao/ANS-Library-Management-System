@@ -35,9 +35,9 @@ namespace ANS_Library_Management_System
             }
             else
             {
-                PersonnelForm n = new PersonnelForm();
+                AdminForm admin = new AdminForm();
+                admin.Show();
                 this.Hide();
-                n.Show();
             }
         }
 
