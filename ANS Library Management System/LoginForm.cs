@@ -22,19 +22,19 @@ namespace ANS_Library_Management_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int result;
-            result = db.sp_login1(txtUsername.Text, txtPassword.Text).Count();
+            //int result;
+            //result = db.sp_login1(txtUsername.Text, txtPassword.Text).Count();
 
-            if (result == 0)
-            {
-                MessageBox.Show("Error");
-            }
-            else
-            {
-                PersonnelForm n = new PersonnelForm();
-                this.Hide();
-                n.Show();
-            }
+            //if (result == 0)
+            //{
+            //    MessageBox.Show("Error");
+            //}
+            //else
+            //{
+            //    PersonnelForm n = new PersonnelForm();
+            //    this.Hide();
+            //    n.Show();
+            //}
         }
     }
 }

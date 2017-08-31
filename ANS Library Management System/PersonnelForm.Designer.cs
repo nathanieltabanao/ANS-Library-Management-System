@@ -151,6 +151,7 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(82, 33);
             this.logOutToolStripMenuItem.Text = "Log - Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // PersonnelForm
             // 
@@ -165,6 +166,7 @@
             this.Name = "PersonnelForm";
             this.Text = "Personnel\'s Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.PersonnelForm_Load);
             this.stripAdmin.ResumeLayout(false);
             this.stripAdmin.PerformLayout();
             this.ResumeLayout(false);

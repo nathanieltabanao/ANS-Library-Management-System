@@ -88,6 +88,7 @@
     <Compile Include="BorrowerForm.Designer.cs">
       <DependentUpon>BorrowerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="clsMiddleClass.cs" />
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

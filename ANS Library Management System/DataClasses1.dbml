@@ -1,9 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ANSLMS" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=NATHANIEL;Initial Catalog=ANSLMS;Integrated Security=True" SettingsObjectName="ANS_Library_Management_System.Properties.Settings" SettingsPropertyName="ANSLMSConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.test" Member="tests">
-    <Type Name="test">
-      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="apassword" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+  <Table Name="dbo.tblAdminDetails" Member="tblAdminDetails">
+    <Type Name="tblAdminDetail">
+      <Column Name="GenID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_Number" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Birthdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email_Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Question" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Answer" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblUserDetails" Member="tblUserDetails">
@@ -25,40 +39,27 @@
       <Column Name="Email_Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Security_Question" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Security_Answer" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblAdminDetails" Member="tblAdminDetails">
-    <Type Name="tblAdminDetail">
-      <Column Name="GenID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Contact_Number" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Gender" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Birthdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Email_Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Security_Question" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Security_Answer" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.tblLoginReport" Member="tblLoginReports">
+    <Type Name="tblLoginReport">
+      <Column Name="LoginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.sp_login1" Method="sp_login1">
-    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
-    <ElementType Name="sp_login1Result">
-      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="apassword" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_DeleteUser" Method="sp_DeleteUser">
+  <Function Name="dbo.sp_AdminDelete" Method="sp_AdminDelete">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UserUpdate" Method="sp_UserUpdate">
+  <Function Name="dbo.sp_AdminID" Method="sp_AdminID">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_AdminInsert" Method="sp_AdminInsert">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
@@ -70,11 +71,43 @@
     <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Birthdate" Parameter="birthdate" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="Age" Parameter="age" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Section" Parameter="section" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="Grade_Level" Parameter="grade_Level" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Email_Address" Parameter="email_Address" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Security_Question" Parameter="security_Question" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="Security_Answer" Parameter="security_Answer" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Usertype" Parameter="usertype" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_AdminLogin" Method="sp_AdminLogin">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_AdminLoginResult">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_AdminUpdate" Method="sp_AdminUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="First_Name" Parameter="first_Name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Middle_Name" Parameter="middle_Name" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Last_Name" Parameter="last_Name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Contact_Number" Parameter="contact_Number" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Birthdate" Parameter="birthdate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Age" Parameter="age" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Email_Address" Parameter="email_Address" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Security_Question" Parameter="security_Question" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Security_Answer" Parameter="security_Answer" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Usertype" Parameter="usertype" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteUser" Method="sp_DeleteUser">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UserID" Method="sp_UserID">
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_UserInsert" Method="sp_UserInsert">
@@ -94,6 +127,7 @@
     <Parameter Name="Email_Address" Parameter="email_Address" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Security_Question" Parameter="security_Question" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="Security_Answer" Parameter="security_Answer" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Usertype" Parameter="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_UserLogin" Method="sp_UserLogin">
@@ -121,14 +155,7 @@
       <Column Name="Email_Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_UserID" Method="sp_UserID">
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_AdminDelete" Method="sp_AdminDelete">
-    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_AdminUpdate" Method="sp_AdminUpdate">
+  <Function Name="dbo.sp_UserUpdate" Method="sp_UserUpdate">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
@@ -140,37 +167,36 @@
     <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Birthdate" Parameter="birthdate" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="Age" Parameter="age" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Section" Parameter="section" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Grade_Level" Parameter="grade_Level" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Email_Address" Parameter="email_Address" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Security_Question" Parameter="security_Question" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="Security_Answer" Parameter="security_Answer" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Usertype" Parameter="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_AdminID" Method="sp_AdminID">
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_AdminInsert" Method="sp_AdminInsert">
-    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="First_Name" Parameter="first_Name" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Middle_Name" Parameter="middle_Name" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Last_Name" Parameter="last_Name" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="Contact_Number" Parameter="contact_Number" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Birthdate" Parameter="birthdate" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="Age" Parameter="age" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Email_Address" Parameter="email_Address" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Security_Question" Parameter="security_Question" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="Security_Answer" Parameter="security_Answer" Type="System.String" DbType="VarChar(MAX)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_AdminLogin" Method="sp_AdminLogin">
-    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
-    <ElementType Name="sp_AdminLoginResult">
+  <Function Name="dbo.UserUsertype" Method="UserUsertype">
+    <Parameter Name="parameter1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="parameter2" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="UserUsertypeResult">
       <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.AdminUsertype" Method="AdminUsertype">
+    <Parameter Name="parameter1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="parameter2" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="AdminUsertypeResult">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LoginReport" Method="sp_LoginReport">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Action" Parameter="action" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Timestamp" Parameter="timestamp" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

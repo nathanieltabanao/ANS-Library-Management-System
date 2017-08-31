@@ -20,11 +20,12 @@ namespace ANS_Library_Management_System
         //database connection
         DataClasses1DataContext db = new DataClasses1DataContext();
 
+
         // hashing stirng
         encryption_algorithm hash = new encryption_algorithm();
 
         // some variables i might need latur
-        string gender, stringdate, salt, hashed;
+        string gender, stringdate, salt, hashed, Usertype;
         DateTime date;
 
         //methods for form
@@ -120,7 +121,7 @@ namespace ANS_Library_Management_System
             stringdate = null;
             salt = null;
             hashed = null;
-
+            dtpBirthdate.Value = DateTime.Now;
             rdoAdmin.Checked = true;
         }
 
@@ -236,6 +237,9 @@ namespace ANS_Library_Management_System
                 date = DateTime.Parse(dtpBirthdate.Text);
                 stringdate = dtpBirthdate.Text;
 
+                //Messagebox
+                MessageBox.Show(txtlastname.Text + ", " + txtfirstname.Text + " is now registered!");
+
                 //selection of gender
                 if (rdoMale.Checked)
                 {
@@ -249,24 +253,31 @@ namespace ANS_Library_Management_System
                 //selection of role
                 if (rdoAdmin.Checked)
                 {
+                    Usertype = "Admin";
                     AdminID();
-                    db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text);
+                    db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
+                    Clear();
                 }
                 else if (rdoPersonnel.Checked)
                 {
+                    Usertype = "Personnel";
                     PersonelID();
-                    db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text);
+                    db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
+                    Clear();
                 }
                 else if (rdoStudent.Checked)
                 {
+                    Usertype = "Student";
                     StudentID();
-                    db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text);
-                    
+                    db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
+                    Clear();
                 }
                 else if (rdoTeacher.Checked)
                 {
+                    Usertype = "Teacher";
                     TeacherID();
-                    db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text);
+                    db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
+                    Clear();
                 }
             }
             

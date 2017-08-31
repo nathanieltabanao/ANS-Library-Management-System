@@ -93,6 +93,7 @@
             this.Name = "BorrowerForm";
             this.Text = "Borrower\'s Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.BorrowerForm_Load);
             this.stripAdmin.ResumeLayout(false);
             this.stripAdmin.PerformLayout();
             this.ResumeLayout(false);

@@ -81,7 +81,7 @@
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.accountsToolStripMenuItem.Text = "Accounts";
             this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
@@ -101,6 +101,7 @@
             this.bookInventoryToolStripMenuItem.Name = "bookInventoryToolStripMenuItem";
             this.bookInventoryToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.bookInventoryToolStripMenuItem.Text = "Book Inventory";
+            this.bookInventoryToolStripMenuItem.Click += new System.EventHandler(this.bookInventoryToolStripMenuItem_Click);
             // 
             // bookBorrowingToolStripMenuItem
             // 
@@ -160,6 +161,7 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(82, 33);
             this.logOutToolStripMenuItem.Text = "Log - Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // AdminForm
             // 

@@ -1,7 +1,6 @@
 create database ANSLMS
 use ANSLMS
 
-drop database ANSLMS
 
 create procedure sp_login
 @username varchar (50),
@@ -19,6 +18,7 @@ create table tblUserDetails
 	ID varchar(50) not null,
 	username varchar(50) not null,
 	password varchar(max) not null,
+	usertype varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
 	Last_Name varchar(50) not null,
@@ -31,8 +31,7 @@ create table tblUserDetails
 	Grade_Level varchar(20) ,
 	Email_Address varchar(100) not null,
 	Security_Question varchar(max) not null,
-	Security_Answer varchar(max) not null,
-	Usertype varchar(50)
+	Security_Answer varchar(max) not null
 )
 --FOr tblUserdetails
 drop table tblUserDetails
@@ -66,12 +65,11 @@ create procedure sp_UserInsert
 	@Grade_Level varchar(20) ,
 	@Email_Address varchar(100),
 	@Security_Question varchar(max),
-	@Security_Answer varchar(max),
-	@Usertype varchar(50)
+	@Security_Answer varchar(max)
 )
 as
 insert into tblUserDetails
-values (@ID,@username,@password,@First_Name,@Middle_Name ,@Last_Name ,@Address ,@Contact_Number ,@Gender,@Birthdate ,@Age ,@Section,@Grade_Level ,@Email_Address ,@Security_Question ,@Security_Answer,@Usertype)
+values (@ID,@username,@password,@First_Name,@Middle_Name ,@Last_Name ,@Address ,@Contact_Number ,@Gender,@Birthdate ,@Age ,@Section,@Grade_Level ,@Email_Address ,@Security_Question ,@Security_Answer)
 
 --USER UPDATE
 create procedure sp_UserUpdate
@@ -91,12 +89,11 @@ create procedure sp_UserUpdate
 	@Grade_Level varchar(20) ,
 	@Email_Address varchar(100),
 	@Security_Question varchar(max),
-	@Security_Answer varchar(max),
-	@Usertype varchar(50)
+	@Security_Answer varchar(max)
 )
 as
 update tblUserDetails
-set ID=@ID,username=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name ,Last_Name=@Last_Name ,Address=@Address ,Contact_Number=@Contact_Number ,Gender=@Gender,Birthdate=@Birthdate ,Age=@Age ,Section=@Section,Grade_Level=@Grade_Level ,Email_Address=@Email_Address ,Security_Question=@Security_Question ,Security_Answer=@Security_Answer,Usertype=@Usertype
+set ID=@ID,username=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name ,Last_Name=@Last_Name ,Address=@Address ,Contact_Number=@Contact_Number ,Gender=@Gender,Birthdate=@Birthdate ,Age=@Age ,Section=@Section,Grade_Level=@Grade_Level ,Email_Address=@Email_Address ,Security_Question=@Security_Question ,Security_Answer=@Security_Answer
 where tblUserDetails.ID=@ID
 
 --USER DELETE
@@ -124,23 +121,19 @@ as
 select ID,First_Name,Middle_Name,Last_Name,Address,Contact_Number,Gender,Birthdate,Age,Section,Grade_Level,Email_Address from tblUserDetails
 where tblUserDetails.ID = @SearchKey or tblUserDetails.Last_Name=@SearchKey
 
---id retrieve
-create procedure UserUsertype
-@parameter1 varchar (50),
-@parameter2 varchar(50)
-as
-select tblUserDetails.username,tblUserDetails.Usertype from tblUserDetails
-where tblUserDetails.username=@parameter1 and tblUserDetails.Usertype='student'
-return 0
+
+
 
 ---------------------------------------------------------------------------------------
---tblAdminDetails
+--tblAdminDetails 
+drop table tblAdminDetails
 create table tblAdminDetails
 (
-	GenID int unique identity(200000,1),
-	ID varchar(50) not null,
+	ID int unique identity(200000,1),
+	GenID varchar(50) not null,
 	username varchar(50) not null,
 	password varchar(max) not null,
+	usertype varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
 	Last_Name varchar(50) not null,
@@ -151,37 +144,35 @@ create table tblAdminDetails
 	Age int,
 	Email_Address varchar(100) not null,
 	Security_Question varchar(max) not null,
-	Security_Answer varchar(max) not null,
-	Usertype varchar(50)
+	Security_Answer varchar(max) not null
 )
 
+drop procedure sp_insertadmin
 
---procedures for Admin
-
---Data Insert Admin
-create procedure sp_AdminInsert
+create procedure sp_insertadmin
 (
-	@ID varchar(50),
+	
+	@GenID varchar(50),
 	@username varchar(50),
 	@password varchar(max),
+	@usertype varchar(max),
 	@First_Name varchar(50),
 	@Middle_Name varchar(30),
 	@Last_Name varchar(50),
 	@Address varchar(max),
-	@Contact_Number varchar(20),
+	@Contact_Number varchar(20), 
 	@Gender varchar(10),
 	@Birthdate datetime,
 	@Age int,
 	@Email_Address varchar(100),
 	@Security_Question varchar(max),
-	@Security_Answer varchar(max),
-	@Usertype varchar(50)
+	@Security_Answer varchar(max)
 )
 as
 insert into tblAdminDetails
-values(@ID,@username,@password,@First_Name ,@Middle_Name,@Last_Name,@Address,@Contact_Number,@Gender ,@Birthdate,@Age,@Email_Address,@Security_Question,@Security_Answer,@Usertype)
+values (@GenID,@username ,@password ,@usertype ,@First_Name,@Middle_Name ,@Last_Name ,@Address ,@Contact_Number ,@Gender,@Birthdate ,@Age ,@Email_Address ,@Security_Question ,@Security_Answer)
 
-
+drop procedure sp_AdminUpdate
 create procedure sp_AdminUpdate
 (
 	@ID varchar(50),
@@ -195,52 +186,16 @@ create procedure sp_AdminUpdate
 	@Gender varchar(10),
 	@Birthdate datetime,
 	@Age int,
+	@Section varchar(20),
+	@Grade_Level varchar(20) ,
 	@Email_Address varchar(100),
 	@Security_Question varchar(max),
-	@Security_Answer varchar(max),
-	@Usertype varchar(50)
+	@Security_Answer varchar(max)
 )
 as
 update tblAdminDetails
-set username=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name,Last_Name=@Last_Name,Address=@Address,Contact_Number=@Contact_Number,Gender=@Gender,Age=@Age,Email_Address=@Email_Address,Security_Question=@Security_Question,Security_Answer=@Security_Answer,Usertype=@Usertype
-where ID=@ID
-
---delete from admin table
-create procedure sp_AdminDelete
-(
-	@ID varchar(50)
-)
-as
-delete tblAdminDetails
-where ID=@ID
-
---search function 
-
-
---LOGINFUNCTION
-create procedure sp_AdminLogin
-@username varchar (50),
-@password varchar(max)
-as
-select tblAdminDetails.username,tblAdminDetails.password from tblAdminDetails
-where tblAdminDetails.username=@username and tblAdminDetails.password=@password
-return 0
-
---ID FUcntion
-create procedure sp_AdminID
-as
-declare @ID int
-select  @ID = IDENT_CURRENT('tblAdminDetails')
-return @ID
-
-create procedure AdminUsertype
-@parameter1 varchar (50),
-@parameter2 varchar(50)
-as
-select tblAdminDetails.username,tblAdminDetails.Usertype from tblAdminDetails
-where tblAdminDetails.username=@parameter1 and tblAdminDetails.Usertype='admin'
-return 0
-
+set ID=@ID,username=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name ,Last_Name=@Last_Name ,Address=@Address ,Contact_Number=@Contact_Number ,Gender=@Gender,Birthdate=@Birthdate ,Age=@Age ,Email_Address=@Email_Address ,Security_Question=@Security_Question ,Security_Answer=@Security_Answer
+where tblAdminDetails.ID=@ID
 ------------------------------------------------------------------------------------------------
 --test system
 create table test
@@ -266,7 +221,7 @@ as
 create table tblBooksData
 (
 	BookID int identity(300000,1),
-	ISBN varchar(50),
+	ISBN varchar(50)
 	Title varchar(100) not null,
 	Author1 varchar(100) not null,
 	Author2 varchar(100),
@@ -278,97 +233,18 @@ create table tblBooksData
 	Publisher varchar(50)
 )
 
---stored procedures
-
-
---addbook
-create procedure sp_BookAdd
-(
-	@ISBN varchar(50),
-	@Title varchar(100),
-	@Author1 varchar(100),
-	@Author2 varchar(100),
-	@Author3 varchar(100),
-	@Author4 varchar(100),
-	@Publication_Year datetime,
-	@Field_of_Study varchar(50),
-	@Category varchar(50),
-	@Publisher varchar(50)
-)
-as
-insert into tblBooksData
-values (@ISBN,@Title,@Author1,@Author2,@Author3,@Author4,@Publication_Year,@Field_of_Study,@Category,@Publisher)
-
---update book details
-create procedure sp_BookEdit
-(
-	@BookID int,
-	@ISBN varchar(50),
-	@Title varchar(100),
-	@Author1 varchar(100),
-	@Author2 varchar(100),
-	@Author3 varchar(100),
-	@Author4 varchar(100),
-	@Publication_Year datetime,
-	@Field_of_Study varchar(50),
-	@Category varchar(50),
-	@Publisher varchar(50)
-)
-as 
-update tblBooksData
-set ISBN=@ISBN,Title=@Title,Author1=@Author1,Author2=@Author2,Author3=@Author3,Author4=@Author4,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher
-where BookID=@BookID
-
---------------------------------------
 create table  BookAuthors
 (
 	
 )
 
-
-------------------------------
-
 create table tblDailyReports
 (
-	transactionID int identity(0000000,1),
+	transactionID int identity(1000000,1),
 	tDate datetime,
-	tAttendant varchar(100)
+	tAttendant varchar(100),
 
 )
-
-
-------------------------------------
-
---login report
-drop table tblLoginReport
-create table tblLoginReport
-(
-	LoginID int identity(10000000,1),
-	username varchar(50),
-	password varchar(max),
-	Action varchar(100),
-	Timestamp datetime,
-	usertype varchar(50)
-)
-
-select * from tblLoginReport
-
-
---login status
-create procedure sp_LoginReport
-(
-	@username varchar(50),
-	@password varchar(max),
-	@Action varchar(100),
-	@Timestamp datetime,
-	@usertype varchar(50)
-)
-as
-insert into tblLoginReport
-values (@username,@password,@Action,@Timestamp,@usertype)
-
-
---------------------------------------------------------------------------------
 
 create table tblBookUsage
 (
@@ -379,6 +255,8 @@ create table tblLostBooks
 (
 	
 )
+
+
 
 --need to be added which is wala pa 
 
