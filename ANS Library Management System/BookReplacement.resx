@@ -117,23 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="eye.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ANS LOGO (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ANS LOGO (2).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lms-test (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lms-test (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAwAAAANAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAANAAAACgAA
+        AAkAAAABAAAAOQAAAKwAAAC1AAAAswAAALQAAAC0AAAAtAAAALQAAAC0AAAAtAAAALQAAAC0AAAAsQAA
+        AMYAAACeAAAAEwAAALUAAABBAAAACAAAABEAAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAAEwAA
+        AAAAAACuAAAASgAAAAAAAAC2AAAARAAAAAAAAAANAAAACwAAAAsAAAALAAAACwAAAAsAAAALAAAACwAA
+        AA8AAAAAAAAArAAAAEQAAAAAAAAAKQAAAMgAAAD/AAAA7QAAAO8AAADvAAAA7wAAAO8AAADvAAAA7wAA
+        AO8AAADvAAAA7QAAAPcAAADoAAAAqQAAAAAAAACjAAAAYAAAADAAAAA4AAAANwAAADcAAAA3AAAANwAA
+        ADcAAAA3AAAANwAAADoAAAAnAAAAlQAAAJwAAAARAAAAvAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAHMAAAB1AAAAAAAAAGEAAAD1AAAA1wAAANoAAADaAAAA2gAA
+        ANoAAADaAAAA2gAAANoAAADaAAAA2wAAANEAAADjAAAA2AAAADEAAACtAAAAsAAAALcAAAC3AAAAtwAA
+        ALcAAAC3AAAAtwAAALcAAAC3AAAAtwAAALMAAADLAAAA/wAAAGAAAACdAAAAZgAAAAAAAAADAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQgAAAL8AAAALAAAAbAAAALkAAABuAAAAdgAA
+        AHUAAAB1AAAAdQAAAHUAAAB1AAAAdQAAAHUAAAB2AAAAbwAAAKAAAAC9AAAAIwAAAAAAAACwAAAA/wAA
+        APsAAAD+AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD7AAAA/wAAAGEAAAAAAAAAIQAA
+        AOkAAAD9AAAA9gAAAPgAAAD4AAAA+AAAAPgAAAD4AAAA+AAAAPcAAAD1AAAA/wAAAJ8AAAAAAAAAAwAA
+        AAAAAABtAAAA/wAAAPwAAAD+AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD9AAAA/wAAAMYAAAAPAAAAAAAA
+        AAAAAAAAAAAACAAAAJ4AAADPAAAAxQAAAMcAAADHAAAAxwAAAMcAAADGAAAAyQAAAL4AAAAnAAAAAAAA
+        AAIAAAAAAAAAAAAAAAAAAAAEAAAACQAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAkAAAAFAAAAAAAA
+        AAEAAAAA//8AAIABAAB/+wAAf/sAAIAAAAC//AAAv/8AAMAAAACAAQAAf/0AAL/5AACAAQAAwAEAAOAD
+        AADgBwAA//8AAA==
+</value>
   </data>
 </root>
