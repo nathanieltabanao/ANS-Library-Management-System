@@ -33,6 +33,29 @@ namespace ANS_Library_Management_System
             db.sp_LoginReport(username, hash.HashPass(hashed, salt), "Logout", DateTime.Now, "Personnel");
         }
 
+        private void bookReplacementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookReplacement rep = new BookReplacement();
+            rep.MdiParent = this;
+            rep.Show();
+        }
+
+        private void bookBorrowingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookBorrow bor = new BookBorrow();
+            bor.MdiParent = this;
+            bor.Show();
+        }
+
+        private void bookInventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookInventory inv = new BookInventory();
+            inv.username = username;
+            inv.password = password;
+            inv.MdiParent = this;
+            inv.Show();
+        }
+
         private void PersonnelForm_Load(object sender, System.EventArgs e)
         {
 

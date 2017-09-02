@@ -254,30 +254,30 @@ namespace ANS_Library_Management_System
                 if (rdoAdmin.Checked)
                 {
                     Usertype = "Admin";
-                    AdminID();
                     db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
                     Clear();
+                    AdminID();
                 }
                 else if (rdoPersonnel.Checked)
                 {
                     Usertype = "Personnel";
-                    PersonelID();
                     db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
                     Clear();
+                    PersonelID();
                 }
                 else if (rdoStudent.Checked)
                 {
                     Usertype = "Student";
-                    StudentID();
                     db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
                     Clear();
+                    StudentID();
                 }
                 else if (rdoTeacher.Checked)
                 {
                     Usertype = "Teacher";
-                    TeacherID();
                     db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
                     Clear();
+                    TeacherID();
                 }
             }
             

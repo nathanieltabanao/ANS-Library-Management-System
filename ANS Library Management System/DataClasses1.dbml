@@ -52,6 +52,37 @@
       <Column Name="usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tblBooksData" Member="tblBooksDatas">
+    <Type Name="tblBooksData">
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Author1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Author2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Author3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Author4" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Publication_Year" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Field_of_Study" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AdminUsertype" Method="AdminUsertype">
+    <Parameter Name="parameter1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="parameter2" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="AdminUsertypeResult">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UserUsertype" Method="UserUsertype">
+    <Parameter Name="parameter1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="parameter2" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="UserUsertypeResult">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_AdminDelete" Method="sp_AdminDelete">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
@@ -103,8 +134,46 @@
     <Parameter Name="Usertype" Parameter="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_BookAdd" Method="sp_BookAdd">
+    <Parameter Name="ISBN" Parameter="iSBN" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author1" Parameter="author1" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author2" Parameter="author2" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author3" Parameter="author3" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author4" Parameter="author4" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Publication_Year" Parameter="publication_Year" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Field_of_Study" Parameter="field_of_Study" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Publisher" Parameter="publisher" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BookEdit" Method="sp_BookEdit">
+    <Parameter Name="BookID" Parameter="bookID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ISBN" Parameter="iSBN" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author1" Parameter="author1" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author2" Parameter="author2" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author3" Parameter="author3" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Author4" Parameter="author4" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Publication_Year" Parameter="publication_Year" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Field_of_Study" Parameter="field_of_Study" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Publisher" Parameter="publisher" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BookID" Method="sp_BookID">
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_DeleteUser" Method="sp_DeleteUser">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LoginReport" Method="sp_LoginReport">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Action" Parameter="action" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Timestamp" Parameter="timestamp" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_UserID" Method="sp_UserID">
@@ -175,28 +244,35 @@
     <Parameter Name="Usertype" Parameter="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.UserUsertype" Method="UserUsertype">
-    <Parameter Name="parameter1" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="parameter2" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="UserUsertypeResult">
-      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Function Name="dbo.sp_BookView" Method="sp_BookView">
+    <ElementType Name="sp_BookViewResult">
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Author1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Author2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Author3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Author4" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Publication_Year" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Field_of_Study" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.AdminUsertype" Method="AdminUsertype">
-    <Parameter Name="parameter1" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="parameter2" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="AdminUsertypeResult">
-      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Function Name="dbo.sp_BookSearch" Method="sp_BookSearch">
+    <Parameter Name="SearchKey" Parameter="searchKey" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_BookSearchResult">
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Author1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Author2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Author3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Author4" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Publication_Year" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Field_of_Study" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.sp_LoginReport" Method="sp_LoginReport">
-    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="Action" Parameter="action" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Timestamp" Parameter="timestamp" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -86,6 +86,28 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		public System.Data.Linq.Table<tblBooksData> tblBooksDatas
+		{
+			get
+			{
+				return this.GetTable<tblBooksData>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AdminUsertype")]
+		public ISingleResult<AdminUsertypeResult> AdminUsertype([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), parameter1, parameter2);
+			return ((ISingleResult<AdminUsertypeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UserUsertype")]
+		public ISingleResult<UserUsertypeResult> UserUsertype([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), parameter1, parameter2);
+			return ((ISingleResult<UserUsertypeResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AdminDelete")]
 		public int sp_AdminDelete([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(50)")] string iD)
 		{
@@ -121,10 +143,38 @@ namespace ANS_Library_Management_System
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookAdd")]
+		public int sp_BookAdd([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(50)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(100)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author1", DbType="VarChar(100)")] string author1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author2", DbType="VarChar(100)")] string author2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author3", DbType="VarChar(100)")] string author3, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author4", DbType="VarChar(100)")] string author4, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publication_Year", DbType="DateTime")] System.Nullable<System.DateTime> publication_Year, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Field_of_Study", DbType="VarChar(50)")] string field_of_Study, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publisher", DbType="VarChar(50)")] string publisher)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iSBN, title, author1, author2, author3, author4, publication_Year, field_of_Study, category, publisher);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookEdit")]
+		public int sp_BookEdit([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookID", DbType="Int")] System.Nullable<int> bookID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(50)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(100)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author1", DbType="VarChar(100)")] string author1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author2", DbType="VarChar(100)")] string author2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author3", DbType="VarChar(100)")] string author3, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author4", DbType="VarChar(100)")] string author4, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publication_Year", DbType="DateTime")] System.Nullable<System.DateTime> publication_Year, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Field_of_Study", DbType="VarChar(50)")] string field_of_Study, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publisher", DbType="VarChar(50)")] string publisher)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookID, iSBN, title, author1, author2, author3, author4, publication_Year, field_of_Study, category, publisher);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookID")]
+		public int sp_BookID()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteUser")]
 		public int sp_DeleteUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(50)")] string iD)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LoginReport")]
+		public int sp_LoginReport([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Action", DbType="VarChar(100)")] string action, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Timestamp", DbType="DateTime")] System.Nullable<System.DateTime> timestamp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, action, timestamp, usertype);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -197,25 +247,18 @@ namespace ANS_Library_Management_System
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UserUsertype")]
-		public ISingleResult<UserUsertypeResult> UserUsertype([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter2)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookView")]
+		public ISingleResult<sp_BookViewResult> sp_BookView()
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), parameter1, parameter2);
-			return ((ISingleResult<UserUsertypeResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_BookViewResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AdminUsertype")]
-		public ISingleResult<AdminUsertypeResult> AdminUsertype([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string parameter2)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookSearch")]
+		public ISingleResult<sp_BookSearchResult> sp_BookSearch([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SearchKey", DbType="VarChar(50)")] string searchKey)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), parameter1, parameter2);
-			return ((ISingleResult<AdminUsertypeResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LoginReport")]
-		public int sp_LoginReport([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Action", DbType="VarChar(100)")] string action, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Timestamp", DbType="DateTime")] System.Nullable<System.DateTime> timestamp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, action, timestamp, usertype);
-			return ((int)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), searchKey);
+			return ((ISingleResult<sp_BookSearchResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -966,6 +1009,301 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblBooksData")]
+	public partial class tblBooksData
+	{
+		
+		private int _BookID;
+		
+		private string _ISBN;
+		
+		private string _Title;
+		
+		private string _Author1;
+		
+		private string _Author2;
+		
+		private string _Author3;
+		
+		private string _Author4;
+		
+		private System.Nullable<System.DateTime> _Publication_Year;
+		
+		private string _Field_of_Study;
+		
+		private string _Category;
+		
+		private string _Publisher;
+		
+		public tblBooksData()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int BookID
+		{
+			get
+			{
+				return this._BookID;
+			}
+			set
+			{
+				if ((this._BookID != value))
+				{
+					this._BookID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(50)")]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this._ISBN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author1", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Author1
+		{
+			get
+			{
+				return this._Author1;
+			}
+			set
+			{
+				if ((this._Author1 != value))
+				{
+					this._Author1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author2", DbType="VarChar(100)")]
+		public string Author2
+		{
+			get
+			{
+				return this._Author2;
+			}
+			set
+			{
+				if ((this._Author2 != value))
+				{
+					this._Author2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author3", DbType="VarChar(100)")]
+		public string Author3
+		{
+			get
+			{
+				return this._Author3;
+			}
+			set
+			{
+				if ((this._Author3 != value))
+				{
+					this._Author3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author4", DbType="VarChar(100)")]
+		public string Author4
+		{
+			get
+			{
+				return this._Author4;
+			}
+			set
+			{
+				if ((this._Author4 != value))
+				{
+					this._Author4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publication_Year", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Publication_Year
+		{
+			get
+			{
+				return this._Publication_Year;
+			}
+			set
+			{
+				if ((this._Publication_Year != value))
+				{
+					this._Publication_Year = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Field_of_Study", DbType="VarChar(50)")]
+		public string Field_of_Study
+		{
+			get
+			{
+				return this._Field_of_Study;
+			}
+			set
+			{
+				if ((this._Field_of_Study != value))
+				{
+					this._Field_of_Study = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="VarChar(50)")]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="VarChar(50)")]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this._Publisher = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AdminUsertypeResult
+	{
+		
+		private string _username;
+		
+		private string _Usertype;
+		
+		public AdminUsertypeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usertype", DbType="VarChar(50)")]
+		public string Usertype
+		{
+			get
+			{
+				return this._Usertype;
+			}
+			set
+			{
+				if ((this._Usertype != value))
+				{
+					this._Usertype = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UserUsertypeResult
+	{
+		
+		private string _username;
+		
+		private string _Usertype;
+		
+		public UserUsertypeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usertype", DbType="VarChar(50)")]
+		public string Usertype
+		{
+			get
+			{
+				return this._Usertype;
+			}
+			set
+			{
+				if ((this._Usertype != value))
+				{
+					this._Usertype = value;
+				}
+			}
+		}
+	}
+	
 	public partial class sp_AdminLoginResult
 	{
 		
@@ -1278,89 +1616,413 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
-	public partial class UserUsertypeResult
+	public partial class sp_BookViewResult
 	{
 		
-		private string _username;
+		private int _BookID;
 		
-		private string _Usertype;
+		private string _ISBN;
 		
-		public UserUsertypeResult()
+		private string _Title;
+		
+		private string _Author1;
+		
+		private string _Author2;
+		
+		private string _Author3;
+		
+		private string _Author4;
+		
+		private System.Nullable<System.DateTime> _Publication_Year;
+		
+		private string _Field_of_Study;
+		
+		private string _Category;
+		
+		private string _Publisher;
+		
+		public sp_BookViewResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string username
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookID", DbType="Int NOT NULL")]
+		public int BookID
 		{
 			get
 			{
-				return this._username;
+				return this._BookID;
 			}
 			set
 			{
-				if ((this._username != value))
+				if ((this._BookID != value))
 				{
-					this._username = value;
+					this._BookID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usertype", DbType="VarChar(50)")]
-		public string Usertype
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(50)")]
+		public string ISBN
 		{
 			get
 			{
-				return this._Usertype;
+				return this._ISBN;
 			}
 			set
 			{
-				if ((this._Usertype != value))
+				if ((this._ISBN != value))
 				{
-					this._Usertype = value;
+					this._ISBN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author1", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Author1
+		{
+			get
+			{
+				return this._Author1;
+			}
+			set
+			{
+				if ((this._Author1 != value))
+				{
+					this._Author1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author2", DbType="VarChar(100)")]
+		public string Author2
+		{
+			get
+			{
+				return this._Author2;
+			}
+			set
+			{
+				if ((this._Author2 != value))
+				{
+					this._Author2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author3", DbType="VarChar(100)")]
+		public string Author3
+		{
+			get
+			{
+				return this._Author3;
+			}
+			set
+			{
+				if ((this._Author3 != value))
+				{
+					this._Author3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author4", DbType="VarChar(100)")]
+		public string Author4
+		{
+			get
+			{
+				return this._Author4;
+			}
+			set
+			{
+				if ((this._Author4 != value))
+				{
+					this._Author4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publication_Year", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Publication_Year
+		{
+			get
+			{
+				return this._Publication_Year;
+			}
+			set
+			{
+				if ((this._Publication_Year != value))
+				{
+					this._Publication_Year = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Field_of_Study", DbType="VarChar(50)")]
+		public string Field_of_Study
+		{
+			get
+			{
+				return this._Field_of_Study;
+			}
+			set
+			{
+				if ((this._Field_of_Study != value))
+				{
+					this._Field_of_Study = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="VarChar(50)")]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="VarChar(50)")]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this._Publisher = value;
 				}
 			}
 		}
 	}
 	
-	public partial class AdminUsertypeResult
+	public partial class sp_BookSearchResult
 	{
 		
-		private string _username;
+		private int _BookID;
 		
-		private string _Usertype;
+		private string _ISBN;
 		
-		public AdminUsertypeResult()
+		private string _Title;
+		
+		private string _Author1;
+		
+		private string _Author2;
+		
+		private string _Author3;
+		
+		private string _Author4;
+		
+		private System.Nullable<System.DateTime> _Publication_Year;
+		
+		private string _Field_of_Study;
+		
+		private string _Category;
+		
+		private string _Publisher;
+		
+		public sp_BookSearchResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string username
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookID", DbType="Int NOT NULL")]
+		public int BookID
 		{
 			get
 			{
-				return this._username;
+				return this._BookID;
 			}
 			set
 			{
-				if ((this._username != value))
+				if ((this._BookID != value))
 				{
-					this._username = value;
+					this._BookID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usertype", DbType="VarChar(50)")]
-		public string Usertype
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(50)")]
+		public string ISBN
 		{
 			get
 			{
-				return this._Usertype;
+				return this._ISBN;
 			}
 			set
 			{
-				if ((this._Usertype != value))
+				if ((this._ISBN != value))
 				{
-					this._Usertype = value;
+					this._ISBN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author1", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Author1
+		{
+			get
+			{
+				return this._Author1;
+			}
+			set
+			{
+				if ((this._Author1 != value))
+				{
+					this._Author1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author2", DbType="VarChar(100)")]
+		public string Author2
+		{
+			get
+			{
+				return this._Author2;
+			}
+			set
+			{
+				if ((this._Author2 != value))
+				{
+					this._Author2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author3", DbType="VarChar(100)")]
+		public string Author3
+		{
+			get
+			{
+				return this._Author3;
+			}
+			set
+			{
+				if ((this._Author3 != value))
+				{
+					this._Author3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author4", DbType="VarChar(100)")]
+		public string Author4
+		{
+			get
+			{
+				return this._Author4;
+			}
+			set
+			{
+				if ((this._Author4 != value))
+				{
+					this._Author4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publication_Year", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Publication_Year
+		{
+			get
+			{
+				return this._Publication_Year;
+			}
+			set
+			{
+				if ((this._Publication_Year != value))
+				{
+					this._Publication_Year = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Field_of_Study", DbType="VarChar(50)")]
+		public string Field_of_Study
+		{
+			get
+			{
+				return this._Field_of_Study;
+			}
+			set
+			{
+				if ((this._Field_of_Study != value))
+				{
+					this._Field_of_Study = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="VarChar(50)")]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="VarChar(50)")]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this._Publisher = value;
 				}
 			}
 		}

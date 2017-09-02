@@ -73,23 +73,23 @@ namespace ANS_Library_Management_System
                 int a = db.AdminUsertype(txtUsername.Text, null).Count();
                 if (a==0)
                 {
+                    //personnel
                     PersonnelForm p = new PersonnelForm();
                     p.username = txtUsername.Text;
                     p.password = txtPassword.Text;
                     db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Personnel");
-                    PersonnelForm personnel = new PersonnelForm();
                     this.Hide();
-                    personnel.Show();
+                    p.Show();
                 }
                 else
                 {
+                    //admin
                     AdminForm ad = new AdminForm();
                     ad.username = txtUsername.Text;
                     ad.password = txtPassword.Text;
                     db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Admin");
-                    AdminForm admin = new AdminForm();
                     this.Hide();
-                    admin.Show();
+                    ad.Show();
                 }
             }
             

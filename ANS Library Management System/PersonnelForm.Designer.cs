@@ -86,11 +86,12 @@
             this.bookInventoryToolStripMenuItem.Name = "bookInventoryToolStripMenuItem";
             this.bookInventoryToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.bookInventoryToolStripMenuItem.Text = "Book Inventory";
+            this.bookInventoryToolStripMenuItem.Click += new System.EventHandler(this.bookInventoryToolStripMenuItem_Click);
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // bookBorrowingToolStripMenuItem
@@ -98,6 +99,7 @@
             this.bookBorrowingToolStripMenuItem.Name = "bookBorrowingToolStripMenuItem";
             this.bookBorrowingToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.bookBorrowingToolStripMenuItem.Text = "Book Borrowing";
+            this.bookBorrowingToolStripMenuItem.Click += new System.EventHandler(this.bookBorrowingToolStripMenuItem_Click);
             // 
             // bookPenaltyToolStripMenuItem
             // 
@@ -110,6 +112,7 @@
             this.bookReplacementToolStripMenuItem.Name = "bookReplacementToolStripMenuItem";
             this.bookReplacementToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.bookReplacementToolStripMenuItem.Text = "Book Replacement";
+            this.bookReplacementToolStripMenuItem.Click += new System.EventHandler(this.bookReplacementToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 

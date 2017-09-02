@@ -156,6 +156,8 @@ create table tblAdminDetails
 )
 
 
+select * from tblAdminDetails
+
 --procedures for Admin
 
 --Data Insert Admin
@@ -278,6 +280,10 @@ create table tblBooksData
 	Publisher varchar(50)
 )
 
+select * from tblBooksData
+
+insert into tblBooksData
+values('8789798-4546','the idiot')
 --stored procedures
 
 
@@ -319,6 +325,31 @@ update tblBooksData
 set ISBN=@ISBN,Title=@Title,Author1=@Author1,Author2=@Author2,Author3=@Author3,Author4=@Author4,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher
 where BookID=@BookID
 
+
+--book ID
+create procedure sp_BookID
+as
+declare @ID int
+select  @ID = IDENT_CURRENT('tblBooksData')
+return @ID
+
+--search function
+create procedure sp_BookSearch
+(
+	@SearchKey varchar(50)
+)
+as
+select * from tblBooksData
+where tblBooksData.Title like '%'+@SearchKey+'&' or tblBooksData.Author1 like '%'+@SearchKey+'&' or tblBooksData.Publisher like '%'+@SearchKey+'&'
+return 0
+
+---view shat
+create procedure sp_BookView
+as
+select * from tblBooksData
+
+
+
 --------------------------------------
 create table  BookAuthors
 (
@@ -352,7 +383,7 @@ create table tblLoginReport
 )
 
 select * from tblLoginReport
-
+ truncate table tblloginreport
 
 --login status
 create procedure sp_LoginReport

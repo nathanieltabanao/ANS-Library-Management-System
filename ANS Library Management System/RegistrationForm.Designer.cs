@@ -72,8 +72,8 @@
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.cmbGradeLevel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cmbSection = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.cmbSection = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -93,7 +93,7 @@
             this.txtfirstname.Location = new System.Drawing.Point(161, 173);
             this.txtfirstname.Name = "txtfirstname";
             this.txtfirstname.Size = new System.Drawing.Size(234, 23);
-            this.txtfirstname.TabIndex = 4;
+            this.txtfirstname.TabIndex = 3;
             this.txtfirstname.WatermarkText = "First name...";
             // 
             // txtlastname
@@ -106,7 +106,7 @@
             this.txtlastname.Location = new System.Drawing.Point(161, 135);
             this.txtlastname.Name = "txtlastname";
             this.txtlastname.Size = new System.Drawing.Size(234, 23);
-            this.txtlastname.TabIndex = 3;
+            this.txtlastname.TabIndex = 2;
             this.txtlastname.WatermarkText = "Last name...";
             // 
             // labelX1
@@ -172,7 +172,7 @@
             this.txtID.Location = new System.Drawing.Point(161, 89);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(234, 23);
-            this.txtID.TabIndex = 8;
+            this.txtID.TabIndex = 1;
             this.txtID.WatermarkText = "User ID...";
             // 
             // txtmiddlename
@@ -185,7 +185,7 @@
             this.txtmiddlename.Location = new System.Drawing.Point(161, 210);
             this.txtmiddlename.Name = "txtmiddlename";
             this.txtmiddlename.Size = new System.Drawing.Size(234, 23);
-            this.txtmiddlename.TabIndex = 7;
+            this.txtmiddlename.TabIndex = 4;
             this.txtmiddlename.WatermarkText = "Middle name...";
             // 
             // cmbSecQuestion
@@ -205,7 +205,7 @@
             this.cmbSecQuestion.Name = "cmbSecQuestion";
             this.cmbSecQuestion.Size = new System.Drawing.Size(348, 26);
             this.cmbSecQuestion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbSecQuestion.TabIndex = 11;
+            this.cmbSecQuestion.TabIndex = 14;
             // 
             // question1
             // 
@@ -251,7 +251,7 @@
             this.txtAnswer.Location = new System.Drawing.Point(287, 480);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(348, 26);
-            this.txtAnswer.TabIndex = 13;
+            this.txtAnswer.TabIndex = 15;
             // 
             // labelX6
             // 
@@ -276,7 +276,7 @@
             this.txtPassword.Location = new System.Drawing.Point(47, 480);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(192, 23);
-            this.txtPassword.TabIndex = 16;
+            this.txtPassword.TabIndex = 13;
             this.txtPassword.WatermarkText = "Password";
             // 
             // txtUsername
@@ -289,7 +289,7 @@
             this.txtUsername.Location = new System.Drawing.Point(47, 416);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(192, 23);
-            this.txtUsername.TabIndex = 15;
+            this.txtUsername.TabIndex = 12;
             this.txtUsername.WatermarkText = "Username";
             // 
             // labelX7
@@ -342,7 +342,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(234, 54);
-            this.txtAddress.TabIndex = 19;
+            this.txtAddress.TabIndex = 5;
             this.txtAddress.WatermarkText = "Address...";
             // 
             // labelX11
@@ -442,7 +442,7 @@
             this.dtpBirthdate.Name = "dtpBirthdate";
             this.dtpBirthdate.Size = new System.Drawing.Size(200, 20);
             this.dtpBirthdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpBirthdate.TabIndex = 27;
+            this.dtpBirthdate.TabIndex = 9;
             this.dtpBirthdate.ValueChanged += new System.EventHandler(this.dtpBirthdate_ValueChanged);
             this.dtpBirthdate.Click += new System.EventHandler(this.dtpBirthdate_Click);
             // 
@@ -469,7 +469,7 @@
             this.txtEmail.Location = new System.Drawing.Point(537, 89);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 23);
-            this.txtEmail.TabIndex = 28;
+            this.txtEmail.TabIndex = 6;
             this.txtEmail.WatermarkText = "j.doe@...";
             // 
             // btnRegister
@@ -564,7 +564,7 @@
             this.txtContact.Location = new System.Drawing.Point(537, 136);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(234, 23);
-            this.txtContact.TabIndex = 20;
+            this.txtContact.TabIndex = 7;
             this.txtContact.WatermarkText = "09...";
             // 
             // labelX9
@@ -604,7 +604,7 @@
             this.txtAge.Location = new System.Drawing.Point(537, 248);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(234, 23);
-            this.txtAge.TabIndex = 37;
+            this.txtAge.TabIndex = 9;
             this.txtAge.WatermarkText = "100 years";
             // 
             // labelX16
@@ -646,7 +646,11 @@
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(243, 20);
             this.cmbGradeLevel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbGradeLevel.TabIndex = 43;
+            this.cmbGradeLevel.TabIndex = 10;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "test";
             // 
             // cmbSection
             // 
@@ -661,11 +665,7 @@
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(243, 20);
             this.cmbSection.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbSection.TabIndex = 44;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "test";
+            this.cmbSection.TabIndex = 11;
             // 
             // comboItem2
             // 
@@ -691,7 +691,7 @@
             this.groupBox2.Location = new System.Drawing.Point(537, 165);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(247, 41);
-            this.groupBox2.TabIndex = 46;
+            this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
             // RegistrationForm

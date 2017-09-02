@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookBorrow));
             this.dgvBooks = new System.Windows.Forms.DataGridView();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSearch = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -39,55 +39,59 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTitle = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtBookID = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtISBN = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtAuthor = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPublishDate = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPublisher = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtFoS = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCategory = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.lblCurrentAttendant = new DevComponents.DotNetBar.LabelX();
             this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.grpBorrowInfo = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.grpBorrowInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvBooks
             // 
+            this.dgvBooks.AllowUserToAddRows = false;
+            this.dgvBooks.AllowUserToDeleteRows = false;
             this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBooks.Location = new System.Drawing.Point(62, 84);
             this.dgvBooks.Name = "dgvBooks";
+            this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
             this.dgvBooks.TabIndex = 2;
             // 
-            // textBoxX1
+            // txtSearch
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxX1.Location = new System.Drawing.Point(557, 49);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(313, 25);
-            this.textBoxX1.TabIndex = 3;
-            this.textBoxX1.WatermarkText = "Search by title, code, publisher";
+            this.txtSearch.Border.Class = "TextBoxBorder";
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSearch.Location = new System.Drawing.Point(557, 49);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(313, 25);
+            this.txtSearch.TabIndex = 3;
+            this.txtSearch.WatermarkText = "Search by title, code, publisher";
             // 
             // labelX1
             // 
@@ -193,93 +197,101 @@
             this.labelX8.TabIndex = 11;
             this.labelX8.Text = "Publisher:";
             // 
-            // textBoxX2
+            // txtTitle
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(323, 310);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(305, 20);
-            this.textBoxX2.TabIndex = 12;
+            this.txtTitle.Border.Class = "TextBoxBorder";
+            this.txtTitle.Enabled = false;
+            this.txtTitle.Location = new System.Drawing.Point(323, 310);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(305, 20);
+            this.txtTitle.TabIndex = 12;
             // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(165, 354);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX3.TabIndex = 13;
-            // 
-            // textBoxX4
+            // txtBookID
             // 
             // 
             // 
             // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(165, 383);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX4.TabIndex = 14;
+            this.txtBookID.Border.Class = "TextBoxBorder";
+            this.txtBookID.Enabled = false;
+            this.txtBookID.Location = new System.Drawing.Point(165, 354);
+            this.txtBookID.Name = "txtBookID";
+            this.txtBookID.Size = new System.Drawing.Size(190, 20);
+            this.txtBookID.TabIndex = 13;
             // 
-            // textBoxX5
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(165, 412);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX5.TabIndex = 15;
-            // 
-            // textBoxX6
+            // txtISBN
             // 
             // 
             // 
             // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Location = new System.Drawing.Point(165, 441);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX6.TabIndex = 16;
+            this.txtISBN.Border.Class = "TextBoxBorder";
+            this.txtISBN.Enabled = false;
+            this.txtISBN.Location = new System.Drawing.Point(165, 383);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(190, 20);
+            this.txtISBN.TabIndex = 14;
             // 
-            // textBoxX7
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Location = new System.Drawing.Point(165, 470);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX7.TabIndex = 17;
-            // 
-            // textBoxX8
+            // txtAuthor
             // 
             // 
             // 
             // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Location = new System.Drawing.Point(165, 499);
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.Size = new System.Drawing.Size(192, 20);
-            this.textBoxX8.TabIndex = 18;
+            this.txtAuthor.Border.Class = "TextBoxBorder";
+            this.txtAuthor.Enabled = false;
+            this.txtAuthor.Location = new System.Drawing.Point(165, 412);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(190, 20);
+            this.txtAuthor.TabIndex = 15;
             // 
-            // textBoxX9
+            // txtPublishDate
             // 
             // 
             // 
             // 
-            this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Location = new System.Drawing.Point(165, 531);
-            this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.Size = new System.Drawing.Size(192, 20);
-            this.textBoxX9.TabIndex = 19;
+            this.txtPublishDate.Border.Class = "TextBoxBorder";
+            this.txtPublishDate.Enabled = false;
+            this.txtPublishDate.Location = new System.Drawing.Point(165, 441);
+            this.txtPublishDate.Name = "txtPublishDate";
+            this.txtPublishDate.Size = new System.Drawing.Size(190, 20);
+            this.txtPublishDate.TabIndex = 16;
+            // 
+            // txtPublisher
+            // 
+            // 
+            // 
+            // 
+            this.txtPublisher.Border.Class = "TextBoxBorder";
+            this.txtPublisher.Enabled = false;
+            this.txtPublisher.Location = new System.Drawing.Point(165, 470);
+            this.txtPublisher.Name = "txtPublisher";
+            this.txtPublisher.Size = new System.Drawing.Size(190, 20);
+            this.txtPublisher.TabIndex = 17;
+            // 
+            // txtFoS
+            // 
+            // 
+            // 
+            // 
+            this.txtFoS.Border.Class = "TextBoxBorder";
+            this.txtFoS.Enabled = false;
+            this.txtFoS.Location = new System.Drawing.Point(165, 499);
+            this.txtFoS.Name = "txtFoS";
+            this.txtFoS.Size = new System.Drawing.Size(192, 20);
+            this.txtFoS.TabIndex = 18;
+            // 
+            // txtCategory
+            // 
+            // 
+            // 
+            // 
+            this.txtCategory.Border.Class = "TextBoxBorder";
+            this.txtCategory.Enabled = false;
+            this.txtCategory.Location = new System.Drawing.Point(165, 531);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(192, 20);
+            this.txtCategory.TabIndex = 19;
             // 
             // buttonX1
             // 
@@ -323,19 +335,18 @@
             this.labelX9.TabIndex = 22;
             this.labelX9.Text = "Double click on record to add";
             // 
-            // labelX10
+            // lblCurrentAttendant
             // 
             // 
             // 
             // 
-            this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.labelX10.ForeColor = System.Drawing.Color.RosyBrown;
-            this.labelX10.Location = new System.Drawing.Point(646, 10);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(95, 23);
-            this.labelX10.TabIndex = 23;
-            this.labelX10.Text = "Current Attendant";
+            this.lblCurrentAttendant.BackgroundStyle.Class = "";
+            this.lblCurrentAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.lblCurrentAttendant.ForeColor = System.Drawing.Color.RosyBrown;
+            this.lblCurrentAttendant.Location = new System.Drawing.Point(646, 10);
+            this.lblCurrentAttendant.Name = "lblCurrentAttendant";
+            this.lblCurrentAttendant.Size = new System.Drawing.Size(224, 23);
+            this.lblCurrentAttendant.TabIndex = 23;
             // 
             // textBoxX10
             // 
@@ -434,33 +445,51 @@
             this.grpBorrowInfo.TabIndex = 28;
             this.grpBorrowInfo.Text = "Borrow Information";
             // 
-            // labelX13
-            // 
-            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            // dateTimeInput2
             // 
             // 
             // 
-            this.labelX13.BackgroundStyle.Class = "";
-            this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX13.Location = new System.Drawing.Point(3, 87);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(94, 23);
-            this.labelX13.TabIndex = 28;
-            this.labelX13.Text = "Date Borrowed:";
             // 
-            // labelX14
-            // 
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeInput2.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateTimeInput2.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateTimeInput2.ButtonDropDown.Visible = true;
+            this.dateTimeInput2.Location = new System.Drawing.Point(103, 125);
             // 
             // 
             // 
-            this.labelX14.BackgroundStyle.Class = "";
-            this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX14.Location = new System.Drawing.Point(3, 122);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(83, 23);
-            this.labelX14.TabIndex = 30;
-            this.labelX14.Text = "Deadline:";
+            this.dateTimeInput2.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput2.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateTimeInput2.MonthCalendar.BackgroundStyle.Class = "";
+            this.dateTimeInput2.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.Class = "";
+            this.dateTimeInput2.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
+            this.dateTimeInput2.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateTimeInput2.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.Class = "";
+            this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
+            this.dateTimeInput2.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateTimeInput2.Name = "dateTimeInput2";
+            this.dateTimeInput2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dateTimeInput2.TabIndex = 32;
             // 
             // dateTimeInput1
             // 
@@ -508,51 +537,33 @@
             this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput1.TabIndex = 31;
             // 
-            // dateTimeInput2
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
+            this.labelX14.BackgroundStyle.Class = "";
+            this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX14.Location = new System.Drawing.Point(3, 122);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(83, 23);
+            this.labelX14.TabIndex = 30;
+            this.labelX14.Text = "Deadline:";
             // 
-            this.dateTimeInput2.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput2.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput2.ButtonDropDown.Visible = true;
-            this.dateTimeInput2.Location = new System.Drawing.Point(103, 125);
+            // labelX13
             // 
-            // 
-            // 
-            this.dateTimeInput2.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput2.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeInput2.MonthCalendar.BackgroundStyle.Class = "";
-            this.dateTimeInput2.MonthCalendar.ClearButtonVisible = true;
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.Class = "";
-            this.dateTimeInput2.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
-            this.dateTimeInput2.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput2.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.Class = "";
-            this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput2.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput2.Name = "dateTimeInput2";
-            this.dateTimeInput2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput2.TabIndex = 32;
+            this.labelX13.BackgroundStyle.Class = "";
+            this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX13.Location = new System.Drawing.Point(3, 87);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(94, 23);
+            this.labelX13.TabIndex = 28;
+            this.labelX13.Text = "Date Borrowed:";
             // 
             // BookBorrow
             // 
@@ -560,18 +571,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 641);
             this.Controls.Add(this.grpBorrowInfo);
-            this.Controls.Add(this.labelX10);
+            this.Controls.Add(this.lblCurrentAttendant);
             this.Controls.Add(this.labelX9);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.buttonX1);
-            this.Controls.Add(this.textBoxX9);
-            this.Controls.Add(this.textBoxX8);
-            this.Controls.Add(this.textBoxX7);
-            this.Controls.Add(this.textBoxX6);
-            this.Controls.Add(this.textBoxX5);
-            this.Controls.Add(this.textBoxX4);
-            this.Controls.Add(this.textBoxX3);
-            this.Controls.Add(this.textBoxX2);
+            this.Controls.Add(this.txtCategory);
+            this.Controls.Add(this.txtFoS);
+            this.Controls.Add(this.txtPublisher);
+            this.Controls.Add(this.txtPublishDate);
+            this.Controls.Add(this.txtAuthor);
+            this.Controls.Add(this.txtISBN);
+            this.Controls.Add(this.txtBookID);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.labelX8);
             this.Controls.Add(this.labelX7);
             this.Controls.Add(this.labelX6);
@@ -580,7 +591,7 @@
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxX1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvBooks);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookBorrow";
@@ -588,15 +599,15 @@
             this.Load += new System.EventHandler(this.BookBorrow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.grpBorrowInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dgvBooks;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSearch;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX3;
@@ -605,18 +616,18 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX8;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX8;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTitle;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtBookID;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtISBN;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtAuthor;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPublishDate;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPublisher;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtFoS;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtCategory;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.LabelX labelX9;
-        private DevComponents.DotNetBar.LabelX labelX10;
+        private DevComponents.DotNetBar.LabelX lblCurrentAttendant;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
         private DevComponents.DotNetBar.LabelX labelX11;
