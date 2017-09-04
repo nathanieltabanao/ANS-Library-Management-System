@@ -16,5 +16,18 @@ namespace ANS_Library_Management_System
         {
             InitializeComponent();
         }
+
+        //some variables
+        public string username { get; set; }
+        public string password { get; set; }
+        public string usertype { get; set; }
+
+        //instances needed
+        DataClasses1DataContext db = new DataClasses1DataContext();
+
+        private void BookReplacement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

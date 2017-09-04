@@ -133,6 +133,41 @@ select tblUserDetails.username,tblUserDetails.Usertype from tblUserDetails
 where tblUserDetails.username=@parameter1 and tblUserDetails.Usertype='student'
 return 0
 
+-- check username for dlasjdlkasjdklasjdas
+create procedure sp_UserUsernameCheck
+(
+	@username varchar(50)
+)
+as
+select * from tblUserDetails
+where tblUserDetails.username=@username
+return 0
+
+----Security Change Qustion
+create procedure sp_UserChangePassVerify
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Security_Question varchar(max),
+	@Security_Answer varchar(max)
+)
+as
+select * from tblUserDetails
+where tblUserDetails.username=@username and tblUserDetails.Security_Question=@Security_Question and tblUserDetails.Security_Answer=@Security_Answer
+return 0
+
+create procedure sp_UserChangePass
+(
+	@username varchar(50),
+	@password varchar(max)
+)
+as
+update tblUserDetails
+set password=@password
+where tblUserDetails.username=@username
+
+
+
 ---------------------------------------------------------------------------------------
 --tblAdminDetails
 create table tblAdminDetails
@@ -243,6 +278,42 @@ select tblAdminDetails.username,tblAdminDetails.Usertype from tblAdminDetails
 where tblAdminDetails.username=@parameter1 and tblAdminDetails.Usertype='admin'
 return 0
 
+
+create procedure sp_AdminUsernameCheck
+(
+	@username varchar(50)
+)
+as
+select * from tblAdminDetails
+where tblAdminDetails.username=@username
+return 0
+
+
+----Security Change Qustion
+create procedure sp_AdminChangePassVerify
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Security_Question varchar(max),
+	@Security_Answer varchar(max)
+)
+as
+select * from tblAdminDetails
+where tblAdminDetails.username=@username and tblAdminDetails.Security_Question=@Security_Question and tblAdminDetails.Security_Answer=@Security_Answer
+return 0
+
+create procedure sp_AdminChangePass
+(
+	@username varchar(50),
+	@password varchar(max)
+)
+as
+update tblAdminDetails
+set password=@password
+where tblAdminDetails.username=@username
+
+
+
 ------------------------------------------------------------------------------------------------
 --test system
 create table test
@@ -264,6 +335,8 @@ as
 	return 0
 --------------------------------------------------------------------------------------------------------
 
+drop table tblBooksData
+
 --table for books
 create table tblBooksData
 (
@@ -271,9 +344,6 @@ create table tblBooksData
 	ISBN varchar(50),
 	Title varchar(100) not null,
 	Author1 varchar(100) not null,
-	Author2 varchar(100),
-	Author3 varchar(100),
-	Author4 varchar(100),
 	Publication_Year datetime,
 	Field_of_Study varchar(50),
 	Category varchar(50),
@@ -293,9 +363,6 @@ create procedure sp_BookAdd
 	@ISBN varchar(50),
 	@Title varchar(100),
 	@Author1 varchar(100),
-	@Author2 varchar(100),
-	@Author3 varchar(100),
-	@Author4 varchar(100),
 	@Publication_Year datetime,
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
@@ -303,7 +370,7 @@ create procedure sp_BookAdd
 )
 as
 insert into tblBooksData
-values (@ISBN,@Title,@Author1,@Author2,@Author3,@Author4,@Publication_Year,@Field_of_Study,@Category,@Publisher)
+values (@ISBN,@Title,@Author1,@Publication_Year,@Field_of_Study,@Category,@Publisher)
 
 --update book details
 create procedure sp_BookEdit
@@ -312,9 +379,6 @@ create procedure sp_BookEdit
 	@ISBN varchar(50),
 	@Title varchar(100),
 	@Author1 varchar(100),
-	@Author2 varchar(100),
-	@Author3 varchar(100),
-	@Author4 varchar(100),
 	@Publication_Year datetime,
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
@@ -322,7 +386,7 @@ create procedure sp_BookEdit
 )
 as 
 update tblBooksData
-set ISBN=@ISBN,Title=@Title,Author1=@Author1,Author2=@Author2,Author3=@Author3,Author4=@Author4,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher
+set ISBN=@ISBN,Title=@Title,Author1=@Author1,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher
 where BookID=@BookID
 
 

@@ -103,7 +103,9 @@ namespace ANS_Library_Management_System
 
         private void lblForget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //this.Hide;
+            ForgotPassword f = new ForgotPassword();
+            this.Hide();
+            f.Show();
         }
     }
 }

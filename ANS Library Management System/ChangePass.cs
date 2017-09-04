@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace ANS_Library_Management_System
 {
-    public partial class ForgotPassword : Form
+    public partial class ChangePass : Form
     {
-        public ForgotPassword()
+        public ChangePass()
         {
             InitializeComponent();
-        }
-
-        DataClasses1DataContext db = new DataClasses1DataContext();
-
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

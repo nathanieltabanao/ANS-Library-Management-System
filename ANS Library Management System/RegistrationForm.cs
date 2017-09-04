@@ -228,62 +228,70 @@ namespace ANS_Library_Management_System
             {
                 MessageBox.Show("Please fill all fields");
             }
+            
             else
             {
-                //basic stuff
-                //lets hash some shat
-                salt = txtPassword.Text;
-                hashed = hash.HashPass(txtPassword.Text, salt);
-                date = DateTime.Parse(dtpBirthdate.Text);
-                stringdate = dtpBirthdate.Text;
-
-                //Messagebox
-                MessageBox.Show(txtlastname.Text + ", " + txtfirstname.Text + " is now registered!");
-
-                //selection of gender
-                if (rdoMale.Checked)
+                int resultUser = db.sp_UserUsernameCheck(txtUsername.Text).Count();
+                int resultAdmin = db.sp_AdminUsernameCheck(txtUsername.Text).Count();
+                if (resultAdmin==0 && resultUser==0)
                 {
-                    gender = "Male";
+                    //basic stuff
+                    //lets hash some shat
+                    salt = txtPassword.Text;
+                    hashed = hash.HashPass(txtPassword.Text, salt);
+                    date = DateTime.Parse(dtpBirthdate.Text);
+                    stringdate = dtpBirthdate.Text;
+
+                    //Messagebox
+                    MessageBox.Show(txtlastname.Text + ", " + txtfirstname.Text + " is now registered!");
+
+                    //selection of gender
+                    if (rdoMale.Checked)
+                    {
+                        gender = "Male";
+                    }
+                    else
+                    {
+                        gender = "Female";
+                    }
+
+                    //selection of role
+                    if (rdoAdmin.Checked)
+                    {
+                        Usertype = "Admin";
+                        db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                        Clear();
+                        AdminID();
+                    }
+                    else if (rdoPersonnel.Checked)
+                    {
+                        Usertype = "Personnel";
+                        db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                        Clear();
+                        PersonelID();
+                    }
+                    else if (rdoStudent.Checked)
+                    {
+                        Usertype = "Student";
+                        db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                        Clear();
+                        StudentID();
+                    }
+                    else if (rdoTeacher.Checked)
+                    {
+                        Usertype = "Teacher";
+                        db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                        Clear();
+                        TeacherID();
+                    }
                 }
                 else
                 {
-                    gender = "Female";
-                }
-
-                //selection of role
-                if (rdoAdmin.Checked)
-                {
-                    Usertype = "Admin";
-                    db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
-                    Clear();
-                    AdminID();
-                }
-                else if (rdoPersonnel.Checked)
-                {
-                    Usertype = "Personnel";
-                    db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
-                    Clear();
-                    PersonelID();
-                }
-                else if (rdoStudent.Checked)
-                {
-                    Usertype = "Student";
-                    db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
-                    Clear();
-                    StudentID();
-                }
-                else if (rdoTeacher.Checked)
-                {
-                    Usertype = "Teacher";
-                    db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text,Usertype);
-                    Clear();
-                    TeacherID();
+                    MessageBox.Show("That username has been already been taken please choose another one");
+                    txtUsername.Text = null;
                 }
             }
             
         }
     }
-
-        
-    
 }
