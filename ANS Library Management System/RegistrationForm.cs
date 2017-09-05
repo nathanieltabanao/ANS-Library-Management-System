@@ -132,6 +132,8 @@ namespace ANS_Library_Management_System
             if (rdoAdmin.Checked)
             {
                 AdminID();
+                cmbGradeLevel.Enabled = false;
+                cmbSection.Enabled=false;
             }
             else if (rdoPersonnel.Checked)
             {

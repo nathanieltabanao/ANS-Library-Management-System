@@ -192,6 +192,7 @@ create table tblAdminDetails
 
 
 select * from tblAdminDetails
+truncate table tblAdminDetails
 
 --procedures for Admin
 
@@ -412,7 +413,14 @@ create procedure sp_BookView
 as
 select * from tblBooksData
 
-
+--delete book
+create procedure sp_BookDelete
+(
+	@BookID int
+)
+as
+delete tblBooksData
+where tblBooksData.BookID=@BookID
 
 --------------------------------------
 create table  BookAuthors

@@ -302,6 +302,13 @@ namespace ANS_Library_Management_System
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
 			return ((ISingleResult<sp_UserUsernameCheckResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookDelete")]
+		public int sp_BookDelete([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookID", DbType="Int")] System.Nullable<int> bookID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookID);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAdminDetails")]

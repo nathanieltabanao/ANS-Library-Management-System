@@ -39,12 +39,13 @@
             // 
             this.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnConfirm.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnConfirm.Location = new System.Drawing.Point(140, 84);
+            this.btnConfirm.Location = new System.Drawing.Point(164, 84);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
             this.btnConfirm.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnConfirm.TabIndex = 0;
             this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // label1
             // 
@@ -63,7 +64,7 @@
             this.txtPassword.Border.Class = "TextBoxBorder";
             this.txtPassword.Location = new System.Drawing.Point(115, 32);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(124, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // txtCPassword
@@ -74,7 +75,7 @@
             this.txtCPassword.Border.Class = "TextBoxBorder";
             this.txtCPassword.Location = new System.Drawing.Point(115, 58);
             this.txtCPassword.Name = "txtCPassword";
-            this.txtCPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtCPassword.Size = new System.Drawing.Size(124, 20);
             this.txtCPassword.TabIndex = 4;
             // 
             // label2
@@ -90,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 129);
+            this.ClientSize = new System.Drawing.Size(250, 117);
             this.Controls.Add(this.txtCPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
@@ -98,6 +99,7 @@
             this.Controls.Add(this.btnConfirm);
             this.Name = "ChangePass";
             this.Text = "ChangePass";
+            this.Load += new System.EventHandler(this.ChangePass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

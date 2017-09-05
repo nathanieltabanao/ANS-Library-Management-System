@@ -36,12 +36,6 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.txtID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtmiddlename = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cmbSecQuestion = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.question1 = new DevComponents.Editors.ComboItem();
-            this.question2 = new DevComponents.Editors.ComboItem();
-            this.question3 = new DevComponents.Editors.ComboItem();
-            this.question4 = new DevComponents.Editors.ComboItem();
-            this.question5 = new DevComponents.Editors.ComboItem();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.txtAnswer = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
@@ -77,6 +71,7 @@
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbSecQuestion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -187,46 +182,6 @@
             this.txtmiddlename.Size = new System.Drawing.Size(234, 23);
             this.txtmiddlename.TabIndex = 4;
             this.txtmiddlename.WatermarkText = "Middle name...";
-            // 
-            // cmbSecQuestion
-            // 
-            this.cmbSecQuestion.DisplayMember = "Text";
-            this.cmbSecQuestion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbSecQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSecQuestion.FormattingEnabled = true;
-            this.cmbSecQuestion.ItemHeight = 20;
-            this.cmbSecQuestion.Items.AddRange(new object[] {
-            this.question1,
-            this.question2,
-            this.question3,
-            this.question4,
-            this.question5});
-            this.cmbSecQuestion.Location = new System.Drawing.Point(287, 416);
-            this.cmbSecQuestion.Name = "cmbSecQuestion";
-            this.cmbSecQuestion.Size = new System.Drawing.Size(348, 26);
-            this.cmbSecQuestion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbSecQuestion.TabIndex = 14;
-            // 
-            // question1
-            // 
-            this.question1.Text = "Question One";
-            // 
-            // question2
-            // 
-            this.question2.Text = "Question 2";
-            // 
-            // question3
-            // 
-            this.question3.Text = "Question 3";
-            // 
-            // question4
-            // 
-            this.question4.Text = "Question 4";
-            // 
-            // question5
-            // 
-            this.question5.ImagePosition = System.Windows.Forms.HorizontalAlignment.Center;
-            this.question5.Text = "Question 5";
             // 
             // labelX5
             // 
@@ -694,11 +649,43 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
+            // cmbSecQuestion
+            // 
+            this.cmbSecQuestion.FormattingEnabled = true;
+            this.cmbSecQuestion.Items.AddRange(new object[] {
+            "What is the first and last name of your first boyfriend or girlfriend?",
+            "Which phone number do you remember most from your childhood?",
+            "What was your favorite place to visit as a child?",
+            "Who is your favorite actor, musician, or artist?",
+            "What is the name of your favorite pet?",
+            "In what city were you born?",
+            "What high school did you attend?",
+            "What is the name of your first school?",
+            "What is your favorite movie?",
+            "What is your mother\'s maiden name?",
+            "What street did you grow up on?",
+            "What was the make of your first car?",
+            "When is your anniversary?",
+            "What is your favorite color?",
+            "What is your father\'s middle name?",
+            "What is the name of your first grade teacher?",
+            "What was your high school mascot?",
+            "Which is your favorite web browser?",
+            "what is your favorite website",
+            "what is your favorite forum",
+            "what is your favorite online platform",
+            "what is your favorite social media website"});
+            this.cmbSecQuestion.Location = new System.Drawing.Point(287, 416);
+            this.cmbSecQuestion.Name = "cmbSecQuestion";
+            this.cmbSecQuestion.Size = new System.Drawing.Size(348, 21);
+            this.cmbSecQuestion.TabIndex = 46;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 590);
+            this.Controls.Add(this.cmbSecQuestion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbSection);
@@ -725,7 +712,6 @@
             this.Controls.Add(this.labelX6);
             this.Controls.Add(this.txtAnswer);
             this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.cmbSecQuestion);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.txtID);
@@ -757,7 +743,6 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.Controls.TextBoxX txtID;
         private DevComponents.DotNetBar.Controls.TextBoxX txtmiddlename;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbSecQuestion;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.Controls.TextBoxX txtAnswer;
         private DevComponents.DotNetBar.LabelX labelX6;
@@ -777,11 +762,6 @@
         private DevComponents.DotNetBar.ButtonX btnRegister;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtAge;
-        private DevComponents.Editors.ComboItem question1;
-        private DevComponents.Editors.ComboItem question2;
-        private DevComponents.Editors.ComboItem question3;
-        private DevComponents.Editors.ComboItem question4;
-        private DevComponents.Editors.ComboItem question5;
         private System.Windows.Forms.RadioButton rdoAdmin;
         private System.Windows.Forms.RadioButton rdoPersonnel;
         private System.Windows.Forms.RadioButton rdoStudent;
@@ -798,5 +778,6 @@
         private DevComponents.Editors.ComboItem comboItem2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cmbSecQuestion;
     }
 }

@@ -364,4 +364,8 @@
       <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_BookDelete" Method="sp_BookDelete">
+    <Parameter Name="BookID" Parameter="bookID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

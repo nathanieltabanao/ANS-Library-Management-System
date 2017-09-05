@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtSecurityQuestion = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSecurityAnswer = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.btnConfirm = new DevComponents.DotNetBar.ButtonX();
+            this.txtSecurityQuestion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelX1
@@ -51,18 +51,6 @@
             this.labelX1.TabIndex = 4;
             this.labelX1.Text = "Please login to continue.";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // txtSecurityQuestion
-            // 
-            this.txtSecurityQuestion.DisplayMember = "Text";
-            this.txtSecurityQuestion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtSecurityQuestion.FormattingEnabled = true;
-            this.txtSecurityQuestion.ItemHeight = 14;
-            this.txtSecurityQuestion.Location = new System.Drawing.Point(110, 76);
-            this.txtSecurityQuestion.Name = "txtSecurityQuestion";
-            this.txtSecurityQuestion.Size = new System.Drawing.Size(223, 20);
-            this.txtSecurityQuestion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtSecurityQuestion.TabIndex = 5;
             // 
             // txtUsername
             // 
@@ -134,18 +122,49 @@
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.Click += new System.EventHandler(this.buttonX1_Click);
             // 
+            // txtSecurityQuestion
+            // 
+            this.txtSecurityQuestion.FormattingEnabled = true;
+            this.txtSecurityQuestion.Items.AddRange(new object[] {
+            "What is the first and last name of your first boyfriend or girlfriend?",
+            "Which phone number do you remember most from your childhood?",
+            "What was your favorite place to visit as a child?",
+            "Who is your favorite actor, musician, or artist?",
+            "What is the name of your favorite pet?",
+            "In what city were you born?",
+            "What high school did you attend?",
+            "What is the name of your first school?",
+            "What is your favorite movie?",
+            "What is your mother\'s maiden name?",
+            "What street did you grow up on?",
+            "What was the make of your first car?",
+            "When is your anniversary?",
+            "What is your favorite color?",
+            "What is your father\'s middle name?",
+            "What is the name of your first grade teacher?",
+            "What was your high school mascot?",
+            "Which is your favorite web browser?",
+            "what is your favorite website",
+            "what is your favorite forum",
+            "what is your favorite online platform",
+            "what is your favorite social media website"});
+            this.txtSecurityQuestion.Location = new System.Drawing.Point(110, 75);
+            this.txtSecurityQuestion.Name = "txtSecurityQuestion";
+            this.txtSecurityQuestion.Size = new System.Drawing.Size(223, 21);
+            this.txtSecurityQuestion.TabIndex = 12;
+            // 
             // ForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 179);
+            this.Controls.Add(this.txtSecurityQuestion);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.txtSecurityAnswer);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.txtSecurityQuestion);
             this.Controls.Add(this.labelX1);
             this.Name = "ForgotPassword";
             this.Text = "Forgot Password";
@@ -156,12 +175,12 @@
         #endregion
 
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx txtSecurityQuestion;
         private DevComponents.DotNetBar.Controls.TextBoxX txtUsername;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSecurityAnswer;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.ButtonX btnConfirm;
+        private System.Windows.Forms.ComboBox txtSecurityQuestion;
     }
 }

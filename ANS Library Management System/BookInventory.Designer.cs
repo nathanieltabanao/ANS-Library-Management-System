@@ -349,6 +349,7 @@
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnDelete.TabIndex = 46;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dtpPublishDate
             // 
@@ -591,6 +592,7 @@
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
             this.dgvBooks.TabIndex = 50;
+            this.dgvBooks.DoubleClick += new System.EventHandler(this.dgvBooks_DoubleClick);
             // 
             // labelX10
             // 

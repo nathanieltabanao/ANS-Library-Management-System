@@ -58,6 +58,7 @@ namespace ANS_Library_Management_System
             lblAttendant.Text = "Current Attendant: " + username;
             btnUpdate.Enabled = false;
             btnCancel.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void textBoxX1_TextChanged(object sender, EventArgs e)
@@ -102,7 +103,46 @@ namespace ANS_Library_Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtauthor.Text) || string.IsNullOrWhiteSpace(txtISBN.Text) || string.IsNullOrWhiteSpace(txtpublisher.Text) ||
+                string.IsNullOrWhiteSpace(txtTitle.Text))
+            {
+                MessageBox.Show("Please fill all fields");
+            }
+            else
+            {
+                db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text);
+                Clear();
+                BookView();
+                BookID();
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = false;
+            }
+        }
 
+        private void dgvBooks_DoubleClick(object sender, EventArgs e)
+        {
+            txtBookID.Text = dgvBooks.CurrentRow.Cells[0].Value.ToString();
+            txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
+            txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
+            txtauthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
+            //dtpPublishDate.Value = DateTime.Parse( dgvBooks.CurrentRow.Cells[4].Value.ToString);
+            cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
+            cmbCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
+            txtpublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
+            btnAdd.Enabled = false;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            db.sp_BookDelete(int.Parse(txtBookID.Text));
+            Clear();
+            BookID();
+            BookView();
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
         }
     }
 }
