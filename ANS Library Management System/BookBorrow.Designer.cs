@@ -513,7 +513,7 @@
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(94, 23);
             this.labelX12.TabIndex = 33;
-            this.labelX12.Text = "ID:";
+            this.labelX12.Text = "Username:";
             // 
             // labelX10
             // 

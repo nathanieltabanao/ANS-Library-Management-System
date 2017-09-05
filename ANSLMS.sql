@@ -11,13 +11,13 @@ as
 	where tblUserDetails.username=@username and tblUserDetails.password=@password
 	return 0
 
-
+	select * from tblAdminDetails
 --tblUserdetails
 create table tblUserDetails
 (
 	GenID int unique identity(100000,1),
 	ID varchar(50) not null,
-	username varchar(50) not null,
+	username varchar(50) primary key,
 	password varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
@@ -174,7 +174,7 @@ create table tblAdminDetails
 (
 	GenID int unique identity(200000,1),
 	ID varchar(50) not null,
-	username varchar(50) not null,
+	username varchar(50) primary key,
 	password varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
@@ -190,7 +190,7 @@ create table tblAdminDetails
 	Usertype varchar(50)
 )
 
-
+drop table tblAdminDetails
 select * from tblAdminDetails
 truncate table tblAdminDetails
 
@@ -431,12 +431,12 @@ create table  BookAuthors
 
 ------------------------------
 
-create table tblDailyReports
+create table tblUserReport
 (
 	transactionID int identity(0000000,1),
-	tDate datetime,
-	tAttendant varchar(100)
-
+	timestamp datetime,
+	username varchar(50) foreign key references tblUserDetails(username),
+	Action varchar(max)
 )
 
 
@@ -473,6 +473,22 @@ values (@username,@password,@Action,@Timestamp,@usertype)
 
 --------------------------------------------------------------------------------
 
+--action report
+create table tblActionReport
+(
+	LogID int identity(100000000,1),
+	username varchar(50),
+	Action varchar(max),
+	Timestamp datetime
+)
+
+--make this alter to make this foreign key
+alter table tblActionReport
+add constraint fk_Username
+foreign key (username) references tblAdminDetails(username)
+
+
+----------------------------------------------------------------------------------
 create table tblBookUsage
 (
 	
