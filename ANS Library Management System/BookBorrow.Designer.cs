@@ -47,21 +47,25 @@
             this.txtPublisher = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtFoS = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCategory = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.lblCurrentAttendant = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.grpBorrowInfo = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.grpBorrowDetails = new System.Windows.Forms.GroupBox();
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.linkRepRecords = new System.Windows.Forms.LinkLabel();
+            this.btnDelete = new DevComponents.DotNetBar.ButtonX();
+            this.btnUpdate = new DevComponents.DotNetBar.ButtonX();
+            this.btnCancel = new DevComponents.DotNetBar.ButtonX();
+            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
-            this.grpBorrowInfo.SuspendLayout();
+            this.grpBorrowDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             this.SuspendLayout();
@@ -73,11 +77,13 @@
             this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBooks.Location = new System.Drawing.Point(62, 84);
+            this.dgvBooks.Location = new System.Drawing.Point(22, 97);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
             this.dgvBooks.TabIndex = 2;
+            this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
+            this.dgvBooks.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentDoubleClick);
             // 
             // txtSearch
             // 
@@ -86,12 +92,13 @@
             // 
             this.txtSearch.Border.Class = "TextBoxBorder";
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(557, 49);
+            this.txtSearch.Location = new System.Drawing.Point(514, 66);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(313, 25);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.WatermarkText = "Search by title, code, publisher";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // labelX1
             // 
@@ -100,7 +107,7 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX1.Location = new System.Drawing.Point(67, 354);
+            this.labelX1.Location = new System.Drawing.Point(27, 367);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(49, 23);
             this.labelX1.TabIndex = 4;
@@ -113,7 +120,7 @@
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX2.Location = new System.Drawing.Point(67, 383);
+            this.labelX2.Location = new System.Drawing.Point(27, 396);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(49, 23);
             this.labelX2.TabIndex = 5;
@@ -126,7 +133,7 @@
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX3.Location = new System.Drawing.Point(276, 307);
+            this.labelX3.Location = new System.Drawing.Point(236, 320);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(41, 23);
             this.labelX3.TabIndex = 6;
@@ -139,7 +146,7 @@
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX4.Location = new System.Drawing.Point(67, 412);
+            this.labelX4.Location = new System.Drawing.Point(27, 425);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(64, 23);
             this.labelX4.TabIndex = 7;
@@ -152,7 +159,7 @@
             // 
             this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX5.Location = new System.Drawing.Point(67, 441);
+            this.labelX5.Location = new System.Drawing.Point(27, 454);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(83, 23);
             this.labelX5.TabIndex = 8;
@@ -165,7 +172,7 @@
             // 
             this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX6.Location = new System.Drawing.Point(67, 499);
+            this.labelX6.Location = new System.Drawing.Point(27, 512);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(94, 23);
             this.labelX6.TabIndex = 9;
@@ -178,7 +185,7 @@
             // 
             this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX7.Location = new System.Drawing.Point(67, 528);
+            this.labelX7.Location = new System.Drawing.Point(27, 541);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(83, 23);
             this.labelX7.TabIndex = 10;
@@ -191,7 +198,7 @@
             // 
             this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX8.Location = new System.Drawing.Point(67, 470);
+            this.labelX8.Location = new System.Drawing.Point(27, 483);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(83, 23);
             this.labelX8.TabIndex = 11;
@@ -204,7 +211,7 @@
             // 
             this.txtTitle.Border.Class = "TextBoxBorder";
             this.txtTitle.Enabled = false;
-            this.txtTitle.Location = new System.Drawing.Point(323, 310);
+            this.txtTitle.Location = new System.Drawing.Point(283, 323);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(305, 20);
             this.txtTitle.TabIndex = 12;
@@ -216,7 +223,7 @@
             // 
             this.txtBookID.Border.Class = "TextBoxBorder";
             this.txtBookID.Enabled = false;
-            this.txtBookID.Location = new System.Drawing.Point(165, 354);
+            this.txtBookID.Location = new System.Drawing.Point(125, 367);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(190, 20);
             this.txtBookID.TabIndex = 13;
@@ -228,7 +235,7 @@
             // 
             this.txtISBN.Border.Class = "TextBoxBorder";
             this.txtISBN.Enabled = false;
-            this.txtISBN.Location = new System.Drawing.Point(165, 383);
+            this.txtISBN.Location = new System.Drawing.Point(125, 396);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(190, 20);
             this.txtISBN.TabIndex = 14;
@@ -240,7 +247,7 @@
             // 
             this.txtAuthor.Border.Class = "TextBoxBorder";
             this.txtAuthor.Enabled = false;
-            this.txtAuthor.Location = new System.Drawing.Point(165, 412);
+            this.txtAuthor.Location = new System.Drawing.Point(125, 425);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(190, 20);
             this.txtAuthor.TabIndex = 15;
@@ -252,7 +259,7 @@
             // 
             this.txtPublishDate.Border.Class = "TextBoxBorder";
             this.txtPublishDate.Enabled = false;
-            this.txtPublishDate.Location = new System.Drawing.Point(165, 441);
+            this.txtPublishDate.Location = new System.Drawing.Point(125, 454);
             this.txtPublishDate.Name = "txtPublishDate";
             this.txtPublishDate.Size = new System.Drawing.Size(190, 20);
             this.txtPublishDate.TabIndex = 16;
@@ -264,7 +271,7 @@
             // 
             this.txtPublisher.Border.Class = "TextBoxBorder";
             this.txtPublisher.Enabled = false;
-            this.txtPublisher.Location = new System.Drawing.Point(165, 470);
+            this.txtPublisher.Location = new System.Drawing.Point(125, 483);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(190, 20);
             this.txtPublisher.TabIndex = 17;
@@ -276,7 +283,7 @@
             // 
             this.txtFoS.Border.Class = "TextBoxBorder";
             this.txtFoS.Enabled = false;
-            this.txtFoS.Location = new System.Drawing.Point(165, 499);
+            this.txtFoS.Location = new System.Drawing.Point(125, 512);
             this.txtFoS.Name = "txtFoS";
             this.txtFoS.Size = new System.Drawing.Size(192, 20);
             this.txtFoS.TabIndex = 18;
@@ -288,38 +295,10 @@
             // 
             this.txtCategory.Border.Class = "TextBoxBorder";
             this.txtCategory.Enabled = false;
-            this.txtCategory.Location = new System.Drawing.Point(165, 531);
+            this.txtCategory.Location = new System.Drawing.Point(125, 544);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(192, 20);
             this.txtCategory.TabIndex = 19;
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.BackColor = System.Drawing.SystemColors.ControlText;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonX1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonX1.Location = new System.Drawing.Point(667, 573);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(85, 42);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.buttonX1.TabIndex = 20;
-            this.buttonX1.Text = "Add Item";
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.BackColor = System.Drawing.SystemColors.ControlText;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonX2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonX2.Location = new System.Drawing.Point(766, 573);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(85, 42);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.buttonX2.TabIndex = 21;
-            this.buttonX2.Text = "Cancel";
             // 
             // labelX9
             // 
@@ -329,7 +308,7 @@
             this.labelX9.BackgroundStyle.Class = "";
             this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.labelX9.ForeColor = System.Drawing.Color.OrangeRed;
-            this.labelX9.Location = new System.Drawing.Point(62, 51);
+            this.labelX9.Location = new System.Drawing.Point(22, 68);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(166, 23);
             this.labelX9.TabIndex = 22;
@@ -343,107 +322,28 @@
             this.lblCurrentAttendant.BackgroundStyle.Class = "";
             this.lblCurrentAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.lblCurrentAttendant.ForeColor = System.Drawing.Color.RosyBrown;
-            this.lblCurrentAttendant.Location = new System.Drawing.Point(646, 10);
+            this.lblCurrentAttendant.Location = new System.Drawing.Point(606, 12);
             this.lblCurrentAttendant.Name = "lblCurrentAttendant";
             this.lblCurrentAttendant.Size = new System.Drawing.Size(224, 23);
             this.lblCurrentAttendant.TabIndex = 23;
             // 
-            // textBoxX10
+            // grpBorrowDetails
             // 
-            // 
-            // 
-            // 
-            this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.Location = new System.Drawing.Point(103, 52);
-            this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(253, 20);
-            this.textBoxX10.TabIndex = 27;
-            // 
-            // textBoxX11
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX11.Border.Class = "TextBoxBorder";
-            this.textBoxX11.Location = new System.Drawing.Point(103, 20);
-            this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.Size = new System.Drawing.Size(253, 20);
-            this.textBoxX11.TabIndex = 26;
-            // 
-            // labelX11
-            // 
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX11.Location = new System.Drawing.Point(3, 49);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(83, 23);
-            this.labelX11.TabIndex = 25;
-            this.labelX11.Text = "Name:";
-            // 
-            // labelX12
-            // 
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.Class = "";
-            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX12.Location = new System.Drawing.Point(3, 20);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(94, 23);
-            this.labelX12.TabIndex = 24;
-            this.labelX12.Text = "ID:";
-            // 
-            // grpBorrowInfo
-            // 
-            this.grpBorrowInfo.CanvasColor = System.Drawing.SystemColors.Control;
-            this.grpBorrowInfo.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.grpBorrowInfo.Controls.Add(this.dateTimeInput2);
-            this.grpBorrowInfo.Controls.Add(this.dateTimeInput1);
-            this.grpBorrowInfo.Controls.Add(this.labelX14);
-            this.grpBorrowInfo.Controls.Add(this.labelX13);
-            this.grpBorrowInfo.Controls.Add(this.textBoxX10);
-            this.grpBorrowInfo.Controls.Add(this.textBoxX11);
-            this.grpBorrowInfo.Controls.Add(this.labelX11);
-            this.grpBorrowInfo.Controls.Add(this.labelX12);
-            this.grpBorrowInfo.Location = new System.Drawing.Point(460, 345);
-            this.grpBorrowInfo.Name = "grpBorrowInfo";
-            this.grpBorrowInfo.Size = new System.Drawing.Size(384, 206);
-            // 
-            // 
-            // 
-            this.grpBorrowInfo.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.grpBorrowInfo.Style.BackColorGradientAngle = 90;
-            this.grpBorrowInfo.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.grpBorrowInfo.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grpBorrowInfo.Style.BorderBottomWidth = 1;
-            this.grpBorrowInfo.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.grpBorrowInfo.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grpBorrowInfo.Style.BorderLeftWidth = 1;
-            this.grpBorrowInfo.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grpBorrowInfo.Style.BorderRightWidth = 1;
-            this.grpBorrowInfo.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grpBorrowInfo.Style.BorderTopWidth = 1;
-            this.grpBorrowInfo.Style.Class = "";
-            this.grpBorrowInfo.Style.CornerDiameter = 4;
-            this.grpBorrowInfo.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.grpBorrowInfo.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.grpBorrowInfo.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.grpBorrowInfo.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.grpBorrowInfo.StyleMouseDown.Class = "";
-            // 
-            // 
-            // 
-            this.grpBorrowInfo.StyleMouseOver.Class = "";
-            this.grpBorrowInfo.TabIndex = 28;
-            this.grpBorrowInfo.Text = "Borrow Information";
+            this.grpBorrowDetails.Controls.Add(this.dateTimeInput2);
+            this.grpBorrowDetails.Controls.Add(this.dateTimeInput1);
+            this.grpBorrowDetails.Controls.Add(this.labelX14);
+            this.grpBorrowDetails.Controls.Add(this.labelX13);
+            this.grpBorrowDetails.Controls.Add(this.textBoxX10);
+            this.grpBorrowDetails.Controls.Add(this.textBoxX11);
+            this.grpBorrowDetails.Controls.Add(this.labelX11);
+            this.grpBorrowDetails.Controls.Add(this.labelX12);
+            this.grpBorrowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grpBorrowDetails.Location = new System.Drawing.Point(367, 367);
+            this.grpBorrowDetails.Name = "grpBorrowDetails";
+            this.grpBorrowDetails.Size = new System.Drawing.Size(463, 197);
+            this.grpBorrowDetails.TabIndex = 29;
+            this.grpBorrowDetails.TabStop = false;
+            this.grpBorrowDetails.Text = "Borrow Details";
             // 
             // dateTimeInput2
             // 
@@ -453,7 +353,7 @@
             this.dateTimeInput2.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dateTimeInput2.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dateTimeInput2.ButtonDropDown.Visible = true;
-            this.dateTimeInput2.Location = new System.Drawing.Point(103, 125);
+            this.dateTimeInput2.Location = new System.Drawing.Point(147, 145);
             // 
             // 
             // 
@@ -487,9 +387,9 @@
             this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput2.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput2.Name = "dateTimeInput2";
-            this.dateTimeInput2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeInput2.Size = new System.Drawing.Size(253, 20);
             this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput2.TabIndex = 32;
+            this.dateTimeInput2.TabIndex = 40;
             // 
             // dateTimeInput1
             // 
@@ -499,7 +399,7 @@
             this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.Location = new System.Drawing.Point(103, 87);
+            this.dateTimeInput1.Location = new System.Drawing.Point(147, 107);
             // 
             // 
             // 
@@ -533,9 +433,9 @@
             this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeInput1.Size = new System.Drawing.Size(253, 20);
             this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 31;
+            this.dateTimeInput1.TabIndex = 39;
             // 
             // labelX14
             // 
@@ -545,10 +445,10 @@
             // 
             this.labelX14.BackgroundStyle.Class = "";
             this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX14.Location = new System.Drawing.Point(3, 122);
+            this.labelX14.Location = new System.Drawing.Point(47, 142);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(83, 23);
-            this.labelX14.TabIndex = 30;
+            this.labelX14.TabIndex = 38;
             this.labelX14.Text = "Deadline:";
             // 
             // labelX13
@@ -559,22 +459,155 @@
             // 
             this.labelX13.BackgroundStyle.Class = "";
             this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX13.Location = new System.Drawing.Point(3, 87);
+            this.labelX13.Location = new System.Drawing.Point(47, 107);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(94, 23);
-            this.labelX13.TabIndex = 28;
+            this.labelX13.TabIndex = 37;
             this.labelX13.Text = "Date Borrowed:";
+            // 
+            // textBoxX10
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX10.Border.Class = "TextBoxBorder";
+            this.textBoxX10.Location = new System.Drawing.Point(147, 72);
+            this.textBoxX10.Name = "textBoxX10";
+            this.textBoxX10.Size = new System.Drawing.Size(253, 20);
+            this.textBoxX10.TabIndex = 36;
+            // 
+            // textBoxX11
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX11.Border.Class = "TextBoxBorder";
+            this.textBoxX11.Location = new System.Drawing.Point(147, 40);
+            this.textBoxX11.Name = "textBoxX11";
+            this.textBoxX11.Size = new System.Drawing.Size(253, 20);
+            this.textBoxX11.TabIndex = 35;
+            // 
+            // labelX11
+            // 
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX11.Location = new System.Drawing.Point(47, 69);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(83, 23);
+            this.labelX11.TabIndex = 34;
+            this.labelX11.Text = "Name:";
+            // 
+            // labelX12
+            // 
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.Class = "";
+            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX12.Location = new System.Drawing.Point(47, 40);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(94, 23);
+            this.labelX12.TabIndex = 33;
+            this.labelX12.Text = "Username:";
+            // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold);
+            this.labelX10.Location = new System.Drawing.Point(22, 23);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(159, 47);
+            this.labelX10.TabIndex = 72;
+            this.labelX10.Text = "Book Borrow";
+            // 
+            // linkRepRecords
+            // 
+            this.linkRepRecords.AutoSize = true;
+            this.linkRepRecords.Location = new System.Drawing.Point(684, 45);
+            this.linkRepRecords.Name = "linkRepRecords";
+            this.linkRepRecords.Size = new System.Drawing.Size(143, 13);
+            this.linkRepRecords.TabIndex = 73;
+            this.linkRepRecords.TabStop = true;
+            this.linkRepRecords.Text = "Show Replacement Records";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDelete.Location = new System.Drawing.Point(236, 609);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(89, 32);
+            this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnDelete.TabIndex = 77;
+            this.btnDelete.Text = "Delete";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnUpdate.Location = new System.Drawing.Point(132, 609);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(89, 32);
+            this.btnUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnUpdate.TabIndex = 76;
+            this.btnUpdate.Text = "Update Item";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancel.Location = new System.Drawing.Point(345, 609);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(89, 32);
+            this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnCancel.TabIndex = 75;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAdd.Location = new System.Drawing.Point(27, 609);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(89, 32);
+            this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnAdd.TabIndex = 74;
+            this.btnAdd.Text = "Add Item";
             // 
             // BookBorrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 641);
-            this.Controls.Add(this.grpBorrowInfo);
+            this.ClientSize = new System.Drawing.Size(861, 675);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.linkRepRecords);
+            this.Controls.Add(this.labelX10);
+            this.Controls.Add(this.grpBorrowDetails);
             this.Controls.Add(this.lblCurrentAttendant);
             this.Controls.Add(this.labelX9);
-            this.Controls.Add(this.buttonX2);
-            this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.txtFoS);
             this.Controls.Add(this.txtPublisher);
@@ -598,10 +631,11 @@
             this.Text = "Book Borrow";
             this.Load += new System.EventHandler(this.BookBorrow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
-            this.grpBorrowInfo.ResumeLayout(false);
+            this.grpBorrowDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -624,18 +658,22 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtPublisher;
         private DevComponents.DotNetBar.Controls.TextBoxX txtFoS;
         private DevComponents.DotNetBar.Controls.TextBoxX txtCategory;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX lblCurrentAttendant;
+        private System.Windows.Forms.GroupBox grpBorrowDetails;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput2;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
+        private DevComponents.DotNetBar.LabelX labelX14;
+        private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX12;
-        private DevComponents.DotNetBar.Controls.GroupPanel grpBorrowInfo;
-        private DevComponents.DotNetBar.LabelX labelX13;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput2;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private DevComponents.DotNetBar.LabelX labelX14;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private System.Windows.Forms.LinkLabel linkRepRecords;
+        private DevComponents.DotNetBar.ButtonX btnDelete;
+        private DevComponents.DotNetBar.ButtonX btnUpdate;
+        private DevComponents.DotNetBar.ButtonX btnCancel;
+        private DevComponents.DotNetBar.ButtonX btnAdd;
     }
 }

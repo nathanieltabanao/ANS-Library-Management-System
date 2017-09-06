@@ -45,9 +45,9 @@
             this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogin.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnLogin.Location = new System.Drawing.Point(196, 210);
+            this.btnLogin.Location = new System.Drawing.Point(205, 210);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(85, 42);
+            this.btnLogin.Size = new System.Drawing.Size(76, 30);
             this.btnLogin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
@@ -98,7 +98,7 @@
             // 
             this.lblForget.AutoSize = true;
             this.lblForget.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForget.Location = new System.Drawing.Point(176, 255);
+            this.lblForget.Location = new System.Drawing.Point(164, 252);
             this.lblForget.Name = "lblForget";
             this.lblForget.Size = new System.Drawing.Size(117, 16);
             this.lblForget.TabIndex = 4;

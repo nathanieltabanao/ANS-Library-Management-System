@@ -17,77 +17,118 @@ namespace ANS_Library_Management_System
             InitializeComponent();
         }
 
+        //Instances that is important for the system
+        //Database Connection
         DataClasses1DataContext db = new DataClasses1DataContext();
-        int LogError, result1, result2;
-        string salt, hashed, action;
+        //Encryption Instance
         encryption_algorithm hash = new encryption_algorithm();
-        clsMiddleClass m = new clsMiddleClass();
+
+        //Some Very much needed variables
+        //variables for system 
+        int LogError, result1, result2;
+        //variables for password hashing
+        string salt, hashed;
+        
+        
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //setting of variables
             salt = txtPassword.Text;
+            //passowrd forst hash
             hashed = hash.HashPass(txtPassword.Text, salt);
 
-            result1 = db.sp_UserLogin(txtUsername.Text, hash.HashPass(hashed, salt)).Count();
-            result2 = db.sp_AdminLogin(txtUsername.Text, hash.HashPass(hashed, salt)).Count();
+            //primary login check
+            result1 = db.sp_UserLogin(txtUsername.Text, hash.HashPass(hashed, salt)).Count(); //login check for user table
+            result2 = db.sp_AdminLogin(txtUsername.Text, hash.HashPass(hashed, salt)).Count(); //login check for admin table
+
+            //failed authentication
             if (result1==0&&result2==0)
             {
-                MessageBox.Show("Invalid Username or Password");
-                LogError++;
-                db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Failed", DateTime.Now, null);
-                if (LogError>3)
+                MessageBox.Show("Invalid Username or Password"); //Show message to user failed authentication
+                LogError++; // count many incorrect attemps for forget password
+                db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Failed", DateTime.Now, null); //login report if failed or succes.
+
+                //if too many incorrect attempts try to show forget passweord
+                if (LogError>3) // 3 incorrect attempts and show link for forget password
                 {
-                    lblForget.Text = "Forget Password";
+                    lblForget.Text = "Forget Password?"; //show forget password
                 }
             }
+            //username match for user table goes here
             else if (result1==1)
             {
-                //user
-                LogError = 0;
+                //user table success
+                LogError = 0; //clear log attempts
+                //identify if the user is teacher or student
                 int a = db.UserUsertype(txtUsername.Text,null).Count();
                 if (a==0)
                 {
-                    //teacher
-                    BorrowerForm b = new BorrowerForm();
+                    // if the user is a teacher details goes here
+                    BorrowerForm b = new BorrowerForm(); //instantiate new borrower form
+
+                    //transferring of raw data
                     b.username = txtUsername.Text;
                     b.password = txtPassword.Text;
+
+                    //Create Log report
                     db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Teacher");
+
+                    //transfer to another form
                     this.Hide();
                     b.Show();
                 }
                 else
                 {
-                    //student
+                    //if the user is a student, details continue here
                     BorrowerForm b = new BorrowerForm();
+
+                    //transferrring of variables
                     b.username = txtUsername.Text;
                     b.password = txtPassword.Text;
+
+                    //create login report
                     db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Student");
+
+                    //transferring to another form
                     this.Hide();
                     b.Show();
                 }
             }
             else
             {
-                //admin
-                LogError = 0;
-                int a = db.AdminUsertype(txtUsername.Text, null).Count();
+                //success for admin table goes here
+                LogError = 0; //clearing log attempt error
+                int a = db.AdminUsertype(txtUsername.Text, null).Count(); //try to identify if the user is admin or personnel
                 if (a==0)
                 {
-                    //personnel
+                    //for table for personnel goes here
                     PersonnelForm p = new PersonnelForm();
+
+                    //transferring of raw data
                     p.username = txtUsername.Text;
                     p.password = txtPassword.Text;
+
+                    //create log report
                     db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Personnel");
+
+                    //transfer form
                     this.Hide();
                     p.Show();
                 }
                 else
                 {
-                    //admin
-                    AdminForm ad = new AdminForm();
+                    //for admin account goes here
+                    AdminForm ad = new AdminForm(); //create instance for admin
+
+                    //transferring of raw data
                     ad.username = txtUsername.Text;
                     ad.password = txtPassword.Text;
+
+                    //create a login report
                     db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Admin");
+
+                    //transferring of form
                     this.Hide();
                     ad.Show();
                 }
@@ -96,14 +137,20 @@ namespace ANS_Library_Management_System
 
         }
 
+        //first load of login form
         private void Login1_Load(object sender, EventArgs e)
         {
+            //hide forget text
             lblForget.Text = null;
         }
 
+        //Forget password link clicked
         private void lblForget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //this.Hide;
+            //transfer to forget passowrd form
+            ForgotPassword f = new ForgotPassword();
+            this.Hide();
+            f.Show();
         }
     }
 }

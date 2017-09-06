@@ -3,6 +3,7 @@ use ANSLMS
 
 drop database ANSLMS
 
+-------------------------------------------------------------------------------
 create procedure sp_login
 @username varchar (50),
 @password varchar(max)
@@ -11,13 +12,15 @@ as
 	where tblUserDetails.username=@username and tblUserDetails.password=@password
 	return 0
 
+	select * from tblAdminDetails
 
+	---------------------------------------------------------------------------------------
 --tblUserdetails
 create table tblUserDetails
 (
 	GenID int unique identity(100000,1),
 	ID varchar(50) not null,
-	username varchar(50) not null,
+	username varchar(50) primary key,
 	password varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
@@ -133,13 +136,48 @@ select tblUserDetails.username,tblUserDetails.Usertype from tblUserDetails
 where tblUserDetails.username=@parameter1 and tblUserDetails.Usertype='student'
 return 0
 
+-- check username for dlasjdlkasjdklasjdas
+create procedure sp_UserUsernameCheck
+(
+	@username varchar(50)
+)
+as
+select * from tblUserDetails
+where tblUserDetails.username=@username
+return 0
+
+----Security Change Qustion
+create procedure sp_UserChangePassVerify
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Security_Question varchar(max),
+	@Security_Answer varchar(max)
+)
+as
+select * from tblUserDetails
+where tblUserDetails.username=@username and tblUserDetails.Security_Question=@Security_Question and tblUserDetails.Security_Answer=@Security_Answer
+return 0
+
+create procedure sp_UserChangePass
+(
+	@username varchar(50),
+	@password varchar(max)
+)
+as
+update tblUserDetails
+set password=@password
+where tblUserDetails.username=@username
+
+
+
 ---------------------------------------------------------------------------------------
 --tblAdminDetails
 create table tblAdminDetails
 (
 	GenID int unique identity(200000,1),
 	ID varchar(50) not null,
-	username varchar(50) not null,
+	username varchar(50) primary key,
 	password varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
@@ -155,8 +193,9 @@ create table tblAdminDetails
 	Usertype varchar(50)
 )
 
-
+drop table tblAdminDetails
 select * from tblAdminDetails
+truncate table tblAdminDetails
 
 --procedures for Admin
 
@@ -243,6 +282,42 @@ select tblAdminDetails.username,tblAdminDetails.Usertype from tblAdminDetails
 where tblAdminDetails.username=@parameter1 and tblAdminDetails.Usertype='admin'
 return 0
 
+
+create procedure sp_AdminUsernameCheck
+(
+	@username varchar(50)
+)
+as
+select * from tblAdminDetails
+where tblAdminDetails.username=@username
+return 0
+
+
+----Security Change Qustion
+create procedure sp_AdminChangePassVerify
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Security_Question varchar(max),
+	@Security_Answer varchar(max)
+)
+as
+select * from tblAdminDetails
+where tblAdminDetails.username=@username and tblAdminDetails.Security_Question=@Security_Question and tblAdminDetails.Security_Answer=@Security_Answer
+return 0
+
+create procedure sp_AdminChangePass
+(
+	@username varchar(50),
+	@password varchar(max)
+)
+as
+update tblAdminDetails
+set password=@password
+where tblAdminDetails.username=@username
+
+
+
 ------------------------------------------------------------------------------------------------
 --test system
 create table test
@@ -264,6 +339,8 @@ as
 	return 0
 --------------------------------------------------------------------------------------------------------
 
+drop table tblBooksData
+
 --table for books
 create table tblBooksData
 (
@@ -271,9 +348,6 @@ create table tblBooksData
 	ISBN varchar(50),
 	Title varchar(100) not null,
 	Author1 varchar(100) not null,
-	Author2 varchar(100),
-	Author3 varchar(100),
-	Author4 varchar(100),
 	Publication_Year datetime,
 	Field_of_Study varchar(50),
 	Category varchar(50),
@@ -293,9 +367,6 @@ create procedure sp_BookAdd
 	@ISBN varchar(50),
 	@Title varchar(100),
 	@Author1 varchar(100),
-	@Author2 varchar(100),
-	@Author3 varchar(100),
-	@Author4 varchar(100),
 	@Publication_Year datetime,
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
@@ -303,7 +374,7 @@ create procedure sp_BookAdd
 )
 as
 insert into tblBooksData
-values (@ISBN,@Title,@Author1,@Author2,@Author3,@Author4,@Publication_Year,@Field_of_Study,@Category,@Publisher)
+values (@ISBN,@Title,@Author1,@Publication_Year,@Field_of_Study,@Category,@Publisher)
 
 --update book details
 create procedure sp_BookEdit
@@ -312,9 +383,6 @@ create procedure sp_BookEdit
 	@ISBN varchar(50),
 	@Title varchar(100),
 	@Author1 varchar(100),
-	@Author2 varchar(100),
-	@Author3 varchar(100),
-	@Author4 varchar(100),
 	@Publication_Year datetime,
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
@@ -322,7 +390,7 @@ create procedure sp_BookEdit
 )
 as 
 update tblBooksData
-set ISBN=@ISBN,Title=@Title,Author1=@Author1,Author2=@Author2,Author3=@Author3,Author4=@Author4,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher
+set ISBN=@ISBN,Title=@Title,Author1=@Author1,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher
 where BookID=@BookID
 
 
@@ -348,7 +416,14 @@ create procedure sp_BookView
 as
 select * from tblBooksData
 
-
+--delete book
+create procedure sp_BookDelete
+(
+	@BookID int
+)
+as
+delete tblBooksData
+where tblBooksData.BookID=@BookID
 
 --------------------------------------
 create table  BookAuthors
@@ -359,23 +434,82 @@ create table  BookAuthors
 
 ------------------------------
 
-create table tblDailyReports
+create table tblUserReport
 (
 	transactionID int identity(0000000,1),
-	tDate datetime,
-	tAttendant varchar(100)
-
+	timestamp datetime,
+	username varchar(50) foreign key references tblUserDetails(username),
+	Action varchar(max)
 )
 
 
 ------------------------------------
 
 --login report
-drop table tblLoginReport
+drop table tblAdminLoginReport
+create table tblAdminLoginReport
+(
+	LoginID int identity(10000000,1),
+	username varchar(50) foreign key references tblAdminDetails(username),
+	password varchar(max),
+	Action varchar(100),
+	Timestamp datetime,
+	usertype varchar(50)
+)
+
+select * from tblAdminLoginReport
+ truncate table tblAdminloginreport
+
+--login status
+create procedure sp_AdminLoginReport
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Action varchar(100),
+	@Timestamp datetime,
+	@usertype varchar(50)
+)
+as
+insert into tblAdminLoginReport
+values (@username,@password,@Action,@Timestamp,@usertype)
+
+
+--------------------------------------------------------------------------------
+
+--login for user
+drop table tblUserLoginReport
+create table tblUserLoginReport
+(
+	LoginID int identity(10000000,1),
+	username varchar(50) foreign key references tblUserDetails(username),
+	password varchar(max),
+	Action varchar(100),
+	Timestamp datetime,
+	usertype varchar(50)
+)
+
+select * from tblUserLoginReport
+ truncate table tblAUserloginreport
+
+--login status
+create procedure sp_UserLoginReport
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Action varchar(100),
+	@Timestamp datetime,
+	@usertype varchar(50)
+)
+as
+insert into tblUserLoginReport
+values (@username,@password,@Action,@Timestamp,@usertype)
+
+
+----------------------------------------------------------------------------------
 create table tblLoginReport
 (
 	LoginID int identity(10000000,1),
-	username varchar(50),
+	username varchar(50) ,
 	password varchar(max),
 	Action varchar(100),
 	Timestamp datetime,
@@ -399,8 +533,55 @@ insert into tblLoginReport
 values (@username,@password,@Action,@Timestamp,@usertype)
 
 
---------------------------------------------------------------------------------
 
+
+
+-----------------------------------------------------------------------------------
+--action report admin
+create table tblAdminActionReport
+(
+	LogID int identity(100000000,1),
+	username varchar(50) foreign key references tblAdminDetails(username),
+	Action varchar(max),
+	Timestamp datetime
+)
+
+--insert stored procedure
+create procedure sp_AdminActionReport
+(
+	@username varchar(50),
+	@Action varchar(max),
+	@Timestamp datetime
+)
+as
+insert into tblAdminActionReport
+values (@username,@Action,@Timestamp)
+
+
+-------------------------------------------------------
+
+--action report user
+create table tblUserActionReport
+(
+	LogID int identity(100000000,1),
+	username varchar(50) foreign key references tblUserDetails(username),
+	Action varchar(max),
+	Timestamp datetime
+)
+
+--stored proceure for insert
+create procedure sp_UserActionReport
+(
+	@username varchar(50),
+	@Action varchar(max),
+	@Timestamp datetime
+)
+as
+insert into tblUserActionReport
+values (@username,@Action,@Timestamp)
+
+
+----------------------------------------------------------------------------------
 create table tblBookUsage
 (
 	
@@ -412,7 +593,7 @@ create table tblLostBooks
 )
 
 --need to be added which is wala pa 
-
+encryption_algorithm hash = new encryption_algorithm();
 
 --USER TYPE HERE
 

@@ -81,7 +81,7 @@
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.accountsToolStripMenuItem.Text = "Accounts";
             this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
@@ -178,6 +178,7 @@
             this.Name = "AdminForm";
             this.Text = "Administrator\'s Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.stripAdmin.ResumeLayout(false);
             this.stripAdmin.PerformLayout();
             this.ResumeLayout(false);
