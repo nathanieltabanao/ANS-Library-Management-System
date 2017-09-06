@@ -3,6 +3,7 @@ use ANSLMS
 
 drop database ANSLMS
 
+-------------------------------------------------------------------------------
 create procedure sp_login
 @username varchar (50),
 @password varchar(max)
@@ -12,6 +13,8 @@ as
 	return 0
 
 	select * from tblAdminDetails
+
+	---------------------------------------------------------------------------------------
 --tblUserdetails
 create table tblUserDetails
 (
@@ -443,11 +446,70 @@ create table tblUserReport
 ------------------------------------
 
 --login report
-drop table tblLoginReport
+drop table tblAdminLoginReport
+create table tblAdminLoginReport
+(
+	LoginID int identity(10000000,1),
+	username varchar(50) foreign key references tblAdminDetails(username),
+	password varchar(max),
+	Action varchar(100),
+	Timestamp datetime,
+	usertype varchar(50)
+)
+
+select * from tblAdminLoginReport
+ truncate table tblAdminloginreport
+
+--login status
+create procedure sp_AdminLoginReport
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Action varchar(100),
+	@Timestamp datetime,
+	@usertype varchar(50)
+)
+as
+insert into tblAdminLoginReport
+values (@username,@password,@Action,@Timestamp,@usertype)
+
+
+--------------------------------------------------------------------------------
+
+--login for user
+drop table tblUserLoginReport
+create table tblUserLoginReport
+(
+	LoginID int identity(10000000,1),
+	username varchar(50) foreign key references tblUserDetails(username),
+	password varchar(max),
+	Action varchar(100),
+	Timestamp datetime,
+	usertype varchar(50)
+)
+
+select * from tblUserLoginReport
+ truncate table tblAUserloginreport
+
+--login status
+create procedure sp_UserLoginReport
+(
+	@username varchar(50),
+	@password varchar(max),
+	@Action varchar(100),
+	@Timestamp datetime,
+	@usertype varchar(50)
+)
+as
+insert into tblUserLoginReport
+values (@username,@password,@Action,@Timestamp,@usertype)
+
+
+----------------------------------------------------------------------------------
 create table tblLoginReport
 (
 	LoginID int identity(10000000,1),
-	username varchar(50),
+	username varchar(50) ,
 	password varchar(max),
 	Action varchar(100),
 	Timestamp datetime,
@@ -471,21 +533,52 @@ insert into tblLoginReport
 values (@username,@password,@Action,@Timestamp,@usertype)
 
 
---------------------------------------------------------------------------------
 
---action report
-create table tblActionReport
+
+
+-----------------------------------------------------------------------------------
+--action report admin
+create table tblAdminActionReport
 (
 	LogID int identity(100000000,1),
-	username varchar(50),
+	username varchar(50) foreign key references tblAdminDetails(username),
 	Action varchar(max),
 	Timestamp datetime
 )
 
---make this alter to make this foreign key
-alter table tblActionReport
-add constraint fk_Username
-foreign key (username) references tblAdminDetails(username)
+--insert stored procedure
+create procedure sp_AdminActionReport
+(
+	@username varchar(50),
+	@Action varchar(max),
+	@Timestamp datetime
+)
+as
+insert into tblAdminActionReport
+values (@username,@Action,@Timestamp)
+
+
+-------------------------------------------------------
+
+--action report user
+create table tblUserActionReport
+(
+	LogID int identity(100000000,1),
+	username varchar(50) foreign key references tblUserDetails(username),
+	Action varchar(max),
+	Timestamp datetime
+)
+
+--stored proceure for insert
+create procedure sp_UserActionReport
+(
+	@username varchar(50),
+	@Action varchar(max),
+	@Timestamp datetime
+)
+as
+insert into tblUserActionReport
+values (@username,@Action,@Timestamp)
 
 
 ----------------------------------------------------------------------------------
@@ -500,7 +593,7 @@ create table tblLostBooks
 )
 
 --need to be added which is wala pa 
-
+encryption_algorithm hash = new encryption_algorithm();
 
 --USER TYPE HERE
 
