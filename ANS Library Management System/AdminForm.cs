@@ -89,7 +89,7 @@ namespace ANS_Library_Management_System
             log.Show();
 
             //log details for login details
-            db.sp_LoginReport(username, hash.HashPass(hashed, salt), "Logout", DateTime.Now, "Admin");
+            db.sp_LoginReport(username, null, hash.HashPass(hashed, salt), "Logout", DateTime.Now, "Admin");
         }
     }
 }

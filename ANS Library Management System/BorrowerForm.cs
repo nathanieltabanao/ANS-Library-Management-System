@@ -32,7 +32,7 @@ namespace ANS_Library_Management_System
             Login1 log = new Login1();
              this.Hide();
             log.Show();
-            db.sp_LoginReport(username, hash.HashPass(hashed, salt), "Logout", DateTime.Now, usertype);
+            db.sp_LoginReport(null, username, hash.HashPass(hashed, salt), "Logout", DateTime.Now, usertype);
         }
 
 
