@@ -100,6 +100,14 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		public System.Data.Linq.Table<tblAdminTransaction> tblAdminTransactions
+		{
+			get
+			{
+				return this.GetTable<tblAdminTransaction>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tblBooksData> tblBooksDatas
 		{
 			get
@@ -210,6 +218,13 @@ namespace ANS_Library_Management_System
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AdminTransactionAdd")]
+		public int sp_AdminTransactionAdd([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Attendant", DbType="VarChar(50)")] string attendant, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Action", DbType="VarChar(MAX)")] string action, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Client", DbType="VarChar(50)")] string client, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TimeStamp", DbType="DateTime")] System.Nullable<System.DateTime> timeStamp)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), attendant, action, client, timeStamp);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_AdminUpdate")]
 		public int sp_AdminUpdate([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(50)")] string iD, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="First_Name", DbType="VarChar(50)")] string first_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Middle_Name", DbType="VarChar(30)")] string middle_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Last_Name", DbType="VarChar(50)")] string last_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="VarChar(MAX)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contact_Number", DbType="VarChar(20)")] string contact_Number, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="VarChar(10)")] string gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Birthdate", DbType="DateTime")] System.Nullable<System.DateTime> birthdate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Age", DbType="Int")] System.Nullable<int> age, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email_Address", DbType="VarChar(100)")] string email_Address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Security_Question", DbType="VarChar(MAX)")] string security_Question, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Security_Answer", DbType="VarChar(MAX)")] string security_Answer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usertype", DbType="VarChar(50)")] string usertype)
 		{
@@ -273,10 +288,11 @@ namespace ANS_Library_Management_System
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_login")]
-		public void sp_login([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string password)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LoginReport")]
+		public int sp_LoginReport([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AdminUsername", DbType="VarChar(50)")] string adminUsername, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserUsername", DbType="VarChar(50)")] string userUsername, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Action", DbType="VarChar(100)")] string action, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Timestamp", DbType="DateTime")] System.Nullable<System.DateTime> timestamp, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, adminUsername, userUsername, password, action, timestamp, usertype);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UserActionReport")]
@@ -1080,6 +1096,105 @@ namespace ANS_Library_Management_System
 				if ((this._usertype != value))
 				{
 					this._usertype = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAdminTransaction")]
+	public partial class tblAdminTransaction
+	{
+		
+		private int _TransactionID;
+		
+		private string _Attendant;
+		
+		private string _Action;
+		
+		private string _Client;
+		
+		private System.Nullable<System.DateTime> _TimeStamp;
+		
+		public tblAdminTransaction()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this._TransactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Attendant", DbType="VarChar(50)")]
+		public string Attendant
+		{
+			get
+			{
+				return this._Attendant;
+			}
+			set
+			{
+				if ((this._Attendant != value))
+				{
+					this._Attendant = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
+		public string Action
+		{
+			get
+			{
+				return this._Action;
+			}
+			set
+			{
+				if ((this._Action != value))
+				{
+					this._Action = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Client", DbType="VarChar(50)")]
+		public string Client
+		{
+			get
+			{
+				return this._Client;
+			}
+			set
+			{
+				if ((this._Client != value))
+				{
+					this._Client = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TimeStamp
+		{
+			get
+			{
+				return this._TimeStamp;
+			}
+			set
+			{
+				if ((this._TimeStamp != value))
+				{
+					this._TimeStamp = value;
 				}
 			}
 		}

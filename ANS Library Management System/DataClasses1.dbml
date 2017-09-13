@@ -38,6 +38,7 @@
       <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="tblAdminDetail_tblAdminActionReport" Member="tblAdminActionReports" ThisKey="AdminUsername" OtherKey="username" Type="tblAdminActionReport" />
       <Association Name="tblAdminDetail_tblAdminLoginReport" Member="tblAdminLoginReports" ThisKey="AdminUsername" OtherKey="username" Type="tblAdminLoginReport" />
+      <Association Name="tblAdminDetail_tblAdminTransaction" Member="tblAdminTransactions" ThisKey="AdminUsername" OtherKey="Attendant" Type="tblAdminTransaction" />
       <Association Name="tblAdminDetail_tblLoginReport" Member="tblLoginReports" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblLoginReport" />
     </Type>
   </Table>
@@ -50,6 +51,17 @@
       <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="tblAdminDetail_tblAdminLoginReport" Member="tblAdminDetail" ThisKey="username" OtherKey="AdminUsername" Type="tblAdminDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAdminTransaction" Member="tblAdminTransactions">
+    <Type Name="tblAdminTransaction">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Attendant" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Action" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Client" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblAdminDetail_tblAdminTransaction" Member="tblAdminDetail" ThisKey="Attendant" OtherKey="AdminUsername" Type="tblAdminDetail" IsForeignKey="true" />
+      <Association Name="tblUserDetail_tblAdminTransaction" Member="tblUserDetail" ThisKey="Client" OtherKey="UserUsername" Type="tblUserDetail" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblBooksData" Member="tblBooksDatas">
@@ -108,6 +120,7 @@
       <Column Name="Security_Answer" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="tblUserDetail_tblUserReport" Member="tblUserReports" ThisKey="UserUsername" OtherKey="username" Type="tblUserReport" />
+      <Association Name="tblUserDetail_tblAdminTransaction" Member="tblAdminTransactions" ThisKey="UserUsername" OtherKey="Client" Type="tblAdminTransaction" />
       <Association Name="tblUserDetail_tblLoginReport" Member="tblLoginReports" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblLoginReport" />
       <Association Name="tblUserDetail_tblUserActionReport" Member="tblUserActionReports" ThisKey="UserUsername" OtherKey="username" Type="tblUserActionReport" />
       <Association Name="tblUserDetail_tblUserLoginReport" Member="tblUserLoginReports" ThisKey="UserUsername" OtherKey="username" Type="tblUserLoginReport" />
@@ -216,6 +229,13 @@
     <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_AdminTransactionAdd" Method="sp_AdminTransactionAdd">
+    <Parameter Name="Attendant" Parameter="attendant" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Action" Parameter="action" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Client" Parameter="client" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TimeStamp" Parameter="timeStamp" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_AdminUpdate" Method="sp_AdminUpdate">
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
@@ -312,9 +332,15 @@
     <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_login" Method="sp_login">
+  <Function Name="dbo.sp_LoginReport" Method="sp_LoginReport">
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AdminUsername" Parameter="adminUsername" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UserUsername" Parameter="userUsername" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="password" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Action" Parameter="action" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Timestamp" Parameter="timestamp" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_UserActionReport" Method="sp_UserActionReport">
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />

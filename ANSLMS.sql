@@ -524,6 +524,7 @@ select * from tblLoginReport
 --login status
 create procedure sp_LoginReport
 (
+	@username varchar(50),
 	@AdminUsername varchar(50),
 	@UserUsername varchar(50),
 	@password varchar(max),
@@ -533,7 +534,7 @@ create procedure sp_LoginReport
 )
 as
 insert into tblLoginReport
-values (@AdminUsername,@UserUsername,@password,@Action,@Timestamp,@usertype)
+values (@username,@AdminUsername,@UserUsername,@password,@Action,@Timestamp,@usertype)
 
 
 
@@ -585,6 +586,39 @@ values (@username,@Action,@Timestamp)
 
 
 ----------------------------------------------------------------------------------
+
+
+--tables for daily transactions
+drop table tblAdminTransaction
+
+create table tblAdminTransaction
+(
+	TransactionID int identity(0000000,1),
+	Attendant varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	Action varchar(max),
+	Client varchar(50) foreign key references tblUserDetails(UserUsername),
+	TimeStamp datetime
+)
+
+select * from tblAdminTransaction
+
+--stored procedures for admin transaction
+
+create procedure sp_AdminTransactionAdd
+(
+	@Attendant varchar(50),
+	@Action varchar(max),
+	@Client varchar(50),
+	@TimeStamp datetime
+)
+as
+insert into tblAdminTransaction
+values (@Attendant,@Action,@Client,@TimeStamp)
+
+
+
+
+--------------------------------------------------------------------------------------
 create table tblBookUsage
 (
 	

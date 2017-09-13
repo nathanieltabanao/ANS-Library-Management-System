@@ -30,7 +30,7 @@ namespace ANS_Library_Management_System
             Login1 log = new Login1();
             this.Hide();
             log.Show();
-            db.sp_LoginReport(username, hash.HashPass(hashed, salt), "Logout", DateTime.Now, "Personnel");
+            db.sp_LoginReport(username, username, null, hash.HashPass(hashed, salt), "Logout", DateTime.Now, "Personnel");
         }
 
         private void bookReplacementToolStripMenuItem_Click(object sender, EventArgs e)
