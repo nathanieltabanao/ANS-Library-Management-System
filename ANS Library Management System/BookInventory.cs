@@ -24,6 +24,8 @@ namespace ANS_Library_Management_System
         public string password { get; set; }
         public string usertype { get; set; }
 
+        string action;
+
         //view shit
         public void BookView()
         {
@@ -38,7 +40,8 @@ namespace ANS_Library_Management_System
             txtTitle.Text = null;
             cmbCategory.Text = null;
             cmbFoS.Text = null;
-
+            action = null;
+            dtpPublishDate.Value = DateTime.Now;
         }
 
         public int ID()
@@ -78,6 +81,8 @@ namespace ANS_Library_Management_System
             {
                 db.sp_BookAdd(txtISBN.Text, txtTitle.Text, txtauthor.Text,  dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text);
                 BookView();
+                action = "Registered a book";
+                db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
                 Clear();
                 BookID();
             }
@@ -94,7 +99,7 @@ namespace ANS_Library_Management_System
             txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
             txtauthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
-            //dtpPublishDate.Value = DateTime.Parse( dgvBooks.CurrentRow.Cells[4].Value.ToString);
+            dtpPublishDate.Value =DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
             cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             cmbCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtpublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
@@ -110,12 +115,15 @@ namespace ANS_Library_Management_System
             }
             else
             {
+                action = "Edited a Book Information";
                 db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text);
+                db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
                 Clear();
                 BookView();
                 BookID();
                 btnAdd.Enabled = true;
                 btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
             }
         }
 
@@ -136,13 +144,20 @@ namespace ANS_Library_Management_System
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            action = "Deleted A Book Entry";
             db.sp_BookDelete(int.Parse(txtBookID.Text));
+            db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
             Clear();
             BookID();
             BookView();
             btnAdd.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

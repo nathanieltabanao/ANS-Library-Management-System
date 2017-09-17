@@ -21,6 +21,9 @@ namespace ANS_Library_Management_System
         public string username { get; set; }
         public string password { get; set; }
         public string usertype { get; set; }
+        public string user { get; set; }
+        public string name { get; set; }
+
 
         //instances
         DataClasses1DataContext db = new DataClasses1DataContext();
@@ -35,7 +38,11 @@ namespace ANS_Library_Management_System
 
         private void BookBorrow_Load(object sender, EventArgs e)
         {
+            lblCurrentAttendant.Text = "Current Attendant: " + username;
             View();
+            txtUsername.Text = user;
+            txtName.Text = name;
+            
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -59,5 +66,46 @@ namespace ANS_Library_Management_System
             txtCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtPublisher.Text= dgvBooks.CurrentRow.Cells[7].Value.ToString();
         }
+
+        private void textBoxX11_Click(object sender, EventArgs e)
+        {
+            UserSearch s = new UserSearch();
+            s.Show();
+        }
+
+        private void textBoxX11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_DoubleClick(object sender, EventArgs e)
+        {
+            UserSearch s = new UserSearch();
+            s.Show();
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            UserSearch s = new UserSearch();
+            s.ShowDialog();
+        }
+
+        private void BookBorrow_Activated(object sender, EventArgs e)
+        {
+            View();
+        }
+
+        private void BookBorrow_Enter(object sender, EventArgs e)
+        {
+            View();
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+    
 }

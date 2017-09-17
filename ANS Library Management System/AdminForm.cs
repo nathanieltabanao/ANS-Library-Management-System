@@ -41,6 +41,7 @@ namespace ANS_Library_Management_System
         private void accountsToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             RegistrationForm register = new RegistrationForm();
+            register.username = username;
             register.MdiParent = this;
             register.Show();
         }
@@ -63,9 +64,9 @@ namespace ANS_Library_Management_System
 
         private void bookBorrowingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BookBorrow bor = new BookBorrow();
-            bor.MdiParent = this;
-            bor.Show();
+            BookBorrow b = new BookBorrow();
+            b.MdiParent = this;
+            b.Show();
         }
 
         private void bookReplacementToolStripMenuItem_Click(object sender, EventArgs e)

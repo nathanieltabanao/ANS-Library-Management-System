@@ -26,8 +26,11 @@ namespace ANS_Library_Management_System
         encryption_algorithm hash = new encryption_algorithm();
 
         // some variables i might need latur
-        string gender, stringdate, salt, hashed, Usertype;
+        string gender, stringdate, salt, hashed, Usertype, action;
         DateTime date;
+
+        //very public shit that is important
+        public string username { get; set; }
 
         //methods for form
 
@@ -194,6 +197,11 @@ namespace ANS_Library_Management_System
             cmbSection.Enabled = false;
         }
 
+        private void txtAge_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void dtpBirthdate_Click(object sender, EventArgs e)
         {
 
@@ -287,28 +295,36 @@ namespace ANS_Library_Management_System
                             if (rdoAdmin.Checked)
                             {
                                 Usertype = "Admin";
+                                action = "Registered an Admin";
                                 db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                                db.sp_AdminTransactionAdd(username,action, txtUsername.Text, DateTime.Now);
                                 Clear();
                                 AdminID();
                             }
                             else if (rdoPersonnel.Checked)
                             {
                                 Usertype = "Personnel";
+                                action = "Registered a Personnel";
                                 db.sp_AdminInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                                db.sp_AdminTransactionAdd(username, action, txtUsername.Text, DateTime.Now);
                                 Clear();
                                 PersonelID();
                             }
                             else if (rdoStudent.Checked)
                             {
                                 Usertype = "Student";
+                                action = "Registered a Student";
                                 db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                                db.sp_AdminTransactionAdd(username, action, txtUsername.Text, DateTime.Now);
                                 Clear();
                                 StudentID();
                             }
                             else if (rdoTeacher.Checked)
                             {
                                 Usertype = "Teacher";
+                                action = "Registered a Teacher";
                                 db.sp_UserInsert(txtID.Text, txtUsername.Text, hash.HashPass(hashed, salt), txtfirstname.Text, txtmiddlename.Text, txtlastname.Text, txtAddress.Text, txtContact.Text, gender, date, int.Parse(txtAge.Text), cmbSection.Text, cmbGradeLevel.Text, txtEmail.Text, cmbSecQuestion.Text, txtAnswer.Text, Usertype);
+                                db.sp_AdminTransactionAdd(username, action, txtUsername.Text, DateTime.Now);
                                 Clear();
                                 TeacherID();
                             }

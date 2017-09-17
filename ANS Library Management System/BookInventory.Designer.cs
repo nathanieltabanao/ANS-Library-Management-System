@@ -145,6 +145,7 @@
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -170,7 +171,7 @@
             this.txtpublisher.Location = new System.Drawing.Point(115, 498);
             this.txtpublisher.Name = "txtpublisher";
             this.txtpublisher.Size = new System.Drawing.Size(248, 20);
-            this.txtpublisher.TabIndex = 40;
+            this.txtpublisher.TabIndex = 5;
             // 
             // txtauthor
             // 
@@ -181,7 +182,7 @@
             this.txtauthor.Location = new System.Drawing.Point(115, 440);
             this.txtauthor.Name = "txtauthor";
             this.txtauthor.Size = new System.Drawing.Size(248, 20);
-            this.txtauthor.TabIndex = 38;
+            this.txtauthor.TabIndex = 3;
             // 
             // txtISBN
             // 
@@ -192,7 +193,7 @@
             this.txtISBN.Location = new System.Drawing.Point(115, 411);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(248, 20);
-            this.txtISBN.TabIndex = 37;
+            this.txtISBN.TabIndex = 2;
             // 
             // txtBookID
             // 
@@ -215,7 +216,7 @@
             this.txtTitle.Location = new System.Drawing.Point(290, 337);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(305, 20);
-            this.txtTitle.TabIndex = 35;
+            this.txtTitle.TabIndex = 1;
             // 
             // labelX8
             // 
@@ -353,6 +354,7 @@
             // 
             // dtpPublishDate
             // 
+            this.dtpPublishDate.AllowEmptyState = false;
             this.dtpPublishDate.AutoSelectDate = true;
             // 
             // 
@@ -360,7 +362,6 @@
             this.dtpPublishDate.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtpPublishDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpPublishDate.ButtonDropDown.Visible = true;
-            this.dtpPublishDate.DefaultInputValues = false;
             this.dtpPublishDate.Location = new System.Drawing.Point(115, 469);
             // 
             // 
@@ -397,7 +398,7 @@
             this.dtpPublishDate.Name = "dtpPublishDate";
             this.dtpPublishDate.Size = new System.Drawing.Size(248, 20);
             this.dtpPublishDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpPublishDate.TabIndex = 47;
+            this.dtpPublishDate.TabIndex = 4;
             // 
             // cmbFoS
             // 
@@ -421,7 +422,8 @@
             this.cmbFoS.Name = "cmbFoS";
             this.cmbFoS.Size = new System.Drawing.Size(271, 20);
             this.cmbFoS.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbFoS.TabIndex = 48;
+            this.cmbFoS.TabIndex = 6;
+            this.cmbFoS.WatermarkText = "Field of Study";
             // 
             // Anthropology
             // 
@@ -498,7 +500,8 @@
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(271, 20);
             this.cmbCategory.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbCategory.TabIndex = 49;
+            this.cmbCategory.TabIndex = 7;
+            this.cmbCategory.WatermarkText = "Category";
             // 
             // comboItem8
             // 

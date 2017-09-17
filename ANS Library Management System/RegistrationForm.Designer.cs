@@ -88,7 +88,7 @@
             this.txtfirstname.Location = new System.Drawing.Point(161, 173);
             this.txtfirstname.Name = "txtfirstname";
             this.txtfirstname.Size = new System.Drawing.Size(234, 23);
-            this.txtfirstname.TabIndex = 3;
+            this.txtfirstname.TabIndex = 2;
             this.txtfirstname.WatermarkText = "First name...";
             // 
             // txtlastname
@@ -101,7 +101,7 @@
             this.txtlastname.Location = new System.Drawing.Point(161, 135);
             this.txtlastname.Name = "txtlastname";
             this.txtlastname.Size = new System.Drawing.Size(234, 23);
-            this.txtlastname.TabIndex = 2;
+            this.txtlastname.TabIndex = 1;
             this.txtlastname.WatermarkText = "Last name...";
             // 
             // labelX1
@@ -180,7 +180,7 @@
             this.txtmiddlename.Location = new System.Drawing.Point(161, 210);
             this.txtmiddlename.Name = "txtmiddlename";
             this.txtmiddlename.Size = new System.Drawing.Size(234, 23);
-            this.txtmiddlename.TabIndex = 4;
+            this.txtmiddlename.TabIndex = 3;
             this.txtmiddlename.WatermarkText = "Middle name...";
             // 
             // labelX5
@@ -206,7 +206,7 @@
             this.txtAnswer.Location = new System.Drawing.Point(287, 480);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(348, 26);
-            this.txtAnswer.TabIndex = 15;
+            this.txtAnswer.TabIndex = 14;
             // 
             // labelX6
             // 
@@ -231,7 +231,7 @@
             this.txtPassword.Location = new System.Drawing.Point(47, 480);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(192, 23);
-            this.txtPassword.TabIndex = 13;
+            this.txtPassword.TabIndex = 12;
             this.txtPassword.WatermarkText = "Password";
             // 
             // txtUsername
@@ -244,7 +244,7 @@
             this.txtUsername.Location = new System.Drawing.Point(47, 416);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(192, 23);
-            this.txtUsername.TabIndex = 12;
+            this.txtUsername.TabIndex = 11;
             this.txtUsername.WatermarkText = "Username";
             // 
             // labelX7
@@ -297,7 +297,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(234, 54);
-            this.txtAddress.TabIndex = 5;
+            this.txtAddress.TabIndex = 4;
             this.txtAddress.WatermarkText = "Address...";
             // 
             // labelX11
@@ -321,7 +321,7 @@
             this.rdoMale.Location = new System.Drawing.Point(8, 12);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(56, 20);
-            this.rdoMale.TabIndex = 24;
+            this.rdoMale.TabIndex = 7;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Male";
             this.rdoMale.UseVisualStyleBackColor = true;
@@ -397,7 +397,8 @@
             this.dtpBirthdate.Name = "dtpBirthdate";
             this.dtpBirthdate.Size = new System.Drawing.Size(200, 20);
             this.dtpBirthdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpBirthdate.TabIndex = 9;
+            this.dtpBirthdate.TabIndex = 8;
+            this.dtpBirthdate.Value = new System.DateTime(2017, 9, 13, 22, 50, 32, 253);
             this.dtpBirthdate.ValueChanged += new System.EventHandler(this.dtpBirthdate_ValueChanged);
             this.dtpBirthdate.Click += new System.EventHandler(this.dtpBirthdate_Click);
             // 
@@ -424,7 +425,7 @@
             this.txtEmail.Location = new System.Drawing.Point(537, 89);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 23);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.WatermarkText = "j.doe@...";
             // 
             // btnRegister
@@ -519,7 +520,7 @@
             this.txtContact.Location = new System.Drawing.Point(537, 136);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(234, 23);
-            this.txtContact.TabIndex = 7;
+            this.txtContact.TabIndex = 6;
             this.txtContact.WatermarkText = "09...";
             // 
             // labelX9
@@ -561,6 +562,7 @@
             this.txtAge.Size = new System.Drawing.Size(234, 23);
             this.txtAge.TabIndex = 9;
             this.txtAge.WatermarkText = "100 years";
+            this.txtAge.TextChanged += new System.EventHandler(this.txtAge_TextChanged);
             // 
             // labelX16
             // 
@@ -601,7 +603,7 @@
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(243, 20);
             this.cmbGradeLevel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbGradeLevel.TabIndex = 10;
+            this.cmbGradeLevel.TabIndex = 9;
             // 
             // comboItem1
             // 
@@ -620,7 +622,7 @@
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(243, 20);
             this.cmbSection.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbSection.TabIndex = 11;
+            this.cmbSection.TabIndex = 10;
             // 
             // comboItem2
             // 
@@ -651,37 +653,41 @@
             // 
             // cmbSecQuestion
             // 
+            this.cmbSecQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSecQuestion.FormattingEnabled = true;
             this.cmbSecQuestion.Items.AddRange(new object[] {
-            "What is the first and last name of your first boyfriend or girlfriend?",
-            "Which phone number do you remember most from your childhood?",
-            "What was your favorite place to visit as a child?",
-            "Who is your favorite actor, musician, or artist?",
-            "What is the name of your favorite pet?",
             "In what city were you born?",
             "What high school did you attend?",
+            "What is the first and last name of your first boyfriend or girlfriend?",
+            "What is the name of your favorite pet?",
+            "What is the name of your first grade teacher?",
             "What is the name of your first school?",
+            "What is your father\'s middle name?",
+            "What is your favorite color?",
+            "what is your favorite forum",
             "What is your favorite movie?",
+            "what is your favorite online platform",
+            "what is your favorite social media website",
+            "what is your favorite website",
             "What is your mother\'s maiden name?",
             "What street did you grow up on?",
             "What was the make of your first car?",
-            "When is your anniversary?",
-            "What is your favorite color?",
-            "What is your father\'s middle name?",
-            "What is the name of your first grade teacher?",
+            "What was your favorite place to visit as a child?",
             "What was your high school mascot?",
+            "When is your anniversary?",
             "Which is your favorite web browser?",
-            "what is your favorite website",
-            "what is your favorite forum",
-            "what is your favorite online platform",
-            "what is your favorite social media website"});
+            "Which phone number do you remember most from your childhood?",
+            "Who is your favorite actor, musician, or artist?"});
             this.cmbSecQuestion.Location = new System.Drawing.Point(287, 416);
+            this.cmbSecQuestion.MaxDropDownItems = 15;
             this.cmbSecQuestion.Name = "cmbSecQuestion";
             this.cmbSecQuestion.Size = new System.Drawing.Size(348, 21);
-            this.cmbSecQuestion.TabIndex = 46;
+            this.cmbSecQuestion.Sorted = true;
+            this.cmbSecQuestion.TabIndex = 13;
             // 
             // RegistrationForm
             // 
+            this.AcceptButton = this.btnRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 590);

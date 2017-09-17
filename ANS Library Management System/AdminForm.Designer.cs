@@ -172,6 +172,7 @@
             this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.lms_test__2_;
             this.ClientSize = new System.Drawing.Size(807, 477);
             this.Controls.Add(this.stripAdmin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.stripAdmin;

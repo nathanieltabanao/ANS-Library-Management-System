@@ -50,12 +50,13 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.lblCurrentAttendant = new DevComponents.DotNetBar.LabelX();
             this.grpBorrowDetails = new System.Windows.Forms.GroupBox();
-            this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dtpReturn = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dtpBorrowed = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -66,8 +67,8 @@
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.grpBorrowDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpReturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpBorrowed)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvBooks
@@ -329,12 +330,13 @@
             // 
             // grpBorrowDetails
             // 
-            this.grpBorrowDetails.Controls.Add(this.dateTimeInput2);
-            this.grpBorrowDetails.Controls.Add(this.dateTimeInput1);
+            this.grpBorrowDetails.Controls.Add(this.btnSearch);
+            this.grpBorrowDetails.Controls.Add(this.dtpReturn);
+            this.grpBorrowDetails.Controls.Add(this.dtpBorrowed);
             this.grpBorrowDetails.Controls.Add(this.labelX14);
             this.grpBorrowDetails.Controls.Add(this.labelX13);
-            this.grpBorrowDetails.Controls.Add(this.textBoxX10);
-            this.grpBorrowDetails.Controls.Add(this.textBoxX11);
+            this.grpBorrowDetails.Controls.Add(this.txtName);
+            this.grpBorrowDetails.Controls.Add(this.txtUsername);
             this.grpBorrowDetails.Controls.Add(this.labelX11);
             this.grpBorrowDetails.Controls.Add(this.labelX12);
             this.grpBorrowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -345,97 +347,108 @@
             this.grpBorrowDetails.TabStop = false;
             this.grpBorrowDetails.Text = "Borrow Details";
             // 
-            // dateTimeInput2
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(406, 40);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(32, 23);
+            this.btnSearch.TabIndex = 41;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // dtpReturn
+            // 
+            this.dtpReturn.AllowEmptyState = false;
             // 
             // 
             // 
-            // 
-            this.dateTimeInput2.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput2.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput2.ButtonDropDown.Visible = true;
-            this.dateTimeInput2.Location = new System.Drawing.Point(147, 145);
-            // 
-            // 
-            // 
-            this.dateTimeInput2.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dtpReturn.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtpReturn.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpReturn.ButtonDropDown.Visible = true;
+            this.dtpReturn.Location = new System.Drawing.Point(147, 145);
             // 
             // 
             // 
-            this.dateTimeInput2.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeInput2.MonthCalendar.BackgroundStyle.Class = "";
-            this.dateTimeInput2.MonthCalendar.ClearButtonVisible = true;
+            this.dtpReturn.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.Class = "";
-            this.dateTimeInput2.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
-            this.dateTimeInput2.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput2.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpReturn.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dtpReturn.MonthCalendar.BackgroundStyle.Class = "";
+            this.dtpReturn.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.Class = "";
-            this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput2.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput2.Name = "dateTimeInput2";
-            this.dateTimeInput2.Size = new System.Drawing.Size(253, 20);
-            this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput2.TabIndex = 40;
-            // 
-            // dateTimeInput1
+            this.dtpReturn.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtpReturn.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpReturn.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtpReturn.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtpReturn.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtpReturn.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtpReturn.MonthCalendar.CommandsBackgroundStyle.Class = "";
+            this.dtpReturn.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
+            this.dtpReturn.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpReturn.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
+            this.dtpReturn.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtpReturn.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpReturn.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtpReturn.MonthCalendar.NavigationBackgroundStyle.Class = "";
+            this.dtpReturn.MonthCalendar.TodayButtonVisible = true;
+            this.dtpReturn.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpReturn.Name = "dtpReturn";
+            this.dtpReturn.Size = new System.Drawing.Size(253, 20);
+            this.dtpReturn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpReturn.TabIndex = 40;
             // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.Location = new System.Drawing.Point(147, 107);
+            // dtpBorrowed
             // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.Class = "";
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.Class = "";
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpBorrowed.AllowEmptyState = false;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.Class = "";
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(253, 20);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 39;
+            this.dtpBorrowed.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtpBorrowed.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpBorrowed.ButtonDropDown.Visible = true;
+            this.dtpBorrowed.Location = new System.Drawing.Point(147, 107);
+            // 
+            // 
+            // 
+            this.dtpBorrowed.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtpBorrowed.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dtpBorrowed.MonthCalendar.BackgroundStyle.Class = "";
+            this.dtpBorrowed.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtpBorrowed.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtpBorrowed.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpBorrowed.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtpBorrowed.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtpBorrowed.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtpBorrowed.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtpBorrowed.MonthCalendar.CommandsBackgroundStyle.Class = "";
+            this.dtpBorrowed.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
+            this.dtpBorrowed.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpBorrowed.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtpBorrowed.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtpBorrowed.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpBorrowed.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtpBorrowed.MonthCalendar.NavigationBackgroundStyle.Class = "";
+            this.dtpBorrowed.MonthCalendar.TodayButtonVisible = true;
+            this.dtpBorrowed.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpBorrowed.Name = "dtpBorrowed";
+            this.dtpBorrowed.Size = new System.Drawing.Size(253, 20);
+            this.dtpBorrowed.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpBorrowed.TabIndex = 39;
             // 
             // labelX14
             // 
@@ -465,27 +478,31 @@
             this.labelX13.TabIndex = 37;
             this.labelX13.Text = "Date Borrowed:";
             // 
-            // textBoxX10
+            // txtName
             // 
             // 
             // 
             // 
-            this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.Location = new System.Drawing.Point(147, 72);
-            this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(253, 20);
-            this.textBoxX10.TabIndex = 36;
+            this.txtName.Border.Class = "TextBoxBorder";
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(147, 72);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(253, 20);
+            this.txtName.TabIndex = 36;
             // 
-            // textBoxX11
+            // txtUsername
             // 
             // 
             // 
             // 
-            this.textBoxX11.Border.Class = "TextBoxBorder";
-            this.textBoxX11.Location = new System.Drawing.Point(147, 40);
-            this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.Size = new System.Drawing.Size(253, 20);
-            this.textBoxX11.TabIndex = 35;
+            this.txtUsername.Border.Class = "TextBoxBorder";
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Location = new System.Drawing.Point(147, 40);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(253, 20);
+            this.txtUsername.TabIndex = 35;
+            this.txtUsername.Click += new System.EventHandler(this.textBoxX11_Click);
+            this.txtUsername.TextChanged += new System.EventHandler(this.textBoxX11_TextChanged);
             // 
             // labelX11
             // 
@@ -593,6 +610,7 @@
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnAdd.TabIndex = 74;
             this.btnAdd.Text = "Add Item";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // BookBorrow
             // 
@@ -629,11 +647,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookBorrow";
             this.Text = "Book Borrow";
+            this.Activated += new System.EventHandler(this.BookBorrow_Activated);
             this.Load += new System.EventHandler(this.BookBorrow_Load);
+            this.Enter += new System.EventHandler(this.BookBorrow_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.grpBorrowDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpReturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpBorrowed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,12 +681,10 @@
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX lblCurrentAttendant;
         private System.Windows.Forms.GroupBox grpBorrowDetails;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput2;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpReturn;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpBorrowed;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.LabelX labelX13;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX10;
@@ -675,5 +693,8 @@
         private DevComponents.DotNetBar.ButtonX btnUpdate;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnAdd;
+        private System.Windows.Forms.Button btnSearch;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtName;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtUsername;
     }
 }

@@ -125,7 +125,7 @@ create procedure sp_UserSearch
 )
 as
 select ID,First_Name,Middle_Name,Last_Name,Address,Contact_Number,Gender,Birthdate,Age,Section,Grade_Level,Email_Address from tblUserDetails
-where tblUserDetails.ID = @SearchKey or tblUserDetails.Last_Name=@SearchKey
+where  tblUserDetails.Last_Name like '%'+@SearchKey+'%'
 
 --id retrieve
 create procedure UserUsertype
@@ -169,6 +169,9 @@ update tblUserDetails
 set password=@password
 where tblUserDetails.Userusername=@username
 
+create procedure sp_UserView
+as
+select * from tblUserDetails
 
 
 ---------------------------------------------------------------------------------------
@@ -346,7 +349,7 @@ create table tblBooksData
 (
 	BookID int identity(300000,1),
 	ISBN varchar(50),
-	Title varchar(100) not null,
+	Title varchar(100) primary key,
 	Author1 varchar(100) not null,
 	Publication_Year datetime,
 	Field_of_Study varchar(50),
@@ -408,7 +411,7 @@ create procedure sp_BookSearch
 )
 as
 select * from tblBooksData
-where tblBooksData.Title like '%'+@SearchKey+'&' or tblBooksData.Author1 like '%'+@SearchKey+'&' or tblBooksData.Publisher like '%'+@SearchKey+'&'
+where tblBooksData.Title like '%'+@SearchKey+'&' 
 return 0
 
 ---view shat
@@ -594,9 +597,9 @@ drop table tblAdminTransaction
 create table tblAdminTransaction
 (
 	TransactionID int identity(0000000,1),
-	Attendant varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
 	Action varchar(max),
-	Client varchar(50) foreign key references tblUserDetails(UserUsername),
+	Client varchar(50),
 	TimeStamp datetime
 )
 
@@ -619,6 +622,85 @@ values (@Attendant,@Action,@Client,@TimeStamp)
 
 
 --------------------------------------------------------------------------------------
+
+drop table tblBooksBorrowed
+
+create table tblBooksBorrowed
+(
+	TransactionID int identity(0000000,1),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	BorrowersName varchar(150),
+	Title varchar(100) foreign key references tblBooksData(Title),
+	DateBorrowed datetime,
+	DateDeadline datetime
+)
+
+select * from tblBooksBorrowed
+
+--stored procedures
+create procedure sp_BookBorrowing
+(
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
+	@BorrowersName varchar(150),
+	@Title varchar(100),
+	@DateBorrowed datetime,
+	@DateDeadline datetime
+)
+as
+insert into tblBooksBorrowed
+values (@AdminUsername,@UserUsername,@BorrowersName,@Title,@DateBorrowed,@DateDeadline)
+ 
+
+
+-------------------------------------------------------------------------------------------
+drop table tblBooks
+
+create table tblBooks
+(
+	TransactionID int identity(0000000,1),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	Title varchar(100) foreign key references tblBooksData(Title),
+	DateBorrowed datetime,
+	DateDeadline datetime,
+	ActualReturned datetime,
+	IsGoodContidion varchar(2)
+)	
+
+create procedure sp_BookReturn
+(
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
+	@Title varchar(100),
+	@DateBorrowed datetime,
+	@DateDeadline datetime,
+	@ActualReturned datetime,
+	@IsGoodContidion varchar(2)
+)
+as
+insert into tblBooks
+values (@AdminUsername,@UserUsername,@Title,@DateBorrowed,@DateDeadline,@ActualReturned,@IsGoodContidion)
+
+create procedure sp_BookReturnEdit
+(
+	@ID int,
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
+	@Title varchar(100),
+	@DateBorrowed datetime,
+	@DateDeadline datetime,
+	@ActualReturned datetime,
+	@IsGoodContidion varchar(2)
+)
+as
+update tblBooks
+set AdminUsername=@AdminUsername,UserUsername=@UserUsername,Title=@Title,DateBorrowed=@DateBorrowed,DateDeadline=@DateDeadline,ActualReturned=@ActualReturned,IsGoodContidion=@IsGoodContidion
+where TransactionID=@ID
+
+
+-----------------------------------------------------------------------------------------
 create table tblBookUsage
 (
 	
