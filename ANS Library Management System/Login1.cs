@@ -47,7 +47,7 @@ namespace ANS_Library_Management_System
             {
                 MessageBox.Show("Invalid Username or Password"); //Show message to user failed authentication
                 LogError++; // count many incorrect attemps for forget password
-                db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Failed", DateTime.Now, null); //login report if failed or succes.
+                db.sp_LoginReport(txtUsername.Text, null, null, hash.HashPass(hashed, salt), "Login Failed", DateTime.Now, null); //login report if failed or succes
 
                 //if too many incorrect attempts try to show forget passweord
                 if (LogError>3) // 3 incorrect attempts and show link for forget password
@@ -72,7 +72,7 @@ namespace ANS_Library_Management_System
                     b.password = txtPassword.Text;
 
                     //Create Log report
-                    db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Teacher");
+                    db.sp_LoginReport(txtUsername.Text, null, txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Teacher");
 
                     //transfer to another form
                     this.Hide();
@@ -88,7 +88,7 @@ namespace ANS_Library_Management_System
                     b.password = txtPassword.Text;
 
                     //create login report
-                    db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Student");
+                    db.sp_LoginReport(txtUsername.Text, null, txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Student");
 
                     //transferring to another form
                     this.Hide();
@@ -110,7 +110,7 @@ namespace ANS_Library_Management_System
                     p.password = txtPassword.Text;
 
                     //create log report
-                    db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Personnel");
+                    db.sp_LoginReport(txtUsername.Text,txtUsername.Text,null, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Personnel");
 
                     //transfer form
                     this.Hide();
@@ -126,7 +126,7 @@ namespace ANS_Library_Management_System
                     ad.password = txtPassword.Text;
 
                     //create a login report
-                    db.sp_LoginReport(txtUsername.Text, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Admin");
+                    db.sp_LoginReport(txtUsername.Text, txtUsername.Text, null, hash.HashPass(hashed, salt), "Login Success", DateTime.Now, "Admin");
 
                     //transferring of form
                     this.Hide();

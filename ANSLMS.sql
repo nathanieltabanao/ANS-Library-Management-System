@@ -7,7 +7,7 @@ drop database ANSLMS
 create procedure sp_login
 @username varchar (50),
 @password varchar(max)
-as
+	as
 	select tblUserDetails.username,tblUserDetails.password from tblUserDetails
 	where tblUserDetails.username=@username and tblUserDetails.password=@password
 	return 0
@@ -20,7 +20,7 @@ create table tblUserDetails
 (
 	GenID int unique identity(100000,1),
 	ID varchar(50) not null,
-	username varchar(50) primary key,
+	UserUsername varchar(50) primary key,
 	password varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
@@ -47,8 +47,8 @@ create procedure sp_UserLogin
 @username varchar (50),
 @password varchar(max)
 as
-select tblUserDetails.username,tblUserDetails.password from tblUserDetails
-where tblUserDetails.username=@username and tblUserDetails.password=@password
+select tblUserDetails.Userusername,tblUserDetails.password from tblUserDetails
+where tblUserDetails.UserUsername=@username and tblUserDetails.password=@password
 return 0
 
 --USER INSERT
@@ -99,7 +99,7 @@ create procedure sp_UserUpdate
 )
 as
 update tblUserDetails
-set ID=@ID,username=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name ,Last_Name=@Last_Name ,Address=@Address ,Contact_Number=@Contact_Number ,Gender=@Gender,Birthdate=@Birthdate ,Age=@Age ,Section=@Section,Grade_Level=@Grade_Level ,Email_Address=@Email_Address ,Security_Question=@Security_Question ,Security_Answer=@Security_Answer,Usertype=@Usertype
+set ID=@ID,UserUsername=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name ,Last_Name=@Last_Name ,Address=@Address ,Contact_Number=@Contact_Number ,Gender=@Gender,Birthdate=@Birthdate ,Age=@Age ,Section=@Section,Grade_Level=@Grade_Level ,Email_Address=@Email_Address ,Security_Question=@Security_Question ,Security_Answer=@Security_Answer,Usertype=@Usertype
 where tblUserDetails.ID=@ID
 
 --USER DELETE
@@ -125,15 +125,15 @@ create procedure sp_UserSearch
 )
 as
 select ID,First_Name,Middle_Name,Last_Name,Address,Contact_Number,Gender,Birthdate,Age,Section,Grade_Level,Email_Address from tblUserDetails
-where tblUserDetails.ID = @SearchKey or tblUserDetails.Last_Name=@SearchKey
+where  tblUserDetails.Last_Name like '%'+@SearchKey+'%'
 
 --id retrieve
 create procedure UserUsertype
 @parameter1 varchar (50),
 @parameter2 varchar(50)
 as
-select tblUserDetails.username,tblUserDetails.Usertype from tblUserDetails
-where tblUserDetails.username=@parameter1 and tblUserDetails.Usertype='student'
+select tblUserDetails.Userusername,tblUserDetails.Usertype from tblUserDetails
+where tblUserDetails.Userusername=@parameter1 and tblUserDetails.Usertype='student'
 return 0
 
 -- check username for dlasjdlkasjdklasjdas
@@ -143,7 +143,7 @@ create procedure sp_UserUsernameCheck
 )
 as
 select * from tblUserDetails
-where tblUserDetails.username=@username
+where tblUserDetails.Userusername=@username
 return 0
 
 ----Security Change Qustion
@@ -156,7 +156,7 @@ create procedure sp_UserChangePassVerify
 )
 as
 select * from tblUserDetails
-where tblUserDetails.username=@username and tblUserDetails.Security_Question=@Security_Question and tblUserDetails.Security_Answer=@Security_Answer
+where tblUserDetails.Userusername=@username and tblUserDetails.Security_Question=@Security_Question and tblUserDetails.Security_Answer=@Security_Answer
 return 0
 
 create procedure sp_UserChangePass
@@ -167,8 +167,11 @@ create procedure sp_UserChangePass
 as
 update tblUserDetails
 set password=@password
-where tblUserDetails.username=@username
+where tblUserDetails.Userusername=@username
 
+create procedure sp_UserView
+as
+select * from tblUserDetails
 
 
 ---------------------------------------------------------------------------------------
@@ -177,7 +180,7 @@ create table tblAdminDetails
 (
 	GenID int unique identity(200000,1),
 	ID varchar(50) not null,
-	username varchar(50) primary key,
+	AdminUsername varchar(50) primary key,
 	password varchar(max) not null,
 	First_Name varchar(50) not null,
 	Middle_Name varchar(30),
@@ -243,7 +246,7 @@ create procedure sp_AdminUpdate
 )
 as
 update tblAdminDetails
-set username=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name,Last_Name=@Last_Name,Address=@Address,Contact_Number=@Contact_Number,Gender=@Gender,Age=@Age,Email_Address=@Email_Address,Security_Question=@Security_Question,Security_Answer=@Security_Answer,Usertype=@Usertype
+set AdminUsername=@username,password=@password,First_Name=@First_Name,Middle_Name=@Middle_Name,Last_Name=@Last_Name,Address=@Address,Contact_Number=@Contact_Number,Gender=@Gender,Age=@Age,Email_Address=@Email_Address,Security_Question=@Security_Question,Security_Answer=@Security_Answer,Usertype=@Usertype
 where ID=@ID
 
 --delete from admin table
@@ -263,8 +266,8 @@ create procedure sp_AdminLogin
 @username varchar (50),
 @password varchar(max)
 as
-select tblAdminDetails.username,tblAdminDetails.password from tblAdminDetails
-where tblAdminDetails.username=@username and tblAdminDetails.password=@password
+select tblAdminDetails.AdminUsername,tblAdminDetails.password from tblAdminDetails
+where tblAdminDetails.AdminUsername=@username and tblAdminDetails.password=@password
 return 0
 
 --ID FUcntion
@@ -278,8 +281,8 @@ create procedure AdminUsertype
 @parameter1 varchar (50),
 @parameter2 varchar(50)
 as
-select tblAdminDetails.username,tblAdminDetails.Usertype from tblAdminDetails
-where tblAdminDetails.username=@parameter1 and tblAdminDetails.Usertype='admin'
+select tblAdminDetails.AdminUsername,tblAdminDetails.Usertype from tblAdminDetails
+where tblAdminDetails.AdminUsername=@parameter1 and tblAdminDetails.Usertype='admin'
 return 0
 
 
@@ -289,7 +292,7 @@ create procedure sp_AdminUsernameCheck
 )
 as
 select * from tblAdminDetails
-where tblAdminDetails.username=@username
+where tblAdminDetails.AdminUsername=@username
 return 0
 
 
@@ -303,7 +306,7 @@ create procedure sp_AdminChangePassVerify
 )
 as
 select * from tblAdminDetails
-where tblAdminDetails.username=@username and tblAdminDetails.Security_Question=@Security_Question and tblAdminDetails.Security_Answer=@Security_Answer
+where tblAdminDetails.AdminUsername=@username and tblAdminDetails.Security_Question=@Security_Question and tblAdminDetails.Security_Answer=@Security_Answer
 return 0
 
 create procedure sp_AdminChangePass
@@ -314,7 +317,7 @@ create procedure sp_AdminChangePass
 as
 update tblAdminDetails
 set password=@password
-where tblAdminDetails.username=@username
+where tblAdminDetails.AdminUsername=@username
 
 
 
@@ -346,7 +349,7 @@ create table tblBooksData
 (
 	BookID int identity(300000,1),
 	ISBN varchar(50),
-	Title varchar(100) not null,
+	Title varchar(100) primary key,
 	Author1 varchar(100) not null,
 	Publication_Year datetime,
 	Field_of_Study varchar(50),
@@ -408,8 +411,7 @@ create procedure sp_BookSearch
 )
 as
 select * from tblBooksData
-where tblBooksData.Title like '%'+@SearchKey+'&' or tblBooksData.Author1 like '%'+@SearchKey+'&' or tblBooksData.Publisher like '%'+@SearchKey+'&'
-return 0
+where Title like '%'+@SearchKey+'%' or Author1 like '%'+@SearchKey+'%' or Publisher like '%'+@SearchKey+'%'
 
 ---view shat
 create procedure sp_BookView
@@ -438,7 +440,7 @@ create table tblUserReport
 (
 	transactionID int identity(0000000,1),
 	timestamp datetime,
-	username varchar(50) foreign key references tblUserDetails(username),
+	username varchar(50) foreign key references tblUserDetails(Userusername),
 	Action varchar(max)
 )
 
@@ -450,7 +452,7 @@ drop table tblAdminLoginReport
 create table tblAdminLoginReport
 (
 	LoginID int identity(10000000,1),
-	username varchar(50) foreign key references tblAdminDetails(username),
+	username varchar(50) foreign key references tblAdminDetails(adminusername),
 	password varchar(max),
 	Action varchar(100),
 	Timestamp datetime,
@@ -481,7 +483,7 @@ drop table tblUserLoginReport
 create table tblUserLoginReport
 (
 	LoginID int identity(10000000,1),
-	username varchar(50) foreign key references tblUserDetails(username),
+	username varchar(50) foreign key references tblUserDetails(Userusername),
 	password varchar(max),
 	Action varchar(100),
 	Timestamp datetime,
@@ -509,7 +511,9 @@ values (@username,@password,@Action,@Timestamp,@usertype)
 create table tblLoginReport
 (
 	LoginID int identity(10000000,1),
-	username varchar(50) ,
+	username varchar(50),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(Userusername),
 	password varchar(max),
 	Action varchar(100),
 	Timestamp datetime,
@@ -523,6 +527,8 @@ select * from tblLoginReport
 create procedure sp_LoginReport
 (
 	@username varchar(50),
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
 	@password varchar(max),
 	@Action varchar(100),
 	@Timestamp datetime,
@@ -530,7 +536,7 @@ create procedure sp_LoginReport
 )
 as
 insert into tblLoginReport
-values (@username,@password,@Action,@Timestamp,@usertype)
+values (@username,@AdminUsername,@UserUsername,@password,@Action,@Timestamp,@usertype)
 
 
 
@@ -541,7 +547,7 @@ values (@username,@password,@Action,@Timestamp,@usertype)
 create table tblAdminActionReport
 (
 	LogID int identity(100000000,1),
-	username varchar(50) foreign key references tblAdminDetails(username),
+	username varchar(50) foreign key references tblAdminDetails(adminusername),
 	Action varchar(max),
 	Timestamp datetime
 )
@@ -564,7 +570,7 @@ values (@username,@Action,@Timestamp)
 create table tblUserActionReport
 (
 	LogID int identity(100000000,1),
-	username varchar(50) foreign key references tblUserDetails(username),
+	username varchar(50) foreign key references tblUserDetails(userusername),
 	Action varchar(max),
 	Timestamp datetime
 )
@@ -582,6 +588,118 @@ values (@username,@Action,@Timestamp)
 
 
 ----------------------------------------------------------------------------------
+
+
+--tables for daily transactions
+drop table tblAdminTransaction
+
+create table tblAdminTransaction
+(
+	TransactionID int identity(0000000,1),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	Action varchar(max),
+	Client varchar(50),
+	TimeStamp datetime
+)
+
+select * from tblAdminTransaction
+
+--stored procedures for admin transaction
+
+create procedure sp_AdminTransactionAdd
+(
+	@Attendant varchar(50),
+	@Action varchar(max),
+	@Client varchar(50),
+	@TimeStamp datetime
+)
+as
+insert into tblAdminTransaction
+values (@Attendant,@Action,@Client,@TimeStamp)
+
+
+
+
+--------------------------------------------------------------------------------------
+
+drop table tblBooksBorrowed
+
+create table tblBooksBorrowed
+(
+	TransactionID int identity(0000000,1),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	BorrowersName varchar(150),
+	Title varchar(100) foreign key references tblBooksData(Title),
+	DateBorrowed datetime,
+	DateDeadline datetime
+)
+
+select * from tblBooksBorrowed
+
+--stored procedures
+create procedure sp_BookBorrowing
+(
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
+	@BorrowersName varchar(150),
+	@Title varchar(100),
+	@DateBorrowed datetime,
+	@DateDeadline datetime
+)
+as
+insert into tblBooksBorrowed
+values (@AdminUsername,@UserUsername,@BorrowersName,@Title,@DateBorrowed,@DateDeadline)
+ 
+
+
+-------------------------------------------------------------------------------------------
+drop table tblBooks
+
+create table tblBooks
+(
+	TransactionID int identity(0000000,1),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	Title varchar(100) foreign key references tblBooksData(Title),
+	DateBorrowed datetime,
+	DateDeadline datetime,
+	ActualReturned datetime,
+	IsGoodContidion varchar(2)
+)	
+
+create procedure sp_BookReturn
+(
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
+	@Title varchar(100),
+	@DateBorrowed datetime,
+	@DateDeadline datetime,
+	@ActualReturned datetime,
+	@IsGoodContidion varchar(2)
+)
+as
+insert into tblBooks
+values (@AdminUsername,@UserUsername,@Title,@DateBorrowed,@DateDeadline,@ActualReturned,@IsGoodContidion)
+
+create procedure sp_BookReturnEdit
+(
+	@ID int,
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
+	@Title varchar(100),
+	@DateBorrowed datetime,
+	@DateDeadline datetime,
+	@ActualReturned datetime,
+	@IsGoodContidion varchar(2)
+)
+as
+update tblBooks
+set AdminUsername=@AdminUsername,UserUsername=@UserUsername,Title=@Title,DateBorrowed=@DateBorrowed,DateDeadline=@DateDeadline,ActualReturned=@ActualReturned,IsGoodContidion=@IsGoodContidion
+where TransactionID=@ID
+
+
+-----------------------------------------------------------------------------------------
 create table tblBookUsage
 (
 	
