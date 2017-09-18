@@ -125,7 +125,6 @@
             this.txtSearch.Border.Class = "TextBoxBorder";
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtSearch.Location = new System.Drawing.Point(529, 77);
-            this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(301, 25);
             this.txtSearch.TabIndex = 24;

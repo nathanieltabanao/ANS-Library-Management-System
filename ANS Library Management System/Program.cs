@@ -16,7 +16,7 @@ namespace ANS_Library_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminForm());
+            Application.Run(new Login1());
         }
     }
 }

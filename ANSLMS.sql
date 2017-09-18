@@ -411,8 +411,7 @@ create procedure sp_BookSearch
 )
 as
 select * from tblBooksData
-where tblBooksData.Title like '%'+@SearchKey+'&' 
-return 0
+where Title like '%'+@SearchKey+'%' or Author1 like '%'+@SearchKey+'%' or Publisher like '%'+@SearchKey+'%'
 
 ---view shat
 create procedure sp_BookView

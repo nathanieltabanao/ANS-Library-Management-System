@@ -47,13 +47,12 @@ namespace ANS_Library_Management_System
         {
             user = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             name = dataGridView1.CurrentRow.Cells[6].Value.ToString() + ", " + dataGridView1.CurrentRow.Cells[4].Value.ToString() + " " + dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            BookBorrow b = new BookBorrow();
-            b.txtName.Text = name;
-            b.txtUsername.Text = user;
-            b.user = user;
-            b.name = name;
             this.Close();
-            b.Show();
+        }
+
+        private void UserSearch_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

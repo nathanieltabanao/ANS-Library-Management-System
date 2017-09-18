@@ -402,6 +402,7 @@
             this.dtpReturn.Size = new System.Drawing.Size(253, 20);
             this.dtpReturn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpReturn.TabIndex = 40;
+            this.dtpReturn.Value = new System.DateTime(2017, 9, 16, 11, 0, 38, 537);
             // 
             // dtpBorrowed
             // 
@@ -449,6 +450,7 @@
             this.dtpBorrowed.Size = new System.Drawing.Size(253, 20);
             this.dtpBorrowed.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpBorrowed.TabIndex = 39;
+            this.dtpBorrowed.Value = new System.DateTime(2017, 9, 16, 11, 0, 38, 654);
             // 
             // labelX14
             // 
@@ -648,6 +650,7 @@
             this.Name = "BookBorrow";
             this.Text = "Book Borrow";
             this.Activated += new System.EventHandler(this.BookBorrow_Activated);
+            this.Deactivate += new System.EventHandler(this.BookBorrow_Deactivate);
             this.Load += new System.EventHandler(this.BookBorrow_Load);
             this.Enter += new System.EventHandler(this.BookBorrow_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();

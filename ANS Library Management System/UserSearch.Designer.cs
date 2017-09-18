@@ -80,8 +80,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserSearch";
-            this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserSearch_FormClosing);
             this.Load += new System.EventHandler(this.UserSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

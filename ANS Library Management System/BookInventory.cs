@@ -67,7 +67,6 @@ namespace ANS_Library_Management_System
         private void textBoxX1_TextChanged(object sender, EventArgs e)
         {
             dgvBooks.DataSource = db.sp_BookSearch(txtSearch.Text);
-            BookID();
         }
 
         private void buttonX1_Click(object sender, EventArgs e)

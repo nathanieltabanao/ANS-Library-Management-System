@@ -247,12 +247,24 @@ namespace ANS_Library_Management_System
             cmbSection.Enabled = true;
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        string IsEmtpy()
         {
-            //checking for empty textboxes
             if (string.IsNullOrWhiteSpace(txtAddress.Text) || string.IsNullOrWhiteSpace(txtAge.Text) || string.IsNullOrWhiteSpace(txtContact.Text) ||
                     string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtfirstname.Text) || string.IsNullOrWhiteSpace(txtID.Text) || string.IsNullOrWhiteSpace(txtlastname.Text) ||
                     string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtAnswer.Text))
+            {
+                return "n";
+            }
+            else
+            {
+                return "y";
+            }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            //checking for empty textboxes
+            if (IsEmtpy()=="n")
             {
                 MessageBox.Show("Please fill all fields");
             }
