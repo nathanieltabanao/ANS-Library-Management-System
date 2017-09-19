@@ -23,7 +23,7 @@ namespace ANS_Library_Management_System
         public string user;
         public string name;
 
-        public void Show()
+        public new void Show()
         {
             dataGridView1.DataSource = db.sp_UserView();
         }

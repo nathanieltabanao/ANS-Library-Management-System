@@ -146,6 +146,7 @@
             this.Controls.Add(this.btnLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Login";
             this.Load += new System.EventHandler(this.Login1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
