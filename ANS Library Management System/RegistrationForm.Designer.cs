@@ -72,6 +72,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbSecQuestion = new System.Windows.Forms.ComboBox();
+            this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
+            this.comboItem5 = new DevComponents.Editors.ComboItem();
+            this.comboItem6 = new DevComponents.Editors.ComboItem();
+            this.comboItem7 = new DevComponents.Editors.ComboItem();
+            this.comboItem8 = new DevComponents.Editors.ComboItem();
+            this.comboItem9 = new DevComponents.Editors.ComboItem();
+            this.comboItem10 = new DevComponents.Editors.ComboItem();
+            this.comboItem11 = new DevComponents.Editors.ComboItem();
+            this.comboItem12 = new DevComponents.Editors.ComboItem();
+            this.comboItem13 = new DevComponents.Editors.ComboItem();
+            this.comboItem14 = new DevComponents.Editors.ComboItem();
+            this.comboItem15 = new DevComponents.Editors.ComboItem();
+            this.comboItem16 = new DevComponents.Editors.ComboItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -598,7 +612,16 @@
             this.cmbGradeLevel.FormattingEnabled = true;
             this.cmbGradeLevel.ItemHeight = 14;
             this.cmbGradeLevel.Items.AddRange(new object[] {
-            this.comboItem1});
+            this.comboItem1,
+            this.comboItem3,
+            this.comboItem4,
+            this.comboItem5,
+            this.comboItem6,
+            this.comboItem7,
+            this.comboItem8,
+            this.comboItem9,
+            this.comboItem10,
+            this.comboItem11});
             this.cmbGradeLevel.Location = new System.Drawing.Point(538, 288);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(243, 20);
@@ -607,7 +630,7 @@
             // 
             // comboItem1
             // 
-            this.comboItem1.Text = "test";
+            this.comboItem1.Text = "CI501";
             // 
             // cmbSection
             // 
@@ -617,7 +640,12 @@
             this.cmbSection.FormattingEnabled = true;
             this.cmbSection.ItemHeight = 14;
             this.cmbSection.Items.AddRange(new object[] {
-            this.comboItem2});
+            this.comboItem2,
+            this.comboItem12,
+            this.comboItem13,
+            this.comboItem14,
+            this.comboItem15,
+            this.comboItem16});
             this.cmbSection.Location = new System.Drawing.Point(537, 323);
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(243, 20);
@@ -626,7 +654,7 @@
             // 
             // comboItem2
             // 
-            this.comboItem2.Text = "test";
+            this.comboItem2.Text = "7TH GRADE";
             // 
             // groupBox1
             // 
@@ -684,6 +712,62 @@
             this.cmbSecQuestion.Size = new System.Drawing.Size(348, 21);
             this.cmbSecQuestion.Sorted = true;
             this.cmbSecQuestion.TabIndex = 13;
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "CI502";
+            // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "CI503";
+            // 
+            // comboItem5
+            // 
+            this.comboItem5.Text = "CI504";
+            // 
+            // comboItem6
+            // 
+            this.comboItem6.Text = "CI505";
+            // 
+            // comboItem7
+            // 
+            this.comboItem7.Text = "HB401";
+            // 
+            // comboItem8
+            // 
+            this.comboItem8.Text = "CT405";
+            // 
+            // comboItem9
+            // 
+            this.comboItem9.Text = "LW803";
+            // 
+            // comboItem10
+            // 
+            this.comboItem10.Text = "UI403";
+            // 
+            // comboItem11
+            // 
+            this.comboItem11.Text = "AN758";
+            // 
+            // comboItem12
+            // 
+            this.comboItem12.Text = "8TH GRADE";
+            // 
+            // comboItem13
+            // 
+            this.comboItem13.Text = "9TH GRADE";
+            // 
+            // comboItem14
+            // 
+            this.comboItem14.Text = "10TH GRADE";
+            // 
+            // comboItem15
+            // 
+            this.comboItem15.Text = "11TH GRADE";
+            // 
+            // comboItem16
+            // 
+            this.comboItem16.Text = "12TH GRADE";
             // 
             // RegistrationForm
             // 
@@ -785,5 +869,19 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbSecQuestion;
+        private DevComponents.Editors.ComboItem comboItem3;
+        private DevComponents.Editors.ComboItem comboItem4;
+        private DevComponents.Editors.ComboItem comboItem5;
+        private DevComponents.Editors.ComboItem comboItem6;
+        private DevComponents.Editors.ComboItem comboItem7;
+        private DevComponents.Editors.ComboItem comboItem8;
+        private DevComponents.Editors.ComboItem comboItem9;
+        private DevComponents.Editors.ComboItem comboItem10;
+        private DevComponents.Editors.ComboItem comboItem11;
+        private DevComponents.Editors.ComboItem comboItem12;
+        private DevComponents.Editors.ComboItem comboItem13;
+        private DevComponents.Editors.ComboItem comboItem14;
+        private DevComponents.Editors.ComboItem comboItem15;
+        private DevComponents.Editors.ComboItem comboItem16;
     }
 }

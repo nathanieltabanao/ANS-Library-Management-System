@@ -25,7 +25,7 @@ namespace ANS_Library_Management_System
 
         DataClasses1DataContext db = new DataClasses1DataContext();
 
-        public void Show()
+        private new void Show()
         {
             dtpSearch.DataSource = db.sp_UserView();
         }

@@ -618,6 +618,7 @@ insert into tblAdminTransaction
 values (@Attendant,@Action,@Client,@TimeStamp)
 
 
+select 
 
 
 --------------------------------------------------------------------------------------
@@ -651,8 +652,9 @@ as
 insert into tblBooksBorrowed
 values (@AdminUsername,@UserUsername,@BorrowersName,@Title,@DateBorrowed,@DateDeadline)
  
-
-
+ select tblUserDetails.UserUsername,tblBooksBorrowed.Title from tbluserdetails
+ inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
+ where tblBooksBorrowed.Title='1984'
 -------------------------------------------------------------------------------------------
 drop table tblBooks
 

@@ -66,6 +66,7 @@ namespace ANS_Library_Management_System
         {
             BookBorrow b = new BookBorrow();
             b.MdiParent = this;
+            b.username = username;
             b.Show();
         }
 
