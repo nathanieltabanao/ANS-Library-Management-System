@@ -150,9 +150,19 @@ namespace ANS_Library_Management_System
             }
             else
             {
-                db.sp_BookBorrowing(username, txtUsername.Text, txtName.Text, txtTitle.Text, DateTime.Now, dtpReturn.Value);
-                MessageBox.Show("Book Chekout Success!");
-                Clear();
+
+                int i = db.sp_ViewBorrowedBooks(txtUsername.Text).Count();
+                if (i>=5)
+                {
+                    MessageBox.Show("Limit of books to be borrowed has been reached.");
+                }
+                else
+                {
+                    db.sp_BookBorrowing(username, txtUsername.Text, txtName.Text, txtTitle.Text, DateTime.Now, dtpReturn.Value);
+                    MessageBox.Show("Book Chekout Success!");
+                    Clear();
+                }
+                
             }
         }
 

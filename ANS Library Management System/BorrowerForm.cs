@@ -35,7 +35,14 @@ namespace ANS_Library_Management_System
             db.sp_LoginReport(username, null, username, hash.HashPass(hashed, salt), "Logout", DateTime.Now, usertype);
         }
 
-
+        private void viwToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Student_Book_Form s = new Student_Book_Form();
+            s.username = username;
+            s.usertype = usertype;
+            s.MdiParent = this;
+            s.Show();
+        }
 
         private void BorrowerForm_Load(object sender, System.EventArgs e)
         {

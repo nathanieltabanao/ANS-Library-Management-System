@@ -70,8 +70,9 @@
             // viwToolStripMenuItem
             // 
             this.viwToolStripMenuItem.Name = "viwToolStripMenuItem";
-            this.viwToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.viwToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.viwToolStripMenuItem.Text = "View";
+            this.viwToolStripMenuItem.Click += new System.EventHandler(this.viwToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 

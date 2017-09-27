@@ -718,18 +718,20 @@ where TransactionID=@ID
 
 
 -----------------------------------------------------------------------------------------
-create table tblBookUsage
+create procedure sp_ViewBorrowedBooks
 (
-	
+	@username varchar(50)
 )
+as
+select tblUserDetails.UserUsername,tblBooksBorrowed.Title,tblBooksBorrowed.DateBorrowed,tblBooksBorrowed.DateDeadline from tblUserDetails
+inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
+where tblUserDetails.UserUsername=@username
 
-create table tblLostBooks
-(
-	
-)
 
---need to be added which is wala pa 
-encryption_algorithm hash = new encryption_algorithm();
+ select tblUserDetails.UserUsername,tblBooksBorrowed.Title from tbluserdetails
+ inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
+ where tblBooksBorrowed.Title='1984'
+-----------------------------------------------------------------------------------------
 
 --USER TYPE HERE
 
