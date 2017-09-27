@@ -56,6 +56,22 @@ namespace ANS_Library_Management_System
             inv.Show();
         }
 
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookInventory inv = new BookInventory();
+            inv.username = username;
+            inv.password = password;
+            inv.MdiParent = this;
+            inv.Show();
+        }
+
+        private void bookPenaltyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookPenalty p = new BookPenalty();
+            p.MdiParent = this;
+            p.Show();
+        }
+
         private void PersonnelForm_Load(object sender, System.EventArgs e)
         {
 

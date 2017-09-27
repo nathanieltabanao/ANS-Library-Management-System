@@ -1,6 +1,6 @@
 ﻿namespace ANS_Library_Management_System
 {
-    partial class RegistrationForm
+    partial class btnCancel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnCancel));
             this.txtfirstname = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtlastname = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -86,9 +87,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbSecQuestion = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtfirstname
@@ -202,13 +206,13 @@
             // 
             // labelX5
             // 
-            this.labelX5.BackColor = System.Drawing.Color.White;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(287, 392);
+            this.labelX5.Location = new System.Drawing.Point(256, 37);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(141, 23);
             this.labelX5.TabIndex = 12;
@@ -221,20 +225,20 @@
             // 
             this.txtAnswer.Border.Class = "TextBoxBorder";
             this.txtAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtAnswer.Location = new System.Drawing.Point(287, 480);
+            this.txtAnswer.Location = new System.Drawing.Point(256, 125);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(348, 26);
             this.txtAnswer.TabIndex = 14;
             // 
             // labelX6
             // 
-            this.labelX6.BackColor = System.Drawing.Color.White;
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.Location = new System.Drawing.Point(287, 453);
+            this.labelX6.Location = new System.Drawing.Point(256, 98);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(141, 23);
             this.labelX6.TabIndex = 14;
@@ -247,7 +251,7 @@
             // 
             this.txtPassword.Border.Class = "TextBoxBorder";
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtPassword.Location = new System.Drawing.Point(47, 480);
+            this.txtPassword.Location = new System.Drawing.Point(16, 125);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(192, 23);
             this.txtPassword.TabIndex = 12;
@@ -260,7 +264,7 @@
             // 
             this.txtUsername.Border.Class = "TextBoxBorder";
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtUsername.Location = new System.Drawing.Point(47, 416);
+            this.txtUsername.Location = new System.Drawing.Point(16, 61);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(192, 23);
             this.txtUsername.TabIndex = 11;
@@ -268,13 +272,13 @@
             // 
             // labelX7
             // 
-            this.labelX7.BackColor = System.Drawing.Color.White;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.Location = new System.Drawing.Point(47, 451);
+            this.labelX7.Location = new System.Drawing.Point(16, 96);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(110, 23);
             this.labelX7.TabIndex = 18;
@@ -282,13 +286,13 @@
             // 
             // labelX8
             // 
-            this.labelX8.BackColor = System.Drawing.Color.White;
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX8.Location = new System.Drawing.Point(47, 392);
+            this.labelX8.Location = new System.Drawing.Point(16, 37);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(110, 23);
             this.labelX8.TabIndex = 17;
@@ -458,7 +462,7 @@
             this.btnRegister.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnRegister.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRegister.Location = new System.Drawing.Point(689, 515);
+            this.btnRegister.Location = new System.Drawing.Point(689, 457);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(105, 41);
             this.btnRegister.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -470,9 +474,10 @@
             // 
             this.rdoAdmin.AutoSize = true;
             this.rdoAdmin.Checked = true;
+            this.rdoAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoAdmin.Location = new System.Drawing.Point(6, 38);
             this.rdoAdmin.Name = "rdoAdmin";
-            this.rdoAdmin.Size = new System.Drawing.Size(54, 17);
+            this.rdoAdmin.Size = new System.Drawing.Size(61, 19);
             this.rdoAdmin.TabIndex = 32;
             this.rdoAdmin.TabStop = true;
             this.rdoAdmin.Text = "Admin";
@@ -482,9 +487,10 @@
             // rdoPersonnel
             // 
             this.rdoPersonnel.AutoSize = true;
+            this.rdoPersonnel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoPersonnel.Location = new System.Drawing.Point(85, 38);
             this.rdoPersonnel.Name = "rdoPersonnel";
-            this.rdoPersonnel.Size = new System.Drawing.Size(72, 17);
+            this.rdoPersonnel.Size = new System.Drawing.Size(77, 19);
             this.rdoPersonnel.TabIndex = 33;
             this.rdoPersonnel.Text = "Personnel";
             this.rdoPersonnel.UseVisualStyleBackColor = true;
@@ -493,9 +499,10 @@
             // rdoStudent
             // 
             this.rdoStudent.AutoSize = true;
+            this.rdoStudent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoStudent.Location = new System.Drawing.Point(170, 38);
             this.rdoStudent.Name = "rdoStudent";
-            this.rdoStudent.Size = new System.Drawing.Size(62, 17);
+            this.rdoStudent.Size = new System.Drawing.Size(66, 19);
             this.rdoStudent.TabIndex = 34;
             this.rdoStudent.Text = "Student";
             this.rdoStudent.UseVisualStyleBackColor = true;
@@ -504,9 +511,10 @@
             // rdoTeacher
             // 
             this.rdoTeacher.AutoSize = true;
+            this.rdoTeacher.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoTeacher.Location = new System.Drawing.Point(246, 38);
             this.rdoTeacher.Name = "rdoTeacher";
-            this.rdoTeacher.Size = new System.Drawing.Size(65, 17);
+            this.rdoTeacher.Size = new System.Drawing.Size(66, 19);
             this.rdoTeacher.TabIndex = 35;
             this.rdoTeacher.Text = "Teacher";
             this.rdoTeacher.UseVisualStyleBackColor = true;
@@ -726,9 +734,9 @@
             this.groupBox1.Controls.Add(this.rdoPersonnel);
             this.groupBox1.Controls.Add(this.rdoStudent);
             this.groupBox1.Controls.Add(this.rdoTeacher);
-            this.groupBox1.Location = new System.Drawing.Point(459, 12);
+            this.groupBox1.Location = new System.Drawing.Point(514, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 64);
+            this.groupBox1.Size = new System.Drawing.Size(321, 71);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             // 
@@ -770,10 +778,10 @@
             "Which is your favorite web browser?",
             "Which phone number do you remember most from your childhood?",
             "Who is your favorite actor, musician, or artist?"});
-            this.cmbSecQuestion.Location = new System.Drawing.Point(287, 416);
+            this.cmbSecQuestion.Location = new System.Drawing.Point(256, 61);
             this.cmbSecQuestion.MaxDropDownItems = 15;
             this.cmbSecQuestion.Name = "cmbSecQuestion";
-            this.cmbSecQuestion.Size = new System.Drawing.Size(348, 21);
+            this.cmbSecQuestion.Size = new System.Drawing.Size(348, 25);
             this.cmbSecQuestion.Sorted = true;
             this.cmbSecQuestion.TabIndex = 13;
             // 
@@ -782,14 +790,46 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(12, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(270, 30);
             this.label4.TabIndex = 46;
             this.label4.Text = "REGISTER NEW ACCOUNT";
             // 
-            // RegistrationForm
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.SteelBlue;
+            this.groupBox3.Controls.Add(this.cmbSecQuestion);
+            this.groupBox3.Controls.Add(this.labelX5);
+            this.groupBox3.Controls.Add(this.txtAnswer);
+            this.groupBox3.Controls.Add(this.labelX6);
+            this.groupBox3.Controls.Add(this.txtUsername);
+            this.groupBox3.Controls.Add(this.txtPassword);
+            this.groupBox3.Controls.Add(this.labelX8);
+            this.groupBox3.Controls.Add(this.labelX7);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox3.Location = new System.Drawing.Point(40, 361);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(619, 185);
+            this.groupBox3.TabIndex = 47;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Account Credentials";
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.Location = new System.Drawing.Point(689, 506);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(105, 40);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 48;
+            this.buttonX1.Text = "Cancel";
+            // 
+            // btnCancel
             // 
             this.AcceptButton = this.btnRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -797,8 +837,9 @@
             this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_userform;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(836, 590);
+            this.Controls.Add(this.buttonX1);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbSecQuestion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbSection);
@@ -817,13 +858,6 @@
             this.Controls.Add(this.labelX10);
             this.Controls.Add(this.txtContact);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.labelX7);
-            this.Controls.Add(this.labelX8);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.labelX6);
-            this.Controls.Add(this.txtAnswer);
-            this.Controls.Add(this.labelX5);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.txtID);
@@ -832,7 +866,8 @@
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.txtfirstname);
             this.Controls.Add(this.txtlastname);
-            this.Name = "RegistrationForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "btnCancel";
             this.Text = "Registration Form";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).EndInit();
@@ -840,6 +875,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -905,5 +941,7 @@
         private DevComponents.Editors.ComboItem comboItem15;
         private DevComponents.Editors.ComboItem comboItem16;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }

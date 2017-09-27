@@ -40,7 +40,7 @@ namespace ANS_Library_Management_System
         //Account registration Calling
         private void accountsToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            RegistrationForm register = new RegistrationForm();
+            btnCancel register = new btnCancel();
             register.username = username;
             register.MdiParent = this;
             register.Show();

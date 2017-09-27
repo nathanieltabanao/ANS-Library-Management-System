@@ -43,7 +43,6 @@
             this.txtBookID = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtISBN = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtAuthor = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtPublishDate = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtPublisher = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtFoS = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCategory = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -63,10 +62,12 @@
             this.linkRepRecords = new System.Windows.Forms.LinkLabel();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
+            this.dtpPublish = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.grpBorrowDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtpReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBorrowed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpPublish)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvBooks
@@ -251,18 +252,6 @@
             this.txtAuthor.Size = new System.Drawing.Size(190, 20);
             this.txtAuthor.TabIndex = 15;
             // 
-            // txtPublishDate
-            // 
-            // 
-            // 
-            // 
-            this.txtPublishDate.Border.Class = "TextBoxBorder";
-            this.txtPublishDate.Enabled = false;
-            this.txtPublishDate.Location = new System.Drawing.Point(125, 454);
-            this.txtPublishDate.Name = "txtPublishDate";
-            this.txtPublishDate.Size = new System.Drawing.Size(190, 20);
-            this.txtPublishDate.TabIndex = 16;
-            // 
             // txtPublisher
             // 
             // 
@@ -363,6 +352,7 @@
             this.dtpReturn.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtpReturn.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpReturn.ButtonDropDown.Visible = true;
+            this.dtpReturn.Enabled = false;
             this.dtpReturn.Location = new System.Drawing.Point(147, 145);
             // 
             // 
@@ -411,6 +401,7 @@
             this.dtpBorrowed.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtpBorrowed.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpBorrowed.ButtonDropDown.Visible = true;
+            this.dtpBorrowed.Enabled = false;
             this.dtpBorrowed.Location = new System.Drawing.Point(147, 107);
             // 
             // 
@@ -584,11 +575,61 @@
             this.btnAdd.Text = "Add Item";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // dtpPublish
+            // 
+            this.dtpPublish.AllowEmptyState = false;
+            // 
+            // 
+            // 
+            this.dtpPublish.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtpPublish.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpPublish.ButtonDropDown.Visible = true;
+            this.dtpPublish.Enabled = false;
+            this.dtpPublish.Location = new System.Drawing.Point(125, 457);
+            // 
+            // 
+            // 
+            this.dtpPublish.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtpPublish.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dtpPublish.MonthCalendar.BackgroundStyle.Class = "";
+            this.dtpPublish.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtpPublish.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtpPublish.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpPublish.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtpPublish.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtpPublish.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtpPublish.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtpPublish.MonthCalendar.CommandsBackgroundStyle.Class = "";
+            this.dtpPublish.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
+            this.dtpPublish.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpPublish.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtpPublish.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtpPublish.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpPublish.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtpPublish.MonthCalendar.NavigationBackgroundStyle.Class = "";
+            this.dtpPublish.MonthCalendar.TodayButtonVisible = true;
+            this.dtpPublish.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpPublish.Name = "dtpPublish";
+            this.dtpPublish.Size = new System.Drawing.Size(192, 20);
+            this.dtpPublish.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpPublish.TabIndex = 42;
+            this.dtpPublish.Value = new System.DateTime(2017, 9, 16, 11, 0, 38, 654);
+            // 
             // BookBorrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 675);
+            this.Controls.Add(this.dtpPublish);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.linkRepRecords);
@@ -599,7 +640,6 @@
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.txtFoS);
             this.Controls.Add(this.txtPublisher);
-            this.Controls.Add(this.txtPublishDate);
             this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.txtBookID);
@@ -625,6 +665,7 @@
             this.grpBorrowDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtpReturn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBorrowed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpPublish)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -645,7 +686,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtBookID;
         private DevComponents.DotNetBar.Controls.TextBoxX txtISBN;
         private DevComponents.DotNetBar.Controls.TextBoxX txtAuthor;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtPublishDate;
         private DevComponents.DotNetBar.Controls.TextBoxX txtPublisher;
         private DevComponents.DotNetBar.Controls.TextBoxX txtFoS;
         private DevComponents.DotNetBar.Controls.TextBoxX txtCategory;
@@ -665,5 +705,6 @@
         private System.Windows.Forms.Button btnSearch;
         public DevComponents.DotNetBar.Controls.TextBoxX txtName;
         public DevComponents.DotNetBar.Controls.TextBoxX txtUsername;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpPublish;
     }
 }

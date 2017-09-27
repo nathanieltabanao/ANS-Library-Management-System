@@ -93,6 +93,7 @@
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // bookBorrowingToolStripMenuItem
             // 
@@ -106,6 +107,7 @@
             this.bookPenaltyToolStripMenuItem.Name = "bookPenaltyToolStripMenuItem";
             this.bookPenaltyToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.bookPenaltyToolStripMenuItem.Text = "Book Penalty";
+            this.bookPenaltyToolStripMenuItem.Click += new System.EventHandler(this.bookPenaltyToolStripMenuItem_Click);
             // 
             // bookReplacementToolStripMenuItem
             // 

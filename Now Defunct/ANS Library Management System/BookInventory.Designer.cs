@@ -392,6 +392,7 @@
             // 
             this.labelX10.BackgroundStyle.Class = "";
             this.labelX10.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold);
+            this.labelX10.ForeColor = System.Drawing.Color.DarkRed;
             this.labelX10.Location = new System.Drawing.Point(22, 27);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(166, 46);
@@ -427,7 +428,6 @@
             // 
             this.cmbFoS.FormattingEnabled = true;
             this.cmbFoS.Items.AddRange(new object[] {
-            "",
             "Agricultural Sciences",
             "Animal Science",
             "Anthropology ",

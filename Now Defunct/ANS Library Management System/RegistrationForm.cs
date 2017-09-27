@@ -11,9 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace ANS_Library_Management_System
 {
-    public partial class RegistrationForm : Form
+    public partial class btnCancel : Form
     {
-        public RegistrationForm()
+        public btnCancel()
         {
             InitializeComponent();
         }

@@ -115,6 +115,7 @@
             this.bookPenaltyToolStripMenuItem.Name = "bookPenaltyToolStripMenuItem";
             this.bookPenaltyToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.bookPenaltyToolStripMenuItem.Text = "Book Penalty";
+            this.bookPenaltyToolStripMenuItem.Click += new System.EventHandler(this.bookPenaltyToolStripMenuItem_Click);
             // 
             // bookReplacementToolStripMenuItem
             // 

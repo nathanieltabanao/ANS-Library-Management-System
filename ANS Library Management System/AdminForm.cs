@@ -77,6 +77,13 @@ namespace ANS_Library_Management_System
             rep.Show();
         }
 
+        private void bookPenaltyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookPenalty p = new BookPenalty();
+            p.MdiParent = this;
+            p.Show();
+        }
+
         //Logout Action Button
         private void logOutToolStripMenuItem_Click(object sender, System.EventArgs e)
         {

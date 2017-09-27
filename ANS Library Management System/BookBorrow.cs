@@ -23,6 +23,7 @@ namespace ANS_Library_Management_System
         public string usertype { get; set; }
         public string user { get; set; }
         public string name { get; set; }
+        public int numBooks { get; set; }
 
 
         //instances
@@ -45,12 +46,13 @@ namespace ANS_Library_Management_System
             txtCategory.Text = null;
             txtFoS.Text = null;
             txtName.Text = null;
-            txtPublishDate.Text = null;
+            dtpPublish.Value = DateTime.Now;
             txtPublisher.Text = null;
             txtTitle.Text = null;
             txtUsername.Text = null;
             dtpBorrowed.Value = DateTime.Now;
-            dtpReturn.Value = DateTime.Now;
+            numBooks = 0;
+            dtpReturn.Value = dtpReturn.Value.AddDays(3);
         }
 
         public string IsEmpty()
@@ -58,8 +60,7 @@ namespace ANS_Library_Management_System
             
             if (string.IsNullOrWhiteSpace(txtISBN.Text)|| string.IsNullOrWhiteSpace(txtAuthor.Text)|| string.IsNullOrWhiteSpace(txtBookID.Text)||
                 string.IsNullOrWhiteSpace(txtCategory.Text)|| string.IsNullOrWhiteSpace(txtFoS.Text)|| string.IsNullOrWhiteSpace(txtName.Text)||
-                string.IsNullOrWhiteSpace(txtPublishDate.Text)|| string.IsNullOrWhiteSpace(txtPublisher.Text)|| string.IsNullOrWhiteSpace(txtTitle.Text)||
-                string.IsNullOrWhiteSpace(txtUsername.Text))
+                string.IsNullOrWhiteSpace(txtPublisher.Text)|| string.IsNullOrWhiteSpace(txtTitle.Text)|| string.IsNullOrWhiteSpace(txtUsername.Text))
             {
                 return "n";
             }
@@ -75,6 +76,7 @@ namespace ANS_Library_Management_System
             View();
             txtName.Text = s.name;
             txtUsername.Text = s.user;
+            dtpReturn.Value = dtpReturn.Value.AddDays(3);
 
         }
 
@@ -89,10 +91,11 @@ namespace ANS_Library_Management_System
             txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
             txtAuthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
-            txtPublishDate.Text = dgvBooks.CurrentRow.Cells[4].Value.ToString();
+            dtpPublish.Value =DateTime.Parse( dgvBooks.CurrentRow.Cells[4].Value.ToString());
             txtFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             txtCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtPublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
+            numBooks = int.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
         }
 
         private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,10 +104,11 @@ namespace ANS_Library_Management_System
             txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
             txtAuthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
-            txtPublishDate.Text = dgvBooks.CurrentRow.Cells[4].Value.ToString();
+            dtpPublish.Value = DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
             txtFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             txtCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtPublisher.Text= dgvBooks.CurrentRow.Cells[7].Value.ToString();
+            numBooks = int.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
         }
 
         private void textBoxX11_Click(object sender, EventArgs e)
@@ -156,10 +160,17 @@ namespace ANS_Library_Management_System
                 {
                     MessageBox.Show("Limit of books to be borrowed has been reached.");
                 }
+                else if (numBooks<=1)
+                {
+                    MessageBox.Show("Book not available");
+                }
                 else
                 {
                     db.sp_BookBorrowing(username, txtUsername.Text, txtName.Text, txtTitle.Text, DateTime.Now, dtpReturn.Value);
+                    numBooks--;
+                    db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtAuthor.Text,dtpPublish.Value,  txtFoS.Text, txtCategory.Text, txtPublisher.Text, numBooks);
                     MessageBox.Show("Book Chekout Success!");
+                    View();
                     Clear();
                 }
                 
