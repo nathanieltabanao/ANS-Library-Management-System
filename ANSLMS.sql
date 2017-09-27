@@ -349,12 +349,13 @@ create table tblBooksData
 (
 	BookID int identity(300000,1),
 	ISBN varchar(50),
-	Title varchar(100) primary key,
+	Title varchar(200) primary key,
 	Author1 varchar(100) not null,
 	Publication_Year datetime,
 	Field_of_Study varchar(50),
 	Category varchar(50),
-	Publisher varchar(50)
+	Publisher varchar(50),
+	Quantity int
 )
 
 select * from tblBooksData
@@ -368,32 +369,34 @@ values('8789798-4546','the idiot')
 create procedure sp_BookAdd
 (
 	@ISBN varchar(50),
-	@Title varchar(100),
+	@Title varchar(200),
 	@Author1 varchar(100),
 	@Publication_Year datetime,
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
-	@Publisher varchar(50)
+	@Publisher varchar(50),
+	@Quantity int
 )
 as
 insert into tblBooksData
-values (@ISBN,@Title,@Author1,@Publication_Year,@Field_of_Study,@Category,@Publisher)
+values (@ISBN,@Title,@Author1,@Publication_Year,@Field_of_Study,@Category,@Publisher,@Quantity)
 
 --update book details
 create procedure sp_BookEdit
 (
 	@BookID int,
 	@ISBN varchar(50),
-	@Title varchar(100),
+	@Title varchar(200),
 	@Author1 varchar(100),
 	@Publication_Year datetime,
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
-	@Publisher varchar(50)
+	@Publisher varchar(50),
+	@Quantity int
 )
 as 
 update tblBooksData
-set ISBN=@ISBN,Title=@Title,Author1=@Author1,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher
+set ISBN=@ISBN,Title=@Title,Author1=@Author1,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher, Quantity=@Quantity
 where BookID=@BookID
 
 
@@ -426,6 +429,18 @@ create procedure sp_BookDelete
 as
 delete tblBooksData
 where tblBooksData.BookID=@BookID
+
+
+---to be check
+--book quantity
+create procedure sp_BookQuantity
+(
+	@SearchKey varchar(max)
+)
+as
+select * from tblboo
+where tblBooksData.title=@SearchKey
+return tblBooksData.Quantity
 
 --------------------------------------
 create table  BookAuthors
@@ -631,7 +646,7 @@ create table tblBooksBorrowed
 	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
 	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
 	BorrowersName varchar(150),
-	Title varchar(100) foreign key references tblBooksData(Title),
+	Title varchar(200) foreign key references tblBooksData(Title),
 	DateBorrowed datetime,
 	DateDeadline datetime
 )
@@ -644,7 +659,7 @@ create procedure sp_BookBorrowing
 	@AdminUsername varchar(50),
 	@UserUsername varchar(50),
 	@BorrowersName varchar(150),
-	@Title varchar(100),
+	@Title varchar(200),
 	@DateBorrowed datetime,
 	@DateDeadline datetime
 )
@@ -663,18 +678,19 @@ create table tblBooks
 	TransactionID int identity(0000000,1),
 	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
 	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
-	Title varchar(100) foreign key references tblBooksData(Title),
+	Title varchar(200) foreign key references tblBooksData(Title),
 	DateBorrowed datetime,
 	DateDeadline datetime,
 	ActualReturned datetime,
 	IsGoodContidion varchar(2)
 )	
+select * from tblBooks
 
 create procedure sp_BookReturn
 (
 	@AdminUsername varchar(50),
 	@UserUsername varchar(50),
-	@Title varchar(100),
+	@Title varchar(200),
 	@DateBorrowed datetime,
 	@DateDeadline datetime,
 	@ActualReturned datetime,

@@ -159,17 +159,11 @@
     <Compile Include="SearchUser.Designer.cs">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student Book Form.cs">
+    <Compile Include="Teachers Book Borrowed Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Student Book Form.Designer.cs">
-      <DependentUpon>Student Book Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Teacher Book Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Teacher Book Form.Designer.cs">
-      <DependentUpon>Teacher Book Form.cs</DependentUpon>
+    <Compile Include="Teachers Book Borrowed Form.Designer.cs">
+      <DependentUpon>Teachers Book Borrowed Form.cs</DependentUpon>
     </Compile>
     <Compile Include="UserSearch.cs">
       <SubType>Form</SubType>
@@ -232,11 +226,8 @@
     <EmbeddedResource Include="SearchUser.resx">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student Book Form.resx">
-      <DependentUpon>Student Book Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Teacher Book Form.resx">
-      <DependentUpon>Teacher Book Form.cs</DependentUpon>
+    <EmbeddedResource Include="Teachers Book Borrowed Form.resx">
+      <DependentUpon>Teachers Book Borrowed Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSearch.resx">
       <DependentUpon>UserSearch.cs</DependentUpon>
@@ -293,6 +284,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="add contact.png" />
+    <None Include="Resources\bg_userform.jpg" />
+    <None Include="Resources\bg_userform_png.png" />
+    <None Include="Resources\bg_login2.jpg" />
+    <None Include="Resources\bg_login.jpg" />
     <None Include="Resources\add contact.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
