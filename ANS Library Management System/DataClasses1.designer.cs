@@ -79,11 +79,11 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
-		public System.Data.Linq.Table<tblUserLoginReport> tblUserLoginReports
+		public System.Data.Linq.Table<tblUserReport> tblUserReports
 		{
 			get
 			{
-				return this.GetTable<tblUserLoginReport>();
+				return this.GetTable<tblUserReport>();
 			}
 		}
 		
@@ -143,6 +143,14 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		public System.Data.Linq.Table<tblTransaction> tblTransactions
+		{
+			get
+			{
+				return this.GetTable<tblTransaction>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tblUserActionReport> tblUserActionReports
 		{
 			get
@@ -159,11 +167,11 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
-		public System.Data.Linq.Table<tblUserReport> tblUserReports
+		public System.Data.Linq.Table<tblUserLoginReport> tblUserLoginReports
 		{
 			get
 			{
-				return this.GetTable<tblUserReport>();
+				return this.GetTable<tblUserLoginReport>();
 			}
 		}
 		
@@ -256,6 +264,13 @@ namespace ANS_Library_Management_System
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
 			return ((ISingleResult<sp_AdminUsernameCheckResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookAction")]
+		public int sp_BookAction([global::System.Data.Linq.Mapping.ParameterAttribute(Name="AdminUsername", DbType="VarChar(50)")] string adminUsername, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserUsername", DbType="VarChar(50)")] string userUsername, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Action", DbType="VarChar(MAX)")] string action, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Timestamp", DbType="DateTime")] System.Nullable<System.DateTime> timestamp)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminUsername, userUsername, action, title, timestamp);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookAdd")]
@@ -535,38 +550,50 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserLoginReport")]
-	public partial class tblUserLoginReport
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserReport")]
+	public partial class tblUserReport
 	{
 		
-		private int _LoginID;
+		private int _transactionID;
+		
+		private System.Nullable<System.DateTime> _timestamp;
 		
 		private string _username;
 		
-		private string _password;
-		
 		private string _Action;
 		
-		private System.Nullable<System.DateTime> _Timestamp;
-		
-		private string _usertype;
-		
-		public tblUserLoginReport()
+		public tblUserReport()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoginID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int LoginID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_transactionID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int transactionID
 		{
 			get
 			{
-				return this._LoginID;
+				return this._transactionID;
 			}
 			set
 			{
-				if ((this._LoginID != value))
+				if ((this._transactionID != value))
 				{
-					this._LoginID = value;
+					this._transactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", DbType="DateTime")]
+		public System.Nullable<System.DateTime> timestamp
+		{
+			get
+			{
+				return this._timestamp;
+			}
+			set
+			{
+				if ((this._timestamp != value))
+				{
+					this._timestamp = value;
 				}
 			}
 		}
@@ -587,23 +614,7 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(MAX)")]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this._password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
 		public string Action
 		{
 			get
@@ -615,38 +626,6 @@ namespace ANS_Library_Management_System
 				if ((this._Action != value))
 				{
 					this._Action = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Timestamp
-		{
-			get
-			{
-				return this._Timestamp;
-			}
-			set
-			{
-				if ((this._Timestamp != value))
-				{
-					this._Timestamp = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usertype", DbType="VarChar(50)")]
-		public string usertype
-		{
-			get
-			{
-				return this._usertype;
-			}
-			set
-			{
-				if ((this._usertype != value))
-				{
-					this._usertype = value;
 				}
 			}
 		}
@@ -1985,6 +1964,105 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTransaction")]
+	public partial class tblTransaction
+	{
+		
+		private string _AdminUsername;
+		
+		private string _UserUsername;
+		
+		private string _Action;
+		
+		private string _Title;
+		
+		private System.Nullable<System.DateTime> _Timestamp;
+		
+		public tblTransaction()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminUsername", DbType="VarChar(50)")]
+		public string AdminUsername
+		{
+			get
+			{
+				return this._AdminUsername;
+			}
+			set
+			{
+				if ((this._AdminUsername != value))
+				{
+					this._AdminUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
+		public string UserUsername
+		{
+			get
+			{
+				return this._UserUsername;
+			}
+			set
+			{
+				if ((this._UserUsername != value))
+				{
+					this._UserUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
+		public string Action
+		{
+			get
+			{
+				return this._Action;
+			}
+			set
+			{
+				if ((this._Action != value))
+				{
+					this._Action = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this._Timestamp = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserActionReport")]
 	public partial class tblUserActionReport
 	{
@@ -2536,50 +2614,38 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserReport")]
-	public partial class tblUserReport
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserLoginReport")]
+	public partial class tblUserLoginReport
 	{
 		
-		private int _transactionID;
-		
-		private System.Nullable<System.DateTime> _timestamp;
+		private int _LoginID;
 		
 		private string _username;
 		
+		private string _password;
+		
 		private string _Action;
 		
-		public tblUserReport()
+		private System.Nullable<System.DateTime> _Timestamp;
+		
+		private string _usertype;
+		
+		public tblUserLoginReport()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_transactionID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int transactionID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoginID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int LoginID
 		{
 			get
 			{
-				return this._transactionID;
+				return this._LoginID;
 			}
 			set
 			{
-				if ((this._transactionID != value))
+				if ((this._LoginID != value))
 				{
-					this._transactionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", DbType="DateTime")]
-		public System.Nullable<System.DateTime> timestamp
-		{
-			get
-			{
-				return this._timestamp;
-			}
-			set
-			{
-				if ((this._timestamp != value))
-				{
-					this._timestamp = value;
+					this._LoginID = value;
 				}
 			}
 		}
@@ -2600,7 +2666,23 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(MAX)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this._password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(100)")]
 		public string Action
 		{
 			get
@@ -2612,6 +2694,38 @@ namespace ANS_Library_Management_System
 				if ((this._Action != value))
 				{
 					this._Action = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timestamp", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Timestamp
+		{
+			get
+			{
+				return this._Timestamp;
+			}
+			set
+			{
+				if ((this._Timestamp != value))
+				{
+					this._Timestamp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usertype", DbType="VarChar(50)")]
+		public string usertype
+		{
+			get
+			{
+				return this._usertype;
+			}
+			set
+			{
+				if ((this._usertype != value))
+				{
+					this._usertype = value;
 				}
 			}
 		}

@@ -71,10 +71,15 @@ namespace ANS_Library_Management_System
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtauthor.Text)|| string.IsNullOrWhiteSpace(txtISBN.Text)|| string.IsNullOrWhiteSpace(txtpublisher.Text)||
+            int i = db.sp_BookSearch(txtTitle.Text).Count();
+            if (string.IsNullOrWhiteSpace(txtauthor.Text) || string.IsNullOrWhiteSpace(txtISBN.Text) || string.IsNullOrWhiteSpace(txtpublisher.Text) ||
                 string.IsNullOrWhiteSpace(txtTitle.Text))
             {
                 MessageBox.Show("Please fill all fields");
+            } 
+            else if (i>0)
+            {
+                MessageBox.Show("The book is already in the database");
             }
             else
             {

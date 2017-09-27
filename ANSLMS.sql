@@ -14,6 +14,35 @@ create procedure sp_login
 
 	select * from tblAdminDetails
 
+
+------------------------------------------------------------------------------------------
+
+
+select * from tblAdminActionReport
+select * from tblAdminDetails
+select * from tblAdminLoginReport
+select * from tblAdminTransaction
+select * from tblBooks
+select * from tblBooksData
+select * from tblLoginReport
+select * from tblBooksBorrowed
+select * from tblUserActionReport
+select * from tblUserDetails
+select * from tblUserLoginReport
+select * from tblUserReport
+
+truncate table tblAdminActionReport
+truncate table tblAdminDetails
+truncate table tblAdminLoginReport
+truncate table tblAdminTransaction
+truncate table tblBooks
+truncate table tblBooksData
+truncate table tblLoginReport
+truncate table tblBooksBorrowed
+truncate table tblUserActionReport
+truncate table tblUserDetails
+truncate table tblUserLoginReport
+truncate table tblUserReport
 	---------------------------------------------------------------------------------------
 --tblUserdetails
 create table tblUserDetails
@@ -733,6 +762,35 @@ where tblUserDetails.UserUsername=@username
  where tblBooksBorrowed.Title='1984'
 -----------------------------------------------------------------------------------------
 
+create table tblTransaction
+(
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	Action varchar(max),
+	Title varchar(200) foreign key references tblBooksData(Title),
+	Timestamp datetime
+)
+
+select * from tblTransaction
+
+create procedure sp_BookAction
+(
+	@AdminUsername varchar(50),
+	@UserUsername varchar(50),
+	@Action varchar(max),
+	@Title varchar(200),
+	@Timestamp datetime	
+)
+as
+insert into tblTransaction
+values (@AdminUsername,@UserUsername,@Action,@Title,@Timestamp)
+---------------------------------------------------------------------------------------
+
+--accounting maybe
+
+
+
+----------------------------------------------------------------------------------------
 --USER TYPE HERE
 
 --BOOK CODE HERE

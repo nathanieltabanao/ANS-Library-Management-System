@@ -170,6 +170,7 @@ namespace ANS_Library_Management_System
                     numBooks--;
                     db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtAuthor.Text,dtpPublish.Value,  txtFoS.Text, txtCategory.Text, txtPublisher.Text, numBooks);
                     MessageBox.Show("Book Chekout Success!");
+                    db.sp_BookAction(username, user, "Borrowed a Book", txtTitle.Text, DateTime.Now);
                     View();
                     Clear();
                 }
