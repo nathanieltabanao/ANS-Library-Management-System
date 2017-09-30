@@ -44,6 +44,7 @@
             this.penaltyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.replacementReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.managementToolStripMenuItem,
             this.libraryFunctionsToolStripMenuItem,
             this.reportsToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.stripAdmin.Location = new System.Drawing.Point(0, 0);
             this.stripAdmin.Name = "stripAdmin";
@@ -66,6 +68,7 @@
             // 
             // homeToolStripMenuItem
             // 
+            this.homeToolStripMenuItem.Enabled = false;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(58, 33);
             this.homeToolStripMenuItem.Text = "Home";
@@ -166,6 +169,13 @@
             this.logOutToolStripMenuItem.Text = "Log - Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(130, 33);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem penaltyReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem replacementReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

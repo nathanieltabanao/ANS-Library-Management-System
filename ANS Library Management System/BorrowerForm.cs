@@ -44,6 +44,14 @@ namespace ANS_Library_Management_System
             s.Show();
         }
 
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePass c = new ChangePass();
+            c.username = username;
+            c.MdiParent = this;
+            c.Show();
+        }
+
         private void BorrowerForm_Load(object sender, System.EventArgs e)
         {
 

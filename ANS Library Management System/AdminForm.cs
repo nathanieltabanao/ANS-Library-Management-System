@@ -84,6 +84,14 @@ namespace ANS_Library_Management_System
             p.Show();
         }
 
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePass c = new ChangePass();
+            c.username = username;
+            c.MdiParent = this;
+            c.Show();
+        }
+
         //Logout Action Button
         private void logOutToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
