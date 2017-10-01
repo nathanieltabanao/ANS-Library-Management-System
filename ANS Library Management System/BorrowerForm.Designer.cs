@@ -34,6 +34,7 @@
             this.booksBorrowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.stripAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.booksBorrowedToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.stripAdmin.Location = new System.Drawing.Point(0, 0);
             this.stripAdmin.Name = "stripAdmin";
@@ -70,8 +72,9 @@
             // viwToolStripMenuItem
             // 
             this.viwToolStripMenuItem.Name = "viwToolStripMenuItem";
-            this.viwToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.viwToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.viwToolStripMenuItem.Text = "View";
+            this.viwToolStripMenuItem.Click += new System.EventHandler(this.viwToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -79,6 +82,13 @@
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(82, 33);
             this.logOutToolStripMenuItem.Text = "Log - Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(130, 33);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // BorrowerForm
             // 
@@ -107,5 +117,6 @@
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem booksBorrowedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viwToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

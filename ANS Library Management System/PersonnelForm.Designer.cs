@@ -43,6 +43,7 @@
             this.penaltyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.replacementReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.homeToolStripMenuItem,
             this.libraryFunctionsToolStripMenuItem,
             this.reportsToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.stripAdmin.Location = new System.Drawing.Point(0, 0);
             this.stripAdmin.Name = "stripAdmin";
@@ -90,9 +92,11 @@
             // 
             // searchToolStripMenuItem
             // 
+            this.searchToolStripMenuItem.Enabled = false;
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
             this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // bookBorrowingToolStripMenuItem
             // 
@@ -106,6 +110,7 @@
             this.bookPenaltyToolStripMenuItem.Name = "bookPenaltyToolStripMenuItem";
             this.bookPenaltyToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.bookPenaltyToolStripMenuItem.Text = "Book Penalty";
+            this.bookPenaltyToolStripMenuItem.Click += new System.EventHandler(this.bookPenaltyToolStripMenuItem_Click);
             // 
             // bookReplacementToolStripMenuItem
             // 
@@ -156,6 +161,13 @@
             this.logOutToolStripMenuItem.Text = "Log - Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(130, 33);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
             // PersonnelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem replacementReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

@@ -50,43 +50,15 @@
             this.btnUpdate = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.dtpPublishDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.cmbFoS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.Anthropology = new DevComponents.Editors.ComboItem();
-            this.Archeology = new DevComponents.Editors.ComboItem();
-            this.Biology = new DevComponents.Editors.ComboItem();
-            this.Earth_ = new DevComponents.Editors.ComboItem();
-            this.comboItem5 = new DevComponents.Editors.ComboItem();
-            this.comboItem6 = new DevComponents.Editors.ComboItem();
-            this.comboItem7 = new DevComponents.Editors.ComboItem();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
-            this.cmbCategory = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem8 = new DevComponents.Editors.ComboItem();
-            this.comboItem9 = new DevComponents.Editors.ComboItem();
-            this.comboItem10 = new DevComponents.Editors.ComboItem();
-            this.comboItem11 = new DevComponents.Editors.ComboItem();
-            this.comboItem12 = new DevComponents.Editors.ComboItem();
-            this.comboItem13 = new DevComponents.Editors.ComboItem();
-            this.comboItem14 = new DevComponents.Editors.ComboItem();
-            this.comboItem15 = new DevComponents.Editors.ComboItem();
-            this.comboItem16 = new DevComponents.Editors.ComboItem();
-            this.comboItem17 = new DevComponents.Editors.ComboItem();
-            this.comboItem18 = new DevComponents.Editors.ComboItem();
-            this.comboItem19 = new DevComponents.Editors.ComboItem();
-            this.comboItem20 = new DevComponents.Editors.ComboItem();
-            this.comboItem21 = new DevComponents.Editors.ComboItem();
-            this.comboItem22 = new DevComponents.Editors.ComboItem();
-            this.comboItem23 = new DevComponents.Editors.ComboItem();
-            this.comboItem24 = new DevComponents.Editors.ComboItem();
-            this.comboItem25 = new DevComponents.Editors.ComboItem();
-            this.comboItem26 = new DevComponents.Editors.ComboItem();
-            this.comboItem27 = new DevComponents.Editors.ComboItem();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.numSel = new System.Windows.Forms.NumericUpDown();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.cmbFoS = new System.Windows.Forms.ComboBox();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSel)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAttendant
@@ -126,7 +98,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtSearch.Location = new System.Drawing.Point(529, 77);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(301, 25);
+            this.txtSearch.Size = new System.Drawing.Size(301, 23);
             this.txtSearch.TabIndex = 24;
             this.txtSearch.WatermarkText = "Search by title, code, publisher";
             this.txtSearch.TextChanged += new System.EventHandler(this.textBoxX1_TextChanged);
@@ -153,7 +125,7 @@
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(27, 604);
+            this.btnAdd.Location = new System.Drawing.Point(25, 604);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -361,6 +333,8 @@
             this.dtpPublishDate.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtpPublishDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpPublishDate.ButtonDropDown.Visible = true;
+            this.dtpPublishDate.CustomFormat = "yyyy";
+            this.dtpPublishDate.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtpPublishDate.Location = new System.Drawing.Point(115, 469);
             // 
             // 
@@ -399,189 +373,6 @@
             this.dtpPublishDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpPublishDate.TabIndex = 4;
             // 
-            // cmbFoS
-            // 
-            this.cmbFoS.DisplayMember = "Text";
-            this.cmbFoS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbFoS.FormattingEnabled = true;
-            this.cmbFoS.ItemHeight = 14;
-            this.cmbFoS.Items.AddRange(new object[] {
-            this.Anthropology,
-            this.Archeology,
-            this.Biology,
-            this.Earth_,
-            this.comboItem5,
-            this.comboItem6,
-            this.comboItem7,
-            this.comboItem1,
-            this.comboItem2,
-            this.comboItem3,
-            this.comboItem4});
-            this.cmbFoS.Location = new System.Drawing.Point(559, 382);
-            this.cmbFoS.Name = "cmbFoS";
-            this.cmbFoS.Size = new System.Drawing.Size(271, 20);
-            this.cmbFoS.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbFoS.TabIndex = 6;
-            this.cmbFoS.WatermarkText = "Field of Study";
-            // 
-            // Anthropology
-            // 
-            this.Anthropology.Text = "Anthropology";
-            // 
-            // Archeology
-            // 
-            this.Archeology.Text = "Archeology";
-            // 
-            // Biology
-            // 
-            this.Biology.Text = "Biology";
-            // 
-            // Earth_
-            // 
-            this.Earth_.Text = "Earth & Atmospheric Sciences";
-            // 
-            // comboItem5
-            // 
-            this.comboItem5.Text = "Economics";
-            // 
-            // comboItem6
-            // 
-            this.comboItem6.Text = "Public Health";
-            // 
-            // comboItem7
-            // 
-            this.comboItem7.Text = "Management";
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Physics";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Sociology";
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "Fiction";
-            // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "Technology";
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.DisplayMember = "Text";
-            this.cmbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.ItemHeight = 14;
-            this.cmbCategory.Items.AddRange(new object[] {
-            this.comboItem8,
-            this.comboItem9,
-            this.comboItem10,
-            this.comboItem11,
-            this.comboItem12,
-            this.comboItem13,
-            this.comboItem14,
-            this.comboItem15,
-            this.comboItem16,
-            this.comboItem17,
-            this.comboItem18,
-            this.comboItem19,
-            this.comboItem20,
-            this.comboItem21,
-            this.comboItem22,
-            this.comboItem23,
-            this.comboItem24,
-            this.comboItem25,
-            this.comboItem26,
-            this.comboItem27});
-            this.cmbCategory.Location = new System.Drawing.Point(559, 411);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(271, 20);
-            this.cmbCategory.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbCategory.TabIndex = 7;
-            this.cmbCategory.WatermarkText = "Category";
-            // 
-            // comboItem8
-            // 
-            this.comboItem8.Text = "Science Fiction";
-            // 
-            // comboItem9
-            // 
-            this.comboItem9.Text = "Fiction";
-            // 
-            // comboItem10
-            // 
-            this.comboItem10.Text = "Drama";
-            // 
-            // comboItem11
-            // 
-            this.comboItem11.Text = "Action & Adventure";
-            // 
-            // comboItem12
-            // 
-            this.comboItem12.Text = "Mystery";
-            // 
-            // comboItem13
-            // 
-            this.comboItem13.Text = "Self Help";
-            // 
-            // comboItem14
-            // 
-            this.comboItem14.Text = "Religion & Spirituality";
-            // 
-            // comboItem15
-            // 
-            this.comboItem15.Text = "Science";
-            // 
-            // comboItem16
-            // 
-            this.comboItem16.Text = "History";
-            // 
-            // comboItem17
-            // 
-            this.comboItem17.Text = "Math";
-            // 
-            // comboItem18
-            // 
-            this.comboItem18.Text = "Art";
-            // 
-            // comboItem19
-            // 
-            this.comboItem19.Text = "Encyclopedia";
-            // 
-            // comboItem20
-            // 
-            this.comboItem20.Text = "Diaries";
-            // 
-            // comboItem21
-            // 
-            this.comboItem21.Text = "Journals";
-            // 
-            // comboItem22
-            // 
-            this.comboItem22.Text = "Series";
-            // 
-            // comboItem23
-            // 
-            this.comboItem23.Text = "Biographies";
-            // 
-            // comboItem24
-            // 
-            this.comboItem24.Text = "Autobiographies";
-            // 
-            // comboItem25
-            // 
-            this.comboItem25.Text = "Dictionaries";
-            // 
-            // comboItem26
-            // 
-            this.comboItem26.Text = "Poetry";
-            // 
-            // comboItem27
-            // 
-            this.comboItem27.Text = "Technology";
-            // 
             // dgvBooks
             // 
             this.dgvBooks.AllowUserToAddRows = false;
@@ -609,15 +400,163 @@
             this.labelX10.TabIndex = 73;
             this.labelX10.Text = "Book Inventory";
             // 
+            // numSel
+            // 
+            this.numSel.Location = new System.Drawing.Point(559, 440);
+            this.numSel.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numSel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSel.Name = "numSel";
+            this.numSel.Size = new System.Drawing.Size(120, 20);
+            this.numSel.TabIndex = 8;
+            this.numSel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // labelX11
+            // 
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX11.Location = new System.Drawing.Point(459, 437);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(83, 23);
+            this.labelX11.TabIndex = 75;
+            this.labelX11.Text = "Quantity";
+            // 
+            // cmbFoS
+            // 
+            this.cmbFoS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFoS.FormattingEnabled = true;
+            this.cmbFoS.Items.AddRange(new object[] {
+            "Agricultural Sciences",
+            "Animal Science",
+            "Anthropology ",
+            "Applied Economics and Management \t  ",
+            "Archaeology",
+            "Architecture",
+            "Asian Studies ",
+            "Astronomy",
+            "Atmospheric Science",
+            "Biological Engineering ",
+            "Biological Sciences \t",
+            "Biology and Society \t   ",
+            "Chemistry and Chemical Biology",
+            "Communication ",
+            "Computer Science \t",
+            "Design and Environmental Analysis",
+            "Development Sociology ",
+            "Economics",
+            "Electrical and Computer Engineering",
+            "Engineering Physics",
+            "English",
+            "Entomology",
+            "Environmental and Sustainability Sciences",
+            "Fiction",
+            "Fine Arts ",
+            "Food Science",
+            "Gender & Sexuality Studies ",
+            "Global and Public Health Sciences ",
+            "Government ",
+            "Hotel Administration ",
+            "Human Biology, Health and Society ",
+            "Human Development \t",
+            "Industrial and Labor Relations",
+            "Information Science \t",
+            "Information Science, Systems, and Technology ",
+            "Interdisciplinary Studies \t",
+            "International Agriculture and Rural Development ",
+            "Italian \t",
+            "Landscape Architecture ",
+            "Linguistics \t",
+            "Materials Science and Engineering",
+            "Mathematics \t",
+            "Mechanical Engineering \t",
+            "Music \t",
+            "Near Eastern Studies \t",
+            "Nutritional Sciences\t",
+            "Operations Research and Engineering ",
+            "Performing and Media Arts",
+            "Philosophy ",
+            "Physics",
+            "Plant Science ",
+            "Policy Analysis and Management",
+            "Psychology ",
+            "Religious Studies ",
+            "Science and Technology Studies ",
+            "Sociology ",
+            "Statistical Science",
+            "Urban and Regional Studies "});
+            this.cmbFoS.Location = new System.Drawing.Point(559, 384);
+            this.cmbFoS.Name = "cmbFoS";
+            this.cmbFoS.Size = new System.Drawing.Size(271, 21);
+            this.cmbFoS.Sorted = true;
+            this.cmbFoS.TabIndex = 6;
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Action and Adventure",
+            "Anthology",
+            "Art",
+            "Autobiographies",
+            "Biographies",
+            "Children\'s",
+            "Comics",
+            "Cookbooks",
+            "Diaries",
+            "Dictionaries",
+            "Drama",
+            "Encyclopedias",
+            "Fantasy",
+            "Guide",
+            "Health",
+            "History",
+            "Horror",
+            "Journals",
+            "Math",
+            "Mystery",
+            "Poetry",
+            "Prayer books",
+            "Religion, Spirituality & New Age",
+            "Romance",
+            "Satire",
+            "Science",
+            "Science fiction",
+            "Self help",
+            "Series",
+            "Travel",
+            "Trilogy"});
+            this.cmbCategory.Location = new System.Drawing.Point(559, 413);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(271, 21);
+            this.cmbCategory.Sorted = true;
+            this.cmbCategory.TabIndex = 7;
+            // 
             // BookInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 675);
-            this.Controls.Add(this.labelX10);
-            this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.cmbFoS);
+            this.Controls.Add(this.labelX11);
+            this.Controls.Add(this.numSel);
+            this.Controls.Add(this.labelX10);
+            this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.dtpPublishDate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -645,6 +584,7 @@
             this.Load += new System.EventHandler(this.BookInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -671,40 +611,11 @@
         private DevComponents.DotNetBar.ButtonX btnUpdate;
         private DevComponents.DotNetBar.ButtonX btnDelete;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpPublishDate;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbFoS;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbCategory;
-        private DevComponents.Editors.ComboItem Anthropology;
-        private DevComponents.Editors.ComboItem Archeology;
-        private DevComponents.Editors.ComboItem Biology;
-        private DevComponents.Editors.ComboItem Earth_;
-        private DevComponents.Editors.ComboItem comboItem5;
-        private DevComponents.Editors.ComboItem comboItem6;
-        private DevComponents.Editors.ComboItem comboItem7;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
-        private DevComponents.Editors.ComboItem comboItem3;
-        private DevComponents.Editors.ComboItem comboItem4;
-        private DevComponents.Editors.ComboItem comboItem8;
-        private DevComponents.Editors.ComboItem comboItem9;
-        private DevComponents.Editors.ComboItem comboItem10;
-        private DevComponents.Editors.ComboItem comboItem11;
-        private DevComponents.Editors.ComboItem comboItem12;
-        private DevComponents.Editors.ComboItem comboItem13;
-        private DevComponents.Editors.ComboItem comboItem14;
-        private DevComponents.Editors.ComboItem comboItem15;
-        private DevComponents.Editors.ComboItem comboItem16;
-        private DevComponents.Editors.ComboItem comboItem17;
-        private DevComponents.Editors.ComboItem comboItem18;
-        private DevComponents.Editors.ComboItem comboItem19;
-        private DevComponents.Editors.ComboItem comboItem20;
-        private DevComponents.Editors.ComboItem comboItem21;
-        private DevComponents.Editors.ComboItem comboItem22;
-        private DevComponents.Editors.ComboItem comboItem23;
-        private DevComponents.Editors.ComboItem comboItem24;
-        private DevComponents.Editors.ComboItem comboItem25;
-        private DevComponents.Editors.ComboItem comboItem26;
-        private DevComponents.Editors.ComboItem comboItem27;
         private System.Windows.Forms.DataGridView dgvBooks;
         private DevComponents.DotNetBar.LabelX labelX10;
+        private System.Windows.Forms.NumericUpDown numSel;
+        private DevComponents.DotNetBar.LabelX labelX11;
+        private System.Windows.Forms.ComboBox cmbFoS;
+        private System.Windows.Forms.ComboBox cmbCategory;
     }
 }

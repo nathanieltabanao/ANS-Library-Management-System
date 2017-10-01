@@ -43,6 +43,7 @@ namespace ANS_Library_Management_System
                     ChangePass c = new ChangePass();
                     c.username = txtUsername.Text;
                     this.Hide();
+                    c.from = "change";
                     c.Show();
                 }
             }

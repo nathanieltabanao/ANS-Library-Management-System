@@ -133,6 +133,12 @@
     <Compile Include="BookPenalty.Designer.cs">
       <DependentUpon>BookPenalty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personnel Book Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnel Book Form.Designer.cs">
+      <DependentUpon>Personnel Book Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonnelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,11 +153,29 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Return Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return Form.Designer.cs">
+      <DependentUpon>Return Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchUser.Designer.cs">
       <DependentUpon>SearchUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student Book Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student Book Form.Designer.cs">
+      <DependentUpon>Student Book Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher Book Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher Book Form.Designer.cs">
+      <DependentUpon>Teacher Book Form.cs</DependentUpon>
     </Compile>
     <Compile Include="UserSearch.cs">
       <SubType>Form</SubType>
@@ -192,6 +216,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Personnel Book Form.resx">
+      <DependentUpon>Personnel Book Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PersonnelForm.resx">
       <DependentUpon>PersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,8 +235,17 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Return Form.resx">
+      <DependentUpon>Return Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchUser.resx">
       <DependentUpon>SearchUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student Book Form.resx">
+      <DependentUpon>Student Book Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher Book Form.resx">
+      <DependentUpon>Teacher Book Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSearch.resx">
       <DependentUpon>UserSearch.cs</DependentUpon>

@@ -124,34 +124,37 @@
             // 
             // txtSecurityQuestion
             // 
+            this.txtSecurityQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtSecurityQuestion.FormattingEnabled = true;
             this.txtSecurityQuestion.Items.AddRange(new object[] {
-            "What is the first and last name of your first boyfriend or girlfriend?",
-            "Which phone number do you remember most from your childhood?",
-            "What was your favorite place to visit as a child?",
-            "Who is your favorite actor, musician, or artist?",
-            "What is the name of your favorite pet?",
             "In what city were you born?",
             "What high school did you attend?",
+            "What is the first and last name of your first boyfriend or girlfriend?",
+            "What is the name of your favorite pet?",
+            "What is the name of your first grade teacher?",
             "What is the name of your first school?",
+            "What is your father\'s middle name?",
+            "What is your favorite color?",
+            "what is your favorite forum",
             "What is your favorite movie?",
+            "what is your favorite online platform",
+            "what is your favorite social media website",
+            "what is your favorite website",
             "What is your mother\'s maiden name?",
             "What street did you grow up on?",
             "What was the make of your first car?",
-            "When is your anniversary?",
-            "What is your favorite color?",
-            "What is your father\'s middle name?",
-            "What is the name of your first grade teacher?",
+            "What was your favorite place to visit as a child?",
             "What was your high school mascot?",
+            "When is your anniversary?",
             "Which is your favorite web browser?",
-            "what is your favorite website",
-            "what is your favorite forum",
-            "what is your favorite online platform",
-            "what is your favorite social media website"});
+            "Which phone number do you remember most from your childhood?",
+            "Who is your favorite actor, musician, or artist?"});
             this.txtSecurityQuestion.Location = new System.Drawing.Point(110, 75);
+            this.txtSecurityQuestion.MaxDropDownItems = 15;
             this.txtSecurityQuestion.Name = "txtSecurityQuestion";
             this.txtSecurityQuestion.Size = new System.Drawing.Size(223, 21);
-            this.txtSecurityQuestion.TabIndex = 12;
+            this.txtSecurityQuestion.Sorted = true;
+            this.txtSecurityQuestion.TabIndex = 14;
             // 
             // ForgotPassword
             // 

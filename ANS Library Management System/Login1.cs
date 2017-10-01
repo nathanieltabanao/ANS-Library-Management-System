@@ -62,10 +62,11 @@ namespace ANS_Library_Management_System
                 LogError = 0; //clear log attempts
                 //identify if the user is teacher or student
                 int a = db.UserUsertype(txtUsername.Text,null).Count();
+                BorrowerForm b = new BorrowerForm(); //instantiate new borrower form
                 if (a==0)
                 {
                     // if the user is a teacher details goes here
-                    BorrowerForm b = new BorrowerForm(); //instantiate new borrower form
+                    
 
                     //transferring of raw data
                     b.username = txtUsername.Text;
@@ -81,7 +82,7 @@ namespace ANS_Library_Management_System
                 else
                 {
                     //if the user is a student, details continue here
-                    BorrowerForm b = new BorrowerForm();
+                    
 
                     //transferrring of variables
                     b.username = txtUsername.Text;

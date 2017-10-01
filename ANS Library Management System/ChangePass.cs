@@ -23,6 +23,7 @@ namespace ANS_Library_Management_System
         public string username { get; set; }
         public string password { get; set; }
         string salt, hashed;
+        public string from { get; set; }
 
         private void ChangePass_Load(object sender, EventArgs e)
         {
@@ -42,9 +43,17 @@ namespace ANS_Library_Management_System
                 db.sp_AdminChangePass(username, hash.HashPass(hashed, salt));
                 db.sp_UserChangePass(username, hash.HashPass(hashed, salt));
                 MessageBox.Show("Password changed succesfuly");
-                Login1 l = new Login1();
-                this.Hide();
-                l.Show();
+                if (from=="change")
+                {
+                    Login1 l = new Login1();
+                    this.Hide();
+                    l.Show();
+                }
+                else
+                {
+                    this.Close();
+                }
+                
             }
         }
     }
