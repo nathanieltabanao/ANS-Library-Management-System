@@ -56,9 +56,13 @@
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.cmbFoS = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.numPrice = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAttendant
@@ -377,6 +381,7 @@
             // 
             this.dgvBooks.AllowUserToAddRows = false;
             this.dgvBooks.AllowUserToDeleteRows = false;
+            this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -546,11 +551,65 @@
             this.cmbCategory.Sorted = true;
             this.cmbCategory.TabIndex = 7;
             // 
+            // labelX12
+            // 
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.Class = "";
+            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX12.Location = new System.Drawing.Point(459, 466);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(83, 23);
+            this.labelX12.TabIndex = 77;
+            this.labelX12.Text = "Price";
+            // 
+            // numPrice
+            // 
+            this.numPrice.DecimalPlaces = 2;
+            this.numPrice.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.numPrice.Location = new System.Drawing.Point(559, 469);
+            this.numPrice.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numPrice.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPrice.Name = "numPrice";
+            this.numPrice.Size = new System.Drawing.Size(120, 20);
+            this.numPrice.TabIndex = 9;
+            this.numPrice.ThousandsSeparator = true;
+            this.numPrice.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(546, 472);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(14, 13);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "₱";
+            // 
             // BookInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 675);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelX12);
+            this.Controls.Add(this.numPrice);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.cmbFoS);
             this.Controls.Add(this.labelX11);
@@ -585,7 +644,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrice)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -617,5 +678,8 @@
         private DevComponents.DotNetBar.LabelX labelX11;
         private System.Windows.Forms.ComboBox cmbFoS;
         private System.Windows.Forms.ComboBox cmbCategory;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private System.Windows.Forms.NumericUpDown numPrice;
+        private System.Windows.Forms.Label label1;
     }
 }

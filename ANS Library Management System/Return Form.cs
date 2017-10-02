@@ -25,7 +25,7 @@ namespace ANS_Library_Management_System
 
         private void Return_Form_Load(object sender, EventArgs e)
         {
-
+            dgvView.DataSource = db.sp_ViewBorrowedBooksAdmin("*");
         }
     }
 }

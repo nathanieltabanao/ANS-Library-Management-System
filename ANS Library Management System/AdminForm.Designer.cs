@@ -43,8 +43,9 @@
             this.topBorrowedBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.penaltyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.replacementReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookReturningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +95,8 @@
             this.bookInventoryToolStripMenuItem,
             this.bookBorrowingToolStripMenuItem,
             this.bookPenaltyToolStripMenuItem,
-            this.bookReplacementToolStripMenuItem});
+            this.bookReplacementToolStripMenuItem,
+            this.bookReturningToolStripMenuItem});
             this.libraryFunctionsToolStripMenuItem.Name = "libraryFunctionsToolStripMenuItem";
             this.libraryFunctionsToolStripMenuItem.Size = new System.Drawing.Size(126, 33);
             this.libraryFunctionsToolStripMenuItem.Text = "Library Functions";
@@ -162,6 +164,13 @@
             this.replacementReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.replacementReportToolStripMenuItem.Text = "Replacement Report";
             // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(130, 33);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
@@ -169,12 +178,12 @@
             this.logOutToolStripMenuItem.Text = "Log - Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
-            // changePasswordToolStripMenuItem
+            // bookReturningToolStripMenuItem
             // 
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(130, 33);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            this.bookReturningToolStripMenuItem.Name = "bookReturningToolStripMenuItem";
+            this.bookReturningToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.bookReturningToolStripMenuItem.Text = "Book Returning";
+            this.bookReturningToolStripMenuItem.Click += new System.EventHandler(this.bookReturningToolStripMenuItem_Click);
             // 
             // AdminForm
             // 
@@ -219,5 +228,6 @@
         private System.Windows.Forms.ToolStripMenuItem replacementReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookReturningToolStripMenuItem;
     }
 }

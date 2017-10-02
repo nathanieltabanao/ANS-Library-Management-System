@@ -32,7 +32,7 @@ namespace ANS_Library_Management_System
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrWhiteSpace(txtCPassword.Text)|| string.IsNullOrWhiteSpace(txtPassword.Text))||(txtPassword.Text!=txtCPassword.Text))
+            if ((string.IsNullOrWhiteSpace(txtCPassword.Text) || string.IsNullOrWhiteSpace(txtPassword.Text)) || (txtPassword.Text != txtCPassword.Text))
             {
                 MessageBox.Show("Please fill all fields or passwords do not match");
             }
@@ -43,7 +43,7 @@ namespace ANS_Library_Management_System
                 db.sp_AdminChangePass(username, hash.HashPass(hashed, salt));
                 db.sp_UserChangePass(username, hash.HashPass(hashed, salt));
                 MessageBox.Show("Password changed succesfuly");
-                if (from=="change")
+                if (from == "change")
                 {
                     Login1 l = new Login1();
                     this.Hide();
@@ -53,8 +53,18 @@ namespace ANS_Library_Management_System
                 {
                     this.Close();
                 }
-                
+
             }
+        }
+
+        public void Admin()
+        {
+            db.sp_AdminActionReport(username, "Password Changed", DateTime.Now);
+        }
+
+        public void User()
+        {
+            db.sp_UserActionReport(username, "Password Changed", DateTime.Now);
         }
     }
 }

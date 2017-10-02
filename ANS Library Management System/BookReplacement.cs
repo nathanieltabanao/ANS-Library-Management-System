@@ -27,7 +27,12 @@ namespace ANS_Library_Management_System
 
         private void BookReplacement_Load(object sender, EventArgs e)
         {
+            dgvBooks.DataSource = db.sp_ViewLostBooksTable("");
+        }
 
+        private void textBoxX1_TextChanged(object sender, EventArgs e)
+        {
+            dgvBooks.DataSource = db.sp_ViewLostBooks(txtSearch.Text);
         }
     }
 }

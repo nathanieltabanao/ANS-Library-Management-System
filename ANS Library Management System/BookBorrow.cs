@@ -168,7 +168,7 @@ namespace ANS_Library_Management_System
                 {
                     db.sp_BookBorrowing(username, txtUsername.Text, txtName.Text, txtTitle.Text, DateTime.Now, dtpReturn.Value);
                     numBooks--;
-                    db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtAuthor.Text,dtpPublish.Value,  txtFoS.Text, txtCategory.Text, txtPublisher.Text, numBooks);
+                    db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtAuthor.Text, dtpPublish.Value, txtFoS.Text, txtCategory.Text, txtPublisher.Text, numBooks, decimal.Parse(txtPrice.Text));
                     MessageBox.Show("Book Chekout Success!");
                     db.sp_BookAction(username, user, "Borrowed a Book", txtTitle.Text, DateTime.Now);
                     View();

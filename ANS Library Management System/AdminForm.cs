@@ -92,6 +92,14 @@ namespace ANS_Library_Management_System
             c.Show();
         }
 
+        private void bookReturningToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Return_Form r = new Return_Form();
+            r.MdiParent = this;
+            r.username = username;
+            r.Show();
+        }
+
         //Logout Action Button
         private void logOutToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
