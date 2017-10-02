@@ -384,7 +384,8 @@ create table tblBooksData
 	Field_of_Study varchar(50),
 	Category varchar(50),
 	Publisher varchar(50),
-	Quantity int
+	Quantity int,
+	Price decimal(8,2)
 )
 
 select * from tblBooksData
@@ -404,11 +405,12 @@ create procedure sp_BookAdd
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
 	@Publisher varchar(50),
-	@Quantity int
+	@Quantity int,
+	@Price decimal(8,2)
 )
 as
 insert into tblBooksData
-values (@ISBN,@Title,@Author1,@Publication_Year,@Field_of_Study,@Category,@Publisher,@Quantity)
+values (@ISBN,@Title,@Author1,@Publication_Year,@Field_of_Study,@Category,@Publisher,@Quantity,@Price)
 
 --update book details
 create procedure sp_BookEdit
@@ -421,11 +423,12 @@ create procedure sp_BookEdit
 	@Field_of_Study varchar(50),
 	@Category varchar(50),
 	@Publisher varchar(50),
-	@Quantity int
+	@Quantity int,
+	@Price decimal(8,2)
 )
 as 
 update tblBooksData
-set ISBN=@ISBN,Title=@Title,Author1=@Author1,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher, Quantity=@Quantity
+set ISBN=@ISBN,Title=@Title,Author1=@Author1,Publication_Year=@Publication_Year,Field_of_Study=@Field_of_Study,Category=@Category,Publisher=@Publisher, Quantity=@Quantity,Price=@Price
 where BookID=@BookID
 
 
@@ -488,7 +491,13 @@ create table tblUserReport
 	Action varchar(max)
 )
 
-
+create procedure sp_InsertUserAction
+	@timestamp datetime,
+	@Username varchar(50),
+	@Action varchar(max)
+as
+insert into tblUserReport
+values(@timestamp,@Username,@Action)
 ------------------------------------
 
 --login report
@@ -699,6 +708,14 @@ values (@AdminUsername,@UserUsername,@BorrowersName,@Title,@DateBorrowed,@DateDe
  select tblUserDetails.UserUsername,tblBooksBorrowed.Title from tbluserdetails
  inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
  where tblBooksBorrowed.Title='1984'
+
+ create procedure sp_BookReturnEntryDelete
+ (
+	@username varchar(50)
+ )
+ as
+ delete tblBooksBorrowed
+ where tblBooksBorrowed.UserUsername=@username
 -------------------------------------------------------------------------------------------
 drop table tblBooks
 
@@ -713,7 +730,13 @@ create table tblBooks
 	ActualReturned datetime,
 	IsGoodContidion varchar(2)
 )	
+
 select * from tblBooks
+
+create procedure sp_ViewLostBooks
+as
+select * from tblBooks
+where tblBooks.IsGoodContidion='n'
 
 create procedure sp_BookReturn
 (
@@ -756,6 +779,13 @@ select tblUserDetails.UserUsername,tblBooksBorrowed.Title,tblBooksBorrowed.DateB
 inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
 where tblUserDetails.UserUsername=@username
 
+create procedure sp_ViewBorrowedBooksAdmin
+(
+	@username varchar(50)
+)
+as
+select tblUserDetails.UserUsername,tblBooksBorrowed.Title,tblBooksBorrowed.DateBorrowed,tblBooksBorrowed.DateDeadline from tblUserDetails
+inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
 
  select tblUserDetails.UserUsername,tblBooksBorrowed.Title from tbluserdetails
  inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
@@ -787,7 +817,12 @@ values (@AdminUsername,@UserUsername,@Action,@Title,@Timestamp)
 ---------------------------------------------------------------------------------------
 
 --accounting maybe
-
+--really accounting prices and stuff\
+create table tblBookPrices
+(
+	Title varchar(200) foreign key references tblbooksdata(Title),
+	Price decimal(8,2)
+)
 
 
 ----------------------------------------------------------------------------------------

@@ -79,14 +79,6 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
-		public System.Data.Linq.Table<tblUserReport> tblUserReports
-		{
-			get
-			{
-				return this.GetTable<tblUserReport>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblAdminDetail> tblAdminDetails
 		{
 			get
@@ -108,6 +100,14 @@ namespace ANS_Library_Management_System
 			get
 			{
 				return this.GetTable<tblAdminTransaction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblBookPrice> tblBookPrices
+		{
+			get
+			{
+				return this.GetTable<tblBookPrice>();
 			}
 		}
 		
@@ -172,6 +172,14 @@ namespace ANS_Library_Management_System
 			get
 			{
 				return this.GetTable<tblUserLoginReport>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblUserReport> tblUserReports
+		{
+			get
+			{
+				return this.GetTable<tblUserReport>();
 			}
 		}
 		
@@ -274,9 +282,9 @@ namespace ANS_Library_Management_System
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookAdd")]
-		public int sp_BookAdd([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(50)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author1", DbType="VarChar(100)")] string author1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publication_Year", DbType="DateTime")] System.Nullable<System.DateTime> publication_Year, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Field_of_Study", DbType="VarChar(50)")] string field_of_Study, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publisher", DbType="VarChar(50)")] string publisher, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Int")] System.Nullable<int> quantity)
+		public int sp_BookAdd([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(50)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author1", DbType="VarChar(100)")] string author1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publication_Year", DbType="DateTime")] System.Nullable<System.DateTime> publication_Year, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Field_of_Study", DbType="VarChar(50)")] string field_of_Study, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publisher", DbType="VarChar(50)")] string publisher, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Int")] System.Nullable<int> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Decimal(8,2)")] System.Nullable<decimal> price)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iSBN, title, author1, publication_Year, field_of_Study, category, publisher, quantity);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iSBN, title, author1, publication_Year, field_of_Study, category, publisher, quantity, price);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -295,9 +303,9 @@ namespace ANS_Library_Management_System
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookEdit")]
-		public int sp_BookEdit([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookID", DbType="Int")] System.Nullable<int> bookID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(50)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author1", DbType="VarChar(100)")] string author1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publication_Year", DbType="DateTime")] System.Nullable<System.DateTime> publication_Year, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Field_of_Study", DbType="VarChar(50)")] string field_of_Study, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publisher", DbType="VarChar(50)")] string publisher, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Int")] System.Nullable<int> quantity)
+		public int sp_BookEdit([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BookID", DbType="Int")] System.Nullable<int> bookID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ISBN", DbType="VarChar(50)")] string iSBN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Author1", DbType="VarChar(100)")] string author1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publication_Year", DbType="DateTime")] System.Nullable<System.DateTime> publication_Year, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Field_of_Study", DbType="VarChar(50)")] string field_of_Study, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Category", DbType="VarChar(50)")] string category, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Publisher", DbType="VarChar(50)")] string publisher, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Quantity", DbType="Int")] System.Nullable<int> quantity, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Price", DbType="Decimal(8,2)")] System.Nullable<decimal> price)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookID, iSBN, title, author1, publication_Year, field_of_Study, category, publisher, quantity);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bookID, iSBN, title, author1, publication_Year, field_of_Study, category, publisher, quantity, price);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -322,6 +330,13 @@ namespace ANS_Library_Management_System
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookReturnEntryDelete")]
+		public int sp_BookReturnEntryDelete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookSearch")]
 		public ISingleResult<sp_BookSearchResult> sp_BookSearch([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SearchKey", DbType="VarChar(50)")] string searchKey)
 		{
@@ -340,6 +355,13 @@ namespace ANS_Library_Management_System
 		public int sp_DeleteUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(50)")] string iD)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertUserAction")]
+		public int sp_InsertUserAction([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> timestamp, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Action", DbType="VarChar(MAX)")] string action)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), timestamp, username, action);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -467,6 +489,27 @@ namespace ANS_Library_Management_System
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
 			return ((ISingleResult<sp_ViewBorrowedBooksResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewBorrowedBooksAdmin")]
+		public ISingleResult<sp_ViewBorrowedBooksAdminResult> sp_ViewBorrowedBooksAdmin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
+			return ((ISingleResult<sp_ViewBorrowedBooksAdminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewLostBooks")]
+		public ISingleResult<sp_ViewLostBooksResult> sp_ViewLostBooks([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SearchKey", DbType="VarChar(50)")] string searchKey)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), searchKey);
+			return ((ISingleResult<sp_ViewLostBooksResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ViewLostBooksTable")]
+		public ISingleResult<sp_ViewLostBooksTableResult> sp_ViewLostBooksTable([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SearchKey", DbType="VarChar(50)")] string searchKey)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), searchKey);
+			return ((ISingleResult<sp_ViewLostBooksTableResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAdminActionReport")]
@@ -545,87 +588,6 @@ namespace ANS_Library_Management_System
 				if ((this._Timestamp != value))
 				{
 					this._Timestamp = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserReport")]
-	public partial class tblUserReport
-	{
-		
-		private int _transactionID;
-		
-		private System.Nullable<System.DateTime> _timestamp;
-		
-		private string _username;
-		
-		private string _Action;
-		
-		public tblUserReport()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_transactionID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int transactionID
-		{
-			get
-			{
-				return this._transactionID;
-			}
-			set
-			{
-				if ((this._transactionID != value))
-				{
-					this._transactionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", DbType="DateTime")]
-		public System.Nullable<System.DateTime> timestamp
-		{
-			get
-			{
-				return this._timestamp;
-			}
-			set
-			{
-				if ((this._timestamp != value))
-				{
-					this._timestamp = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50)")]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this._username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
-		public string Action
-		{
-			get
-			{
-				return this._Action;
-			}
-			set
-			{
-				if ((this._Action != value))
-				{
-					this._Action = value;
 				}
 			}
 		}
@@ -1269,6 +1231,51 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblBookPrices")]
+	public partial class tblBookPrice
+	{
+		
+		private string _Title;
+		
+		private System.Nullable<decimal> _Price;
+		
+		public tblBookPrice()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblBooks")]
 	public partial class tblBook
 	{
@@ -1581,6 +1588,8 @@ namespace ANS_Library_Management_System
 		
 		private System.Nullable<int> _Quantity;
 		
+		private System.Nullable<decimal> _Price;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1603,6 +1612,8 @@ namespace ANS_Library_Management_System
     partial void OnPublisherChanged();
     partial void OnQuantityChanging(System.Nullable<int> value);
     partial void OnQuantityChanged();
+    partial void OnPriceChanging(System.Nullable<decimal> value);
+    partial void OnPriceChanged();
     #endregion
 		
 		public tblBooksData()
@@ -1786,6 +1797,26 @@ namespace ANS_Library_Management_System
 					this._Quantity = value;
 					this.SendPropertyChanged("Quantity");
 					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
 				}
 			}
 		}
@@ -2731,6 +2762,87 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserReport")]
+	public partial class tblUserReport
+	{
+		
+		private int _transactionID;
+		
+		private System.Nullable<System.DateTime> _timestamp;
+		
+		private string _username;
+		
+		private string _Action;
+		
+		public tblUserReport()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_transactionID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int transactionID
+		{
+			get
+			{
+				return this._transactionID;
+			}
+			set
+			{
+				if ((this._transactionID != value))
+				{
+					this._transactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", DbType="DateTime")]
+		public System.Nullable<System.DateTime> timestamp
+		{
+			get
+			{
+				return this._timestamp;
+			}
+			set
+			{
+				if ((this._timestamp != value))
+				{
+					this._timestamp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
+		public string Action
+		{
+			get
+			{
+				return this._Action;
+			}
+			set
+			{
+				if ((this._Action != value))
+				{
+					this._Action = value;
+				}
+			}
+		}
+	}
+	
 	public partial class AdminUsertypeResult
 	{
 		
@@ -3476,6 +3588,8 @@ namespace ANS_Library_Management_System
 		
 		private System.Nullable<int> _Quantity;
 		
+		private System.Nullable<decimal> _Price;
+		
 		public sp_BookSearchResult()
 		{
 		}
@@ -3623,6 +3737,22 @@ namespace ANS_Library_Management_System
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
 	}
 	
 	public partial class sp_BookViewResult
@@ -3645,6 +3775,8 @@ namespace ANS_Library_Management_System
 		private string _Publisher;
 		
 		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<decimal> _Price;
 		
 		public sp_BookViewResult()
 		{
@@ -3790,6 +3922,22 @@ namespace ANS_Library_Management_System
 				if ((this._Quantity != value))
 				{
 					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
 				}
 			}
 		}
@@ -5134,6 +5282,390 @@ namespace ANS_Library_Management_System
 				if ((this._DateDeadline != value))
 				{
 					this._DateDeadline = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ViewBorrowedBooksAdminResult
+	{
+		
+		private string _UserUsername;
+		
+		private string _Title;
+		
+		private System.Nullable<System.DateTime> _DateBorrowed;
+		
+		private System.Nullable<System.DateTime> _DateDeadline;
+		
+		public sp_ViewBorrowedBooksAdminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserUsername
+		{
+			get
+			{
+				return this._UserUsername;
+			}
+			set
+			{
+				if ((this._UserUsername != value))
+				{
+					this._UserUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBorrowed", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateBorrowed
+		{
+			get
+			{
+				return this._DateBorrowed;
+			}
+			set
+			{
+				if ((this._DateBorrowed != value))
+				{
+					this._DateBorrowed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateDeadline", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateDeadline
+		{
+			get
+			{
+				return this._DateDeadline;
+			}
+			set
+			{
+				if ((this._DateDeadline != value))
+				{
+					this._DateDeadline = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ViewLostBooksResult
+	{
+		
+		private int _TransactionID;
+		
+		private string _AdminUsername;
+		
+		private string _UserUsername;
+		
+		private string _Title;
+		
+		private System.Nullable<System.DateTime> _DateBorrowed;
+		
+		private System.Nullable<System.DateTime> _DateDeadline;
+		
+		private System.Nullable<System.DateTime> _ActualReturned;
+		
+		private string _IsGoodContidion;
+		
+		public sp_ViewLostBooksResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="Int NOT NULL")]
+		public int TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this._TransactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminUsername", DbType="VarChar(50)")]
+		public string AdminUsername
+		{
+			get
+			{
+				return this._AdminUsername;
+			}
+			set
+			{
+				if ((this._AdminUsername != value))
+				{
+					this._AdminUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
+		public string UserUsername
+		{
+			get
+			{
+				return this._UserUsername;
+			}
+			set
+			{
+				if ((this._UserUsername != value))
+				{
+					this._UserUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBorrowed", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateBorrowed
+		{
+			get
+			{
+				return this._DateBorrowed;
+			}
+			set
+			{
+				if ((this._DateBorrowed != value))
+				{
+					this._DateBorrowed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateDeadline", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateDeadline
+		{
+			get
+			{
+				return this._DateDeadline;
+			}
+			set
+			{
+				if ((this._DateDeadline != value))
+				{
+					this._DateDeadline = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualReturned", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActualReturned
+		{
+			get
+			{
+				return this._ActualReturned;
+			}
+			set
+			{
+				if ((this._ActualReturned != value))
+				{
+					this._ActualReturned = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsGoodContidion", DbType="VarChar(2)")]
+		public string IsGoodContidion
+		{
+			get
+			{
+				return this._IsGoodContidion;
+			}
+			set
+			{
+				if ((this._IsGoodContidion != value))
+				{
+					this._IsGoodContidion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ViewLostBooksTableResult
+	{
+		
+		private int _TransactionID;
+		
+		private string _AdminUsername;
+		
+		private string _UserUsername;
+		
+		private string _Title;
+		
+		private System.Nullable<System.DateTime> _DateBorrowed;
+		
+		private System.Nullable<System.DateTime> _DateDeadline;
+		
+		private System.Nullable<System.DateTime> _ActualReturned;
+		
+		private string _IsGoodContidion;
+		
+		public sp_ViewLostBooksTableResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="Int NOT NULL")]
+		public int TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this._TransactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminUsername", DbType="VarChar(50)")]
+		public string AdminUsername
+		{
+			get
+			{
+				return this._AdminUsername;
+			}
+			set
+			{
+				if ((this._AdminUsername != value))
+				{
+					this._AdminUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
+		public string UserUsername
+		{
+			get
+			{
+				return this._UserUsername;
+			}
+			set
+			{
+				if ((this._UserUsername != value))
+				{
+					this._UserUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBorrowed", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateBorrowed
+		{
+			get
+			{
+				return this._DateBorrowed;
+			}
+			set
+			{
+				if ((this._DateBorrowed != value))
+				{
+					this._DateBorrowed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateDeadline", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateDeadline
+		{
+			get
+			{
+				return this._DateDeadline;
+			}
+			set
+			{
+				if ((this._DateDeadline != value))
+				{
+					this._DateDeadline = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualReturned", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActualReturned
+		{
+			get
+			{
+				return this._ActualReturned;
+			}
+			set
+			{
+				if ((this._ActualReturned != value))
+				{
+					this._ActualReturned = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsGoodContidion", DbType="VarChar(2)")]
+		public string IsGoodContidion
+		{
+			get
+			{
+				return this._IsGoodContidion;
+			}
+			set
+			{
+				if ((this._IsGoodContidion != value))
+				{
+					this._IsGoodContidion = value;
 				}
 			}
 		}

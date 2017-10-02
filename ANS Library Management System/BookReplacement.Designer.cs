@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookReplacement));
             this.txtCurrentAttendant = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSearch = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -56,7 +56,6 @@
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.linkRepRecords = new System.Windows.Forms.LinkLabel();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.btnUpdate = new DevComponents.DotNetBar.ButtonX();
@@ -95,19 +94,20 @@
             this.labelX9.TabIndex = 28;
             this.labelX9.Text = "Double click on record to add";
             // 
-            // textBoxX1
+            // txtSearch
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxX1.Location = new System.Drawing.Point(532, 73);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(301, 25);
-            this.textBoxX1.TabIndex = 27;
-            this.textBoxX1.WatermarkText = "Search by title, code, publisher";
+            this.txtSearch.Border.Class = "TextBoxBorder";
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSearch.Location = new System.Drawing.Point(532, 73);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(301, 25);
+            this.txtSearch.TabIndex = 27;
+            this.txtSearch.WatermarkText = "Search by title, code, publisher";
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBoxX1_TextChanged);
             // 
             // textBoxX2
             // 
@@ -439,16 +439,6 @@
             this.labelX10.TabIndex = 71;
             this.labelX10.Text = "Book Replacement";
             // 
-            // linkRepRecords
-            // 
-            this.linkRepRecords.AutoSize = true;
-            this.linkRepRecords.Location = new System.Drawing.Point(690, 44);
-            this.linkRepRecords.Name = "linkRepRecords";
-            this.linkRepRecords.Size = new System.Drawing.Size(143, 13);
-            this.linkRepRecords.TabIndex = 72;
-            this.linkRepRecords.TabStop = true;
-            this.linkRepRecords.Text = "Show Replacement Records";
-            // 
             // dgvBooks
             // 
             this.dgvBooks.AllowUserToAddRows = false;
@@ -528,7 +518,6 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvBooks);
-            this.Controls.Add(this.linkRepRecords);
             this.Controls.Add(this.labelX10);
             this.Controls.Add(this.grpRepDetails);
             this.Controls.Add(this.textBoxX9);
@@ -549,7 +538,7 @@
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.txtCurrentAttendant);
             this.Controls.Add(this.labelX9);
-            this.Controls.Add(this.textBoxX1);
+            this.Controls.Add(this.txtSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookReplacement";
             this.Text = "Book Replacement";
@@ -558,14 +547,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private DevComponents.DotNetBar.LabelX txtCurrentAttendant;
         private DevComponents.DotNetBar.LabelX labelX9;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSearch;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
@@ -590,7 +578,6 @@
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX10;
-        private System.Windows.Forms.LinkLabel linkRepRecords;
         private System.Windows.Forms.DataGridView dgvBooks;
         private DevComponents.DotNetBar.ButtonX btnDelete;
         private DevComponents.DotNetBar.ButtonX btnUpdate;

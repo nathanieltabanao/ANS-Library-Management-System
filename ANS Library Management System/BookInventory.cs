@@ -42,6 +42,8 @@ namespace ANS_Library_Management_System
             cmbFoS.Text = null;
             action = null;
             dtpPublishDate.Value = DateTime.Now;
+            numPrice.Value = 1;
+            numSel.Value = 1;
         }
 
         public int ID()
@@ -83,7 +85,7 @@ namespace ANS_Library_Management_System
             }
             else
             {
-                db.sp_BookAdd(txtISBN.Text, txtTitle.Text, txtauthor.Text,dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()));
+                db.sp_BookAdd(txtISBN.Text, txtTitle.Text, txtauthor.Text,dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()),numPrice.Value);
                 BookView();
                 action = "Registered a book";
                 db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
@@ -107,6 +109,7 @@ namespace ANS_Library_Management_System
             cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             cmbCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtpublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
+            numPrice.Value = decimal.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
             btnAdd.Enabled = false;
         }
 
@@ -120,7 +123,7 @@ namespace ANS_Library_Management_System
             else
             {
                 action = "Edited a Book Information";
-                db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()));
+                db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()),numPrice.Value);
                 db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
                 Clear();
                 BookView();

@@ -63,6 +63,8 @@
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.dtpPublish = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtPrice = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.grpBorrowDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtpReturn)).BeginInit();
@@ -624,11 +626,38 @@
             this.dtpPublish.TabIndex = 42;
             this.dtpPublish.Value = new System.DateTime(2017, 9, 16, 11, 0, 38, 654);
             // 
+            // txtPrice
+            // 
+            // 
+            // 
+            // 
+            this.txtPrice.Border.Class = "TextBoxBorder";
+            this.txtPrice.Enabled = false;
+            this.txtPrice.Location = new System.Drawing.Point(125, 574);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(192, 20);
+            this.txtPrice.TabIndex = 77;
+            // 
+            // labelX15
+            // 
+            // 
+            // 
+            // 
+            this.labelX15.BackgroundStyle.Class = "";
+            this.labelX15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX15.Location = new System.Drawing.Point(27, 571);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(83, 23);
+            this.labelX15.TabIndex = 76;
+            this.labelX15.Text = "Price:";
+            // 
             // BookBorrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 675);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.labelX15);
             this.Controls.Add(this.dtpPublish);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -706,5 +735,7 @@
         public DevComponents.DotNetBar.Controls.TextBoxX txtName;
         public DevComponents.DotNetBar.Controls.TextBoxX txtUsername;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpPublish;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPrice;
+        private DevComponents.DotNetBar.LabelX labelX15;
     }
 }
