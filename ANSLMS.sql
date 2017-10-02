@@ -711,11 +711,12 @@ values (@AdminUsername,@UserUsername,@BorrowersName,@Title,@DateBorrowed,@DateDe
 
  create procedure sp_BookReturnEntryDelete
  (
-	@username varchar(50)
+	@username varchar(50),
+	@Title varchar(200)
  )
  as
  delete tblBooksBorrowed
- where tblBooksBorrowed.UserUsername=@username
+ where tblBooksBorrowed.Title=@Title and tblBooksBorrowed.UserUsername=@username
 -------------------------------------------------------------------------------------------
 drop table tblBooks
 
@@ -734,6 +735,13 @@ create table tblBooks
 select * from tblBooks
 
 create procedure sp_ViewLostBooks
+@SearchKey varchar(50)
+as
+select * from tblBooks
+where tblBooks.IsGoodContidion='n' and tblBooks.UserUsername like '%'+@SearchKey+'%'
+
+create procedure sp_ViewLostBooksTable
+@SearchKey varchar(50)
 as
 select * from tblBooks
 where tblBooks.IsGoodContidion='n'
@@ -751,7 +759,7 @@ create procedure sp_BookReturn
 as
 insert into tblBooks
 values (@AdminUsername,@UserUsername,@Title,@DateBorrowed,@DateDeadline,@ActualReturned,@IsGoodContidion)
-
+ 
 create procedure sp_BookReturnEdit
 (
 	@ID int,
@@ -826,6 +834,26 @@ create table tblBookPrices
 
 
 ----------------------------------------------------------------------------------------
+create table tblLostDamagedBooks
+(
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	Title varchar(200) foreign key references tblBooksData(Title)
+)
+
+create procedure sp_InsertDamagedBooks
+@username varchar(50),
+@Title varchar(200)
+as
+insert into tblLostDamagedBooks
+values (@username,@Title)
+
+create procedure sp_DeleteDamagedBooks
+@username varchar(50),
+@Title varchar(200)
+as
+delete tblLostDamagedBooks
+where tblLostDamagedBooks.UserUsername=@username and tblLostDamagedBooks.Title=@Title
+-------------------------------------------------------------------
 --USER TYPE HERE
 
 --BOOK CODE HERE

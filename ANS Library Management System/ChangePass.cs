@@ -51,6 +51,14 @@ namespace ANS_Library_Management_System
                 }
                 else
                 {
+                    if (from=="admin")
+                    {
+                        Admin();
+                    }
+                    else if (from=="user")
+                    {
+                        User();
+                    }
                     this.Close();
                 }
 

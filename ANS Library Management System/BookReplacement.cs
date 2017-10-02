@@ -34,5 +34,10 @@ namespace ANS_Library_Management_System
         {
             dgvBooks.DataSource = db.sp_ViewLostBooks(txtSearch.Text);
         }
+
+        private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

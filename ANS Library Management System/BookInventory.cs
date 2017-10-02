@@ -167,5 +167,10 @@ namespace ANS_Library_Management_System
         {
             Clear();
         }
+
+        private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

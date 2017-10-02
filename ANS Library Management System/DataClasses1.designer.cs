@@ -79,6 +79,14 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		public System.Data.Linq.Table<tblUserReport> tblUserReports
+		{
+			get
+			{
+				return this.GetTable<tblUserReport>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tblAdminDetail> tblAdminDetails
 		{
 			get
@@ -143,6 +151,14 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		public System.Data.Linq.Table<tblLostDamagedBook> tblLostDamagedBooks
+		{
+			get
+			{
+				return this.GetTable<tblLostDamagedBook>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tblTransaction> tblTransactions
 		{
 			get
@@ -172,14 +188,6 @@ namespace ANS_Library_Management_System
 			get
 			{
 				return this.GetTable<tblUserLoginReport>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblUserReport> tblUserReports
-		{
-			get
-			{
-				return this.GetTable<tblUserReport>();
 			}
 		}
 		
@@ -331,9 +339,9 @@ namespace ANS_Library_Management_System
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BookReturnEntryDelete")]
-		public int sp_BookReturnEntryDelete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username)
+		public int sp_BookReturnEntryDelete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, title);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -351,10 +359,24 @@ namespace ANS_Library_Management_System
 			return ((ISingleResult<sp_BookViewResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteDamagedBooks")]
+		public int sp_DeleteDamagedBooks([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, title);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteUser")]
 		public int sp_DeleteUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(50)")] string iD)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertDamagedBooks")]
+		public int sp_InsertDamagedBooks([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Title", DbType="VarChar(200)")] string title)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, title);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -588,6 +610,87 @@ namespace ANS_Library_Management_System
 				if ((this._Timestamp != value))
 				{
 					this._Timestamp = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserReport")]
+	public partial class tblUserReport
+	{
+		
+		private int _transactionID;
+		
+		private System.Nullable<System.DateTime> _timestamp;
+		
+		private string _username;
+		
+		private string _Action;
+		
+		public tblUserReport()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_transactionID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int transactionID
+		{
+			get
+			{
+				return this._transactionID;
+			}
+			set
+			{
+				if ((this._transactionID != value))
+				{
+					this._transactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", DbType="DateTime")]
+		public System.Nullable<System.DateTime> timestamp
+		{
+			get
+			{
+				return this._timestamp;
+			}
+			set
+			{
+				if ((this._timestamp != value))
+				{
+					this._timestamp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
+		public string Action
+		{
+			get
+			{
+				return this._Action;
+			}
+			set
+			{
+				if ((this._Action != value))
+				{
+					this._Action = value;
 				}
 			}
 		}
@@ -1995,6 +2098,51 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblLostDamagedBooks")]
+	public partial class tblLostDamagedBook
+	{
+		
+		private string _UserUsername;
+		
+		private string _Title;
+		
+		public tblLostDamagedBook()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
+		public string UserUsername
+		{
+			get
+			{
+				return this._UserUsername;
+			}
+			set
+			{
+				if ((this._UserUsername != value))
+				{
+					this._UserUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTransaction")]
 	public partial class tblTransaction
 	{
@@ -2757,87 +2905,6 @@ namespace ANS_Library_Management_System
 				if ((this._usertype != value))
 				{
 					this._usertype = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUserReport")]
-	public partial class tblUserReport
-	{
-		
-		private int _transactionID;
-		
-		private System.Nullable<System.DateTime> _timestamp;
-		
-		private string _username;
-		
-		private string _Action;
-		
-		public tblUserReport()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_transactionID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int transactionID
-		{
-			get
-			{
-				return this._transactionID;
-			}
-			set
-			{
-				if ((this._transactionID != value))
-				{
-					this._transactionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timestamp", DbType="DateTime")]
-		public System.Nullable<System.DateTime> timestamp
-		{
-			get
-			{
-				return this._timestamp;
-			}
-			set
-			{
-				if ((this._timestamp != value))
-				{
-					this._timestamp = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50)")]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this._username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Action", DbType="VarChar(MAX)")]
-		public string Action
-		{
-			get
-			{
-				return this._Action;
-			}
-			set
-			{
-				if ((this._Action != value))
-				{
-					this._Action = value;
 				}
 			}
 		}

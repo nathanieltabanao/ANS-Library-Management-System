@@ -96,6 +96,7 @@ namespace ANS_Library_Management_System
             txtCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtPublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
             numBooks = int.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
+            txtPrice.Text = dgvBooks.CurrentRow.Cells[9].Value.ToString();
         }
 
         private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -109,6 +110,7 @@ namespace ANS_Library_Management_System
             txtCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtPublisher.Text= dgvBooks.CurrentRow.Cells[7].Value.ToString();
             numBooks = int.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
+            txtPrice.Text = dgvBooks.CurrentRow.Cells[9].Value.ToString();
         }
 
         private void textBoxX11_Click(object sender, EventArgs e)

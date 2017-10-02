@@ -77,6 +77,7 @@ namespace ANS_Library_Management_System
             ChangePass c = new ChangePass();
             c.username = username;
             c.MdiParent = this;
+            c.from = "admin";
             c.Show();
         }
 

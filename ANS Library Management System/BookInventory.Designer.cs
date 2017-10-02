@@ -390,6 +390,7 @@
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
             this.dgvBooks.TabIndex = 50;
+            this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
             this.dgvBooks.DoubleClick += new System.EventHandler(this.dgvBooks_DoubleClick);
             // 
             // labelX10
