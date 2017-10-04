@@ -37,7 +37,7 @@ namespace ANS_Library_Management_System
             {
                 g = "n";
             }
-            db.sp_BookReturn(username, user, title, dateBorrowed, dateDeadline, DateActual, g);
+            db.sp_BookReturn(username, user, title, dateBorrowed, dateDeadline, DateActual, g, "n");
             db.sp_BookReturnEntryDelete(user, title);
             //List<String> data = new List<string>();
             if (g=="y")

@@ -98,6 +98,7 @@
       <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Association Name="tblAdminDetail_tblBook" Member="tblAdminDetail" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblAdminDetail" IsForeignKey="true" />
       <Association Name="tblBooksData_tblBook" Member="tblBooksData" ThisKey="Title" OtherKey="Title" Type="tblBooksData" IsForeignKey="true" />
       <Association Name="tblUserDetail_tblBook" Member="tblUserDetail" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblUserDetail" IsForeignKey="true" />
@@ -392,6 +393,11 @@
     <Parameter Name="BookID" Parameter="bookID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_BookDuePaid" Method="sp_BookDuePaid">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsPaid" Parameter="isPaid" Type="System.String" DbType="VarChar(2)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_BookEdit" Method="sp_BookEdit">
     <Parameter Name="BookID" Parameter="bookID" Type="System.Int32" DbType="Int" />
     <Parameter Name="ISBN" Parameter="iSBN" Type="System.String" DbType="VarChar(50)" />
@@ -441,6 +447,7 @@
     <Parameter Name="DateDeadline" Parameter="dateDeadline" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="ActualReturned" Parameter="actualReturned" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="IsGoodContidion" Parameter="isGoodContidion" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="IsPaid" Parameter="isPaid" Type="System.String" DbType="VarChar(2)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_BookReturnEdit" Method="sp_BookReturnEdit">
@@ -452,6 +459,7 @@
     <Parameter Name="DateDeadline" Parameter="dateDeadline" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="ActualReturned" Parameter="actualReturned" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="IsGoodContidion" Parameter="isGoodContidion" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="IsPaid" Parameter="isPaid" Type="System.String" DbType="VarChar(2)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_BookReturnEntryDelete" Method="sp_BookReturnEntryDelete">
@@ -694,6 +702,18 @@
       <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_ViewAccounting" Method="sp_ViewAccounting">
+    <ElementType Name="sp_ViewAccountingResult">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AdminUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PaymentDue" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="Cash" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="Change" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_ViewBorrowedBooks" Method="sp_ViewBorrowedBooks">
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="sp_ViewBorrowedBooksResult">
@@ -723,6 +743,7 @@
       <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_ViewLostBooksTable" Method="sp_ViewLostBooksTable">
@@ -736,6 +757,34 @@
       <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ViewNotPaidBooks" Method="sp_ViewNotPaidBooks">
+    <ElementType Name="sp_ViewNotPaidBooksResult">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdminUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateBorrowed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ViewTopay" Method="sp_ViewTopay">
+    <ElementType Name="sp_ViewTopayResult">
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateBorrowed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Ispaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_ViewUserModified" Method="sp_ViewUserModified">

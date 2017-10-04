@@ -748,7 +748,8 @@ create table tblBooks
 	DateBorrowed datetime,
 	DateDeadline datetime,
 	ActualReturned datetime,
-	IsGoodContidion varchar(2)
+	IsGoodContidion varchar(2),
+	IsPaid varchar(2)
 )	
 
 select * from tblBooks
@@ -759,11 +760,22 @@ as
 select * from tblBooks
 where tblBooks.IsGoodContidion='n' and tblBooks.UserUsername like '%'+@SearchKey+'%'
 
+create procedure sp_ViewNotPaidBooks
+as
+select * from tblBooks
+where tblBooks.Ispaid='n'
+
 create procedure sp_ViewLostBooksTable
 @SearchKey varchar(50)
 as
 select * from tblBooks
 where tblBooks.IsGoodContidion='n'
+
+create procedure sp_ViewTopay
+as 
+	select tblBooks.UserUsername, tblUserDetails.First_Name, tblUserDetails.Middle_Name,tblUserDetails.Last_Name,tblBooks.Title,tblBooks.DateBorrowed,tblBooks.DateDeadline,tblBooks.ActualReturned,tblBooks.IsGoodContidion,tblBooks.Ispaid from tblBooks
+	inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
+	where  tblBooks.IsGoodContidion='n' or tblBooks.Ispaid='n'
 
 create procedure sp_BookReturn
 (
@@ -773,11 +785,12 @@ create procedure sp_BookReturn
 	@DateBorrowed datetime,
 	@DateDeadline datetime,
 	@ActualReturned datetime,
-	@IsGoodContidion varchar(2)
+	@IsGoodContidion varchar(2),
+	@IsPaid varchar(2)
 )
 as
 insert into tblBooks
-values (@AdminUsername,@UserUsername,@Title,@DateBorrowed,@DateDeadline,@ActualReturned,@IsGoodContidion)
+values (@AdminUsername,@UserUsername,@Title,@DateBorrowed,@DateDeadline,@ActualReturned,@IsGoodContidion,@IsPaid)
  
 create procedure sp_BookReturnEdit
 (
@@ -788,13 +801,23 @@ create procedure sp_BookReturnEdit
 	@DateBorrowed datetime,
 	@DateDeadline datetime,
 	@ActualReturned datetime,
-	@IsGoodContidion varchar(2)
+	@IsGoodContidion varchar(2),
+	@IsPaid varchar(2)
 )
 as
 update tblBooks
-set AdminUsername=@AdminUsername,UserUsername=@UserUsername,Title=@Title,DateBorrowed=@DateBorrowed,DateDeadline=@DateDeadline,ActualReturned=@ActualReturned,IsGoodContidion=@IsGoodContidion
+set AdminUsername=@AdminUsername,UserUsername=@UserUsername,Title=@Title,DateBorrowed=@DateBorrowed,DateDeadline=@DateDeadline,ActualReturned=@ActualReturned,IsGoodContidion=@IsGoodContidion,ispaid=@IsPaid
 where TransactionID=@ID
 
+create procedure sp_BookDuePaid
+@id int,
+@IsPaid varchar(2)
+as
+update tblBooks
+set IsPaid=@IsPaid
+where TransactionID=@id
+
+create procedure sp_BookReturnTransactionID
 
 -----------------------------------------------------------------------------------------
 create procedure sp_ViewBorrowedBooks
@@ -913,6 +936,10 @@ create procedure sp_BookPayDue
 as
 insert into tblBookAccounting
 values(@timestamp,@adminusername,@userusername,@name,@paymentdue,@cash,@change)
+
+create procedure sp_ViewAccounting
+as
+select * from tblBookAccounting
 
 --------------------------------------------------------------------
 --USER TYPE HERE
