@@ -640,6 +640,7 @@
             this.Controls.Add(this.txtSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookInventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BookInventory";
             this.Load += new System.EventHandler(this.BookInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).EndInit();

@@ -105,7 +105,7 @@ namespace ANS_Library_Management_System
             txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
             txtauthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
-            dtpPublishDate.Value =DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
+            dtpPublishDate.Value = DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
             cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             cmbCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtpublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();

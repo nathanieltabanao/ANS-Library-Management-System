@@ -31,7 +31,7 @@ namespace ANS_Library_Management_System
             string g;
             if (rdoG.Checked)
             {
-                g = "y;";
+                g = "y";
             }
             else
             {
@@ -39,18 +39,42 @@ namespace ANS_Library_Management_System
             }
             db.sp_BookReturn(username, user, title, dateBorrowed, dateDeadline, DateActual, g);
             db.sp_BookReturnEntryDelete(user, title);
-            List<String> data = new List<string>();
+            //List<String> data = new List<string>();
             if (g=="y")
             {
-                
+                int quantity = db.sp_BookQuantity(title,0);
+                quantity++;
+                db.sp_BookQuantityUpdate(title, quantity);
+                View();
             }
             else
             {
                 db.sp_InsertDamagedBooks(user, title);
+                View();
             }
         }
 
         private void Return_Form_Load(object sender, EventArgs e)
+        {
+            View();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvView.DataSource = db.sp_SearchBorrowedBooks(txtSearch.Text);
+        }
+
+        private void dgvView_DoubleClick(object sender, EventArgs e)
+        {
+            user = dgvView.CurrentRow.Cells[0].Value.ToString();
+            title = dgvView.CurrentRow.Cells[1].Value.ToString();
+            dateBorrowed = DateTime.Parse(dgvView.CurrentRow.Cells[2].Value.ToString());
+            dateDeadline = DateTime.Parse(dgvView.CurrentRow.Cells[3].Value.ToString());
+            DateActual = DateTime.Now;
+            MessageBox.Show("Loaded!");
+        }
+
+        private void View()
         {
             dgvView.DataSource = db.sp_ViewBorrowedBooksAdmin("*");
         }

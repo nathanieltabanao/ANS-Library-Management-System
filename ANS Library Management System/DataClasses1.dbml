@@ -39,6 +39,7 @@
       <Association Name="tblAdminDetail_tblAdminActionReport" Member="tblAdminActionReports" ThisKey="AdminUsername" OtherKey="username" Type="tblAdminActionReport" />
       <Association Name="tblAdminDetail_tblAdminLoginReport" Member="tblAdminLoginReports" ThisKey="AdminUsername" OtherKey="username" Type="tblAdminLoginReport" />
       <Association Name="tblAdminDetail_tblAdminTransaction" Member="tblAdminTransactions" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblAdminTransaction" />
+      <Association Name="tblAdminDetail_tblBookAccounting" Member="tblBookAccountings" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblBookAccounting" />
       <Association Name="tblAdminDetail_tblBook" Member="tblBooks" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblBook" />
       <Association Name="tblAdminDetail_tblBooksBorrowed" Member="tblBooksBorroweds" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblBooksBorrowed" />
       <Association Name="tblAdminDetail_tblLoginReport" Member="tblLoginReports" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblLoginReport" />
@@ -64,6 +65,20 @@
       <Column Name="Client" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="tblAdminDetail_tblAdminTransaction" Member="tblAdminDetail" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblAdminDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBookAccounting" Member="tblBookAccountings">
+    <Type Name="tblBookAccounting">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AdminUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PaymentDue" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="Cash" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="Change" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Association Name="tblAdminDetail_tblBookAccounting" Member="tblAdminDetail" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblAdminDetail" IsForeignKey="true" />
+      <Association Name="tblUserDetail_tblBookAccounting" Member="tblUserDetail" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblUserDetail" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblBookPrices" Member="tblBookPrices">
@@ -185,6 +200,7 @@
       <Column Name="Security_Answer" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Usertype" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="tblUserDetail_tblUserReport" Member="tblUserReports" ThisKey="UserUsername" OtherKey="username" Type="tblUserReport" />
+      <Association Name="tblUserDetail_tblBookAccounting" Member="tblBookAccountings" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblBookAccounting" />
       <Association Name="tblUserDetail_tblBook" Member="tblBooks" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblBook" />
       <Association Name="tblUserDetail_tblBooksBorrowed" Member="tblBooksBorroweds" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblBooksBorrowed" />
       <Association Name="tblUserDetail_tblLoginReport" Member="tblLoginReports" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblLoginReport" />
@@ -392,6 +408,31 @@
   <Function Name="dbo.sp_BookID" Method="sp_BookID">
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_BookPayDue" Method="sp_BookPayDue">
+    <Parameter Name="timestamp" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="adminusername" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="userusername" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="paymentdue" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="cash" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="change" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BookPriceInsert" Method="sp_BookPriceInsert">
+    <Parameter Name="title" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="price" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BookQuantity" Method="sp_BookQuantity">
+    <Parameter Name="title" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="quantity" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BookQuantityUpdate" Method="sp_BookQuantityUpdate">
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_BookReturn" Method="sp_BookReturn">
     <Parameter Name="AdminUsername" Parameter="adminUsername" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="UserUsername" Parameter="userUsername" Type="System.String" DbType="VarChar(50)" />
@@ -476,6 +517,24 @@
     <Parameter Name="Timestamp" Parameter="timestamp" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SearchBorrowedBooks" Method="sp_SearchBorrowedBooks">
+    <Parameter Name="SearchKey" Parameter="searchKey" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_SearchBorrowedBooksResult">
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateBorrowed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SearchUserModified" Method="sp_SearchUserModified">
+    <Parameter Name="SearchKey" Parameter="searchKey" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_SearchUserModifiedResult">
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
   <Function Name="dbo.sp_UserActionReport" Method="sp_UserActionReport">
     <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
@@ -677,6 +736,14 @@
       <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ViewUserModified" Method="sp_ViewUserModified">
+    <ElementType Name="sp_ViewUserModifiedResult">
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

@@ -16,5 +16,12 @@ namespace ANS_Library_Management_System
         {
             InitializeComponent();
         }
+
+        int penalty;
+
+        private void BookPenalty_Load(object sender, EventArgs e)
+        {
+            penalty = 5;
+        }
     }
 }

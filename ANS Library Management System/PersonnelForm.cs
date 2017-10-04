@@ -37,6 +37,7 @@ namespace ANS_Library_Management_System
         {
             BookReplacement rep = new BookReplacement();
             rep.MdiParent = this;
+            rep.username = username;
             rep.Show();
         }
 
@@ -44,6 +45,7 @@ namespace ANS_Library_Management_System
         {
             BookBorrow bor = new BookBorrow();
             bor.MdiParent = this;
+            bor.username = username;
             bor.Show();
         }
 
@@ -79,6 +81,14 @@ namespace ANS_Library_Management_System
             c.MdiParent = this;
             c.from = "admin";
             c.Show();
+        }
+
+        private void bookReturnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Return_Form r = new Return_Form();
+            r.MdiParent = this;
+            r.username = username;
+            r.Show();
         }
 
         private void PersonnelForm_Load(object sender, System.EventArgs e)

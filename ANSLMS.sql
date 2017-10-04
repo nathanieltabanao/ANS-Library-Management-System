@@ -202,6 +202,16 @@ create procedure sp_UserView
 as
 select * from tblUserDetails
 
+create procedure sp_ViewUserModified
+as
+select UserUsername,First_Name,Middle_Name,Last_Name from tblUserDetails
+
+
+create procedure sp_SearchUserModified
+@SearchKey varchar(50)
+as
+select UserUsername,First_Name,Middle_Name,Last_Name from tblUserDetails
+where UserUsername like '%'+@SearchKey+'%' or First_Name like '%'+@SearchKey+'%' or Last_Name like '%'+@SearchKey+'%'
 
 ---------------------------------------------------------------------------------------
 --tblAdminDetails
@@ -465,14 +475,23 @@ where tblBooksData.BookID=@BookID
 
 ---to be check
 --book quantity
-create procedure sp_BookQuantity
-(
-	@SearchKey varchar(max)
-)
+create procedure sp_BookQuantityUpdate
+@Title varchar(200),
+@Quantity int
 as
-select * from tblboo
-where tblBooksData.title=@SearchKey
-return tblBooksData.Quantity
+update tblBooksData
+set Quantity=@Quantity
+where Title=@Title
+
+create procedure sp_BookQuantity
+@title varchar(200),
+@quantity int
+as
+select @Quantity=tblBooksData.Quantity from tblBooksData
+where tblBooksData.Title=@Title
+return @quantity
+
+
 
 --------------------------------------
 create table  BookAuthors
@@ -795,6 +814,13 @@ as
 select tblUserDetails.UserUsername,tblBooksBorrowed.Title,tblBooksBorrowed.DateBorrowed,tblBooksBorrowed.DateDeadline from tblUserDetails
 inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
 
+create procedure sp_SearchBorrowedBooks
+@SearchKey varchar(50)
+as
+select tblUserDetails.UserUsername,tblBooksBorrowed.Title,tblBooksBorrowed.DateBorrowed,tblBooksBorrowed.DateDeadline from tblUserDetails
+inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
+where tblBooksBorrowed.UserUsername like '%'+@SearchKey+'%' or tblBooksBorrowed.Title like '%'+@SearchKey+'%'
+
  select tblUserDetails.UserUsername,tblBooksBorrowed.Title from tbluserdetails
  inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
  where tblBooksBorrowed.Title='1984'
@@ -832,7 +858,14 @@ create table tblBookPrices
 	Price decimal(8,2)
 )
 
+create procedure sp_BookPriceInsert
+@title varchar(200),
+@price decimal(8,2)
+as
+insert into tblBookPrices
+values(@title,@price)
 
+select * from tblBookPrices
 ----------------------------------------------------------------------------------------
 create table tblLostDamagedBooks
 (
@@ -854,6 +887,34 @@ as
 delete tblLostDamagedBooks
 where tblLostDamagedBooks.UserUsername=@username and tblLostDamagedBooks.Title=@Title
 -------------------------------------------------------------------
+
+drop table tblBookAccounting
+
+create table tblBookAccounting
+(
+	TransactionID int identity(100000000,1),
+	Timestamp datetime,
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	name varchar(200),
+	PaymentDue decimal(8,2),
+	Cash decimal(8,2),
+	Change decimal(8,2)
+)
+
+create procedure sp_BookPayDue
+@timestamp datetime,
+@adminusername varchar(50),
+@userusername varchar(50),
+@name varchar(200),
+@paymentdue decimal(8,2),
+@cash decimal(8,2),
+@change decimal(8,2)
+as
+insert into tblBookAccounting
+values(@timestamp,@adminusername,@userusername,@name,@paymentdue,@cash,@change)
+
+--------------------------------------------------------------------
 --USER TYPE HERE
 
 --BOOK CODE HERE

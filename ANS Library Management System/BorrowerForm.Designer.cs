@@ -33,8 +33,8 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksBorrowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,16 +72,9 @@
             // viwToolStripMenuItem
             // 
             this.viwToolStripMenuItem.Name = "viwToolStripMenuItem";
-            this.viwToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.viwToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.viwToolStripMenuItem.Text = "View";
             this.viwToolStripMenuItem.Click += new System.EventHandler(this.viwToolStripMenuItem_Click);
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(82, 33);
-            this.logOutToolStripMenuItem.Text = "Log - Out";
-            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
@@ -90,11 +83,19 @@
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(82, 33);
+            this.logOutToolStripMenuItem.Text = "Log - Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
             // BorrowerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.lms_test__2_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(807, 477);
             this.Controls.Add(this.stripAdmin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
