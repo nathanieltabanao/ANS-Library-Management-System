@@ -46,6 +46,7 @@ namespace ANS_Library_Management_System
                 quantity++;
                 db.sp_BookQuantityUpdate(title, quantity);
                 View();
+                btnAccept.Enabled = false;
             }
             else
             {
@@ -57,6 +58,7 @@ namespace ANS_Library_Management_System
         private void Return_Form_Load(object sender, EventArgs e)
         {
             View();
+            btnAccept.Enabled = false;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -72,6 +74,7 @@ namespace ANS_Library_Management_System
             dateDeadline = DateTime.Parse(dgvView.CurrentRow.Cells[3].Value.ToString());
             DateActual = DateTime.Now;
             MessageBox.Show("Loaded!");
+            btnAccept.Enabled = true;
         }
 
         private void View()
@@ -87,6 +90,7 @@ namespace ANS_Library_Management_System
             dateDeadline = DateTime.Parse(dgvView.CurrentRow.Cells[3].Value.ToString());
             DateActual = DateTime.Now;
             MessageBox.Show("Loaded!");
+            btnAccept.Enabled = true;
         }
     }
 }

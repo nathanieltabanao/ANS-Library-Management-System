@@ -526,6 +526,22 @@
     <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_SearchAccountingNotPaid" Method="sp_SearchAccountingNotPaid">
+    <Parameter Name="searchkey" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_SearchAccountingNotPaidResult">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DateBorrowed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Ispaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_SearchBorrowedBooks" Method="sp_SearchBorrowedBooks">
     <Parameter Name="SearchKey" Parameter="searchKey" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="sp_SearchBorrowedBooksResult">
@@ -736,12 +752,10 @@
     <Parameter Name="SearchKey" Parameter="searchKey" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="sp_ViewLostBooksResult">
       <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AdminUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="DateBorrowed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="IsPaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
     </ElementType>
@@ -750,12 +764,10 @@
     <Parameter Name="SearchKey" Parameter="searchKey" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="sp_ViewLostBooksTableResult">
       <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AdminUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="DateBorrowed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DateDeadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ActualReturned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsGoodContidion" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="IsPaid" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
     </ElementType>
@@ -775,6 +787,7 @@
   </Function>
   <Function Name="dbo.sp_ViewTopay" Method="sp_ViewTopay">
     <ElementType Name="sp_ViewTopayResult">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />

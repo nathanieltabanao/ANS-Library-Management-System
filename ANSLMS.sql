@@ -752,12 +752,21 @@ create table tblBooks
 	IsPaid varchar(2)
 )	
 
+
 select * from tblBooks
+
+create procedure sp_SearchAccountingNotPaid
+@searchkey varchar(50)
+as
+select tblBooks.TransactionID,tblBooks.UserUsername, tblUserDetails.First_Name, tblUserDetails.Middle_Name,tblUserDetails.Last_Name,tblBooks.Title,tblBooks.DateBorrowed,tblBooks.DateDeadline,tblBooks.ActualReturned,tblBooks.IsGoodContidion,tblBooks.Ispaid from tblBooks
+inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
+where tblBooks.Ispaid='n' or tblBooks.UserUsername=@searchkey
 
 create procedure sp_ViewLostBooks
 @SearchKey varchar(50)
 as
-select * from tblBooks
+select tblBooks.TransactionID,tblBooks.UserUsername,tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
+inner join tblBooksData on tblBooks.Title=tblBooksData.Title
 where tblBooks.IsGoodContidion='n' and tblBooks.UserUsername like '%'+@SearchKey+'%'
 
 create procedure sp_ViewNotPaidBooks
@@ -768,12 +777,14 @@ where tblBooks.Ispaid='n'
 create procedure sp_ViewLostBooksTable
 @SearchKey varchar(50)
 as
-select * from tblBooks
+select tblBooks.TransactionID,tblBooks.UserUsername,tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
+inner join tblBooksData on tblBooks.Title=tblBooksData.Title
 where tblBooks.IsGoodContidion='n'
+
 
 create procedure sp_ViewTopay
 as 
-	select tblBooks.UserUsername, tblUserDetails.First_Name, tblUserDetails.Middle_Name,tblUserDetails.Last_Name,tblBooks.Title,tblBooks.DateBorrowed,tblBooks.DateDeadline,tblBooks.ActualReturned,tblBooks.IsGoodContidion,tblBooks.Ispaid from tblBooks
+	select tblBooks.TransactionID,tblBooks.UserUsername, tblUserDetails.First_Name, tblUserDetails.Middle_Name,tblUserDetails.Last_Name,tblBooks.Title,tblBooks.DateBorrowed,tblBooks.DateDeadline,tblBooks.ActualReturned,tblBooks.IsGoodContidion,tblBooks.Ispaid from tblBooks
 	inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
 	where  tblBooks.IsGoodContidion='n' or tblBooks.Ispaid='n'
 

@@ -437,6 +437,13 @@ namespace ANS_Library_Management_System
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchAccountingNotPaid")]
+		public ISingleResult<sp_SearchAccountingNotPaidResult> sp_SearchAccountingNotPaid([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string searchkey)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), searchkey);
+			return ((ISingleResult<sp_SearchAccountingNotPaidResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_SearchBorrowedBooks")]
 		public ISingleResult<sp_SearchBorrowedBooksResult> sp_SearchBorrowedBooks([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SearchKey", DbType="VarChar(50)")] string searchKey)
 		{
@@ -4266,6 +4273,212 @@ namespace ANS_Library_Management_System
 		}
 	}
 	
+	public partial class sp_SearchAccountingNotPaidResult
+	{
+		
+		private int _TransactionID;
+		
+		private string _UserUsername;
+		
+		private string _First_Name;
+		
+		private string _Middle_Name;
+		
+		private string _Last_Name;
+		
+		private string _Title;
+		
+		private System.Nullable<System.DateTime> _DateBorrowed;
+		
+		private System.Nullable<System.DateTime> _DateDeadline;
+		
+		private System.Nullable<System.DateTime> _ActualReturned;
+		
+		private string _IsGoodContidion;
+		
+		private string _Ispaid;
+		
+		public sp_SearchAccountingNotPaidResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="Int NOT NULL")]
+		public int TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this._TransactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
+		public string UserUsername
+		{
+			get
+			{
+				return this._UserUsername;
+			}
+			set
+			{
+				if ((this._UserUsername != value))
+				{
+					this._UserUsername = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_First_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string First_Name
+		{
+			get
+			{
+				return this._First_Name;
+			}
+			set
+			{
+				if ((this._First_Name != value))
+				{
+					this._First_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Middle_Name", DbType="VarChar(30)")]
+		public string Middle_Name
+		{
+			get
+			{
+				return this._Middle_Name;
+			}
+			set
+			{
+				if ((this._Middle_Name != value))
+				{
+					this._Middle_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Last_Name
+		{
+			get
+			{
+				return this._Last_Name;
+			}
+			set
+			{
+				if ((this._Last_Name != value))
+				{
+					this._Last_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBorrowed", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateBorrowed
+		{
+			get
+			{
+				return this._DateBorrowed;
+			}
+			set
+			{
+				if ((this._DateBorrowed != value))
+				{
+					this._DateBorrowed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateDeadline", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateDeadline
+		{
+			get
+			{
+				return this._DateDeadline;
+			}
+			set
+			{
+				if ((this._DateDeadline != value))
+				{
+					this._DateDeadline = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualReturned", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActualReturned
+		{
+			get
+			{
+				return this._ActualReturned;
+			}
+			set
+			{
+				if ((this._ActualReturned != value))
+				{
+					this._ActualReturned = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsGoodContidion", DbType="VarChar(2)")]
+		public string IsGoodContidion
+		{
+			get
+			{
+				return this._IsGoodContidion;
+			}
+			set
+			{
+				if ((this._IsGoodContidion != value))
+				{
+					this._IsGoodContidion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ispaid", DbType="VarChar(2)")]
+		public string Ispaid
+		{
+			get
+			{
+				return this._Ispaid;
+			}
+			set
+			{
+				if ((this._Ispaid != value))
+				{
+					this._Ispaid = value;
+				}
+			}
+		}
+	}
+	
 	public partial class sp_SearchBorrowedBooksResult
 	{
 		
@@ -6007,17 +6220,13 @@ namespace ANS_Library_Management_System
 		
 		private int _TransactionID;
 		
-		private string _AdminUsername;
-		
 		private string _UserUsername;
 		
+		private int _BookID;
+		
+		private string _ISBN;
+		
 		private string _Title;
-		
-		private System.Nullable<System.DateTime> _DateBorrowed;
-		
-		private System.Nullable<System.DateTime> _DateDeadline;
-		
-		private System.Nullable<System.DateTime> _ActualReturned;
 		
 		private string _IsGoodContidion;
 		
@@ -6043,22 +6252,6 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminUsername", DbType="VarChar(50)")]
-		public string AdminUsername
-		{
-			get
-			{
-				return this._AdminUsername;
-			}
-			set
-			{
-				if ((this._AdminUsername != value))
-				{
-					this._AdminUsername = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
 		public string UserUsername
 		{
@@ -6075,6 +6268,38 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookID", DbType="Int NOT NULL")]
+		public int BookID
+		{
+			get
+			{
+				return this._BookID;
+			}
+			set
+			{
+				if ((this._BookID != value))
+				{
+					this._BookID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(50)")]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this._ISBN = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
 		public string Title
 		{
@@ -6087,54 +6312,6 @@ namespace ANS_Library_Management_System
 				if ((this._Title != value))
 				{
 					this._Title = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBorrowed", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateBorrowed
-		{
-			get
-			{
-				return this._DateBorrowed;
-			}
-			set
-			{
-				if ((this._DateBorrowed != value))
-				{
-					this._DateBorrowed = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateDeadline", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateDeadline
-		{
-			get
-			{
-				return this._DateDeadline;
-			}
-			set
-			{
-				if ((this._DateDeadline != value))
-				{
-					this._DateDeadline = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualReturned", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ActualReturned
-		{
-			get
-			{
-				return this._ActualReturned;
-			}
-			set
-			{
-				if ((this._ActualReturned != value))
-				{
-					this._ActualReturned = value;
 				}
 			}
 		}
@@ -6177,17 +6354,13 @@ namespace ANS_Library_Management_System
 		
 		private int _TransactionID;
 		
-		private string _AdminUsername;
-		
 		private string _UserUsername;
 		
+		private int _BookID;
+		
+		private string _ISBN;
+		
 		private string _Title;
-		
-		private System.Nullable<System.DateTime> _DateBorrowed;
-		
-		private System.Nullable<System.DateTime> _DateDeadline;
-		
-		private System.Nullable<System.DateTime> _ActualReturned;
 		
 		private string _IsGoodContidion;
 		
@@ -6213,22 +6386,6 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdminUsername", DbType="VarChar(50)")]
-		public string AdminUsername
-		{
-			get
-			{
-				return this._AdminUsername;
-			}
-			set
-			{
-				if ((this._AdminUsername != value))
-				{
-					this._AdminUsername = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
 		public string UserUsername
 		{
@@ -6245,6 +6402,38 @@ namespace ANS_Library_Management_System
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookID", DbType="Int NOT NULL")]
+		public int BookID
+		{
+			get
+			{
+				return this._BookID;
+			}
+			set
+			{
+				if ((this._BookID != value))
+				{
+					this._BookID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(50)")]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this._ISBN = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(200)")]
 		public string Title
 		{
@@ -6257,54 +6446,6 @@ namespace ANS_Library_Management_System
 				if ((this._Title != value))
 				{
 					this._Title = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBorrowed", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateBorrowed
-		{
-			get
-			{
-				return this._DateBorrowed;
-			}
-			set
-			{
-				if ((this._DateBorrowed != value))
-				{
-					this._DateBorrowed = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateDeadline", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateDeadline
-		{
-			get
-			{
-				return this._DateDeadline;
-			}
-			set
-			{
-				if ((this._DateDeadline != value))
-				{
-					this._DateDeadline = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualReturned", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ActualReturned
-		{
-			get
-			{
-				return this._ActualReturned;
-			}
-			set
-			{
-				if ((this._ActualReturned != value))
-				{
-					this._ActualReturned = value;
 				}
 			}
 		}
@@ -6515,6 +6656,8 @@ namespace ANS_Library_Management_System
 	public partial class sp_ViewTopayResult
 	{
 		
+		private int _TransactionID;
+		
 		private string _UserUsername;
 		
 		private string _First_Name;
@@ -6537,6 +6680,22 @@ namespace ANS_Library_Management_System
 		
 		public sp_ViewTopayResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="Int NOT NULL")]
+		public int TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this._TransactionID = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserUsername", DbType="VarChar(50)")]
