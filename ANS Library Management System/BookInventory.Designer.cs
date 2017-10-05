@@ -390,6 +390,7 @@
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
             this.dgvBooks.TabIndex = 50;
+            this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
             this.dgvBooks.DoubleClick += new System.EventHandler(this.dgvBooks_DoubleClick);
             // 
             // labelX10
@@ -639,6 +640,7 @@
             this.Controls.Add(this.txtSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookInventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BookInventory";
             this.Load += new System.EventHandler(this.BookInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).EndInit();

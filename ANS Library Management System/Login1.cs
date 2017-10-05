@@ -47,7 +47,8 @@ namespace ANS_Library_Management_System
             {
                 MessageBox.Show("Invalid Username or Password"); //Show message to user failed authentication
                 LogError++; // count many incorrect attemps for forget password
-                db.sp_LoginReport(txtUsername.Text, null, null, hash.HashPass(hashed, salt), "Login Failed", DateTime.Now, null); //login report if failed or succes
+                db.sp_LoginReport(txtUsername.Text, null, null, hash.HashPass(hashed, salt), "Login Failed", DateTime.Now, null); //login report if failed or success
+                txtPassword.Text = null;
 
                 //if too many incorrect attempts try to show forget passweord
                 if (LogError>3) // 3 incorrect attempts and show link for forget password

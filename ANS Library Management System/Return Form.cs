@@ -21,11 +21,76 @@ namespace ANS_Library_Management_System
         public string user { get; set; }
         public string usertype { get; set; }
 
+        string title;
+        DateTime dateBorrowed, dateDeadline, DateActual;
+
         DataClasses1DataContext db = new DataClasses1DataContext();
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            string g;
+            if (rdoG.Checked)
+            {
+                g = "y";
+            }
+            else
+            {
+                g = "n";
+            }
+            db.sp_BookReturn(username, user, title, dateBorrowed, dateDeadline, DateActual, g, "n");
+            db.sp_BookReturnEntryDelete(user, title);
+            //List<String> data = new List<string>();
+            if (g=="y")
+            {
+                int quantity = db.sp_BookQuantity(title,0);
+                quantity++;
+                db.sp_BookQuantityUpdate(title, quantity);
+                View();
+                btnAccept.Enabled = false;
+            }
+            else
+            {
+                db.sp_InsertDamagedBooks(user, title);
+                View();
+            }
+        }
 
         private void Return_Form_Load(object sender, EventArgs e)
         {
+            View();
+            btnAccept.Enabled = false;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvView.DataSource = db.sp_SearchBorrowedBooks(txtSearch.Text);
+        }
+
+        private void dgvView_DoubleClick(object sender, EventArgs e)
+        {
+            user = dgvView.CurrentRow.Cells[0].Value.ToString();
+            title = dgvView.CurrentRow.Cells[1].Value.ToString();
+            dateBorrowed = DateTime.Parse(dgvView.CurrentRow.Cells[2].Value.ToString());
+            dateDeadline = DateTime.Parse(dgvView.CurrentRow.Cells[3].Value.ToString());
+            DateActual = DateTime.Now;
+            MessageBox.Show("Loaded!");
+            btnAccept.Enabled = true;
+        }
+
+        private void View()
+        {
             dgvView.DataSource = db.sp_ViewBorrowedBooksAdmin("*");
+        }
+
+        private void dgvView_Click(object sender, EventArgs e)
+        {
+            user = dgvView.CurrentRow.Cells[0].Value.ToString();
+            title = dgvView.CurrentRow.Cells[1].Value.ToString();
+            dateBorrowed = DateTime.Parse(dgvView.CurrentRow.Cells[2].Value.ToString());
+            dateDeadline = DateTime.Parse(dgvView.CurrentRow.Cells[3].Value.ToString());
+            DateActual = DateTime.Now;
+            MessageBox.Show("Loaded!");
+            btnAccept.Enabled = true;
         }
     }
 }

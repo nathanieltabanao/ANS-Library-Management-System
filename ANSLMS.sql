@@ -202,6 +202,16 @@ create procedure sp_UserView
 as
 select * from tblUserDetails
 
+create procedure sp_ViewUserModified
+as
+select UserUsername,First_Name,Middle_Name,Last_Name from tblUserDetails
+
+
+create procedure sp_SearchUserModified
+@SearchKey varchar(50)
+as
+select UserUsername,First_Name,Middle_Name,Last_Name from tblUserDetails
+where UserUsername like '%'+@SearchKey+'%' or First_Name like '%'+@SearchKey+'%' or Last_Name like '%'+@SearchKey+'%'
 
 ---------------------------------------------------------------------------------------
 --tblAdminDetails
@@ -465,14 +475,23 @@ where tblBooksData.BookID=@BookID
 
 ---to be check
 --book quantity
-create procedure sp_BookQuantity
-(
-	@SearchKey varchar(max)
-)
+create procedure sp_BookQuantityUpdate
+@Title varchar(200),
+@Quantity int
 as
-select * from tblboo
-where tblBooksData.title=@SearchKey
-return tblBooksData.Quantity
+update tblBooksData
+set Quantity=@Quantity
+where Title=@Title
+
+create procedure sp_BookQuantity
+@title varchar(200),
+@quantity int
+as
+select @Quantity=tblBooksData.Quantity from tblBooksData
+where tblBooksData.Title=@Title
+return @quantity
+
+
 
 --------------------------------------
 create table  BookAuthors
@@ -711,11 +730,12 @@ values (@AdminUsername,@UserUsername,@BorrowersName,@Title,@DateBorrowed,@DateDe
 
  create procedure sp_BookReturnEntryDelete
  (
-	@username varchar(50)
+	@username varchar(50),
+	@Title varchar(200)
  )
  as
  delete tblBooksBorrowed
- where tblBooksBorrowed.UserUsername=@username
+ where tblBooksBorrowed.Title=@Title and tblBooksBorrowed.UserUsername=@username
 -------------------------------------------------------------------------------------------
 drop table tblBooks
 
@@ -728,15 +748,55 @@ create table tblBooks
 	DateBorrowed datetime,
 	DateDeadline datetime,
 	ActualReturned datetime,
-	IsGoodContidion varchar(2)
+	IsGoodContidion varchar(2),
+	IsPaid varchar(2)
 )	
 
+
 select * from tblBooks
 
+create procedure sp_SearchAccountingNotPaid
+@searchkey varchar(50)
+as
+select tblBooks.TransactionID,tblBooks.UserUsername, tblUserDetails.First_Name, tblUserDetails.Middle_Name,tblUserDetails.Last_Name,tblBooks.Title,tblBooks.DateBorrowed,tblBooks.DateDeadline,tblBooks.ActualReturned,tblBooks.IsGoodContidion,tblBooks.Ispaid from tblBooks
+inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
+where tblBooks.Ispaid='n' or tblBooks.UserUsername=@searchkey
+
 create procedure sp_ViewLostBooks
+@SearchKey varchar(50)
+as
+select tblBooks.TransactionID,tblBooks.UserUsername,tblUserDetails.First_Name,tblUserDetails.Middle_Name,tblUserDetails.Last_Name, tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
+inner join tblBooksData on tblBooks.Title=tblBooksData.Title
+inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
+where tblBooks.IsGoodContidion='n' and tblBooks.UserUsername like '%'+@SearchKey+'%'
+
+create procedure sp_ViewNotPaidBooks
 as
 select * from tblBooks
+where tblBooks.Ispaid='n'
+
+create procedure sp_BookReplace
+@transactionid int,
+@Key varchar(2)
+as
+update tblBooks
+set IsPaid=@Key, IsGoodContidion=@Key
+where TransactionID=@transactionid
+
+create procedure sp_ViewLostBooksTable
+@SearchKey varchar(50)
+as
+select tblBooks.TransactionID,tblBooks.UserUsername,tblUserDetails.First_Name,tblUserDetails.Middle_Name,tblUserDetails.Last_Name, tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
+inner join tblBooksData on tblBooks.Title=tblBooksData.Title
+inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
 where tblBooks.IsGoodContidion='n'
+
+
+create procedure sp_ViewTopay
+as 
+	select tblBooks.TransactionID,tblBooks.UserUsername, tblUserDetails.First_Name, tblUserDetails.Middle_Name,tblUserDetails.Last_Name,tblBooks.Title,tblBooks.DateBorrowed,tblBooks.DateDeadline,tblBooks.ActualReturned,tblBooks.IsGoodContidion,tblBooks.Ispaid from tblBooks
+	inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
+	where  tblBooks.IsGoodContidion='n' or tblBooks.Ispaid='n'
 
 create procedure sp_BookReturn
 (
@@ -746,12 +806,13 @@ create procedure sp_BookReturn
 	@DateBorrowed datetime,
 	@DateDeadline datetime,
 	@ActualReturned datetime,
-	@IsGoodContidion varchar(2)
+	@IsGoodContidion varchar(2),
+	@IsPaid varchar(2)
 )
 as
 insert into tblBooks
-values (@AdminUsername,@UserUsername,@Title,@DateBorrowed,@DateDeadline,@ActualReturned,@IsGoodContidion)
-
+values (@AdminUsername,@UserUsername,@Title,@DateBorrowed,@DateDeadline,@ActualReturned,@IsGoodContidion,@IsPaid)
+ 
 create procedure sp_BookReturnEdit
 (
 	@ID int,
@@ -761,13 +822,23 @@ create procedure sp_BookReturnEdit
 	@DateBorrowed datetime,
 	@DateDeadline datetime,
 	@ActualReturned datetime,
-	@IsGoodContidion varchar(2)
+	@IsGoodContidion varchar(2),
+	@IsPaid varchar(2)
 )
 as
 update tblBooks
-set AdminUsername=@AdminUsername,UserUsername=@UserUsername,Title=@Title,DateBorrowed=@DateBorrowed,DateDeadline=@DateDeadline,ActualReturned=@ActualReturned,IsGoodContidion=@IsGoodContidion
+set AdminUsername=@AdminUsername,UserUsername=@UserUsername,Title=@Title,DateBorrowed=@DateBorrowed,DateDeadline=@DateDeadline,ActualReturned=@ActualReturned,IsGoodContidion=@IsGoodContidion,ispaid=@IsPaid
 where TransactionID=@ID
 
+create procedure sp_BookDuePaid
+@id int,
+@IsPaid varchar(2)
+as
+update tblBooks
+set IsPaid=@IsPaid
+where TransactionID=@id
+
+create procedure sp_BookReturnTransactionID
 
 -----------------------------------------------------------------------------------------
 create procedure sp_ViewBorrowedBooks
@@ -786,6 +857,13 @@ create procedure sp_ViewBorrowedBooksAdmin
 as
 select tblUserDetails.UserUsername,tblBooksBorrowed.Title,tblBooksBorrowed.DateBorrowed,tblBooksBorrowed.DateDeadline from tblUserDetails
 inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
+
+create procedure sp_SearchBorrowedBooks
+@SearchKey varchar(50)
+as
+select tblUserDetails.UserUsername,tblBooksBorrowed.Title,tblBooksBorrowed.DateBorrowed,tblBooksBorrowed.DateDeadline from tblUserDetails
+inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
+where tblBooksBorrowed.UserUsername like '%'+@SearchKey+'%' or tblBooksBorrowed.Title like '%'+@SearchKey+'%'
 
  select tblUserDetails.UserUsername,tblBooksBorrowed.Title from tbluserdetails
  inner join tblbooksborrowed on tblUserDetails.UserUsername=tblBooksBorrowed.UserUsername
@@ -824,8 +902,85 @@ create table tblBookPrices
 	Price decimal(8,2)
 )
 
+create procedure sp_BookPriceInsert
+@title varchar(200),
+@price decimal(8,2)
+as
+insert into tblBookPrices
+values(@title,@price)
 
+select * from tblBookPrices
 ----------------------------------------------------------------------------------------
+create table tblLostDamagedBooks
+(
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	Title varchar(200) foreign key references tblBooksData(Title)
+)
+
+create procedure sp_InsertDamagedBooks
+@username varchar(50),
+@Title varchar(200)
+as
+insert into tblLostDamagedBooks
+values (@username,@Title)
+
+create procedure sp_DeleteDamagedBooks
+@username varchar(50),
+@Title varchar(200)
+as
+delete tblLostDamagedBooks
+where tblLostDamagedBooks.UserUsername=@username and tblLostDamagedBooks.Title=@Title
+-------------------------------------------------------------------
+
+drop table tblBookAccounting
+
+create table tblBookAccounting
+(
+	TransactionID int identity(100000000,1),
+	Timestamp datetime,
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	UserUsername varchar(50) foreign key references tblUserDetails(UserUsername),
+	name varchar(200),
+	PaymentDue decimal(8,2),
+	Cash decimal(8,2),
+	Change decimal(8,2)
+)
+
+create procedure sp_BookPayDue
+@timestamp datetime,
+@adminusername varchar(50),
+@userusername varchar(50),
+@name varchar(200),
+@paymentdue decimal(8,2),
+@cash decimal(8,2),
+@change decimal(8,2)
+as
+insert into tblBookAccounting
+values(@timestamp,@adminusername,@userusername,@name,@paymentdue,@cash,@change)
+
+create procedure sp_ViewAccounting
+as
+select * from tblBookAccounting
+------------------------------------------------------------------
+create table tblReplacedBooks
+(
+	ReplacementID int identity(5000000,1),
+	UserUsername varchar(50) foreign key references tbluserdetails(userusername),
+	Title varchar(200) foreign key references tblBooksdata(Title),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	DateReplaced datetime
+)
+
+create procedure sp_ReplaceBook
+@UserUsername varchar(50),
+@Title varchar(200),
+@AdminUsername varchar(50),
+@DateReplaced datetime
+as
+insert into tblReplacedBooks
+values(@UserUsername,@Title,@AdminUsername,@DateReplaced)
+
+--------------------------------------------------------------------
 --USER TYPE HERE
 
 --BOOK CODE HERE

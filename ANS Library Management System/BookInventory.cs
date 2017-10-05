@@ -24,7 +24,7 @@ namespace ANS_Library_Management_System
         public string password { get; set; }
         public string usertype { get; set; }
 
-        string action;
+        string action, isbn;
 
         //view shit
         public void BookView()
@@ -103,14 +103,29 @@ namespace ANS_Library_Management_System
         {
             txtBookID.Text = dgvBooks.CurrentRow.Cells[0].Value.ToString();
             txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
+            isbn = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
             txtauthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
-            dtpPublishDate.Value =DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
+            dtpPublishDate.Value = DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
             cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             cmbCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtpublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
             numPrice.Value = decimal.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
             btnAdd.Enabled = false;
+            btnCancel.Enabled = true;
+        }
+
+        private void EditBook()
+        {
+            action = "Edited a Book Information";
+            db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()), numPrice.Value);
+            db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
+            Clear();
+            BookView();
+            BookID();
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -122,15 +137,23 @@ namespace ANS_Library_Management_System
             }
             else
             {
-                action = "Edited a Book Information";
-                db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()),numPrice.Value);
-                db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
-                Clear();
-                BookView();
-                BookID();
-                btnAdd.Enabled = true;
-                btnUpdate.Enabled = false;
-                btnDelete.Enabled = false;
+                if (txtISBN.Text!=isbn)
+                {
+                    DialogResult dr = MessageBox.Show("Are you sure want to change the ISBN of the book?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr==DialogResult.Yes)
+                    {
+                        EditBook();
+                    }
+                    else if (dr==DialogResult.Cancel)
+                    {
+                        txtISBN.Text = isbn;
+                        EditBook();
+                    }
+                }
+                else
+                {
+                    EditBook();
+                }
             }
         }
 
@@ -148,6 +171,7 @@ namespace ANS_Library_Management_System
             btnAdd.Enabled = false;
             btnUpdate.Enabled = true;
             btnDelete.Enabled = true;
+            btnCancel.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -166,6 +190,11 @@ namespace ANS_Library_Management_System
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void dgvBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -64,6 +64,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(192, 26);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsername.WatermarkText = "Username";
             // 
             // txtPassword
@@ -78,6 +79,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(192, 26);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.WatermarkText = "Password";
             // 
             // labelX1
@@ -136,7 +138,7 @@
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 321);
+            this.ClientSize = new System.Drawing.Size(360, 282);
             this.ControlBox = false;
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.labelX2);
