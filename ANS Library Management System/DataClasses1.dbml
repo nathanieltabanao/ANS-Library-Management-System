@@ -43,6 +43,7 @@
       <Association Name="tblAdminDetail_tblBook" Member="tblBooks" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblBook" />
       <Association Name="tblAdminDetail_tblBooksBorrowed" Member="tblBooksBorroweds" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblBooksBorrowed" />
       <Association Name="tblAdminDetail_tblLoginReport" Member="tblLoginReports" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblLoginReport" />
+      <Association Name="tblAdminDetail_tblReplacedBook" Member="tblReplacedBooks" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblReplacedBook" />
       <Association Name="tblAdminDetail_tblTransaction" Member="tblTransactions" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblTransaction" />
     </Type>
   </Table>
@@ -134,6 +135,7 @@
       <Association Name="tblBooksData_tblBook" Member="tblBooks" ThisKey="Title" OtherKey="Title" Type="tblBook" />
       <Association Name="tblBooksData_tblBooksBorrowed" Member="tblBooksBorroweds" ThisKey="Title" OtherKey="Title" Type="tblBooksBorrowed" />
       <Association Name="tblBooksData_tblLostDamagedBook" Member="tblLostDamagedBooks" ThisKey="Title" OtherKey="Title" Type="tblLostDamagedBook" />
+      <Association Name="tblBooksData_tblReplacedBook" Member="tblReplacedBooks" ThisKey="Title" OtherKey="Title" Type="tblReplacedBook" />
       <Association Name="tblBooksData_tblTransaction" Member="tblTransactions" ThisKey="Title" OtherKey="Title" Type="tblTransaction" />
     </Type>
   </Table>
@@ -157,6 +159,18 @@
       <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Association Name="tblBooksData_tblLostDamagedBook" Member="tblBooksData" ThisKey="Title" OtherKey="Title" Type="tblBooksData" IsForeignKey="true" />
       <Association Name="tblUserDetail_tblLostDamagedBook" Member="tblUserDetail" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblUserDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblReplacedBooks" Member="tblReplacedBooks">
+    <Type Name="tblReplacedBook">
+      <Column Name="ReplacementID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AdminUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateReplaced" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblAdminDetail_tblReplacedBook" Member="tblAdminDetail" ThisKey="AdminUsername" OtherKey="AdminUsername" Type="tblAdminDetail" IsForeignKey="true" />
+      <Association Name="tblBooksData_tblReplacedBook" Member="tblBooksData" ThisKey="Title" OtherKey="Title" Type="tblBooksData" IsForeignKey="true" />
+      <Association Name="tblUserDetail_tblReplacedBook" Member="tblUserDetail" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblUserDetail" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblTransaction" Member="tblTransactions">
@@ -206,6 +220,7 @@
       <Association Name="tblUserDetail_tblBooksBorrowed" Member="tblBooksBorroweds" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblBooksBorrowed" />
       <Association Name="tblUserDetail_tblLoginReport" Member="tblLoginReports" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblLoginReport" />
       <Association Name="tblUserDetail_tblLostDamagedBook" Member="tblLostDamagedBooks" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblLostDamagedBook" />
+      <Association Name="tblUserDetail_tblReplacedBook" Member="tblReplacedBooks" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblReplacedBook" />
       <Association Name="tblUserDetail_tblTransaction" Member="tblTransactions" ThisKey="UserUsername" OtherKey="UserUsername" Type="tblTransaction" />
       <Association Name="tblUserDetail_tblUserActionReport" Member="tblUserActionReports" ThisKey="UserUsername" OtherKey="username" Type="tblUserActionReport" />
       <Association Name="tblUserDetail_tblUserLoginReport" Member="tblUserLoginReports" ThisKey="UserUsername" OtherKey="username" Type="tblUserLoginReport" />
@@ -439,6 +454,11 @@
     <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_BookReplace" Method="sp_BookReplace">
+    <Parameter Name="transactionid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Key" Parameter="key" Type="System.String" DbType="VarChar(2)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_BookReturn" Method="sp_BookReturn">
     <Parameter Name="AdminUsername" Parameter="adminUsername" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="UserUsername" Parameter="userUsername" Type="System.String" DbType="VarChar(50)" />
@@ -524,6 +544,13 @@
     <Parameter Name="Action" Parameter="action" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="Timestamp" Parameter="timestamp" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ReplaceBook" Method="sp_ReplaceBook">
+    <Parameter Name="UserUsername" Parameter="userUsername" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="AdminUsername" Parameter="adminUsername" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateReplaced" Parameter="dateReplaced" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_SearchAccountingNotPaid" Method="sp_SearchAccountingNotPaid">
@@ -753,6 +780,9 @@
     <ElementType Name="sp_ViewLostBooksResult">
       <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
@@ -765,6 +795,9 @@
     <ElementType Name="sp_ViewLostBooksTableResult">
       <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middle_Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ISBN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />

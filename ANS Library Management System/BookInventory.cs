@@ -115,6 +115,19 @@ namespace ANS_Library_Management_System
             btnCancel.Enabled = true;
         }
 
+        private void EditBook()
+        {
+            action = "Edited a Book Information";
+            db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()), numPrice.Value);
+            db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
+            Clear();
+            BookView();
+            BookID();
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtauthor.Text) || string.IsNullOrWhiteSpace(txtISBN.Text) || string.IsNullOrWhiteSpace(txtpublisher.Text) ||
@@ -126,20 +139,20 @@ namespace ANS_Library_Management_System
             {
                 if (txtISBN.Text!=isbn)
                 {
-                    MessageBox.Show("Are you sure want to change the ISBN of the book?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    
+                    DialogResult dr = MessageBox.Show("Are you sure want to change the ISBN of the book?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr==DialogResult.Yes)
+                    {
+                        EditBook();
+                    }
+                    else if (dr==DialogResult.Cancel)
+                    {
+                        txtISBN.Text = isbn;
+                        EditBook();
+                    }
                 }
                 else
                 {
-                    action = "Edited a Book Information";
-                    db.sp_BookEdit(int.Parse(txtBookID.Text), txtISBN.Text, txtTitle.Text, txtauthor.Text, dtpPublishDate.Value, cmbFoS.Text, cmbCategory.Text, txtpublisher.Text, int.Parse(numSel.Value.ToString()), numPrice.Value);
-                    db.sp_AdminTransactionAdd(username, action, txtTitle.Text, DateTime.Now);
-                    Clear();
-                    BookView();
-                    BookID();
-                    btnAdd.Enabled = true;
-                    btnUpdate.Enabled = false;
-                    btnDelete.Enabled = false;
+                    EditBook();
                 }
             }
         }

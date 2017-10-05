@@ -765,8 +765,9 @@ where tblBooks.Ispaid='n' or tblBooks.UserUsername=@searchkey
 create procedure sp_ViewLostBooks
 @SearchKey varchar(50)
 as
-select tblBooks.TransactionID,tblBooks.UserUsername,tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
+select tblBooks.TransactionID,tblBooks.UserUsername,tblUserDetails.First_Name,tblUserDetails.Middle_Name,tblUserDetails.Last_Name, tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
 inner join tblBooksData on tblBooks.Title=tblBooksData.Title
+inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
 where tblBooks.IsGoodContidion='n' and tblBooks.UserUsername like '%'+@SearchKey+'%'
 
 create procedure sp_ViewNotPaidBooks
@@ -774,11 +775,20 @@ as
 select * from tblBooks
 where tblBooks.Ispaid='n'
 
+create procedure sp_BookReplace
+@transactionid int,
+@Key varchar(2)
+as
+update tblBooks
+set IsPaid=@Key, IsGoodContidion=@Key
+where TransactionID=@transactionid
+
 create procedure sp_ViewLostBooksTable
 @SearchKey varchar(50)
 as
-select tblBooks.TransactionID,tblBooks.UserUsername,tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
+select tblBooks.TransactionID,tblBooks.UserUsername,tblUserDetails.First_Name,tblUserDetails.Middle_Name,tblUserDetails.Last_Name, tblBooksData.BookID,tblBooksData.ISBN,tblBooks.Title,tblBooks.IsGoodContidion,tblBooks.IsPaid from tblBooks
 inner join tblBooksData on tblBooks.Title=tblBooksData.Title
+inner join tblUserDetails on tblBooks.UserUsername=tblUserDetails.UserUsername
 where tblBooks.IsGoodContidion='n'
 
 
@@ -951,6 +961,24 @@ values(@timestamp,@adminusername,@userusername,@name,@paymentdue,@cash,@change)
 create procedure sp_ViewAccounting
 as
 select * from tblBookAccounting
+------------------------------------------------------------------
+create table tblReplacedBooks
+(
+	ReplacementID int identity(5000000,1),
+	UserUsername varchar(50) foreign key references tbluserdetails(userusername),
+	Title varchar(200) foreign key references tblBooksdata(Title),
+	AdminUsername varchar(50) foreign key references tblAdminDetails(AdminUsername),
+	DateReplaced datetime
+)
+
+create procedure sp_ReplaceBook
+@UserUsername varchar(50),
+@Title varchar(200),
+@AdminUsername varchar(50),
+@DateReplaced datetime
+as
+insert into tblReplacedBooks
+values(@UserUsername,@Title,@AdminUsername,@DateReplaced)
 
 --------------------------------------------------------------------
 --USER TYPE HERE

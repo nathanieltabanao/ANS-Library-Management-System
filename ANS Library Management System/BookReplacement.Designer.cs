@@ -32,36 +32,28 @@
             this.txtCurrentAttendant = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtSearch = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtTitle = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtISBN = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtBookId = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.grpRepDetails = new System.Windows.Forms.GroupBox();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.dtpReplaced = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
-            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
+            this.btnConfirm = new DevComponents.DotNetBar.ButtonX();
+            this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grpRepDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpReplaced)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCurrentAttendant
@@ -72,7 +64,7 @@
             this.txtCurrentAttendant.BackgroundStyle.Class = "";
             this.txtCurrentAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.txtCurrentAttendant.ForeColor = System.Drawing.Color.RosyBrown;
-            this.txtCurrentAttendant.Location = new System.Drawing.Point(648, 12);
+            this.txtCurrentAttendant.Location = new System.Drawing.Point(647, 7);
             this.txtCurrentAttendant.Name = "txtCurrentAttendant";
             this.txtCurrentAttendant.Size = new System.Drawing.Size(185, 23);
             this.txtCurrentAttendant.TabIndex = 29;
@@ -86,7 +78,7 @@
             this.labelX9.BackgroundStyle.Class = "";
             this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.labelX9.ForeColor = System.Drawing.Color.OrangeRed;
-            this.labelX9.Location = new System.Drawing.Point(25, 75);
+            this.labelX9.Location = new System.Drawing.Point(25, 50);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(166, 23);
             this.labelX9.TabIndex = 28;
@@ -99,7 +91,7 @@
             // 
             this.txtSearch.Border.Class = "TextBoxBorder";
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(532, 73);
+            this.txtSearch.Location = new System.Drawing.Point(532, 48);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(301, 25);
@@ -107,322 +99,116 @@
             this.txtSearch.WatermarkText = "Search by title, code, publisher";
             this.txtSearch.TextChanged += new System.EventHandler(this.textBoxX1_TextChanged);
             // 
-            // textBoxX2
+            // txtTitle
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(298, 331);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(305, 20);
-            this.textBoxX2.TabIndex = 51;
+            this.txtTitle.Border.Class = "TextBoxBorder";
+            this.txtTitle.Enabled = false;
+            this.txtTitle.Location = new System.Drawing.Point(82, 19);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(190, 20);
+            this.txtTitle.TabIndex = 51;
             // 
-            // labelX3
+            // txtISBN
             // 
             // 
             // 
             // 
-            this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX3.Location = new System.Drawing.Point(251, 328);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(41, 23);
-            this.labelX3.TabIndex = 45;
-            this.labelX3.Text = "Title";
+            this.txtISBN.Border.Class = "TextBoxBorder";
+            this.txtISBN.Enabled = false;
+            this.txtISBN.Location = new System.Drawing.Point(82, 71);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(190, 20);
+            this.txtISBN.TabIndex = 60;
             // 
-            // textBoxX9
+            // txtBookId
             // 
             // 
             // 
             // 
-            this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Location = new System.Drawing.Point(130, 570);
-            this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.Size = new System.Drawing.Size(192, 20);
-            this.textBoxX9.TabIndex = 65;
-            // 
-            // textBoxX8
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Location = new System.Drawing.Point(130, 538);
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.Size = new System.Drawing.Size(192, 20);
-            this.textBoxX8.TabIndex = 64;
-            // 
-            // textBoxX7
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Location = new System.Drawing.Point(130, 509);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX7.TabIndex = 63;
-            // 
-            // textBoxX6
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Location = new System.Drawing.Point(130, 480);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX6.TabIndex = 62;
-            // 
-            // textBoxX5
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(130, 451);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX5.TabIndex = 61;
-            // 
-            // textBoxX4
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(130, 422);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX4.TabIndex = 60;
-            // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(130, 393);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(190, 20);
-            this.textBoxX3.TabIndex = 59;
-            // 
-            // labelX8
-            // 
-            // 
-            // 
-            // 
-            this.labelX8.BackgroundStyle.Class = "";
-            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX8.Location = new System.Drawing.Point(32, 509);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(83, 23);
-            this.labelX8.TabIndex = 58;
-            this.labelX8.Text = "Publisher:";
-            // 
-            // labelX7
-            // 
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX7.Location = new System.Drawing.Point(32, 567);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(83, 23);
-            this.labelX7.TabIndex = 57;
-            this.labelX7.Text = "Category:";
-            // 
-            // labelX6
-            // 
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX6.Location = new System.Drawing.Point(32, 538);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(94, 23);
-            this.labelX6.TabIndex = 56;
-            this.labelX6.Text = "Field of Study:";
-            // 
-            // labelX5
-            // 
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX5.Location = new System.Drawing.Point(32, 480);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(83, 23);
-            this.labelX5.TabIndex = 55;
-            this.labelX5.Text = "Publish date:";
-            // 
-            // labelX4
-            // 
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX4.Location = new System.Drawing.Point(32, 451);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(64, 23);
-            this.labelX4.TabIndex = 54;
-            this.labelX4.Text = "Author(s):";
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX2.Location = new System.Drawing.Point(32, 422);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(49, 23);
-            this.labelX2.TabIndex = 53;
-            this.labelX2.Text = "ISBN";
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX1.Location = new System.Drawing.Point(32, 393);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(49, 23);
-            this.labelX1.TabIndex = 52;
-            this.labelX1.Text = "Book ID";
+            this.txtBookId.Border.Class = "TextBoxBorder";
+            this.txtBookId.Enabled = false;
+            this.txtBookId.Location = new System.Drawing.Point(82, 45);
+            this.txtBookId.Name = "txtBookId";
+            this.txtBookId.Size = new System.Drawing.Size(190, 20);
+            this.txtBookId.TabIndex = 59;
             // 
             // grpRepDetails
             // 
-            this.grpRepDetails.Controls.Add(this.dateTimeInput1);
-            this.grpRepDetails.Controls.Add(this.labelX13);
-            this.grpRepDetails.Controls.Add(this.textBoxX10);
-            this.grpRepDetails.Controls.Add(this.textBoxX11);
-            this.grpRepDetails.Controls.Add(this.labelX11);
-            this.grpRepDetails.Controls.Add(this.labelX12);
-            this.grpRepDetails.Location = new System.Drawing.Point(387, 393);
+            this.grpRepDetails.Controls.Add(this.label3);
+            this.grpRepDetails.Controls.Add(this.label2);
+            this.grpRepDetails.Controls.Add(this.label1);
+            this.grpRepDetails.Controls.Add(this.txtUsername);
+            this.grpRepDetails.Controls.Add(this.dtpReplaced);
+            this.grpRepDetails.Controls.Add(this.txtName);
+            this.grpRepDetails.Location = new System.Drawing.Point(369, 301);
             this.grpRepDetails.Name = "grpRepDetails";
-            this.grpRepDetails.Size = new System.Drawing.Size(437, 197);
+            this.grpRepDetails.Size = new System.Drawing.Size(437, 114);
             this.grpRepDetails.TabIndex = 70;
             this.grpRepDetails.TabStop = false;
             this.grpRepDetails.Text = "Replacement Details";
+            this.grpRepDetails.Enter += new System.EventHandler(this.grpRepDetails_Enter);
             // 
-            // dateTimeInput1
+            // dtpReplaced
             // 
-            // 
-            // 
-            // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.Location = new System.Drawing.Point(146, 122);
+            this.dtpReplaced.AllowEmptyState = false;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dtpReplaced.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtpReplaced.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpReplaced.ButtonDropDown.Visible = true;
+            this.dtpReplaced.Location = new System.Drawing.Point(145, 71);
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.Class = "";
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            this.dtpReplaced.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.Class = "";
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpReplaced.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dtpReplaced.MonthCalendar.BackgroundStyle.Class = "";
+            this.dtpReplaced.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.Class = "";
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(253, 20);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 37;
-            // 
-            // labelX13
-            // 
-            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            this.dtpReplaced.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtpReplaced.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpReplaced.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtpReplaced.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtpReplaced.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtpReplaced.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtpReplaced.MonthCalendar.CommandsBackgroundStyle.Class = "";
+            this.dtpReplaced.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
+            this.dtpReplaced.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpReplaced.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.labelX13.BackgroundStyle.Class = "";
-            this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX13.Location = new System.Drawing.Point(46, 122);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(94, 23);
-            this.labelX13.TabIndex = 36;
-            this.labelX13.Text = "Date Replaced:";
+            this.dtpReplaced.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtpReplaced.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtpReplaced.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtpReplaced.MonthCalendar.NavigationBackgroundStyle.Class = "";
+            this.dtpReplaced.MonthCalendar.TodayButtonVisible = true;
+            this.dtpReplaced.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpReplaced.Name = "dtpReplaced";
+            this.dtpReplaced.Size = new System.Drawing.Size(253, 20);
+            this.dtpReplaced.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpReplaced.TabIndex = 37;
             // 
-            // textBoxX10
+            // txtName
             // 
             // 
             // 
             // 
-            this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.Location = new System.Drawing.Point(146, 87);
-            this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(253, 20);
-            this.textBoxX10.TabIndex = 35;
-            // 
-            // textBoxX11
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX11.Border.Class = "TextBoxBorder";
-            this.textBoxX11.Location = new System.Drawing.Point(146, 55);
-            this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.Size = new System.Drawing.Size(253, 20);
-            this.textBoxX11.TabIndex = 34;
-            // 
-            // labelX11
-            // 
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX11.Location = new System.Drawing.Point(46, 87);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(83, 23);
-            this.labelX11.TabIndex = 33;
-            this.labelX11.Text = "Name:";
-            // 
-            // labelX12
-            // 
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.Class = "";
-            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX12.Location = new System.Drawing.Point(46, 55);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(94, 23);
-            this.labelX12.TabIndex = 32;
-            this.labelX12.Text = "ID:";
+            this.txtName.Border.Class = "TextBoxBorder";
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(145, 45);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(253, 20);
+            this.txtName.TabIndex = 35;
             // 
             // labelX10
             // 
@@ -431,7 +217,7 @@
             // 
             this.labelX10.BackgroundStyle.Class = "";
             this.labelX10.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold);
-            this.labelX10.Location = new System.Drawing.Point(25, 22);
+            this.labelX10.Location = new System.Drawing.Point(25, -3);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(197, 47);
             this.labelX10.TabIndex = 71;
@@ -441,15 +227,20 @@
             // 
             this.dgvBooks.AllowUserToAddRows = false;
             this.dgvBooks.AllowUserToDeleteRows = false;
+            this.dgvBooks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvBooks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBooks.Location = new System.Drawing.Point(25, 104);
+            this.dgvBooks.Location = new System.Drawing.Point(25, 79);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
             this.dgvBooks.TabIndex = 73;
             this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
+            this.dgvBooks.DoubleClick += new System.EventHandler(this.dgvBooks_DoubleClick);
             // 
             // btnCancel
             // 
@@ -458,53 +249,122 @@
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(735, 620);
+            this.btnCancel.Location = new System.Drawing.Point(717, 421);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 32);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnCancel.TabIndex = 75;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAdd
+            // btnConfirm
             // 
-            this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(640, 620);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(89, 32);
-            this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
-            this.btnAdd.TabIndex = 74;
-            this.btnAdd.Text = "Confirm";
+            this.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnConfirm.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnConfirm.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnConfirm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnConfirm.Location = new System.Drawing.Point(622, 421);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(89, 32);
+            this.btnConfirm.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnConfirm.TabIndex = 74;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtUsername
+            // 
+            // 
+            // 
+            // 
+            this.txtUsername.Border.Class = "TextBoxBorder";
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Location = new System.Drawing.Point(146, 19);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(253, 20);
+            this.txtUsername.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(79, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Username :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(98, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Name :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(57, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Date Returned :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Title :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Book ID :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 78;
+            this.label6.Text = "ISBN :";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtTitle);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtBookId);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtISBN);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(45, 301);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(294, 114);
+            this.groupBox1.TabIndex = 71;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Replacement Details";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // BookReplacement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 675);
+            this.ClientSize = new System.Drawing.Size(861, 472);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.labelX10);
             this.Controls.Add(this.grpRepDetails);
-            this.Controls.Add(this.textBoxX9);
-            this.Controls.Add(this.textBoxX8);
-            this.Controls.Add(this.textBoxX7);
-            this.Controls.Add(this.textBoxX6);
-            this.Controls.Add(this.textBoxX5);
-            this.Controls.Add(this.textBoxX4);
-            this.Controls.Add(this.textBoxX3);
-            this.Controls.Add(this.labelX8);
-            this.Controls.Add(this.labelX7);
-            this.Controls.Add(this.labelX6);
-            this.Controls.Add(this.labelX5);
-            this.Controls.Add(this.labelX4);
-            this.Controls.Add(this.labelX2);
-            this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBoxX2);
-            this.Controls.Add(this.labelX3);
             this.Controls.Add(this.txtCurrentAttendant);
             this.Controls.Add(this.labelX9);
             this.Controls.Add(this.txtSearch);
@@ -513,8 +373,11 @@
             this.Text = "Book Replacement";
             this.Load += new System.EventHandler(this.BookReplacement_Load);
             this.grpRepDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            this.grpRepDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpReplaced)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -523,32 +386,23 @@
         private DevComponents.DotNetBar.LabelX txtCurrentAttendant;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSearch;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX8;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.LabelX labelX8;
-        private DevComponents.DotNetBar.LabelX labelX7;
-        private DevComponents.DotNetBar.LabelX labelX6;
-        private DevComponents.DotNetBar.LabelX labelX5;
-        private DevComponents.DotNetBar.LabelX labelX4;
-        private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTitle;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtISBN;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtBookId;
         private System.Windows.Forms.GroupBox grpRepDetails;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private DevComponents.DotNetBar.LabelX labelX13;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
-        private DevComponents.DotNetBar.LabelX labelX11;
-        private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpReplaced;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtName;
         private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.DataGridView dgvBooks;
         private DevComponents.DotNetBar.ButtonX btnCancel;
-        private DevComponents.DotNetBar.ButtonX btnAdd;
+        private DevComponents.DotNetBar.ButtonX btnConfirm;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtUsername;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
