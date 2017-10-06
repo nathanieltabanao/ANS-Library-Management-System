@@ -114,7 +114,7 @@
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(345, 604);
+            this.btnCancel.Location = new System.Drawing.Point(741, 512);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 32);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -129,7 +129,7 @@
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(25, 604);
+            this.btnAdd.Location = new System.Drawing.Point(421, 512);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -304,7 +304,7 @@
             this.btnUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnUpdate.Location = new System.Drawing.Point(132, 604);
+            this.btnUpdate.Location = new System.Drawing.Point(528, 512);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(89, 32);
             this.btnUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -319,7 +319,7 @@
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDelete.Location = new System.Drawing.Point(236, 604);
+            this.btnDelete.Location = new System.Drawing.Point(632, 512);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(89, 32);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -607,7 +607,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 675);
+            this.ClientSize = new System.Drawing.Size(861, 557);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelX12);
             this.Controls.Add(this.numPrice);

@@ -135,9 +135,9 @@
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX3.Location = new System.Drawing.Point(236, 320);
+            this.labelX3.Location = new System.Drawing.Point(78, 329);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(41, 23);
+            this.labelX3.Size = new System.Drawing.Size(89, 23);
             this.labelX3.TabIndex = 6;
             this.labelX3.Text = "Title";
             // 
@@ -213,9 +213,9 @@
             // 
             this.txtTitle.Border.Class = "TextBoxBorder";
             this.txtTitle.Enabled = false;
-            this.txtTitle.Location = new System.Drawing.Point(283, 323);
+            this.txtTitle.Location = new System.Drawing.Point(125, 332);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(305, 20);
+            this.txtTitle.Size = new System.Drawing.Size(250, 20);
             this.txtTitle.TabIndex = 12;
             // 
             // txtBookID
@@ -329,7 +329,7 @@
             this.grpBorrowDetails.Controls.Add(this.labelX11);
             this.grpBorrowDetails.Controls.Add(this.labelX12);
             this.grpBorrowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpBorrowDetails.Location = new System.Drawing.Point(367, 367);
+            this.grpBorrowDetails.Location = new System.Drawing.Point(386, 335);
             this.grpBorrowDetails.Name = "grpBorrowDetails";
             this.grpBorrowDetails.Size = new System.Drawing.Size(463, 197);
             this.grpBorrowDetails.TabIndex = 29;
@@ -555,7 +555,7 @@
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(125, 609);
+            this.btnCancel.Location = new System.Drawing.Point(760, 538);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 32);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -569,7 +569,7 @@
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(27, 609);
+            this.btnAdd.Location = new System.Drawing.Point(662, 538);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -655,7 +655,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 675);
+            this.ClientSize = new System.Drawing.Size(861, 609);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.labelX15);
             this.Controls.Add(this.dtpPublish);

@@ -35,13 +35,14 @@
             this.rdoG = new System.Windows.Forms.RadioButton();
             this.rdoB = new System.Windows.Forms.RadioButton();
             this.txtSearch = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(507, 237);
+            this.btnAccept.Location = new System.Drawing.Point(426, 239);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
             this.btnAccept.TabIndex = 0;
@@ -120,11 +121,22 @@
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(507, 239);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // Return_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 304);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvView);
@@ -148,5 +160,6 @@
         private System.Windows.Forms.RadioButton rdoG;
         private System.Windows.Forms.RadioButton rdoB;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSearch;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

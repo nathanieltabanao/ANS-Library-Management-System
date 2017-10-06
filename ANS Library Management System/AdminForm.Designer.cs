@@ -38,6 +38,7 @@
             this.bookBorrowingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookPenaltyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookReplacementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookReturningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topBorrowerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topBorrowedBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,7 @@
             this.replacementReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookReturningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stripAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,13 +130,21 @@
             this.bookReplacementToolStripMenuItem.Text = "Book Replacement";
             this.bookReplacementToolStripMenuItem.Click += new System.EventHandler(this.bookReplacementToolStripMenuItem_Click);
             // 
+            // bookReturningToolStripMenuItem
+            // 
+            this.bookReturningToolStripMenuItem.Name = "bookReturningToolStripMenuItem";
+            this.bookReturningToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.bookReturningToolStripMenuItem.Text = "Book Returning";
+            this.bookReturningToolStripMenuItem.Click += new System.EventHandler(this.bookReturningToolStripMenuItem_Click);
+            // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.topBorrowerToolStripMenuItem,
             this.topBorrowedBooksToolStripMenuItem,
             this.penaltyReportToolStripMenuItem,
-            this.replacementReportToolStripMenuItem});
+            this.replacementReportToolStripMenuItem,
+            this.generalReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(68, 33);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -145,24 +154,28 @@
             this.topBorrowerToolStripMenuItem.Name = "topBorrowerToolStripMenuItem";
             this.topBorrowerToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.topBorrowerToolStripMenuItem.Text = "Top Borrower ";
+            this.topBorrowerToolStripMenuItem.Click += new System.EventHandler(this.topBorrowerToolStripMenuItem_Click);
             // 
             // topBorrowedBooksToolStripMenuItem
             // 
             this.topBorrowedBooksToolStripMenuItem.Name = "topBorrowedBooksToolStripMenuItem";
             this.topBorrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.topBorrowedBooksToolStripMenuItem.Text = "Top Borrowed Books";
+            this.topBorrowedBooksToolStripMenuItem.Click += new System.EventHandler(this.topBorrowedBooksToolStripMenuItem_Click);
             // 
             // penaltyReportToolStripMenuItem
             // 
             this.penaltyReportToolStripMenuItem.Name = "penaltyReportToolStripMenuItem";
             this.penaltyReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.penaltyReportToolStripMenuItem.Text = "Penalty Report";
+            this.penaltyReportToolStripMenuItem.Click += new System.EventHandler(this.penaltyReportToolStripMenuItem_Click);
             // 
             // replacementReportToolStripMenuItem
             // 
             this.replacementReportToolStripMenuItem.Name = "replacementReportToolStripMenuItem";
             this.replacementReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.replacementReportToolStripMenuItem.Text = "Replacement Report";
+            this.replacementReportToolStripMenuItem.Click += new System.EventHandler(this.replacementReportToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
@@ -178,12 +191,12 @@
             this.logOutToolStripMenuItem.Text = "Log - Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
-            // bookReturningToolStripMenuItem
+            // generalReportToolStripMenuItem
             // 
-            this.bookReturningToolStripMenuItem.Name = "bookReturningToolStripMenuItem";
-            this.bookReturningToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
-            this.bookReturningToolStripMenuItem.Text = "Book Returning";
-            this.bookReturningToolStripMenuItem.Click += new System.EventHandler(this.bookReturningToolStripMenuItem_Click);
+            this.generalReportToolStripMenuItem.Name = "generalReportToolStripMenuItem";
+            this.generalReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.generalReportToolStripMenuItem.Text = "General Report";
+            this.generalReportToolStripMenuItem.Click += new System.EventHandler(this.generalReportToolStripMenuItem_Click);
             // 
             // AdminForm
             // 
@@ -229,5 +242,6 @@
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookReturningToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generalReportToolStripMenuItem;
     }
 }

@@ -101,6 +101,41 @@ namespace ANS_Library_Management_System
             r.Show();
         }
 
+        private void generalReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Crystal_Report cr = new Crystal_Report();
+            cr.MdiParent = this;
+            cr.Show();
+        }
+
+        private void topBorrowerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Top_Borrower_Viewer tb = new Top_Borrower_Viewer();
+            tb.MdiParent = this;
+            tb.Show();
+        }
+
+        private void topBorrowedBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Top_Borrowed_Books_Viewer tbb = new Top_Borrowed_Books_Viewer();
+            tbb.MdiParent = this;
+            tbb.Show();
+        }
+
+        private void penaltyReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Penalty_Report_View pr = new Penalty_Report_View();
+            pr.MdiParent = this;
+            pr.Show();
+        }
+
+        private void replacementReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Replacement_Report_Viewer rp = new Replacement_Report_Viewer();
+            rp.MdiParent = this;
+            rp.Show();
+        }
+
         //Logout Action Button
         private void logOutToolStripMenuItem_Click(object sender, System.EventArgs e)
         {

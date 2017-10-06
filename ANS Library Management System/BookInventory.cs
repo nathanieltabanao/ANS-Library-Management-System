@@ -44,6 +44,10 @@ namespace ANS_Library_Management_System
             dtpPublishDate.Value = DateTime.Now;
             numPrice.Value = 1;
             numSel.Value = 1;
+            isbn = null;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = true;
         }
 
         public int ID()
@@ -110,9 +114,12 @@ namespace ANS_Library_Management_System
             cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             cmbCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtpublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
-            numPrice.Value = decimal.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
+            numSel.Value = decimal.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
+            numPrice.Value= decimal.Parse(dgvBooks.CurrentRow.Cells[9].Value.ToString());
             btnAdd.Enabled = false;
             btnCancel.Enabled = true;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
         }
 
         private void EditBook()
@@ -140,7 +147,7 @@ namespace ANS_Library_Management_System
                 if (txtISBN.Text!=isbn)
                 {
                     DialogResult dr = MessageBox.Show("Are you sure want to change the ISBN of the book?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    if (dr==DialogResult.Yes)
+                    if (dr==DialogResult.OK)
                     {
                         EditBook();
                     }
@@ -161,17 +168,19 @@ namespace ANS_Library_Management_System
         {
             txtBookID.Text = dgvBooks.CurrentRow.Cells[0].Value.ToString();
             txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
+            isbn = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
             txtauthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
-            //dtpPublishDate.Value = DateTime.Parse( dgvBooks.CurrentRow.Cells[4].Value.ToString);
+            dtpPublishDate.Value = DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
             cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
             cmbCategory.Text = dgvBooks.CurrentRow.Cells[6].Value.ToString();
             txtpublisher.Text = dgvBooks.CurrentRow.Cells[7].Value.ToString();
             numSel.Value = decimal.Parse(dgvBooks.CurrentRow.Cells[8].Value.ToString());
+            numPrice.Value = decimal.Parse(dgvBooks.CurrentRow.Cells[9].Value.ToString());
             btnAdd.Enabled = false;
-            btnUpdate.Enabled = true;
-            btnDelete.Enabled = true;
             btnCancel.Enabled = true;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
