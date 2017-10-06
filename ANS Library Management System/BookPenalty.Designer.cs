@@ -119,6 +119,7 @@
             // 
             // 
             this.txtName.Border.Class = "TextBoxBorder";
+            this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(127, 321);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(265, 20);
@@ -158,6 +159,7 @@
             // 
             this.numDue.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.numDue.DecimalPlaces = 2;
+            this.numDue.Enabled = false;
             this.numDue.Location = new System.Drawing.Point(497, 295);
             this.numDue.Maximum = new decimal(new int[] {
             999999,
@@ -199,6 +201,7 @@
             // 
             // 
             this.txtChange.Border.Class = "TextBoxBorder";
+            this.txtChange.Enabled = false;
             this.txtChange.Location = new System.Drawing.Point(497, 378);
             this.txtChange.Name = "txtChange";
             this.txtChange.Size = new System.Drawing.Size(223, 20);
@@ -245,6 +248,7 @@
             // dtpReturn
             // 
             this.dtpReturn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpReturn.Enabled = false;
             this.dtpReturn.Location = new System.Drawing.Point(127, 347);
             this.dtpReturn.Name = "dtpReturn";
             this.dtpReturn.Size = new System.Drawing.Size(265, 20);
@@ -253,6 +257,7 @@
             // dtpActual
             // 
             this.dtpActual.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpActual.Enabled = false;
             this.dtpActual.Location = new System.Drawing.Point(127, 373);
             this.dtpActual.Name = "dtpActual";
             this.dtpActual.Size = new System.Drawing.Size(265, 20);
@@ -288,6 +293,7 @@
             // 
             // 
             this.txtUsername.Border.Class = "TextBoxBorder";
+            this.txtUsername.Enabled = false;
             this.txtUsername.Location = new System.Drawing.Point(127, 295);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(265, 20);

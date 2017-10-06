@@ -36,16 +36,16 @@
             this.txtISBN = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtBookId = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.grpRepDetails = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtpReplaced = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnConfirm = new DevComponents.DotNetBar.ButtonX();
-            this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -151,6 +151,45 @@
             this.grpRepDetails.Text = "Replacement Details";
             this.grpRepDetails.Enter += new System.EventHandler(this.grpRepDetails_Enter);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(57, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Date Returned :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(98, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Name :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(79, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Username :";
+            // 
+            // txtUsername
+            // 
+            // 
+            // 
+            // 
+            this.txtUsername.Border.Class = "TextBoxBorder";
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Location = new System.Drawing.Point(146, 19);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(253, 20);
+            this.txtUsername.TabIndex = 39;
+            // 
             // dtpReplaced
             // 
             this.dtpReplaced.AllowEmptyState = false;
@@ -160,6 +199,7 @@
             this.dtpReplaced.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtpReplaced.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpReplaced.ButtonDropDown.Visible = true;
+            this.dtpReplaced.Enabled = false;
             this.dtpReplaced.Location = new System.Drawing.Point(145, 71);
             // 
             // 
@@ -271,45 +311,6 @@
             this.btnConfirm.TabIndex = 74;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtUsername
-            // 
-            // 
-            // 
-            // 
-            this.txtUsername.Border.Class = "TextBoxBorder";
-            this.txtUsername.Enabled = false;
-            this.txtUsername.Location = new System.Drawing.Point(146, 19);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(253, 20);
-            this.txtUsername.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Username :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "Name :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Date Returned :";
             // 
             // label4
             // 

@@ -75,6 +75,20 @@ namespace ANS_Library_Management_System
             DateActual = DateTime.Now;
             MessageBox.Show("Loaded!");
             btnAccept.Enabled = true;
+            btnCancel.Enabled = false;
+        }
+
+        private void Clear()
+        {
+            user = null;
+            title = null;
+            btnAccept.Enabled = false;
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void View()
@@ -91,6 +105,7 @@ namespace ANS_Library_Management_System
             DateActual = DateTime.Now;
             MessageBox.Show("Loaded!");
             btnAccept.Enabled = true;
+            btnCancel.Enabled = false;
         }
     }
 }

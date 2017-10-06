@@ -35,13 +35,20 @@
     <Reference Include="Bunifu_UI_v1.4">
       <HintPath>..\DLL FILES\Bunifu_UI_v1.4.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=12.8.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL FILES\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +70,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ANSLMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Book Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Book Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BookBorrow.cs">
       <SubType>Form</SubType>
@@ -95,6 +108,18 @@
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
     <Compile Include="clsMiddleClass.cs" />
+    <Compile Include="Crystal Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystal Report.Designer.cs">
+      <DependentUpon>Crystal Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,6 +158,18 @@
     <Compile Include="BookPenalty.Designer.cs">
       <DependentUpon>BookPenalty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Penalty Report View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penalty Report View.Designer.cs">
+      <DependentUpon>Penalty Report View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Penalty Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Penalty Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Personnel Book Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +189,18 @@
     </Compile>
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Replacement Report Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Replacement Report Viewer.Designer.cs">
+      <DependentUpon>Replacement Report Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Replacement Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Replacement Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Return Form.cs">
       <SubType>Form</SubType>
@@ -177,6 +226,30 @@
     <Compile Include="Teacher Book Form.Designer.cs">
       <DependentUpon>Teacher Book Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Top Borrowed Books Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Top Borrowed Books Viewer.Designer.cs">
+      <DependentUpon>Top Borrowed Books Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Top Borrowed Books.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Top Borrowed Books.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Top Borrower Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Top Borrower Viewer.Designer.cs">
+      <DependentUpon>Top Borrower Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Top Borrower.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Top Borrower.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +258,10 @@
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Book Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="BookBorrow.resx">
       <DependentUpon>BookBorrow.cs</DependentUpon>
@@ -204,6 +281,13 @@
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Crystal Report.resx">
+      <DependentUpon>Crystal Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +299,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penalty Report View.resx">
+      <DependentUpon>Penalty Report View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penalty Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Penalty Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel Book Form.resx">
       <DependentUpon>Personnel Book Form.cs</DependentUpon>
@@ -235,6 +326,13 @@
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Replacement Report Viewer.resx">
+      <DependentUpon>Replacement Report Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Replacement Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Replacement Report.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Return Form.resx">
       <DependentUpon>Return Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +344,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher Book Form.resx">
       <DependentUpon>Teacher Book Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Top Borrowed Books Viewer.resx">
+      <DependentUpon>Top Borrowed Books Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Top Borrowed Books.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Top Borrowed Books.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Top Borrower Viewer.resx">
+      <DependentUpon>Top Borrower Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Top Borrower.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Top Borrower.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSearch.resx">
       <DependentUpon>UserSearch.cs</DependentUpon>
@@ -293,6 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ANS LOGO %282%29.jpeg" />
