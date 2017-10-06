@@ -47,11 +47,14 @@ namespace ANS_Library_Management_System
                 db.sp_BookQuantityUpdate(title, quantity);
                 View();
                 btnAccept.Enabled = false;
+                btnCancel.Enabled = false;
             }
             else
             {
                 db.sp_InsertDamagedBooks(user, title);
                 View();
+                btnAccept.Enabled = false;
+                btnCancel.Enabled = false;
             }
         }
 
@@ -59,6 +62,7 @@ namespace ANS_Library_Management_System
         {
             View();
             btnAccept.Enabled = false;
+            btnCancel.Enabled = false;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -75,7 +79,7 @@ namespace ANS_Library_Management_System
             DateActual = DateTime.Now;
             MessageBox.Show("Loaded!");
             btnAccept.Enabled = true;
-            btnCancel.Enabled = false;
+            btnCancel.Enabled = true;
         }
 
         private void Clear()
@@ -83,12 +87,13 @@ namespace ANS_Library_Management_System
             user = null;
             title = null;
             btnAccept.Enabled = false;
+            btnCancel.Enabled = false;
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Clear();
         }
 
         private void View()
@@ -105,7 +110,7 @@ namespace ANS_Library_Management_System
             DateActual = DateTime.Now;
             MessageBox.Show("Loaded!");
             btnAccept.Enabled = true;
-            btnCancel.Enabled = false;
+            btnCancel.Enabled = true;
         }
     }
 }

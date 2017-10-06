@@ -24,7 +24,7 @@ namespace ANS_Library_Management_System
         public string password { get; set; }
         public string usertype { get; set; }
 
-        string action, isbn;
+        string action, isbn, title;
 
         //view shit
         public void BookView()
@@ -45,6 +45,7 @@ namespace ANS_Library_Management_System
             numPrice.Value = 1;
             numSel.Value = 1;
             isbn = null;
+            title = null;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
             btnAdd.Enabled = true;
@@ -109,6 +110,7 @@ namespace ANS_Library_Management_System
             txtISBN.Text = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             isbn = dgvBooks.CurrentRow.Cells[1].Value.ToString();
             txtTitle.Text = dgvBooks.CurrentRow.Cells[2].Value.ToString();
+            title = dgvBooks.CurrentRow.Cells[2].Value.ToString();
             txtauthor.Text = dgvBooks.CurrentRow.Cells[3].Value.ToString();
             dtpPublishDate.Value = DateTime.Parse(dgvBooks.CurrentRow.Cells[4].Value.ToString());
             cmbFoS.Text = dgvBooks.CurrentRow.Cells[5].Value.ToString();
@@ -144,22 +146,30 @@ namespace ANS_Library_Management_System
             }
             else
             {
-                if (txtISBN.Text!=isbn)
+                if (txtTitle.Text!=title)
                 {
-                    DialogResult dr = MessageBox.Show("Are you sure want to change the ISBN of the book?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    if (dr==DialogResult.OK)
-                    {
-                        EditBook();
-                    }
-                    else if (dr==DialogResult.Cancel)
-                    {
-                        txtISBN.Text = isbn;
-                        EditBook();
-                    }
+                    MessageBox.Show("You cannot edit a title of a book!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    txtTitle.Text = title;
                 }
                 else
                 {
-                    EditBook();
+                    if (txtISBN.Text != isbn)
+                    {
+                        DialogResult dr = MessageBox.Show("Are you sure want to change the ISBN of the book?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        if (dr == DialogResult.OK)
+                        {
+                            EditBook();
+                        }
+                        else if (dr == DialogResult.Cancel)
+                        {
+                            txtISBN.Text = isbn;
+                            EditBook();
+                        }
+                    }
+                    else
+                    {
+                        EditBook();
+                    }
                 }
             }
         }
