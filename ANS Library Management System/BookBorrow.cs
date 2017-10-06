@@ -35,7 +35,7 @@ namespace ANS_Library_Management_System
         //viweing method
         public void View()
         {
-            dgvBooks.DataSource = db.sp_BookView();
+                dgvBooks.DataSource = db.sp_BookView();
         }
 
         public void Clear()
@@ -76,8 +76,7 @@ namespace ANS_Library_Management_System
             View();
             txtName.Text = s.name;
             txtUsername.Text = s.user;
-            dtpReturn.Value = dtpReturn.Value.AddDays(3);
-
+            Clear();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

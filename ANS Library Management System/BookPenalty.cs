@@ -27,12 +27,24 @@ namespace ANS_Library_Management_System
         {
             penalty = 5;
             View();
+            Clear();
         }
 
         private void View()
         {
             dgvView.DataSource = db.sp_ViewTopay();
             dgvAccounting.DataSource = db.sp_ViewAccounting();
+        }
+
+        private void Clear()
+        {
+            penalty = 5;
+            id = 0;
+            txtChange.Text = null;
+            txtName.Text = null;
+            txtUsername.Text = null;
+            btnConfirm.Enabled = false;
+            btnClear.Enabled = false;
         }
 
         private void dgvView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,16 +59,26 @@ namespace ANS_Library_Management_System
             dtpReturn.Value = DateTime.Parse(dgvView.CurrentRow.Cells[7].Value.ToString());
             dtpActual.Value = DateTime.Parse(dgvView.CurrentRow.Cells[8].Value.ToString());
 
-            int days = dtpReturn.Value.Day - dtpActual.Value.Day;
+            double days = (dtpActual.Value-dtpReturn.Value).TotalDays;
 
             id = int.Parse(dgvView.CurrentRow.Cells[0].Value.ToString());
 
-            numDue.Value = decimal.Parse((penalty*days).ToString());
+
+
+            numDue.Value = decimal.Parse((penalty * days).ToString());
+            btnConfirm.Enabled = true;
+            btnClear.Enabled = true;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgvView.DataSource = db.sp_SearchAccountingNotPaid(txtSearch.Text);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+            btnClear.Enabled = false;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -71,7 +93,7 @@ namespace ANS_Library_Management_System
                 db.sp_BookPayDue(DateTime.Now, username, txtUsername.Text, txtName.Text, numDue.Value, numCash.Value, decimal.Parse(txtChange.Text));
                 db.sp_BookDuePaid(id, "y");
                 View();
-                
+                btnConfirm.Enabled = false;
             }
         }
     }

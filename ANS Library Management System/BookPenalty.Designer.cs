@@ -50,6 +50,7 @@
             this.lblCurrentAttendant = new System.Windows.Forms.Label();
             this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnClear = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCash)).BeginInit();
@@ -309,11 +310,24 @@
             this.label8.TabIndex = 93;
             this.label8.Text = "Username :";
             // 
+            // btnClear
+            // 
+            this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnClear.Location = new System.Drawing.Point(726, 295);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 75);
+            this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnClear.TabIndex = 95;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // BookPenalty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 420);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblCurrentAttendant);
@@ -373,5 +387,6 @@
         private System.Windows.Forms.Label lblCurrentAttendant;
         private DevComponents.DotNetBar.Controls.TextBoxX txtUsername;
         private System.Windows.Forms.Label label8;
+        private DevComponents.DotNetBar.ButtonX btnClear;
     }
 }

@@ -4231,7 +4231,7 @@ namespace ANS_Library_Management_System
 		
 		public sp_BookViewResult()
 		{
-		}
+	}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookID", DbType="Int NOT NULL")]
 		public int BookID
