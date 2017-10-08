@@ -101,7 +101,7 @@
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCancel.Location = new System.Drawing.Point(362, 600);
             this.btnCancel.Name = "btnCancel";
@@ -117,7 +117,7 @@
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAdd.Location = new System.Drawing.Point(42, 600);
             this.btnAdd.Name = "btnAdd";
@@ -134,9 +134,10 @@
             // 
             // 
             this.txtpublisher.Border.Class = "TextBoxBorder";
+            this.txtpublisher.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpublisher.Location = new System.Drawing.Point(148, 537);
             this.txtpublisher.Name = "txtpublisher";
-            this.txtpublisher.Size = new System.Drawing.Size(250, 20);
+            this.txtpublisher.Size = new System.Drawing.Size(250, 25);
             this.txtpublisher.TabIndex = 5;
             // 
             // txtauthor
@@ -146,9 +147,10 @@
             // 
             // 
             this.txtauthor.Border.Class = "TextBoxBorder";
+            this.txtauthor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtauthor.Location = new System.Drawing.Point(148, 479);
             this.txtauthor.Name = "txtauthor";
-            this.txtauthor.Size = new System.Drawing.Size(250, 20);
+            this.txtauthor.Size = new System.Drawing.Size(250, 25);
             this.txtauthor.TabIndex = 3;
             // 
             // txtISBN
@@ -158,9 +160,10 @@
             // 
             // 
             this.txtISBN.Border.Class = "TextBoxBorder";
+            this.txtISBN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtISBN.Location = new System.Drawing.Point(148, 450);
             this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(250, 20);
+            this.txtISBN.Size = new System.Drawing.Size(250, 25);
             this.txtISBN.TabIndex = 2;
             // 
             // txtBookID
@@ -171,9 +174,10 @@
             // 
             this.txtBookID.Border.Class = "TextBoxBorder";
             this.txtBookID.Enabled = false;
+            this.txtBookID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookID.Location = new System.Drawing.Point(148, 421);
             this.txtBookID.Name = "txtBookID";
-            this.txtBookID.Size = new System.Drawing.Size(250, 20);
+            this.txtBookID.Size = new System.Drawing.Size(250, 25);
             this.txtBookID.TabIndex = 36;
             // 
             // txtTitle
@@ -183,19 +187,21 @@
             // 
             // 
             this.txtTitle.Border.Class = "TextBoxBorder";
+            this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitle.Location = new System.Drawing.Point(323, 366);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(307, 20);
+            this.txtTitle.Size = new System.Drawing.Size(307, 25);
             this.txtTitle.TabIndex = 1;
             // 
             // labelX8
             // 
             this.labelX8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
-            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.Location = new System.Drawing.Point(31, 527);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(118, 36);
@@ -205,11 +211,12 @@
             // labelX7
             // 
             this.labelX7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.Location = new System.Drawing.Point(459, 440);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(118, 36);
@@ -219,11 +226,12 @@
             // labelX6
             // 
             this.labelX6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(459, 411);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(129, 36);
@@ -233,11 +241,12 @@
             // labelX5
             // 
             this.labelX5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.Location = new System.Drawing.Point(31, 498);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(118, 36);
@@ -247,11 +256,12 @@
             // labelX4
             // 
             this.labelX4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.Location = new System.Drawing.Point(31, 469);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(99, 36);
@@ -261,11 +271,12 @@
             // labelX3
             // 
             this.labelX3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.Location = new System.Drawing.Point(243, 363);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(76, 36);
@@ -275,11 +286,12 @@
             // labelX2
             // 
             this.labelX2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.Location = new System.Drawing.Point(31, 440);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(84, 36);
@@ -289,11 +301,12 @@
             // labelX1
             // 
             this.labelX1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.Location = new System.Drawing.Point(31, 411);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(84, 36);
@@ -306,7 +319,7 @@
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdate.Location = new System.Drawing.Point(149, 600);
             this.btnUpdate.Name = "btnUpdate";
@@ -322,7 +335,7 @@
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDelete.Location = new System.Drawing.Point(253, 600);
             this.btnDelete.Name = "btnDelete";
@@ -344,6 +357,7 @@
             this.dtpPublishDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpPublishDate.ButtonDropDown.Visible = true;
             this.dtpPublishDate.CustomFormat = "yyyy";
+            this.dtpPublishDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpPublishDate.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtpPublishDate.Location = new System.Drawing.Point(148, 508);
             // 
@@ -379,7 +393,7 @@
             this.dtpPublishDate.MonthCalendar.TodayButtonVisible = true;
             this.dtpPublishDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtpPublishDate.Name = "dtpPublishDate";
-            this.dtpPublishDate.Size = new System.Drawing.Size(250, 20);
+            this.dtpPublishDate.Size = new System.Drawing.Size(250, 25);
             this.dtpPublishDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpPublishDate.TabIndex = 4;
             // 
@@ -404,6 +418,7 @@
             // numSel
             // 
             this.numSel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.numSel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numSel.Location = new System.Drawing.Point(592, 474);
             this.numSel.Maximum = new decimal(new int[] {
             200,
@@ -416,7 +431,7 @@
             0,
             0});
             this.numSel.Name = "numSel";
-            this.numSel.Size = new System.Drawing.Size(122, 20);
+            this.numSel.Size = new System.Drawing.Size(122, 25);
             this.numSel.TabIndex = 8;
             this.numSel.Value = new decimal(new int[] {
             1,
@@ -427,11 +442,12 @@
             // labelX11
             // 
             this.labelX11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.Location = new System.Drawing.Point(459, 466);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(118, 36);
@@ -442,6 +458,7 @@
             // 
             this.cmbFoS.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cmbFoS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFoS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFoS.FormattingEnabled = true;
             this.cmbFoS.Items.AddRange(new object[] {
             "Agricultural Sciences",
@@ -504,7 +521,7 @@
             "Urban and Regional Studies "});
             this.cmbFoS.Location = new System.Drawing.Point(592, 416);
             this.cmbFoS.Name = "cmbFoS";
-            this.cmbFoS.Size = new System.Drawing.Size(273, 21);
+            this.cmbFoS.Size = new System.Drawing.Size(273, 25);
             this.cmbFoS.Sorted = true;
             this.cmbFoS.TabIndex = 6;
             // 
@@ -512,6 +529,7 @@
             // 
             this.cmbCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
             "Action and Adventure",
@@ -547,18 +565,19 @@
             "Trilogy"});
             this.cmbCategory.Location = new System.Drawing.Point(592, 445);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(273, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(273, 25);
             this.cmbCategory.Sorted = true;
             this.cmbCategory.TabIndex = 7;
             // 
             // labelX12
             // 
             this.labelX12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX12.BackgroundStyle.Class = "";
-            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelX12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX12.Location = new System.Drawing.Point(459, 495);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(107, 36);
@@ -569,6 +588,7 @@
             // 
             this.numPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.numPrice.DecimalPlaces = 2;
+            this.numPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numPrice.Increment = new decimal(new int[] {
             25,
             0,
@@ -586,7 +606,7 @@
             0,
             0});
             this.numPrice.Name = "numPrice";
-            this.numPrice.Size = new System.Drawing.Size(122, 20);
+            this.numPrice.Size = new System.Drawing.Size(122, 25);
             this.numPrice.TabIndex = 9;
             this.numPrice.ThousandsSeparator = true;
             this.numPrice.Value = new decimal(new int[] {
@@ -601,9 +621,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(572, 507);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 13);
+            this.label1.Size = new System.Drawing.Size(16, 17);
             this.label1.TabIndex = 78;
             this.label1.Text = "₱";
             // 

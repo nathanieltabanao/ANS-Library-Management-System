@@ -19,7 +19,7 @@ namespace ANS_Library_Management_System.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,11 +61,51 @@ namespace ANS_Library_Management_System.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _lock {
+            get {
+                object obj = ResourceManager.GetObject("_lock", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap add_contact {
             get {
-                object obj = ResourceManager.GetObject("add contact", resourceCulture);
+                object obj = ResourceManager.GetObject("add_contact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anns {
+            get {
+                object obj = ResourceManager.GetObject("anns", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anns__2_ {
+            get {
+                object obj = ResourceManager.GetObject("anns__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ANS_LOGO {
+            get {
+                object obj = ResourceManager.GetObject("ANS_LOGO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +115,7 @@ namespace ANS_Library_Management_System.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ANS_LOGO__2_ {
             get {
-                object obj = ResourceManager.GetObject("ANS LOGO (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("ANS_LOGO__2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +143,59 @@ namespace ANS_Library_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_login {
+            get {
+                object obj = ResourceManager.GetObject("bg_login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_login2 {
+            get {
+                object obj = ResourceManager.GetObject("bg_login2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_login3 {
             get {
                 object obj = ResourceManager.GetObject("bg_login3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_pass {
+            get {
+                object obj = ResourceManager.GetObject("bg_pass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_penalty {
+            get {
+                object obj = ResourceManager.GetObject("bg_penalty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_replacement {
+            get {
+                object obj = ResourceManager.GetObject("bg_replacement", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +223,29 @@ namespace ANS_Library_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_security {
+            get {
+                object obj = ResourceManager.GetObject("bg_security", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_userform {
             get {
                 object obj = ResourceManager.GetObject("bg_userform", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_userform_png {
+            get {
+                object obj = ResourceManager.GetObject("bg_userform_png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +263,9 @@ namespace ANS_Library_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eye_png {
+        internal static System.Drawing.Bitmap bg_usersearch1 {
             get {
-                object obj = ResourceManager.GetObject("eye.png", resourceCulture);
+                object obj = ResourceManager.GetObject("bg_usersearch1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +273,139 @@ namespace ANS_Library_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap home {
+        internal static System.Drawing.Bitmap bg_usersearch11 {
+            get {
+                object obj = ResourceManager.GetObject("bg_usersearch11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_usersearch2 {
+            get {
+                object obj = ResourceManager.GetObject("bg_usersearch2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_usersearch21 {
+            get {
+                object obj = ResourceManager.GetObject("bg_usersearch21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_usersearch3 {
+            get {
+                object obj = ResourceManager.GetObject("bg_usersearch3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon books_stack_png {
+            get {
+                object obj = ResourceManager.GetObject("books_stack_png", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check {
+            get {
+                object obj = ResourceManager.GetObject("check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon eye_png {
+            get {
+                object obj = ResourceManager.GetObject("eye_png", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon folder1_png {
+            get {
+                object obj = ResourceManager.GetObject("folder1_png", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon home {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap index {
+            get {
+                object obj = ResourceManager.GetObject("index", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon key_png {
+            get {
+                object obj = ResourceManager.GetObject("key_png", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon library {
+            get {
+                object obj = ResourceManager.GetObject("library", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon library__2_ {
+            get {
+                object obj = ResourceManager.GetObject("library__2_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lms_test {
+            get {
+                object obj = ResourceManager.GetObject("lms_test", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,18 +415,38 @@ namespace ANS_Library_Management_System.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap lms_test__2_ {
             get {
-                object obj = ResourceManager.GetObject("lms-test (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("lms_test__2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap user_png {
+        internal static System.Drawing.Icon setting_png {
             get {
-                object obj = ResourceManager.GetObject("user.png", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("setting_png", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon user_1_png {
+            get {
+                object obj = ResourceManager.GetObject("user_1_png", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon user_png {
+            get {
+                object obj = ResourceManager.GetObject("user_png", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

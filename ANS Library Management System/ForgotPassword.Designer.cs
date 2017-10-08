@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPassword));
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSecurityAnswer = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -40,16 +41,17 @@
             // 
             // labelX1
             // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(12, 12);
+            this.labelX1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(12, 79);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(160, 19);
             this.labelX1.TabIndex = 4;
-            this.labelX1.Text = "Please login to continue.";
+            this.labelX1.Text = "Confirm security question.";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // txtUsername
@@ -58,9 +60,10 @@
             // 
             // 
             this.txtUsername.Border.Class = "TextBoxBorder";
-            this.txtUsername.Location = new System.Drawing.Point(110, 50);
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(138, 126);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(223, 20);
+            this.txtUsername.Size = new System.Drawing.Size(244, 25);
             this.txtUsername.TabIndex = 6;
             // 
             // txtSecurityAnswer
@@ -69,44 +72,51 @@
             // 
             // 
             this.txtSecurityAnswer.Border.Class = "TextBoxBorder";
-            this.txtSecurityAnswer.Location = new System.Drawing.Point(110, 102);
+            this.txtSecurityAnswer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSecurityAnswer.Location = new System.Drawing.Point(138, 178);
             this.txtSecurityAnswer.Name = "txtSecurityAnswer";
-            this.txtSecurityAnswer.Size = new System.Drawing.Size(223, 20);
+            this.txtSecurityAnswer.Size = new System.Drawing.Size(244, 25);
             this.txtSecurityAnswer.TabIndex = 7;
             // 
             // labelX2
             // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(29, 47);
+            this.labelX2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Location = new System.Drawing.Point(16, 125);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(75, 23);
             this.labelX2.TabIndex = 8;
-            this.labelX2.Text = "Username:";
+            this.labelX2.Text = "Username :";
             // 
             // labelX3
             // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(0, 76);
+            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.Location = new System.Drawing.Point(16, 154);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(104, 23);
+            this.labelX3.Size = new System.Drawing.Size(119, 23);
             this.labelX3.TabIndex = 9;
             this.labelX3.Text = "Security Question :";
             // 
             // labelX4
             // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(12, 105);
+            this.labelX4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.Location = new System.Drawing.Point(16, 183);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(92, 23);
+            this.labelX4.Size = new System.Drawing.Size(107, 23);
             this.labelX4.TabIndex = 10;
             this.labelX4.Text = "Security Answer :";
             // 
@@ -114,9 +124,10 @@
             // 
             this.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnConfirm.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnConfirm.Location = new System.Drawing.Point(258, 128);
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(307, 219);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(75, 36);
             this.btnConfirm.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnConfirm.TabIndex = 11;
             this.btnConfirm.Text = "Confirm";
@@ -125,6 +136,7 @@
             // txtSecurityQuestion
             // 
             this.txtSecurityQuestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtSecurityQuestion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSecurityQuestion.FormattingEnabled = true;
             this.txtSecurityQuestion.Items.AddRange(new object[] {
             "In what city were you born?",
@@ -149,10 +161,10 @@
             "Which is your favorite web browser?",
             "Which phone number do you remember most from your childhood?",
             "Who is your favorite actor, musician, or artist?"});
-            this.txtSecurityQuestion.Location = new System.Drawing.Point(110, 75);
+            this.txtSecurityQuestion.Location = new System.Drawing.Point(138, 152);
             this.txtSecurityQuestion.MaxDropDownItems = 15;
             this.txtSecurityQuestion.Name = "txtSecurityQuestion";
-            this.txtSecurityQuestion.Size = new System.Drawing.Size(223, 21);
+            this.txtSecurityQuestion.Size = new System.Drawing.Size(244, 25);
             this.txtSecurityQuestion.Sorted = true;
             this.txtSecurityQuestion.TabIndex = 14;
             // 
@@ -160,7 +172,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 179);
+            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_security;
+            this.ClientSize = new System.Drawing.Size(414, 273);
             this.Controls.Add(this.txtSecurityQuestion);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.labelX4);
@@ -170,6 +183,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.labelX1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ForgotPassword";

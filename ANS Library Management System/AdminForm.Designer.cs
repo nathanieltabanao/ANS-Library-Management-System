@@ -200,7 +200,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_userform;
+            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_login3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1000, 545);
             this.Controls.Add(this.stripAdmin);

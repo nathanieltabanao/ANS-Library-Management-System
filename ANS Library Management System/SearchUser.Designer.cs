@@ -38,6 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(350, 72);
             this.label1.Name = "label1";
@@ -51,7 +52,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(406, 72);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(381, 20);
+            this.txtSearch.Size = new System.Drawing.Size(411, 20);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -67,7 +68,7 @@
             this.dtpSearch.Location = new System.Drawing.Point(30, 104);
             this.dtpSearch.Name = "dtpSearch";
             this.dtpSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtpSearch.Size = new System.Drawing.Size(757, 224);
+            this.dtpSearch.Size = new System.Drawing.Size(787, 224);
             this.dtpSearch.TabIndex = 2;
             this.dtpSearch.DoubleClick += new System.EventHandler(this.dtpSearch_DoubleClick);
             // 
@@ -90,9 +91,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_usersearch;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(799, 376);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(829, 365);
             this.Controls.Add(this.labelX10);
             this.Controls.Add(this.dtpSearch);
             this.Controls.Add(this.txtSearch);

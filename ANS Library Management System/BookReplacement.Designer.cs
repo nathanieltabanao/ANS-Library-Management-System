@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookReplacement));
             this.txtCurrentAttendant = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtSearch = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTitle = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtISBN = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -42,7 +41,6 @@
             this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtpReplaced = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnConfirm = new DevComponents.DotNetBar.ButtonX();
@@ -64,25 +62,11 @@
             this.txtCurrentAttendant.BackgroundStyle.Class = "";
             this.txtCurrentAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.txtCurrentAttendant.ForeColor = System.Drawing.Color.RosyBrown;
-            this.txtCurrentAttendant.Location = new System.Drawing.Point(647, 7);
+            this.txtCurrentAttendant.Location = new System.Drawing.Point(647, 27);
             this.txtCurrentAttendant.Name = "txtCurrentAttendant";
             this.txtCurrentAttendant.Size = new System.Drawing.Size(185, 23);
             this.txtCurrentAttendant.TabIndex = 29;
             this.txtCurrentAttendant.Text = "";
-            // 
-            // labelX9
-            // 
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.Class = "";
-            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.labelX9.ForeColor = System.Drawing.Color.OrangeRed;
-            this.labelX9.Location = new System.Drawing.Point(25, 50);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(166, 23);
-            this.labelX9.TabIndex = 28;
-            this.labelX9.Text = "Double click on record to add";
             // 
             // txtSearch
             // 
@@ -91,7 +75,7 @@
             // 
             this.txtSearch.Border.Class = "TextBoxBorder";
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(532, 48);
+            this.txtSearch.Location = new System.Drawing.Point(532, 68);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(301, 25);
@@ -106,7 +90,7 @@
             // 
             this.txtTitle.Border.Class = "TextBoxBorder";
             this.txtTitle.Enabled = false;
-            this.txtTitle.Location = new System.Drawing.Point(82, 19);
+            this.txtTitle.Location = new System.Drawing.Point(82, 39);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(190, 20);
             this.txtTitle.TabIndex = 51;
@@ -118,7 +102,7 @@
             // 
             this.txtISBN.Border.Class = "TextBoxBorder";
             this.txtISBN.Enabled = false;
-            this.txtISBN.Location = new System.Drawing.Point(82, 71);
+            this.txtISBN.Location = new System.Drawing.Point(82, 91);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(190, 20);
             this.txtISBN.TabIndex = 60;
@@ -130,7 +114,7 @@
             // 
             this.txtBookId.Border.Class = "TextBoxBorder";
             this.txtBookId.Enabled = false;
-            this.txtBookId.Location = new System.Drawing.Point(82, 45);
+            this.txtBookId.Location = new System.Drawing.Point(82, 65);
             this.txtBookId.Name = "txtBookId";
             this.txtBookId.Size = new System.Drawing.Size(190, 20);
             this.txtBookId.TabIndex = 59;
@@ -143,7 +127,7 @@
             this.grpRepDetails.Controls.Add(this.txtUsername);
             this.grpRepDetails.Controls.Add(this.dtpReplaced);
             this.grpRepDetails.Controls.Add(this.txtName);
-            this.grpRepDetails.Location = new System.Drawing.Point(369, 301);
+            this.grpRepDetails.Location = new System.Drawing.Point(369, 321);
             this.grpRepDetails.Name = "grpRepDetails";
             this.grpRepDetails.Size = new System.Drawing.Size(437, 114);
             this.grpRepDetails.TabIndex = 70;
@@ -154,7 +138,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 75);
+            this.label3.Location = new System.Drawing.Point(57, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 42;
@@ -163,7 +147,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 48);
+            this.label2.Location = new System.Drawing.Point(98, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 41;
@@ -172,7 +156,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 21);
+            this.label1.Location = new System.Drawing.Point(79, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 40;
@@ -185,7 +169,7 @@
             // 
             this.txtUsername.Border.Class = "TextBoxBorder";
             this.txtUsername.Enabled = false;
-            this.txtUsername.Location = new System.Drawing.Point(146, 19);
+            this.txtUsername.Location = new System.Drawing.Point(146, 39);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(253, 20);
             this.txtUsername.TabIndex = 39;
@@ -200,7 +184,7 @@
             this.dtpReplaced.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpReplaced.ButtonDropDown.Visible = true;
             this.dtpReplaced.Enabled = false;
-            this.dtpReplaced.Location = new System.Drawing.Point(145, 71);
+            this.dtpReplaced.Location = new System.Drawing.Point(145, 91);
             // 
             // 
             // 
@@ -245,36 +229,21 @@
             // 
             this.txtName.Border.Class = "TextBoxBorder";
             this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(145, 45);
+            this.txtName.Location = new System.Drawing.Point(145, 65);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(253, 20);
             this.txtName.TabIndex = 35;
-            // 
-            // labelX10
-            // 
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold);
-            this.labelX10.Location = new System.Drawing.Point(25, -3);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(197, 47);
-            this.labelX10.TabIndex = 71;
-            this.labelX10.Text = "Book Replacement";
             // 
             // dgvBooks
             // 
             this.dgvBooks.AllowUserToAddRows = false;
             this.dgvBooks.AllowUserToDeleteRows = false;
-            this.dgvBooks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvBooks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBooks.Location = new System.Drawing.Point(25, 79);
+            this.dgvBooks.Location = new System.Drawing.Point(25, 99);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
@@ -289,7 +258,7 @@
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(717, 421);
+            this.btnCancel.Location = new System.Drawing.Point(717, 441);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 32);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -304,7 +273,7 @@
             this.btnConfirm.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnConfirm.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnConfirm.Location = new System.Drawing.Point(622, 421);
+            this.btnConfirm.Location = new System.Drawing.Point(622, 441);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(89, 32);
             this.btnConfirm.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -315,7 +284,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 21);
+            this.label4.Location = new System.Drawing.Point(43, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 76;
@@ -324,7 +293,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 47);
+            this.label5.Location = new System.Drawing.Point(24, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 77;
@@ -333,7 +302,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 73);
+            this.label6.Location = new System.Drawing.Point(38, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 78;
@@ -347,7 +316,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtISBN);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(45, 301);
+            this.groupBox1.Location = new System.Drawing.Point(45, 321);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(294, 114);
             this.groupBox1.TabIndex = 71;
@@ -359,15 +328,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 472);
+            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_replacement;
+            this.ClientSize = new System.Drawing.Size(861, 494);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.dgvBooks);
-            this.Controls.Add(this.labelX10);
             this.Controls.Add(this.grpRepDetails);
             this.Controls.Add(this.txtCurrentAttendant);
-            this.Controls.Add(this.labelX9);
             this.Controls.Add(this.txtSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -389,7 +357,6 @@
 
         #endregion
         private DevComponents.DotNetBar.LabelX txtCurrentAttendant;
-        private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSearch;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTitle;
         private DevComponents.DotNetBar.Controls.TextBoxX txtISBN;
@@ -397,7 +364,6 @@
         private System.Windows.Forms.GroupBox grpRepDetails;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpReplaced;
         private DevComponents.DotNetBar.Controls.TextBoxX txtName;
-        private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.DataGridView dgvBooks;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnConfirm;
