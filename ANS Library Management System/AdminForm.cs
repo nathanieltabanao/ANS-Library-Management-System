@@ -136,6 +136,34 @@ namespace ANS_Library_Management_System
             rp.Show();
         }
 
+        private void topBorrowerToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Top_Borrower_Viewer tbv = new Top_Borrower_Viewer();
+            tbv.MdiParent = this;
+            tbv.Show();
+        }
+
+        private void topBorrowedBooksToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Top_Borrowed_Books_Viewer tbb = new Top_Borrowed_Books_Viewer();
+            tbb.MdiParent = this;
+            tbb.Show();
+        }
+
+        private void penaltyReportToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Penalty_Report_View pr = new Penalty_Report_View();
+            pr.MdiParent = this;
+            pr.Show();
+        }
+
+        private void replacementReportToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Replacement_Report_Viewer rpv = new Replacement_Report_Viewer();
+            rpv.MdiParent = this;
+            rpv.Show();
+        }
+
         //Logout Action Button
         private void logOutToolStripMenuItem_Click(object sender, System.EventArgs e)
         {

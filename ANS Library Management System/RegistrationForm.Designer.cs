@@ -67,11 +67,6 @@
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.cmbGradeLevel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.cmbSection = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbSecQuestion = new System.Windows.Forms.ComboBox();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.comboItem5 = new DevComponents.Editors.ComboItem();
@@ -81,11 +76,16 @@
             this.comboItem9 = new DevComponents.Editors.ComboItem();
             this.comboItem10 = new DevComponents.Editors.ComboItem();
             this.comboItem11 = new DevComponents.Editors.ComboItem();
+            this.cmbSection = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem12 = new DevComponents.Editors.ComboItem();
             this.comboItem13 = new DevComponents.Editors.ComboItem();
             this.comboItem14 = new DevComponents.Editors.ComboItem();
             this.comboItem15 = new DevComponents.Editors.ComboItem();
             this.comboItem16 = new DevComponents.Editors.ComboItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbSecQuestion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -632,6 +632,42 @@
             // 
             this.comboItem1.Text = "CI501";
             // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "CI502";
+            // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "CI503";
+            // 
+            // comboItem5
+            // 
+            this.comboItem5.Text = "CI504";
+            // 
+            // comboItem6
+            // 
+            this.comboItem6.Text = "CI505";
+            // 
+            // comboItem7
+            // 
+            this.comboItem7.Text = "HB401";
+            // 
+            // comboItem8
+            // 
+            this.comboItem8.Text = "CT405";
+            // 
+            // comboItem9
+            // 
+            this.comboItem9.Text = "LW803";
+            // 
+            // comboItem10
+            // 
+            this.comboItem10.Text = "UI403";
+            // 
+            // comboItem11
+            // 
+            this.comboItem11.Text = "AN758";
+            // 
             // cmbSection
             // 
             this.cmbSection.DisplayMember = "Text";
@@ -655,6 +691,26 @@
             // comboItem2
             // 
             this.comboItem2.Text = "7TH GRADE";
+            // 
+            // comboItem12
+            // 
+            this.comboItem12.Text = "8TH GRADE";
+            // 
+            // comboItem13
+            // 
+            this.comboItem13.Text = "9TH GRADE";
+            // 
+            // comboItem14
+            // 
+            this.comboItem14.Text = "10TH GRADE";
+            // 
+            // comboItem15
+            // 
+            this.comboItem15.Text = "11TH GRADE";
+            // 
+            // comboItem16
+            // 
+            this.comboItem16.Text = "12TH GRADE";
             // 
             // groupBox1
             // 
@@ -713,62 +769,6 @@
             this.cmbSecQuestion.Sorted = true;
             this.cmbSecQuestion.TabIndex = 13;
             // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "CI502";
-            // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "CI503";
-            // 
-            // comboItem5
-            // 
-            this.comboItem5.Text = "CI504";
-            // 
-            // comboItem6
-            // 
-            this.comboItem6.Text = "CI505";
-            // 
-            // comboItem7
-            // 
-            this.comboItem7.Text = "HB401";
-            // 
-            // comboItem8
-            // 
-            this.comboItem8.Text = "CT405";
-            // 
-            // comboItem9
-            // 
-            this.comboItem9.Text = "LW803";
-            // 
-            // comboItem10
-            // 
-            this.comboItem10.Text = "UI403";
-            // 
-            // comboItem11
-            // 
-            this.comboItem11.Text = "AN758";
-            // 
-            // comboItem12
-            // 
-            this.comboItem12.Text = "8TH GRADE";
-            // 
-            // comboItem13
-            // 
-            this.comboItem13.Text = "9TH GRADE";
-            // 
-            // comboItem14
-            // 
-            this.comboItem14.Text = "10TH GRADE";
-            // 
-            // comboItem15
-            // 
-            this.comboItem15.Text = "11TH GRADE";
-            // 
-            // comboItem16
-            // 
-            this.comboItem16.Text = "12TH GRADE";
-            // 
             // RegistrationForm
             // 
             this.AcceptButton = this.btnRegister;
@@ -810,7 +810,11 @@
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.txtfirstname);
             this.Controls.Add(this.txtlastname);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegistrationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration Form";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).EndInit();

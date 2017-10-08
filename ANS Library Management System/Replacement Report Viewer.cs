@@ -22,5 +22,11 @@ namespace ANS_Library_Management_System
             Replacement_Report rr = new Replacement_Report();
             crystalReportViewer1.ReportSource = rr;
         }
+
+        private void crystalReportViewer2_Load(object sender, EventArgs e)
+        {
+            Replacement_Report rr = new Replacement_Report();
+            crystalReportViewer2.ReportSource = rr;
+        }
     }
 }
