@@ -369,8 +369,12 @@
             this.Controls.Add(this.txtCurrentAttendant);
             this.Controls.Add(this.labelX9);
             this.Controls.Add(this.txtSearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BookReplacement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Replacement";
             this.Load += new System.EventHandler(this.BookReplacement_Load);
             this.grpRepDetails.ResumeLayout(false);

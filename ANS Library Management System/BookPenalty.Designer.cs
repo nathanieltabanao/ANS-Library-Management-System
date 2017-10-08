@@ -349,11 +349,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvView);
             this.Controls.Add(this.labelX10);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BookPenalty";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.BookPenalty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDue)).EndInit();

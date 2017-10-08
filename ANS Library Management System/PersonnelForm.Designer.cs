@@ -144,24 +144,28 @@
             this.topBorrowerToolStripMenuItem.Name = "topBorrowerToolStripMenuItem";
             this.topBorrowerToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.topBorrowerToolStripMenuItem.Text = "Top Borrower ";
+            this.topBorrowerToolStripMenuItem.Click += new System.EventHandler(this.topBorrowerToolStripMenuItem_Click);
             // 
             // topBorrowedBooksToolStripMenuItem
             // 
             this.topBorrowedBooksToolStripMenuItem.Name = "topBorrowedBooksToolStripMenuItem";
             this.topBorrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.topBorrowedBooksToolStripMenuItem.Text = "Top Borrowed Books";
+            this.topBorrowedBooksToolStripMenuItem.Click += new System.EventHandler(this.topBorrowedBooksToolStripMenuItem_Click);
             // 
             // penaltyReportToolStripMenuItem
             // 
             this.penaltyReportToolStripMenuItem.Name = "penaltyReportToolStripMenuItem";
             this.penaltyReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.penaltyReportToolStripMenuItem.Text = "Penalty Report";
+            this.penaltyReportToolStripMenuItem.Click += new System.EventHandler(this.penaltyReportToolStripMenuItem_Click);
             // 
             // replacementReportToolStripMenuItem
             // 
             this.replacementReportToolStripMenuItem.Name = "replacementReportToolStripMenuItem";
             this.replacementReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.replacementReportToolStripMenuItem.Text = "Replacement Report";
+            this.replacementReportToolStripMenuItem.Click += new System.EventHandler(this.replacementReportToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
@@ -185,10 +189,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(807, 477);
             this.Controls.Add(this.stripAdmin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.stripAdmin;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PersonnelForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personnel\'s Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PersonnelForm_Load);

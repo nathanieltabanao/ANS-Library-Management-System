@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookInventory));
             this.lblAttendant = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtSearch = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
@@ -50,6 +51,7 @@
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.dtpPublishDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.numSel = new System.Windows.Forms.NumericUpDown();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.cmbFoS = new System.Windows.Forms.ComboBox();
@@ -57,7 +59,6 @@
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.numPrice = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSel)).BeginInit();
@@ -66,31 +67,42 @@
             // 
             // lblAttendant
             // 
-            this.lblAttendant.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAttendant.BackColor = System.Drawing.Color.Brown;
             // 
             // 
             // 
             this.lblAttendant.BackgroundStyle.Class = "";
             this.lblAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.lblAttendant.ForeColor = System.Drawing.Color.White;
-            this.lblAttendant.Location = new System.Drawing.Point(709, 33);
+            this.lblAttendant.ForeColor = System.Drawing.Color.RosyBrown;
+            this.lblAttendant.Location = new System.Drawing.Point(643, 12);
             this.lblAttendant.Name = "lblAttendant";
             this.lblAttendant.Size = new System.Drawing.Size(187, 23);
             this.lblAttendant.TabIndex = 26;
             this.lblAttendant.Click += new System.EventHandler(this.lblAttendant_Click);
             // 
+            // labelX9
+            // 
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.Class = "";
+            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.labelX9.ForeColor = System.Drawing.Color.OrangeRed;
+            this.labelX9.Location = new System.Drawing.Point(22, 79);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(166, 23);
+            this.labelX9.TabIndex = 25;
+            this.labelX9.Text = "Double click on record to add";
+            // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtSearch.Border.Class = "TextBoxBorder";
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(529, 106);
+            this.txtSearch.Location = new System.Drawing.Point(529, 77);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(336, 23);
+            this.txtSearch.Size = new System.Drawing.Size(301, 23);
             this.txtSearch.TabIndex = 24;
             this.txtSearch.WatermarkText = "Search by title, code, publisher";
             this.txtSearch.TextChanged += new System.EventHandler(this.textBoxX1_TextChanged);
@@ -98,14 +110,13 @@
             // btnCancel
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(362, 600);
+            this.btnCancel.Location = new System.Drawing.Point(741, 512);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 32);
+            this.btnCancel.Size = new System.Drawing.Size(89, 32);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "Cancel";
@@ -114,14 +125,13 @@
             // btnAdd
             // 
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(42, 600);
+            this.btnAdd.Location = new System.Drawing.Point(421, 512);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(91, 32);
+            this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnAdd.TabIndex = 43;
             this.btnAdd.Text = "Add Item";
@@ -129,188 +139,174 @@
             // 
             // txtpublisher
             // 
-            this.txtpublisher.Anchor = System.Windows.Forms.AnchorStyles.Right;
             // 
             // 
             // 
             this.txtpublisher.Border.Class = "TextBoxBorder";
-            this.txtpublisher.Location = new System.Drawing.Point(148, 537);
+            this.txtpublisher.Location = new System.Drawing.Point(115, 498);
             this.txtpublisher.Name = "txtpublisher";
-            this.txtpublisher.Size = new System.Drawing.Size(250, 20);
+            this.txtpublisher.Size = new System.Drawing.Size(248, 20);
             this.txtpublisher.TabIndex = 5;
             // 
             // txtauthor
             // 
-            this.txtauthor.Anchor = System.Windows.Forms.AnchorStyles.Right;
             // 
             // 
             // 
             this.txtauthor.Border.Class = "TextBoxBorder";
-            this.txtauthor.Location = new System.Drawing.Point(148, 479);
+            this.txtauthor.Location = new System.Drawing.Point(115, 440);
             this.txtauthor.Name = "txtauthor";
-            this.txtauthor.Size = new System.Drawing.Size(250, 20);
+            this.txtauthor.Size = new System.Drawing.Size(248, 20);
             this.txtauthor.TabIndex = 3;
             // 
             // txtISBN
             // 
-            this.txtISBN.Anchor = System.Windows.Forms.AnchorStyles.Right;
             // 
             // 
             // 
             this.txtISBN.Border.Class = "TextBoxBorder";
-            this.txtISBN.Location = new System.Drawing.Point(148, 450);
+            this.txtISBN.Location = new System.Drawing.Point(115, 411);
             this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(250, 20);
+            this.txtISBN.Size = new System.Drawing.Size(248, 20);
             this.txtISBN.TabIndex = 2;
             // 
             // txtBookID
             // 
-            this.txtBookID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             // 
             // 
             // 
             this.txtBookID.Border.Class = "TextBoxBorder";
             this.txtBookID.Enabled = false;
-            this.txtBookID.Location = new System.Drawing.Point(148, 421);
+            this.txtBookID.Location = new System.Drawing.Point(115, 382);
             this.txtBookID.Name = "txtBookID";
-            this.txtBookID.Size = new System.Drawing.Size(250, 20);
+            this.txtBookID.Size = new System.Drawing.Size(248, 20);
             this.txtBookID.TabIndex = 36;
             // 
             // txtTitle
             // 
-            this.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             // 
             // 
             // 
             this.txtTitle.Border.Class = "TextBoxBorder";
-            this.txtTitle.Location = new System.Drawing.Point(323, 366);
+            this.txtTitle.Location = new System.Drawing.Point(290, 337);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(307, 20);
+            this.txtTitle.Size = new System.Drawing.Size(305, 20);
             this.txtTitle.TabIndex = 1;
             // 
             // labelX8
             // 
-            this.labelX8.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX8.Location = new System.Drawing.Point(31, 527);
+            this.labelX8.Location = new System.Drawing.Point(31, 498);
             this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(118, 36);
+            this.labelX8.Size = new System.Drawing.Size(83, 23);
             this.labelX8.TabIndex = 34;
             this.labelX8.Text = "Publisher:";
             // 
             // labelX7
             // 
-            this.labelX7.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX7.Location = new System.Drawing.Point(459, 440);
+            this.labelX7.Location = new System.Drawing.Point(459, 411);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(118, 36);
+            this.labelX7.Size = new System.Drawing.Size(83, 23);
             this.labelX7.TabIndex = 33;
             this.labelX7.Text = "Category:";
             // 
             // labelX6
             // 
-            this.labelX6.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX6.Location = new System.Drawing.Point(459, 411);
+            this.labelX6.Location = new System.Drawing.Point(459, 382);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(129, 36);
+            this.labelX6.Size = new System.Drawing.Size(94, 23);
             this.labelX6.TabIndex = 32;
             this.labelX6.Text = "Field of Study:";
             // 
             // labelX5
             // 
-            this.labelX5.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX5.Location = new System.Drawing.Point(31, 498);
+            this.labelX5.Location = new System.Drawing.Point(31, 469);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(118, 36);
+            this.labelX5.Size = new System.Drawing.Size(83, 23);
             this.labelX5.TabIndex = 31;
             this.labelX5.Text = "Publish date:";
             // 
             // labelX4
             // 
-            this.labelX4.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX4.Location = new System.Drawing.Point(31, 469);
+            this.labelX4.Location = new System.Drawing.Point(31, 440);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(99, 36);
+            this.labelX4.Size = new System.Drawing.Size(64, 23);
             this.labelX4.TabIndex = 30;
             this.labelX4.Text = "Author(s):";
             // 
             // labelX3
             // 
-            this.labelX3.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX3.Location = new System.Drawing.Point(243, 363);
+            this.labelX3.Location = new System.Drawing.Point(243, 334);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(76, 36);
+            this.labelX3.Size = new System.Drawing.Size(41, 23);
             this.labelX3.TabIndex = 29;
             this.labelX3.Text = "Title";
             // 
             // labelX2
             // 
-            this.labelX2.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX2.Location = new System.Drawing.Point(31, 440);
+            this.labelX2.Location = new System.Drawing.Point(31, 411);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(84, 36);
+            this.labelX2.Size = new System.Drawing.Size(49, 23);
             this.labelX2.TabIndex = 28;
             this.labelX2.Text = "ISBN";
             // 
             // labelX1
             // 
-            this.labelX1.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX1.Location = new System.Drawing.Point(31, 411);
+            this.labelX1.Location = new System.Drawing.Point(31, 382);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(84, 36);
+            this.labelX1.Size = new System.Drawing.Size(49, 23);
             this.labelX1.TabIndex = 27;
             this.labelX1.Text = "Book ID";
             // 
             // btnUpdate
             // 
             this.btnUpdate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnUpdate.Location = new System.Drawing.Point(149, 600);
+            this.btnUpdate.Location = new System.Drawing.Point(528, 512);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(91, 32);
+            this.btnUpdate.Size = new System.Drawing.Size(89, 32);
             this.btnUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.Text = "Update Item";
@@ -319,14 +315,13 @@
             // btnDelete
             // 
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDelete.Location = new System.Drawing.Point(253, 600);
+            this.btnDelete.Location = new System.Drawing.Point(632, 512);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 32);
+            this.btnDelete.Size = new System.Drawing.Size(89, 32);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.btnDelete.TabIndex = 46;
             this.btnDelete.Text = "Delete";
@@ -335,7 +330,6 @@
             // dtpPublishDate
             // 
             this.dtpPublishDate.AllowEmptyState = false;
-            this.dtpPublishDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dtpPublishDate.AutoSelectDate = true;
             // 
             // 
@@ -345,7 +339,7 @@
             this.dtpPublishDate.ButtonDropDown.Visible = true;
             this.dtpPublishDate.CustomFormat = "yyyy";
             this.dtpPublishDate.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dtpPublishDate.Location = new System.Drawing.Point(148, 508);
+            this.dtpPublishDate.Location = new System.Drawing.Point(115, 469);
             // 
             // 
             // 
@@ -379,7 +373,7 @@
             this.dtpPublishDate.MonthCalendar.TodayButtonVisible = true;
             this.dtpPublishDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtpPublishDate.Name = "dtpPublishDate";
-            this.dtpPublishDate.Size = new System.Drawing.Size(250, 20);
+            this.dtpPublishDate.Size = new System.Drawing.Size(248, 20);
             this.dtpPublishDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpPublishDate.TabIndex = 4;
             // 
@@ -387,24 +381,34 @@
             // 
             this.dgvBooks.AllowUserToAddRows = false;
             this.dgvBooks.AllowUserToDeleteRows = false;
-            this.dgvBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvBooks.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBooks.Location = new System.Drawing.Point(22, 137);
+            this.dgvBooks.Location = new System.Drawing.Point(22, 108);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooks.Size = new System.Drawing.Size(843, 221);
+            this.dgvBooks.Size = new System.Drawing.Size(808, 208);
             this.dgvBooks.TabIndex = 50;
             this.dgvBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooks_CellContentClick);
             this.dgvBooks.DoubleClick += new System.EventHandler(this.dgvBooks_DoubleClick);
             // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold);
+            this.labelX10.Location = new System.Drawing.Point(22, 27);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(166, 46);
+            this.labelX10.TabIndex = 73;
+            this.labelX10.Text = "Book Inventory";
+            // 
             // numSel
             // 
-            this.numSel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.numSel.Location = new System.Drawing.Point(592, 474);
+            this.numSel.Location = new System.Drawing.Point(559, 440);
             this.numSel.Maximum = new decimal(new int[] {
             200,
             0,
@@ -416,7 +420,7 @@
             0,
             0});
             this.numSel.Name = "numSel";
-            this.numSel.Size = new System.Drawing.Size(122, 20);
+            this.numSel.Size = new System.Drawing.Size(120, 20);
             this.numSel.TabIndex = 8;
             this.numSel.Value = new decimal(new int[] {
             1,
@@ -426,21 +430,19 @@
             // 
             // labelX11
             // 
-            this.labelX11.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX11.BackgroundStyle.Class = "";
             this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX11.Location = new System.Drawing.Point(459, 466);
+            this.labelX11.Location = new System.Drawing.Point(459, 437);
             this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(118, 36);
+            this.labelX11.Size = new System.Drawing.Size(83, 23);
             this.labelX11.TabIndex = 75;
             this.labelX11.Text = "Quantity";
             // 
             // cmbFoS
             // 
-            this.cmbFoS.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cmbFoS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFoS.FormattingEnabled = true;
             this.cmbFoS.Items.AddRange(new object[] {
@@ -502,15 +504,14 @@
             "Sociology ",
             "Statistical Science",
             "Urban and Regional Studies "});
-            this.cmbFoS.Location = new System.Drawing.Point(592, 416);
+            this.cmbFoS.Location = new System.Drawing.Point(559, 384);
             this.cmbFoS.Name = "cmbFoS";
-            this.cmbFoS.Size = new System.Drawing.Size(273, 21);
+            this.cmbFoS.Size = new System.Drawing.Size(271, 21);
             this.cmbFoS.Sorted = true;
             this.cmbFoS.TabIndex = 6;
             // 
             // cmbCategory
             // 
-            this.cmbCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
@@ -545,36 +546,34 @@
             "Series",
             "Travel",
             "Trilogy"});
-            this.cmbCategory.Location = new System.Drawing.Point(592, 445);
+            this.cmbCategory.Location = new System.Drawing.Point(559, 413);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(273, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(271, 21);
             this.cmbCategory.Sorted = true;
             this.cmbCategory.TabIndex = 7;
             // 
             // labelX12
             // 
-            this.labelX12.Anchor = System.Windows.Forms.AnchorStyles.None;
             // 
             // 
             // 
             this.labelX12.BackgroundStyle.Class = "";
             this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX12.Location = new System.Drawing.Point(459, 495);
+            this.labelX12.Location = new System.Drawing.Point(459, 466);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(107, 36);
+            this.labelX12.Size = new System.Drawing.Size(83, 23);
             this.labelX12.TabIndex = 77;
             this.labelX12.Text = "Price";
             // 
             // numPrice
             // 
-            this.numPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.numPrice.DecimalPlaces = 2;
             this.numPrice.Increment = new decimal(new int[] {
             25,
             0,
             0,
             131072});
-            this.numPrice.Location = new System.Drawing.Point(592, 505);
+            this.numPrice.Location = new System.Drawing.Point(559, 469);
             this.numPrice.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -586,7 +585,7 @@
             0,
             0});
             this.numPrice.Name = "numPrice";
-            this.numPrice.Size = new System.Drawing.Size(122, 20);
+            this.numPrice.Size = new System.Drawing.Size(120, 20);
             this.numPrice.TabIndex = 9;
             this.numPrice.ThousandsSeparator = true;
             this.numPrice.Value = new decimal(new int[] {
@@ -597,40 +596,18 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(572, 507);
+            this.label1.Location = new System.Drawing.Point(546, 472);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(14, 13);
             this.label1.TabIndex = 78;
             this.label1.Text = "₱";
             // 
-            // labelX10
-            // 
-            this.labelX10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.ForeColor = System.Drawing.Color.OrangeRed;
-            this.labelX10.Location = new System.Drawing.Point(22, 95);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(194, 36);
-            this.labelX10.TabIndex = 79;
-            this.labelX10.Text = "Double click on record to add";
-            // 
             // BookInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_inventory;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(896, 688);
-            this.Controls.Add(this.labelX10);
+            this.ClientSize = new System.Drawing.Size(861, 557);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelX12);
             this.Controls.Add(this.numPrice);
@@ -638,6 +615,7 @@
             this.Controls.Add(this.cmbFoS);
             this.Controls.Add(this.labelX11);
             this.Controls.Add(this.numSel);
+            this.Controls.Add(this.labelX10);
             this.Controls.Add(this.dgvBooks);
             this.Controls.Add(this.dtpPublishDate);
             this.Controls.Add(this.btnDelete);
@@ -658,13 +636,11 @@
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.lblAttendant);
+            this.Controls.Add(this.labelX9);
             this.Controls.Add(this.txtSearch);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "BookInventory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BookInventory";
             this.Load += new System.EventHandler(this.BookInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublishDate)).EndInit();
@@ -678,6 +654,7 @@
 
         #endregion
         private DevComponents.DotNetBar.LabelX lblAttendant;
+        private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSearch;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnAdd;
@@ -698,6 +675,7 @@
         private DevComponents.DotNetBar.ButtonX btnDelete;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpPublishDate;
         private System.Windows.Forms.DataGridView dgvBooks;
+        private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.NumericUpDown numSel;
         private DevComponents.DotNetBar.LabelX labelX11;
         private System.Windows.Forms.ComboBox cmbFoS;
@@ -705,6 +683,5 @@
         private DevComponents.DotNetBar.LabelX labelX12;
         private System.Windows.Forms.NumericUpDown numPrice;
         private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.LabelX labelX10;
     }
 }

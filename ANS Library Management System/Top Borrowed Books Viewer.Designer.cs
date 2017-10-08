@@ -1,4 +1,6 @@
-﻿namespace ANS_Library_Management_System
+﻿using WindowsFormsControlLibrary1;
+
+namespace ANS_Library_Management_System
 {
     partial class Top_Borrowed_Books_Viewer
     {
@@ -49,8 +51,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.crystalReportViewer1);
+            this.MinimizeBox = false;
             this.Name = "Top_Borrowed_Books_Viewer";
             this.Text = "Top_Borrowed_Books_Viewer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

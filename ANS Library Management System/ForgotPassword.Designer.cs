@@ -169,7 +169,11 @@
             this.Controls.Add(this.txtSecurityAnswer);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.labelX1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ForgotPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forgot Password";
             this.ResumeLayout(false);
 

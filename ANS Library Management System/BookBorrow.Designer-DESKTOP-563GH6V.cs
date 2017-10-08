@@ -58,6 +58,8 @@
             this.txtUsername = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.linkRepRecords = new System.Windows.Forms.LinkLabel();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.dtpPublish = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -74,14 +76,10 @@
             // 
             this.dgvBooks.AllowUserToAddRows = false;
             this.dgvBooks.AllowUserToDeleteRows = false;
-            this.dgvBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvBooks.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBooks.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBooks.Location = new System.Drawing.Point(29, 114);
+            this.dgvBooks.Location = new System.Drawing.Point(22, 97);
             this.dgvBooks.Name = "dgvBooks";
             this.dgvBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooks.Size = new System.Drawing.Size(808, 208);
@@ -91,15 +89,12 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtSearch.Border.Class = "TextBoxBorder";
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSearch.Location = new System.Drawing.Point(521, 83);
+            this.txtSearch.Location = new System.Drawing.Point(514, 66);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(313, 25);
@@ -109,15 +104,12 @@
             // 
             // labelX1
             // 
-            this.labelX1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX1.Location = new System.Drawing.Point(34, 384);
+            this.labelX1.Location = new System.Drawing.Point(27, 367);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(49, 23);
             this.labelX1.TabIndex = 4;
@@ -125,15 +117,12 @@
             // 
             // labelX2
             // 
-            this.labelX2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX2.Location = new System.Drawing.Point(34, 413);
+            this.labelX2.Location = new System.Drawing.Point(27, 396);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(49, 23);
             this.labelX2.TabIndex = 5;
@@ -141,31 +130,25 @@
             // 
             // labelX3
             // 
-            this.labelX3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX3.Location = new System.Drawing.Point(243, 337);
+            this.labelX3.Location = new System.Drawing.Point(78, 329);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(41, 23);
+            this.labelX3.Size = new System.Drawing.Size(89, 23);
             this.labelX3.TabIndex = 6;
             this.labelX3.Text = "Title";
             // 
             // labelX4
             // 
-            this.labelX4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX4.Location = new System.Drawing.Point(34, 442);
+            this.labelX4.Location = new System.Drawing.Point(27, 425);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(64, 23);
             this.labelX4.TabIndex = 7;
@@ -173,15 +156,12 @@
             // 
             // labelX5
             // 
-            this.labelX5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX5.Location = new System.Drawing.Point(34, 471);
+            this.labelX5.Location = new System.Drawing.Point(27, 454);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(83, 23);
             this.labelX5.TabIndex = 8;
@@ -189,15 +169,12 @@
             // 
             // labelX6
             // 
-            this.labelX6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX6.Location = new System.Drawing.Point(34, 529);
+            this.labelX6.Location = new System.Drawing.Point(27, 512);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(94, 23);
             this.labelX6.TabIndex = 9;
@@ -205,15 +182,12 @@
             // 
             // labelX7
             // 
-            this.labelX7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX7.Location = new System.Drawing.Point(34, 558);
+            this.labelX7.Location = new System.Drawing.Point(27, 541);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(83, 23);
             this.labelX7.TabIndex = 10;
@@ -221,15 +195,12 @@
             // 
             // labelX8
             // 
-            this.labelX8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
             this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX8.Location = new System.Drawing.Point(34, 500);
+            this.labelX8.Location = new System.Drawing.Point(27, 483);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(83, 23);
             this.labelX8.TabIndex = 11;
@@ -237,149 +208,117 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtTitle.Border.Class = "TextBoxBorder";
             this.txtTitle.Enabled = false;
-            this.txtTitle.Location = new System.Drawing.Point(290, 340);
+            this.txtTitle.Location = new System.Drawing.Point(125, 332);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(305, 20);
+            this.txtTitle.Size = new System.Drawing.Size(250, 20);
             this.txtTitle.TabIndex = 12;
             // 
             // txtBookID
             // 
-            this.txtBookID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtBookID.Border.Class = "TextBoxBorder";
             this.txtBookID.Enabled = false;
-            this.txtBookID.Location = new System.Drawing.Point(132, 384);
+            this.txtBookID.Location = new System.Drawing.Point(125, 367);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.Size = new System.Drawing.Size(190, 20);
             this.txtBookID.TabIndex = 13;
             // 
             // txtISBN
             // 
-            this.txtISBN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtISBN.Border.Class = "TextBoxBorder";
             this.txtISBN.Enabled = false;
-            this.txtISBN.Location = new System.Drawing.Point(132, 413);
+            this.txtISBN.Location = new System.Drawing.Point(125, 396);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(190, 20);
             this.txtISBN.TabIndex = 14;
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtAuthor.Border.Class = "TextBoxBorder";
             this.txtAuthor.Enabled = false;
-            this.txtAuthor.Location = new System.Drawing.Point(132, 442);
+            this.txtAuthor.Location = new System.Drawing.Point(125, 425);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(190, 20);
             this.txtAuthor.TabIndex = 15;
             // 
             // txtPublisher
             // 
-            this.txtPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtPublisher.Border.Class = "TextBoxBorder";
             this.txtPublisher.Enabled = false;
-            this.txtPublisher.Location = new System.Drawing.Point(132, 500);
+            this.txtPublisher.Location = new System.Drawing.Point(125, 483);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(190, 20);
             this.txtPublisher.TabIndex = 17;
             // 
             // txtFoS
             // 
-            this.txtFoS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtFoS.Border.Class = "TextBoxBorder";
             this.txtFoS.Enabled = false;
-            this.txtFoS.Location = new System.Drawing.Point(132, 529);
+            this.txtFoS.Location = new System.Drawing.Point(125, 512);
             this.txtFoS.Name = "txtFoS";
             this.txtFoS.Size = new System.Drawing.Size(192, 20);
             this.txtFoS.TabIndex = 18;
             // 
             // txtCategory
             // 
-            this.txtCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtCategory.Border.Class = "TextBoxBorder";
             this.txtCategory.Enabled = false;
-            this.txtCategory.Location = new System.Drawing.Point(132, 561);
+            this.txtCategory.Location = new System.Drawing.Point(125, 544);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(192, 20);
             this.txtCategory.TabIndex = 19;
             // 
             // labelX9
             // 
-            this.labelX9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelX9.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX9.BackgroundStyle.Class = "";
-            this.labelX9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.labelX9.ForeColor = System.Drawing.Color.OrangeRed;
-            this.labelX9.Location = new System.Drawing.Point(29, 85);
+            this.labelX9.Location = new System.Drawing.Point(22, 68);
             this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(192, 23);
+            this.labelX9.Size = new System.Drawing.Size(166, 23);
             this.labelX9.TabIndex = 22;
             this.labelX9.Text = "Double click on record to add";
             // 
             // lblCurrentAttendant
             // 
-            this.lblCurrentAttendant.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCurrentAttendant.BackColor = System.Drawing.Color.Brown;
             // 
             // 
             // 
             this.lblCurrentAttendant.BackgroundStyle.Class = "";
             this.lblCurrentAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.lblCurrentAttendant.ForeColor = System.Drawing.Color.White;
-            this.lblCurrentAttendant.Location = new System.Drawing.Point(636, 36);
+            this.lblCurrentAttendant.ForeColor = System.Drawing.Color.RosyBrown;
+            this.lblCurrentAttendant.Location = new System.Drawing.Point(606, 12);
             this.lblCurrentAttendant.Name = "lblCurrentAttendant";
             this.lblCurrentAttendant.Size = new System.Drawing.Size(224, 23);
             this.lblCurrentAttendant.TabIndex = 23;
             // 
             // grpBorrowDetails
             // 
-            this.grpBorrowDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBorrowDetails.Controls.Add(this.btnSearch);
             this.grpBorrowDetails.Controls.Add(this.dtpReturn);
             this.grpBorrowDetails.Controls.Add(this.dtpBorrowed);
@@ -390,7 +329,7 @@
             this.grpBorrowDetails.Controls.Add(this.labelX11);
             this.grpBorrowDetails.Controls.Add(this.labelX12);
             this.grpBorrowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpBorrowDetails.Location = new System.Drawing.Point(374, 384);
+            this.grpBorrowDetails.Location = new System.Drawing.Point(386, 335);
             this.grpBorrowDetails.Name = "grpBorrowDetails";
             this.grpBorrowDetails.Size = new System.Drawing.Size(463, 197);
             this.grpBorrowDetails.TabIndex = 29;
@@ -399,9 +338,6 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.Location = new System.Drawing.Point(406, 40);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(32, 23);
@@ -412,9 +348,6 @@
             // dtpReturn
             // 
             this.dtpReturn.AllowEmptyState = false;
-            this.dtpReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -459,14 +392,10 @@
             this.dtpReturn.Size = new System.Drawing.Size(253, 20);
             this.dtpReturn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpReturn.TabIndex = 40;
-            this.dtpReturn.Value = new System.DateTime(2017, 9, 16, 11, 0, 38, 537);
             // 
             // dtpBorrowed
             // 
             this.dtpBorrowed.AllowEmptyState = false;
-            this.dtpBorrowed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -511,13 +440,9 @@
             this.dtpBorrowed.Size = new System.Drawing.Size(253, 20);
             this.dtpBorrowed.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpBorrowed.TabIndex = 39;
-            this.dtpBorrowed.Value = new System.DateTime(2017, 9, 16, 11, 0, 38, 654);
             // 
             // labelX14
             // 
-            this.labelX14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelX14.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
@@ -532,9 +457,6 @@
             // 
             // labelX13
             // 
-            this.labelX13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelX13.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
@@ -549,9 +471,6 @@
             // 
             // txtName
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -564,9 +483,6 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -581,9 +497,6 @@
             // 
             // labelX11
             // 
-            this.labelX11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelX11.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
@@ -598,9 +511,6 @@
             // 
             // labelX12
             // 
-            this.labelX12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelX12.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
@@ -613,17 +523,37 @@
             this.labelX12.TabIndex = 33;
             this.labelX12.Text = "Username:";
             // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold);
+            this.labelX10.Location = new System.Drawing.Point(22, 23);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(159, 47);
+            this.labelX10.TabIndex = 72;
+            this.labelX10.Text = "Book Borrow";
+            // 
+            // linkRepRecords
+            // 
+            this.linkRepRecords.AutoSize = true;
+            this.linkRepRecords.Location = new System.Drawing.Point(684, 45);
+            this.linkRepRecords.Name = "linkRepRecords";
+            this.linkRepRecords.Size = new System.Drawing.Size(143, 13);
+            this.linkRepRecords.TabIndex = 73;
+            this.linkRepRecords.TabStop = true;
+            this.linkRepRecords.Text = "Show Replacement Records";
+            // 
             // btnCancel
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancel.Location = new System.Drawing.Point(132, 626);
+            this.btnCancel.Location = new System.Drawing.Point(760, 538);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 32);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -633,14 +563,11 @@
             // btnAdd
             // 
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdd.Location = new System.Drawing.Point(34, 626);
+            this.btnAdd.Location = new System.Drawing.Point(662, 538);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
@@ -651,9 +578,6 @@
             // dtpPublish
             // 
             this.dtpPublish.AllowEmptyState = false;
-            this.dtpPublish.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -661,7 +585,7 @@
             this.dtpPublish.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpPublish.ButtonDropDown.Visible = true;
             this.dtpPublish.Enabled = false;
-            this.dtpPublish.Location = new System.Drawing.Point(132, 474);
+            this.dtpPublish.Location = new System.Drawing.Point(125, 457);
             // 
             // 
             // 
@@ -702,30 +626,24 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.txtPrice.Border.Class = "TextBoxBorder";
             this.txtPrice.Enabled = false;
-            this.txtPrice.Location = new System.Drawing.Point(132, 591);
+            this.txtPrice.Location = new System.Drawing.Point(125, 574);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(192, 20);
             this.txtPrice.TabIndex = 77;
             // 
             // labelX15
             // 
-            this.labelX15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
             this.labelX15.BackgroundStyle.Class = "";
             this.labelX15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelX15.Location = new System.Drawing.Point(34, 588);
+            this.labelX15.Location = new System.Drawing.Point(27, 571);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(83, 23);
             this.labelX15.TabIndex = 76;
@@ -735,16 +653,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_bookborrow;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(861, 675);
-            this.Controls.Add(this.lblCurrentAttendant);
+            this.ClientSize = new System.Drawing.Size(861, 609);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.labelX15);
             this.Controls.Add(this.dtpPublish);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.linkRepRecords);
+            this.Controls.Add(this.labelX10);
             this.Controls.Add(this.grpBorrowDetails);
+            this.Controls.Add(this.lblCurrentAttendant);
             this.Controls.Add(this.labelX9);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.txtFoS);
@@ -763,12 +681,8 @@
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvBooks);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "BookBorrow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Borrow";
             this.Activated += new System.EventHandler(this.BookBorrow_Activated);
             this.Deactivate += new System.EventHandler(this.BookBorrow_Deactivate);
@@ -780,6 +694,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpBorrowed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpPublish)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -810,6 +725,8 @@
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private System.Windows.Forms.LinkLabel linkRepRecords;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnAdd;
         private System.Windows.Forms.Button btnSearch;

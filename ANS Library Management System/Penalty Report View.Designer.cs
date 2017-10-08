@@ -1,4 +1,6 @@
-﻿namespace ANS_Library_Management_System
+﻿using WindowsFormsControlLibrary1;
+
+namespace ANS_Library_Management_System
 {
     partial class Penalty_Report_View
     {
@@ -49,8 +51,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.crystalReportViewer1);
+            this.MinimizeBox = false;
             this.Name = "Penalty_Report_View";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Penalty_Report_View";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

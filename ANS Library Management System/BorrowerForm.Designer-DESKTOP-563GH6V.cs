@@ -42,8 +42,8 @@
             // 
             this.stripAdmin.AllowItemReorder = true;
             this.stripAdmin.AutoSize = false;
-            this.stripAdmin.BackColor = System.Drawing.Color.IndianRed;
-            this.stripAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stripAdmin.BackColor = System.Drawing.Color.CadetBlue;
+            this.stripAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.stripAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.booksBorrowedToolStripMenuItem,
@@ -51,46 +51,42 @@
             this.logOutToolStripMenuItem});
             this.stripAdmin.Location = new System.Drawing.Point(0, 0);
             this.stripAdmin.Name = "stripAdmin";
-            this.stripAdmin.Size = new System.Drawing.Size(984, 37);
+            this.stripAdmin.Size = new System.Drawing.Size(807, 37);
             this.stripAdmin.TabIndex = 0;
             this.stripAdmin.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(62, 33);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(58, 33);
             this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Visible = false;
             // 
             // booksBorrowedToolStripMenuItem
             // 
             this.booksBorrowedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viwToolStripMenuItem});
-            this.booksBorrowedToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.booksBorrowedToolStripMenuItem.Name = "booksBorrowedToolStripMenuItem";
-            this.booksBorrowedToolStripMenuItem.Size = new System.Drawing.Size(133, 33);
+            this.booksBorrowedToolStripMenuItem.Size = new System.Drawing.Size(121, 33);
             this.booksBorrowedToolStripMenuItem.Text = "Books Borrowed";
             // 
             // viwToolStripMenuItem
             // 
             this.viwToolStripMenuItem.Name = "viwToolStripMenuItem";
-            this.viwToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.viwToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.viwToolStripMenuItem.Text = "View";
             this.viwToolStripMenuItem.Click += new System.EventHandler(this.viwToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
-            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(130, 33);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
-            this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(85, 33);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(82, 33);
             this.logOutToolStripMenuItem.Text = "Log - Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -98,10 +94,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_userform;
-            this.ClientSize = new System.Drawing.Size(984, 510);
+            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.lms_test__2_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(807, 477);
             this.Controls.Add(this.stripAdmin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.stripAdmin;
