@@ -53,7 +53,6 @@
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.txtEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnRegister = new DevComponents.DotNetBar.ButtonX();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdoAdmin = new System.Windows.Forms.RadioButton();
             this.rdoPersonnel = new System.Windows.Forms.RadioButton();
             this.rdoStudent = new System.Windows.Forms.RadioButton();
@@ -87,7 +86,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbSecQuestion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -455,16 +453,6 @@
             this.btnRegister.Text = "Register";
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ANS_Library_Management_System.Properties.Resources.add_contact;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            // 
             // rdoAdmin
             // 
             this.rdoAdmin.AutoSize = true;
@@ -774,6 +762,7 @@
             this.AcceptButton = this.btnRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(836, 590);
             this.Controls.Add(this.cmbSecQuestion);
             this.Controls.Add(this.groupBox2);
@@ -784,7 +773,6 @@
             this.Controls.Add(this.labelX16);
             this.Controls.Add(this.labelX15);
             this.Controls.Add(this.txtAge);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.labelX13);
             this.Controls.Add(this.txtEmail);
@@ -818,7 +806,6 @@
             this.Text = "Registration Form";
             this.Load += new System.EventHandler(this.RegistrationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpBirthdate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -854,7 +841,6 @@
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.Controls.TextBoxX txtEmail;
         private DevComponents.DotNetBar.ButtonX btnRegister;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtAge;
         private System.Windows.Forms.RadioButton rdoAdmin;
         private System.Windows.Forms.RadioButton rdoPersonnel;

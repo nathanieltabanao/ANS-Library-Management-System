@@ -51,7 +51,7 @@
             // stripAdmin
             // 
             this.stripAdmin.AutoSize = false;
-            this.stripAdmin.BackColor = System.Drawing.Color.CadetBlue;
+            this.stripAdmin.BackColor = System.Drawing.Color.IndianRed;
             this.stripAdmin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.stripAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
@@ -61,15 +61,17 @@
             this.logOutToolStripMenuItem});
             this.stripAdmin.Location = new System.Drawing.Point(0, 0);
             this.stripAdmin.Name = "stripAdmin";
-            this.stripAdmin.Size = new System.Drawing.Size(807, 37);
+            this.stripAdmin.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.stripAdmin.Size = new System.Drawing.Size(1354, 37);
             this.stripAdmin.TabIndex = 0;
             this.stripAdmin.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(58, 33);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(58, 31);
             this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Visible = false;
             // 
             // libraryFunctionsToolStripMenuItem
             // 
@@ -79,8 +81,10 @@
             this.bookPenaltyToolStripMenuItem,
             this.bookReplacementToolStripMenuItem,
             this.bookReturnToolStripMenuItem});
+            this.libraryFunctionsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.libraryFunctionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.libraryFunctionsToolStripMenuItem.Name = "libraryFunctionsToolStripMenuItem";
-            this.libraryFunctionsToolStripMenuItem.Size = new System.Drawing.Size(126, 33);
+            this.libraryFunctionsToolStripMenuItem.Size = new System.Drawing.Size(140, 31);
             this.libraryFunctionsToolStripMenuItem.Text = "Library Functions";
             // 
             // bookInventoryToolStripMenuItem
@@ -88,7 +92,7 @@
             this.bookInventoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchToolStripMenuItem});
             this.bookInventoryToolStripMenuItem.Name = "bookInventoryToolStripMenuItem";
-            this.bookInventoryToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.bookInventoryToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.bookInventoryToolStripMenuItem.Text = "Book Inventory";
             this.bookInventoryToolStripMenuItem.Click += new System.EventHandler(this.bookInventoryToolStripMenuItem_Click);
             // 
@@ -96,35 +100,35 @@
             // 
             this.searchToolStripMenuItem.Enabled = false;
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
             this.searchToolStripMenuItem.Text = "Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // bookBorrowingToolStripMenuItem
             // 
             this.bookBorrowingToolStripMenuItem.Name = "bookBorrowingToolStripMenuItem";
-            this.bookBorrowingToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.bookBorrowingToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.bookBorrowingToolStripMenuItem.Text = "Book Borrowing";
             this.bookBorrowingToolStripMenuItem.Click += new System.EventHandler(this.bookBorrowingToolStripMenuItem_Click);
             // 
             // bookPenaltyToolStripMenuItem
             // 
             this.bookPenaltyToolStripMenuItem.Name = "bookPenaltyToolStripMenuItem";
-            this.bookPenaltyToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.bookPenaltyToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.bookPenaltyToolStripMenuItem.Text = "Book Penalty";
             this.bookPenaltyToolStripMenuItem.Click += new System.EventHandler(this.bookPenaltyToolStripMenuItem_Click);
             // 
             // bookReplacementToolStripMenuItem
             // 
             this.bookReplacementToolStripMenuItem.Name = "bookReplacementToolStripMenuItem";
-            this.bookReplacementToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.bookReplacementToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.bookReplacementToolStripMenuItem.Text = "Book Replacement";
             this.bookReplacementToolStripMenuItem.Click += new System.EventHandler(this.bookReplacementToolStripMenuItem_Click);
             // 
             // bookReturnToolStripMenuItem
             // 
             this.bookReturnToolStripMenuItem.Name = "bookReturnToolStripMenuItem";
-            this.bookReturnToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.bookReturnToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.bookReturnToolStripMenuItem.Text = "Book Return";
             this.bookReturnToolStripMenuItem.Click += new System.EventHandler(this.bookReturnToolStripMenuItem_Click);
             // 
@@ -135,64 +139,73 @@
             this.topBorrowedBooksToolStripMenuItem,
             this.penaltyReportToolStripMenuItem,
             this.replacementReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(68, 33);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(73, 31);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
             // topBorrowerToolStripMenuItem
             // 
             this.topBorrowerToolStripMenuItem.Name = "topBorrowerToolStripMenuItem";
-            this.topBorrowerToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.topBorrowerToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.topBorrowerToolStripMenuItem.Text = "Top Borrower ";
             this.topBorrowerToolStripMenuItem.Click += new System.EventHandler(this.topBorrowerToolStripMenuItem_Click);
             // 
             // topBorrowedBooksToolStripMenuItem
             // 
             this.topBorrowedBooksToolStripMenuItem.Name = "topBorrowedBooksToolStripMenuItem";
-            this.topBorrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.topBorrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.topBorrowedBooksToolStripMenuItem.Text = "Top Borrowed Books";
             this.topBorrowedBooksToolStripMenuItem.Click += new System.EventHandler(this.topBorrowedBooksToolStripMenuItem_Click);
             // 
             // penaltyReportToolStripMenuItem
             // 
             this.penaltyReportToolStripMenuItem.Name = "penaltyReportToolStripMenuItem";
-            this.penaltyReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.penaltyReportToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.penaltyReportToolStripMenuItem.Text = "Penalty Report";
             this.penaltyReportToolStripMenuItem.Click += new System.EventHandler(this.penaltyReportToolStripMenuItem_Click);
             // 
             // replacementReportToolStripMenuItem
             // 
             this.replacementReportToolStripMenuItem.Name = "replacementReportToolStripMenuItem";
-            this.replacementReportToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
+            this.replacementReportToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
             this.replacementReportToolStripMenuItem.Text = "Replacement Report";
             this.replacementReportToolStripMenuItem.Click += new System.EventHandler(this.replacementReportToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
+            this.changePasswordToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(130, 33);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(141, 31);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
+            this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.logOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(82, 33);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(85, 31);
             this.logOutToolStripMenuItem.Text = "Log - Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // PersonnelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.lms_test__2_;
+            this.BackgroundImage = global::ANS_Library_Management_System.Properties.Resources.bg_login;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(807, 477);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.stripAdmin);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.stripAdmin;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PersonnelForm";

@@ -118,43 +118,121 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bg_return1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_return1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg_usersearch1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_usersearch1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="bg_usersearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_usersearch.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_usersearch2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_usersearch2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lms-test (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lms-test (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="anns" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anns.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="anns__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anns (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ANS_LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ANS LOGO.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ANS_LOGO__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ANS LOGO (2).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_bookborrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_bookborrow.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ANS LOGO (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ANS LOGO (2).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bg_userform" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_userform.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bg_inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_inventory.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_login2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_login3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_login3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bg_pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_pass.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_penalty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_penalty.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_replacement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_replacement.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bg_return" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_return.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_usersearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="bg_return1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_return1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_security" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_security.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_userform" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_userform.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_userform_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_userform_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_usersearch11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_usersearch1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_usersearch21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_usersearch2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_usersearch3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_usersearch.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="books_stack_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\books-stack.png.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye.png.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder1_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder1.png.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="index" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\index.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="key_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key.png.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="library" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\library.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="library__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\library (2).ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lms_test" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lms-test.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lms_test__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lms-test (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting.png.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_1_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user 1.png.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

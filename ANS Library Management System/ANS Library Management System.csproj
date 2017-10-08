@@ -199,6 +199,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,14 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,34 +410,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user.png.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\eye.png.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ANS LOGO %282%29.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lms-test %282%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="add contact.png" />
-    <None Include="Resources\bg_usersearch.jpg" />
-    <None Include="Resources\bg_return1.jpg" />
-    <None Include="Resources\bg_return.jpg" />
-    <None Include="Resources\bg_inventory.jpg" />
-    <None Include="Resources\bg_bookborrow.jpg" />
-    <None Include="Resources\bg_userform.jpg" />
-    <None Include="Resources\bg_login3.jpg" />
-    <None Include="Resources\add contact.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -450,6 +424,48 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_usersearch1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_usersearch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add contact.png" />
+    <Content Include="Resources\anns %282%29.jpg" />
+    <Content Include="Resources\anns.jpg" />
+    <Content Include="Resources\ANS LOGO %282%29.jpeg" />
+    <Content Include="Resources\ANS LOGO.jpeg" />
+    <Content Include="Resources\bg_bookborrow.jpg" />
+    <Content Include="Resources\bg_inventory.jpg" />
+    <Content Include="Resources\bg_login.jpg" />
+    <Content Include="Resources\bg_login2.jpg" />
+    <Content Include="Resources\bg_login3.jpg" />
+    <Content Include="Resources\bg_pass.jpg" />
+    <Content Include="Resources\bg_penalty.jpg" />
+    <Content Include="Resources\bg_replacement.jpg" />
+    <Content Include="Resources\bg_return.jpg" />
+    <None Include="Resources\bg_return1.jpg" />
+    <Content Include="Resources\bg_security.jpg" />
+    <Content Include="Resources\bg_userform.jpg" />
+    <Content Include="Resources\bg_userform_png.png" />
+    <None Include="Resources\bg_usersearch2.jpg" />
+    <Content Include="Resources\books-stack.png.ico" />
+    <Content Include="Resources\check.png" />
+    <Content Include="Resources\eye.png.ico" />
+    <Content Include="Resources\folder1.png.ico" />
+    <Content Include="Resources\home.ico" />
+    <Content Include="Resources\index.png" />
+    <Content Include="Resources\key.png.ico" />
+    <Content Include="Resources\library %282%29.ico" />
+    <Content Include="Resources\library.ico" />
+    <Content Include="Resources\lms-test %282%29.jpg" />
+    <Content Include="Resources\lms-test.jpg" />
+    <Content Include="Resources\lock.ico" />
+    <Content Include="Resources\setting.png.ico" />
+    <Content Include="Resources\user 1.png.ico" />
+    <Content Include="Resources\user.png.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
